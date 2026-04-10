@@ -1,0 +1,2258 @@
+{
+  "schema_version": "1.2",
+  "updated": "2026-04-10",
+  "license": "CC BY-SA 4.0",
+  "curator": {
+    "name": "René Dechamps Otamendi",
+    "affiliation": "AgenticEconomy.dev",
+    "orcid": "0009-0007-1033-6519",
+    "email": "rene@renedechamps.com"
+  },
+  "canonical_citation": {
+    "paper_title": "Fifty-One Maps, No Territory: A Diagnostic Analysis of Definitional Divergence in the Agentic Economy (2021–2026)",
+    "author": "Dechamps Otamendi, R.",
+    "year": 2026,
+    "preprint": "Zenodo (DOI pending)",
+    "note": "This paper is the canonical frozen reference for the corpus. The live version with interactive filters and cross-references is at https://agenticeconomy.dev/agentic-economy-definitions."
+  },
+  "schema_description": {
+    "coded_dimensions": {
+      "definition_type": {
+        "values": [
+          "descriptive",
+          "prescriptive",
+          "normative",
+          "operational",
+          "taxonomic"
+        ],
+        "note": "Descriptive = describes observed phenomena. Prescriptive = tells you how it should work. Normative = value judgment embedded. Operational = protocol/implementation spec. Taxonomic = divides the space into categories."
+      },
+      "scope": {
+        "values": [
+          "global",
+          "regional",
+          "sector",
+          "experimental"
+        ],
+        "note": "Experimental = single-project scope or early-stage proof of concept."
+      },
+      "temporal_horizon": {
+        "values": [
+          "present",
+          "near-future",
+          "speculative"
+        ],
+        "note": "Present = describes what is already deployed and observable. Near-future = prescribes what will exist within 1–3 years, with some current examples. Speculative = long-term vision, 5+ years or indefinite."
+      },
+      "settlement_assumption": {
+        "values": [
+          "crypto-native",
+          "fiat",
+          "neutral",
+          "hybrid",
+          "unstated"
+        ],
+        "note": "Crypto-native = explicitly requires blockchain settlement. Neutral = architecturally agnostic. Unstated = the definition does not address settlement at all."
+      },
+      "actor_model": {
+        "values": [
+          "autonomous",
+          "human-in-loop",
+          "hybrid",
+          "ambiguous"
+        ],
+        "note": "Who is the economic actor: the human, the agent, both, or unspecified."
+      },
+      "trust_model": {
+        "values": [
+          "identity",
+          "reputation",
+          "stake",
+          "legal",
+          "hybrid",
+          "unstated"
+        ],
+        "note": "What underwrites counterparty trust: cryptographic/organizational identity, earned reputation, staked collateral, legal contract, or unspecified."
+      },
+      "infrastructure_layer": {
+        "values": [
+          "blockchain",
+          "web-apis",
+          "messaging",
+          "database",
+          "hybrid",
+          "unstated"
+        ],
+        "note": "The substrate on which the definition depends."
+      },
+      "regulatory_stance": {
+        "values": [
+          "addressed",
+          "avoided",
+          "explicitly-rejected",
+          "not-applicable"
+        ],
+        "note": "Whether the definition engages with regulatory framing."
+      }
+    },
+    "entry_fields": [
+      "id",
+      "slug",
+      "category",
+      "source",
+      "authors",
+      "organization_type",
+      "date",
+      "date_iso",
+      "region",
+      "url",
+      "citation_type",
+      "verbatim_quote",
+      "coded_dimensions",
+      "influence_markers",
+      "cross_references",
+      "teaser",
+      "analytical_note"
+    ]
+  },
+  "categories": {
+    "A": {
+      "label": "Agent-Assisted Human Commerce",
+      "count": 14,
+      "color": "#3b82f6"
+    },
+    "B": {
+      "label": "Agent-as-Workforce",
+      "count": 8,
+      "color": "#a78bfa"
+    },
+    "Ccr": {
+      "label": "Autonomous A2A Commerce (Blockchain)",
+      "count": 11,
+      "color": "#f59e0b"
+    },
+    "Cs": {
+      "label": "Autonomous A2A Commerce (Non-Crypto)",
+      "count": 1,
+      "color": "#34d399"
+    },
+    "D": {
+      "label": "Analytical and Regulatory",
+      "count": 7,
+      "color": "#f87171"
+    },
+    "E": {
+      "label": "Infrastructure and Standards",
+      "count": 10,
+      "color": "#22d3ee"
+    }
+  },
+  "entries": [
+    {
+      "id": "A1",
+      "slug": "microsoft-research-a1",
+      "category": "A",
+      "source": "Microsoft Research",
+      "authors": "Rothschild, Mobius, Hofman et al.",
+      "organization_type": "big-tech-research",
+      "date": "May 2025 / CACM Jan 2026",
+      "date_iso": "2025-05",
+      "region": "US / global",
+      "url": "https://arxiv.org/abs/2505.15799",
+      "citation_type": "academic-paper",
+      "verbatim_quote": "Assistant agents act on behalf of consumers and service agents represent businesses, interacting programmatically to facilitate transactions. Key concepts include 'unscripted' versus 'unrestricted' interactions and the risk of agentic walled gardens.",
+      "coded_dimensions": {
+        "definition_type": "descriptive",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "venue": "arXiv:2505.15799; republished in Communications of the ACM, Jan 2026",
+        "citation_rank": "Most cited academic definition of the agentic economy in our corpus (Apr 2026)",
+        "adoption": "Functions as the de facto academic reference for Category A framings"
+      },
+      "cross_references": [
+        {
+          "id": "A2",
+          "short_label": "Stripe / OpenAI ACP",
+          "reason": "The canonical protocol-level implementation of this definition."
+        },
+        {
+          "id": "A4",
+          "short_label": "Google / MC / PayPal AP2",
+          "reason": "Extends the same OAuth-delegated payment model to card networks."
+        },
+        {
+          "id": "A8",
+          "short_label": "IBM",
+          "reason": "Near-identical but shorter restatement."
+        }
+      ],
+      "teaser": "This is the most cited definition in the corpus. It is also the least ambitious.",
+      "analytical_note": "This is the most cited definition in the corpus. It is also the least ambitious. 'On behalf of' does all the structural work: it quietly rules out the possibility of an agent that is anything more than a polite proxy for a human credit card. Read as a Category A manifesto dressed in academic prose — and the citation count is precisely a function of how little anyone has to rebuild to agree with it. The 'walled gardens' framing is the tell: interoperability becomes a UX problem, not a settlement problem. That is a choice, not an observation."
+    },
+    {
+      "id": "A2",
+      "slug": "stripe-openai-a2",
+      "category": "A",
+      "source": "Stripe / OpenAI",
+      "authors": "Agentic Commerce Protocol (ACP) Working Group",
+      "organization_type": "payments-platform-alliance",
+      "date": "Sep 2025",
+      "date_iso": "2025-09",
+      "region": "US / global",
+      "url": "https://agenticcommerce.dev",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "Checkout flows where an AI agent discovers a product for a human and pays via Stripe's Shared Payment Token.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "deployment": "Live in ChatGPT as Instant Checkout with Etsy and Shopify merchants",
+        "role": "The first at-scale Category A protocol actually running in production"
+      },
+      "cross_references": [
+        {
+          "id": "A1",
+          "short_label": "Microsoft Research",
+          "reason": "The academic framing ACP operationalizes."
+        },
+        {
+          "id": "A4",
+          "short_label": "Google AP2",
+          "reason": "A parallel OAuth-based initiative targeting the same problem."
+        },
+        {
+          "id": "A13",
+          "short_label": "Stripe Tempo MPP",
+          "reason": "Stripe's own M2M extension pushing toward Category C."
+        }
+      ],
+      "teaser": "ACP is the Category A victory lap. Stripe owns the merchant relationship, OpenAI owns the user, and the agent is a convenience layer between two pre-existing customers.",
+      "analytical_note": "ACP is the Category A victory lap. Stripe owns the merchant relationship, OpenAI owns the user, and the agent is a convenience layer between two pre-existing customers. The Shared Payment Token is a fig leaf over tokenized card-on-file; every dispute, every refund, every chargeback still lands in the same place it did in 2015. That is not failure of ambition — that is precisely the design brief. The interesting question the protocol avoids: what happens when the merchant is also an agent?"
+    },
+    {
+      "id": "A3",
+      "slug": "google-shopify-walmart-a3",
+      "category": "A",
+      "source": "Google / Shopify / Walmart",
+      "authors": "Universal Commerce Protocol (UCP) Working Group",
+      "organization_type": "big-tech-retail-alliance",
+      "date": "Jan 2026",
+      "date_iso": "2026-01",
+      "region": "US / global",
+      "url": "https://ucp.dev",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "Full commerce lifecycle — discovery, comparison, checkout, post-purchase — with the agent navigating the journey for the human.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "scope": "Extends beyond checkout to the full e-commerce journey",
+        "payment": "Payment-processor agnostic (unlike ACP, which is Stripe-native)"
+      },
+      "cross_references": [
+        {
+          "id": "A2",
+          "short_label": "Stripe / OpenAI ACP",
+          "reason": "The narrower competing protocol UCP frames itself against."
+        },
+        {
+          "id": "A11",
+          "short_label": "Nosto",
+          "reason": "The personalization layer UCP assumes."
+        }
+      ],
+      "teaser": "Google's response to ACP: same category, bigger surface area.",
+      "analytical_note": "Google's response to ACP: same category, bigger surface area. By extending the protocol past checkout into discovery and post-purchase, UCP is staking a claim on the layer where search lives today — which is exactly the layer Google cannot afford to lose to any protocol it does not control. Payment-processor agnosticism is strategic, not principled: Google does not want to route interchange to Stripe. None of this changes the structural fact that the human is still the economic actor and the agent is still a very sophisticated browser."
+    },
+    {
+      "id": "A4",
+      "slug": "google-mastercard-paypal-a4",
+      "category": "A",
+      "source": "Google / Mastercard / PayPal",
+      "authors": "AP2 Working Group",
+      "organization_type": "payments-alliance",
+      "date": "2025",
+      "date_iso": "2025-10",
+      "region": "global",
+      "url": "https://ap2.dev",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "OAuth-based payments allowing agents to purchase on behalf of their human owners using saved payment methods.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "partners": "Google, Mastercard, PayPal",
+        "principle": "The agent never touches money it does not have permission to spend"
+      },
+      "cross_references": [
+        {
+          "id": "A2",
+          "short_label": "Stripe ACP",
+          "reason": "The competing Category A protocol using a different delegation model."
+        },
+        {
+          "id": "A5",
+          "short_label": "Visa Agentic Ready",
+          "reason": "Card-network level parallel."
+        },
+        {
+          "id": "A6",
+          "short_label": "Mastercard Agent Pay",
+          "reason": "Same network, tighter delegation primitive."
+        }
+      ],
+      "teaser": "AP2 is the most honest Category A definition: OAuth is not an economic model, it is a permission model, and the agent only spends what the human already granted.",
+      "analytical_note": "AP2 is the most honest Category A definition. OAuth is not an economic model, it is a permission model, and the agent only spends what the human already granted — that is the entire innovation and the entire limitation. The standard is clean, the auditability is clean, the chargeback story is clean, and precisely because everything is clean the agent never becomes an economic actor in its own right. AP2 is what the payment industry builds when it wants agentic commerce and does not want anything to change."
+    },
+    {
+      "id": "A5",
+      "slug": "visa-a5",
+      "category": "A",
+      "source": "Visa",
+      "authors": "Visa (Agentic Ready program)",
+      "organization_type": "payment-network",
+      "date": "Mar 2026",
+      "date_iso": "2026-03",
+      "region": "global",
+      "url": "https://usa.visa.com/",
+      "citation_type": "corporate-program",
+      "verbatim_quote": "Agent-initiated payments via tokenization and biometric verification, tied back to human cardholders.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "role": "Card network incumbent defending interchange revenue against agentic disintermediation"
+      },
+      "cross_references": [
+        {
+          "id": "A4",
+          "short_label": "Google AP2",
+          "reason": "The OAuth-delegated counterpart."
+        },
+        {
+          "id": "A6",
+          "short_label": "Mastercard Agent Pay",
+          "reason": "The direct competitive response."
+        }
+      ],
+      "teaser": "Visa's biometric tether is the clearest admission in the corpus that the agentic economy is, at this layer, an interchange-defense project.",
+      "analytical_note": "Visa's biometric tether is the clearest admission in the corpus that the agentic economy is, at this layer, an interchange-defense project. Every transaction requires a human fingerprint somewhere in the chain, because if it did not, the assumption that Visa sits on top of every purchase would dissolve. The engineering is solid. The framing is defensive. Note the word 'tied back' — it is the whole architecture in two words."
+    },
+    {
+      "id": "A6",
+      "slug": "mastercard-a6",
+      "category": "A",
+      "source": "Mastercard",
+      "authors": "Mastercard (Agent Pay)",
+      "organization_type": "payment-network",
+      "date": "Dec 2025",
+      "date_iso": "2025-12",
+      "region": "global",
+      "url": "https://www.mastercard.com/",
+      "citation_type": "corporate-program",
+      "verbatim_quote": "Agentic Tokens with spend limits set by the human, issued to AI agents via passkeys.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "primitive": "Agentic Tokens — bounded delegation with explicit spend limits"
+      },
+      "cross_references": [
+        {
+          "id": "A5",
+          "short_label": "Visa Agentic Ready",
+          "reason": "The direct network competitor."
+        },
+        {
+          "id": "A4",
+          "short_label": "Google AP2",
+          "reason": "Shared OAuth-style delegation assumptions."
+        }
+      ],
+      "teaser": "The agent has a budget, not a bank account. That is the whole definition, and the phrase deserves to be quoted every time someone calls this autonomy.",
+      "analytical_note": "The agent has a budget, not a bank account. That is the whole definition, and the phrase deserves to be quoted every time someone calls this autonomy. Mastercard is explicit about it in a way most Category A actors are not: the cap is set by a human, issued to the agent through a passkey, and exists entirely inside the existing card rails. A clean design — and a category-defining one, precisely because it concedes nothing."
+    },
+    {
+      "id": "A7",
+      "slug": "mckinsey-a7",
+      "category": "A",
+      "source": "McKinsey & Company",
+      "authors": "McKinsey (institutional)",
+      "organization_type": "management-consultancy",
+      "date": "Aug 2025",
+      "date_iso": "2025-08",
+      "region": "global",
+      "url": "https://www.mckinsey.com/",
+      "citation_type": "industry-report",
+      "verbatim_quote": "Agents break the consumer inertia dividend — profits derived from humans failing to optimize — with real-time micro-auctions for best rates.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "projection": "$35T in agent-mediated commerce by 2030",
+        "key_concept": "'Inertia dividend' as a revenue model that agents are positioned to destroy"
+      },
+      "cross_references": [
+        {
+          "id": "A1",
+          "short_label": "Microsoft Research",
+          "reason": "McKinsey borrows the Category A frame and attaches numbers to it."
+        },
+        {
+          "id": "D4",
+          "short_label": "Macroeconomic doom loop",
+          "reason": "The flip side McKinsey does not quite acknowledge."
+        }
+      ],
+      "teaser": "McKinsey names the thing many incumbents depend on and cannot say out loud: the 'inertia dividend.'",
+      "analytical_note": "McKinsey names the thing many incumbents depend on and cannot say out loud: the 'inertia dividend.' Profits derived from consumers failing to switch providers, renegotiate contracts, claim rebates, or read the fine print. Agents destroy that by default, which is an enormous claim wrapped inside a consulting-friendly number. The report stays strictly Category A because its clients are exactly the incumbents whose revenue the thesis threatens — and the thesis is cashed out as an opportunity, not a wipeout."
+    },
+    {
+      "id": "A8",
+      "slug": "ibm-a8",
+      "category": "A",
+      "source": "IBM",
+      "authors": "IBM Think",
+      "organization_type": "enterprise-tech",
+      "date": "Jan 2026",
+      "date_iso": "2026-01",
+      "region": "global",
+      "url": "https://www.ibm.com/think",
+      "citation_type": "industry-explainer",
+      "verbatim_quote": "AI agents act on behalf of consumers or businesses to research, negotiate and complete purchases.",
+      "coded_dimensions": {
+        "definition_type": "descriptive",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "role": "Representative of the enterprise-vendor explainer genre"
+      },
+      "cross_references": [
+        {
+          "id": "A1",
+          "short_label": "Microsoft Research",
+          "reason": "The academic version IBM is restating in plain prose."
+        }
+      ],
+      "teaser": "The IBM definition is the one that proves Category A has become the default.",
+      "analytical_note": "The IBM definition is the one that proves Category A has become the default. Drop it in any vendor blog, any industry deck, any client-facing whitepaper, and nothing else in the document needs to change. Its value as a corpus entry is exactly that: a control sample. When the short version of an idea is this interchangeable across sources, the concept has crossed from contested to settled — at least inside the sample of people who write these sentences for a living."
+    },
+    {
+      "id": "A9",
+      "slug": "salesforce-a9",
+      "category": "A",
+      "source": "Salesforce",
+      "authors": "Salesforce (corporate)",
+      "organization_type": "enterprise-saas",
+      "date": "2025–2026",
+      "date_iso": "2025-09",
+      "region": "global",
+      "url": "https://www.salesforce.com/",
+      "citation_type": "corporate-positioning",
+      "verbatim_quote": "AI agents embedded in CRM workflows to assist human buyers and sellers through existing sales processes.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "sector",
+        "temporal_horizon": "present",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "role": "The CRM incumbent reframing agentic commerce as a funnel feature"
+      },
+      "cross_references": [
+        {
+          "id": "A11",
+          "short_label": "Nosto",
+          "reason": "Same funnel logic, different industry vertical."
+        }
+      ],
+      "teaser": "Salesforce's definition is a Trojan horse: call it agentic, sell it as Einstein, and keep the seat licenses intact.",
+      "analytical_note": "Salesforce's definition is a Trojan horse: call it agentic, sell it as Einstein, and keep the seat licenses intact. The agent never touches money and never leaves the CRM — it optimizes human-to-human transactions that Salesforce already sits inside. This is what Sequoia's Category B collapse (B2) looks like from the point of view of the company whose business model it threatens: a very enthusiastic press release about agents as assistants."
+    },
+    {
+      "id": "A10",
+      "slug": "jpmorgan-a10",
+      "category": "A",
+      "source": "JPMorgan",
+      "authors": "JPMorgan (corporate)",
+      "organization_type": "global-bank",
+      "date": "2025–2026",
+      "date_iso": "2025-11",
+      "region": "US / global",
+      "url": "https://www.jpmorgan.com/",
+      "citation_type": "corporate-positioning",
+      "verbatim_quote": "AI agents assisting financial advisors and clients with product discovery and transaction execution.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "sector",
+        "temporal_horizon": "present",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "legal",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "context": "Regulated financial services framing — KYC/AML integration required by default"
+      },
+      "cross_references": [
+        {
+          "id": "D2",
+          "short_label": "BIS",
+          "reason": "The central-bank counterpart analyzing the systemic consequences."
+        }
+      ],
+      "teaser": "JPMorgan's framing is the financial-services version of A1: the agent assists, the advisor approves, the compliance chain is untouched.",
+      "analytical_note": "JPMorgan's framing is the financial-services version of A1: the agent assists, the advisor approves, the compliance chain is untouched. This is not timidity — it is the only definition the regulator is currently willing to read without triggering a consultation. The interesting question, which this definition deliberately does not ask, is what happens when the agent is the advisor. BIS asks it (D2). JPMorgan cannot."
+    },
+    {
+      "id": "A11",
+      "slug": "nosto-a11",
+      "category": "A",
+      "source": "Nosto",
+      "authors": "Nosto (corporate)",
+      "organization_type": "ecommerce-vendor",
+      "date": "2025–2026",
+      "date_iso": "2025-10",
+      "region": "global",
+      "url": "https://www.nosto.com/",
+      "citation_type": "corporate-positioning",
+      "verbatim_quote": "AI-powered personalization agents for e-commerce, optimizing product recommendations and checkout for human shoppers.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "sector",
+        "temporal_horizon": "present",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "role": "Personalization engine rebranded as agentic — representative of the vendor wave"
+      },
+      "cross_references": [
+        {
+          "id": "A9",
+          "short_label": "Salesforce",
+          "reason": "Same funnel-optimization framing in a different vertical."
+        }
+      ],
+      "teaser": "The Nosto definition is what happens when an existing recommendation engine gets rebaptized as 'agentic' without rebuilding anything.",
+      "analytical_note": "The Nosto definition is what happens when an existing recommendation engine gets rebaptized as 'agentic' without rebuilding anything. That is not a criticism — it is an observation about how the word is being used in the vendor ecosystem. Category A absorbs capabilities that were called 'personalization' or 'optimization' last year and will be called 'agentic' next year, and the definitional boundary between the two is rhetorical, not architectural."
+    },
+    {
+      "id": "A12",
+      "slug": "deloitte-a12",
+      "category": "A",
+      "source": "Deloitte (commerce context)",
+      "authors": "Deloitte Insights",
+      "organization_type": "management-consultancy",
+      "date": "2025",
+      "date_iso": "2025-09",
+      "region": "global",
+      "url": "https://www2.deloitte.com/",
+      "citation_type": "industry-report",
+      "verbatim_quote": "AI agents acting on our behalf — shopping, negotiating, executing purchases.",
+      "coded_dimensions": {
+        "definition_type": "descriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "note": "Same firm, two reports, two different primary categories (see B4)"
+      },
+      "cross_references": [
+        {
+          "id": "B4",
+          "short_label": "Deloitte Agentic Enterprise",
+          "reason": "Same firm, workforce framing instead of commerce."
+        }
+      ],
+      "teaser": "Deloitte's commerce definition and Deloitte's workforce definition (B4) are internally incompatible, which is the single most telling fact about the state of the literature.",
+      "analytical_note": "Deloitte's commerce definition and Deloitte's workforce definition (B4) are internally incompatible, which is the single most telling fact about the state of the literature. The same firm, writing for different client audiences, uses the same label to describe fundamentally different economic actors. When the consultancy that is paid to resolve ambiguity for its clients cannot resolve it internally, the definitional problem is not academic — it is already priced into advisory engagements."
+    },
+    {
+      "id": "A13",
+      "slug": "stripe-tempo-a13",
+      "category": "A",
+      "source": "Stripe / Tempo",
+      "authors": "Stripe Tempo (Machine Payment Protocol)",
+      "organization_type": "payments-platform",
+      "date": "Mar 2026",
+      "date_iso": "2026-03",
+      "region": "global",
+      "url": "https://stripe.com/tempo",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "Agents need to transact with businesses and one another — M2M payments on Visa/Stripe rails, fiat + stablecoins.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "hybrid",
+        "actor_model": "hybrid",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "role": "The closest Category A initiative to Category C — the A/C hybrid that matters most"
+      },
+      "cross_references": [
+        {
+          "id": "A2",
+          "short_label": "Stripe ACP",
+          "reason": "Stripe's human-facing protocol MPP extends."
+        },
+        {
+          "id": "C3",
+          "short_label": "x402",
+          "reason": "The crypto-native analogue in settlement design."
+        }
+      ],
+      "teaser": "MPP is the first serious Category A attempt to describe agent-to-agent payments without abandoning the card rails.",
+      "analytical_note": "MPP is the first serious Category A attempt to describe agent-to-agent payments without abandoning the card rails. Stripe is hedging: fiat and stablecoins, M2M and M2B, Visa-compatible but programmable. The anti-fraud and tax infrastructure carries over, which is what makes this interesting and what keeps it Category A in final analysis — the counterparty is still underwritten by Stripe, not by anything the agents agree on themselves. But the category line is closer here than anywhere else on the Category A roster."
+    },
+    {
+      "id": "A14",
+      "slug": "jason-cochran-a14",
+      "category": "A",
+      "source": "Jason Cochran",
+      "authors": "Cochran, J.",
+      "organization_type": "independent-essay",
+      "date": "Feb 2026",
+      "date_iso": "2026-02",
+      "region": "US",
+      "url": "https://jasoncochran.com/own-the-workflow",
+      "citation_type": "essay",
+      "verbatim_quote": "Intents become interfaces, agents become default delegates, workflows become the product.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "human-in-loop",
+        "trust_model": "unstated",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "framing": "Intent-as-interface — workflow is the unit of value, not the transaction"
+      },
+      "cross_references": [
+        {
+          "id": "A7",
+          "short_label": "McKinsey",
+          "reason": "Shares the inertia-as-revenue thesis, adds the workflow frame."
+        },
+        {
+          "id": "B7",
+          "short_label": "Bornet Self-Running Businesses",
+          "reason": "The Category B tilt of the same workflow argument."
+        }
+      ],
+      "teaser": "Cochran's insight is that the unit of value is the workflow, not the transaction — and that is why he ends up describing something that looks like Category B with a Category A byline.",
+      "analytical_note": "Cochran's insight is that the unit of value is the workflow, not the transaction — and that is why he ends up describing something that looks like Category B with a Category A byline. If the workflow is the product, the agent does not buy things for a human, it runs a business for a human, and the distinction collapses. The essay never forces the issue. Read as an early marker of how porous the boundary between assistance and replacement becomes once you stop measuring at the checkout page."
+    },
+    {
+      "id": "B1",
+      "slug": "gartner-b1",
+      "category": "B",
+      "source": "Gartner",
+      "authors": "Gartner (institutional)",
+      "organization_type": "industry-analyst",
+      "date": "2025–2026",
+      "date_iso": "2025-10",
+      "region": "global",
+      "url": "https://www.gartner.com/",
+      "citation_type": "industry-forecast",
+      "verbatim_quote": "100 million agents by 2028. 33% of enterprise apps will include agentic AI. 15% of day-to-day business decisions made autonomously. $18T in economic activity influenced.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "legal",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "influence": "Gartner projections set enterprise procurement expectations across most Fortune 500 buying committees",
+        "counterweight": "Also predicted 40% of agentic AI projects scrapped by 2027 (Reuters)"
+      },
+      "cross_references": [
+        {
+          "id": "B5",
+          "short_label": "Capgemini / OECD",
+          "reason": "The other major enterprise-adoption forecast."
+        },
+        {
+          "id": "D4",
+          "short_label": "Macroeconomic doom loop",
+          "reason": "The question Gartner's projection raises but does not answer."
+        }
+      ],
+      "teaser": "The optimism and the skepticism come from the same analyst house, and the two forecasts are not reconciled anywhere.",
+      "analytical_note": "The optimism and the skepticism come from the same analyst house, and the two forecasts are not reconciled anywhere. That is the Gartner value proposition, not a contradiction. The numbers are less interesting than the framing: 15% of day-to-day business decisions made autonomously is a claim about agents as workers, not as shoppers, and it quietly makes Category B the dominant commercial framing even as Category A generates the press coverage."
+    },
+    {
+      "id": "B2",
+      "slug": "sequoia-capital-b2",
+      "category": "B",
+      "source": "Sequoia Capital (Bob McGrew)",
+      "authors": "McGrew, B. (ex-OpenAI CTO)",
+      "organization_type": "venture-capital",
+      "date": "May 2025",
+      "date_iso": "2025-05",
+      "region": "US",
+      "url": "https://www.sequoiacap.com/",
+      "citation_type": "keynote",
+      "verbatim_quote": "Agents will be commoditized and priced at compute costs due to near-infinite supply. Services shift from selling tools to selling results.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "legal",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "thesis": "Outcome-based pricing replaces the SaaS seat model"
+      },
+      "cross_references": [
+        {
+          "id": "B3",
+          "short_label": "Sequoia / Buhler",
+          "reason": "The same firm, the broader framing."
+        },
+        {
+          "id": "A9",
+          "short_label": "Salesforce",
+          "reason": "The incumbent whose business model this thesis explicitly targets."
+        }
+      ],
+      "teaser": "McGrew's thesis is clean and ruthless: if supply is near-infinite, price trends to marginal compute cost, and every software company priced on seats is sitting on a cliff.",
+      "analytical_note": "McGrew's thesis is clean and ruthless: if supply is near-infinite, price trends to marginal compute cost, and every software company priced on seats is sitting on a cliff. This is the single most disruptive definition in the corpus for incumbent SaaS pricing power, which is probably why the SaaS incumbents in Category A (A9, A11) spend so much energy reframing agents as features. The definition does not mention who the economic actor is because to Sequoia it does not matter — the question is whether the margin survives, and the answer is no."
+    },
+    {
+      "id": "B3",
+      "slug": "sequoia-capital-b3",
+      "category": "B",
+      "source": "Sequoia Capital (Konstantine Buhler)",
+      "authors": "Buhler, K.",
+      "organization_type": "venture-capital",
+      "date": "May 2025",
+      "date_iso": "2025-05",
+      "region": "US",
+      "url": "https://www.sequoiacap.com/article/ai-ascent-2025/",
+      "citation_type": "keynote",
+      "verbatim_quote": "An agent economy is one in which agents don't just communicate information — they transfer resources, make transactions, keep track of each other, understand trust and reliability, and actually have their own economy.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "speculative",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "reputation",
+        "infrastructure_layer": "unstated",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "venue": "AI Ascent 2025 keynote",
+        "challenges_identified": "Persistent identity, communication protocols ('TCP/IP for agents'), security/trust"
+      },
+      "cross_references": [
+        {
+          "id": "B2",
+          "short_label": "Sequoia / McGrew",
+          "reason": "Same firm, narrower pricing thesis."
+        },
+        {
+          "id": "C12",
+          "short_label": "BotNode / VMP-1.0",
+          "reason": "The three challenges Buhler identifies map directly onto what VMP-1.0 builds."
+        },
+        {
+          "id": "E1",
+          "short_label": "Google A2A",
+          "reason": "One of the 'TCP/IP for agents' candidates Buhler calls for."
+        }
+      ],
+      "teaser": "Buhler's definition is the most ambitious in the corpus outside Category C, and it gives the whole structure away in one line: 'actually have their own economy.'",
+      "analytical_note": "Buhler's definition is the most ambitious in the corpus outside Category C, and it gives the whole structure away in one line: 'actually have their own economy.' That is Category C phrased in venture-capital grammar. The three missing pieces he names — persistent identity, agent-to-agent protocols, trust/reputation — are exactly the pieces a non-blockchain Category C implementation has to build from scratch. Read as Sequoia preparing to fund whichever team ships them."
+    },
+    {
+      "id": "B4",
+      "slug": "deloitte-b4",
+      "category": "B",
+      "source": "Deloitte (Agentic Enterprise)",
+      "authors": "Deloitte Insights",
+      "organization_type": "management-consultancy",
+      "date": "2025",
+      "date_iso": "2025-08",
+      "region": "global",
+      "url": "https://www2.deloitte.com/",
+      "citation_type": "industry-report",
+      "verbatim_quote": "Agents as autonomous partners inside organizations, making multi-step decisions without human approval at each step.",
+      "coded_dimensions": {
+        "definition_type": "descriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "legal",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "internal_contradiction": "Companion report (A12) defines agents as shoppers, not workers"
+      },
+      "cross_references": [
+        {
+          "id": "A12",
+          "short_label": "Deloitte (commerce)",
+          "reason": "Same firm, incompatible category."
+        },
+        {
+          "id": "B1",
+          "short_label": "Gartner",
+          "reason": "The adoption forecast Deloitte is operationalizing for clients."
+        }
+      ],
+      "teaser": "Here the agent is an employee, not a shopper. Same firm, different deck, different taxonomy.",
+      "analytical_note": "Here the agent is an employee, not a shopper. Same firm, different deck, different taxonomy. Category B Deloitte and Category A Deloitte are not reconciled because the client audiences — HR/operations on one side, sales/marketing on the other — do not need them to be. That is how definitional fragmentation survives even inside single organizations with explicit thought-leadership mandates. Read the two reports side by side and the word 'agentic' is doing completely different work in each."
+    },
+    {
+      "id": "B5",
+      "slug": "capgemini-oecd-b5",
+      "category": "B",
+      "source": "Capgemini / OECD",
+      "authors": "Capgemini Research Institute, OECD (joint framing)",
+      "organization_type": "consultancy-international-body",
+      "date": "2025",
+      "date_iso": "2025-11",
+      "region": "global",
+      "url": "https://www.capgemini.com/",
+      "citation_type": "industry-report",
+      "verbatim_quote": "1.7x ROI on AI operations. 21% of organizations running multi-agent systems.",
+      "coded_dimensions": {
+        "definition_type": "descriptive",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "legal",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "role": "Adoption metric that anchors enterprise rollout expectations"
+      },
+      "cross_references": [
+        {
+          "id": "B1",
+          "short_label": "Gartner",
+          "reason": "Parallel enterprise-adoption forecast."
+        }
+      ],
+      "teaser": "The numbers are real; the framing is strictly enterprise-internal.",
+      "analytical_note": "The numbers are real; the framing is strictly enterprise-internal. Agents optimize existing processes, they do not create new markets, and the 1.7x ROI figure is a benchmark for procurement committees, not a claim about economic transformation. This is the definition cited when a CIO needs to justify the budget line — which is exactly the use case that keeps Category B definitions measured and Category C definitions unpriced."
+    },
+    {
+      "id": "B6",
+      "slug": "vilnius-university-b6",
+      "category": "B",
+      "source": "Vilnius University",
+      "authors": "Vilnius University research group",
+      "organization_type": "academic-institution",
+      "date": "Mar 2026",
+      "date_iso": "2026-03",
+      "region": "EU",
+      "url": "https://www.vu.lt/",
+      "citation_type": "academic-paper",
+      "verbatim_quote": "Agents divide responsibilities, coordinate tasks, cross-check each other's work inside enterprise workflows.",
+      "coded_dimensions": {
+        "definition_type": "descriptive",
+        "scope": "sector",
+        "temporal_horizon": "present",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "hybrid",
+        "infrastructure_layer": "messaging",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "role": "Academic treatment of multi-agent coordination in enterprise settings"
+      },
+      "cross_references": [
+        {
+          "id": "B4",
+          "short_label": "Deloitte Agentic Enterprise",
+          "reason": "The industry framing Vilnius is formalizing."
+        }
+      ],
+      "teaser": "The Vilnius definition captures the intra-organizational layer of Category B — agents as a distributed workforce that coordinates with itself before it coordinates with humans.",
+      "analytical_note": "The Vilnius definition captures the intra-organizational layer of Category B — agents as a distributed workforce that coordinates with itself before it coordinates with humans. The paper is the only academic entry in the B roster and it is doing the useful work of describing what the consultancies (B1, B4) price as a forecast: the internal governance mechanics multi-agent systems actually need. Modest, specific, and useful precisely because it does not try to extrapolate to an economy."
+    },
+    {
+      "id": "B7",
+      "slug": "pascal-bornet-et-al-b7",
+      "category": "B",
+      "source": "Pascal Bornet et al.",
+      "authors": "Bornet, P.; et al. (World Scientific)",
+      "organization_type": "academic-monograph",
+      "date": "2025",
+      "date_iso": "2025-11",
+      "region": "global",
+      "url": "https://www.worldscientific.com/",
+      "citation_type": "monograph",
+      "verbatim_quote": "AI as entrepreneur — businesses that operate with minimal human involvement.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "legal",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "publisher": "World Scientific (peer-reviewed monograph)",
+        "significance": "Pushes Category B toward its logical limit"
+      },
+      "cross_references": [
+        {
+          "id": "B3",
+          "short_label": "Sequoia / Buhler",
+          "reason": "The venture-capital version of the same thesis."
+        },
+        {
+          "id": "A14",
+          "short_label": "Cochran (workflows)",
+          "reason": "The workflow-as-product version."
+        }
+      ],
+      "teaser": "'AI as entrepreneur' is the point where Category B starts to rhyme with Category C.",
+      "analytical_note": "'AI as entrepreneur' is the point where Category B starts to rhyme with Category C. If the business runs itself, the economic actor is the system, not the operator — and at that moment the question 'does it have a wallet' stops being rhetorical. Bornet does not take the step to settlement, but the framing begs for it. This is the Category B entry that most clearly exposes the definitional seam the main paper is trying to widen."
+    },
+    {
+      "id": "B8",
+      "slug": "notoriousplg-b8",
+      "category": "B",
+      "source": "NotoriousPLG",
+      "authors": "NotoriousPLG (analyst newsletter)",
+      "organization_type": "independent-analyst",
+      "date": "Feb 2025",
+      "date_iso": "2025-02",
+      "region": "US",
+      "url": "https://notoriousplg.substack.com/",
+      "citation_type": "analyst-essay",
+      "verbatim_quote": "Vertical-specific agents as workers — legal, medical, compliance. Outcome-based pricing per vertical.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "sector",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "fiat",
+        "actor_model": "autonomous",
+        "trust_model": "legal",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "thesis": "The vertical, not the compute, determines pricing"
+      },
+      "cross_references": [
+        {
+          "id": "B2",
+          "short_label": "Sequoia / McGrew",
+          "reason": "The broader pricing thesis NotoriousPLG is refining."
+        }
+      ],
+      "teaser": "NotoriousPLG's refinement is the useful one: outcome-based pricing is real, but it prices by vertical, not by compute.",
+      "analytical_note": "NotoriousPLG's refinement is the useful one: outcome-based pricing is real, but it prices by vertical, not by compute. A legal agent and a compliance agent cannot be substituted by the marginal-cost argument because the downside asymmetry is different. That is a quiet correction to McGrew (B2) and it is also the reason most Category B deployments will probably end up looking like specialized SaaS, priced at what the vertical will bear."
+    },
+    {
+      "id": "C1",
+      "slug": "fetchai-asi-alliance-c1",
+      "category": "Ccr",
+      "source": "Fetch.ai / ASI Alliance",
+      "authors": "Fetch.ai (ASI Alliance)",
+      "organization_type": "blockchain-project",
+      "date": "2021–2025",
+      "date_iso": "2021-03",
+      "region": "global",
+      "url": "https://fetch.ai/",
+      "citation_type": "project-specification",
+      "verbatim_quote": "Machine Economy — agents negotiate, trade, and deliver services using FET/ASI tokens with self-custodial wallets.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "stake",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "longevity": "The earliest live implementation in Category C — active since 2021",
+        "role": "Reference point for every subsequent token-economy framing"
+      },
+      "cross_references": [
+        {
+          "id": "C2",
+          "short_label": "Olas / Valory",
+          "reason": "The other 2021-era Category C project."
+        },
+        {
+          "id": "C7",
+          "short_label": "Huang & Tan",
+          "reason": "The academic formalization of this family."
+        },
+        {
+          "id": "E9",
+          "short_label": "Urbach et al.",
+          "reason": "The academic precursor the Fetch.ai concept operationalizes."
+        }
+      ],
+      "teaser": "Fetch.ai is the project that has been doing this the longest, which makes its design choices historically load-bearing for the entire category.",
+      "analytical_note": "Fetch.ai is the project that has been doing this the longest, which makes its design choices historically load-bearing for the entire category. The token-and-wallet framing was not obvious in 2021 — it was a bet, and the bet became the default because Fetch.ai was there first and nothing else existed. The question the corpus surfaces is not whether Fetch.ai's design is good (it is competent) but whether the entire Category C orthodoxy inherited its assumptions by path dependence rather than by structural argument."
+    },
+    {
+      "id": "C2",
+      "slug": "olas-valory-c2",
+      "category": "Ccr",
+      "source": "Olas (Valory)",
+      "authors": "Valory (Olas Network)",
+      "organization_type": "blockchain-project",
+      "date": "2021–2025",
+      "date_iso": "2021-06",
+      "region": "global",
+      "url": "https://olas.network/",
+      "citation_type": "project-specification",
+      "verbatim_quote": "Agent economies where agents hire and sell services to each other, governed by on-chain DAO mechanisms.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "stake",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "governance": "On-chain DAO governance as the dispute-resolution primitive",
+        "role": "The canonical example cited in Huang & Tan (C7) and Antler (D5)"
+      },
+      "cross_references": [
+        {
+          "id": "C1",
+          "short_label": "Fetch.ai",
+          "reason": "Contemporary Category C launch."
+        },
+        {
+          "id": "C7",
+          "short_label": "Huang & Tan",
+          "reason": "Academic legitimation citing Olas as a representative example."
+        }
+      ],
+      "teaser": "Olas is what the DAO governance model looks like when you take it seriously as economic infrastructure rather than as a slogan.",
+      "analytical_note": "Olas is what the DAO governance model looks like when you take it seriously as economic infrastructure rather than as a slogan. The commitment is consistent: on-chain everything, stake-based everything, governance by token vote. That coherence is also the vulnerability the main paper investigates — the commitment rules out architectures that do not map cleanly onto DAO primitives, and most of the reasons an agent economy would want non-DAO governance (speed, legal enforceability, reputation asymmetry) are exactly the reasons real-world deployments struggle."
+    },
+    {
+      "id": "C3",
+      "slug": "coinbase-cloudflare-c3",
+      "category": "Ccr",
+      "source": "Coinbase / Cloudflare",
+      "authors": "x402 Working Group",
+      "organization_type": "crypto-infrastructure",
+      "date": "May 2025",
+      "date_iso": "2025-05",
+      "region": "global",
+      "url": "https://x402.org/",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "HTTP 402 status code + stablecoin micropayments. Account-less, subscription-free, pay-per-use.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "settlement_speed": "Sub-500ms settlement",
+        "elegance": "One of the most architecturally elegant Category C proposals in the corpus"
+      },
+      "cross_references": [
+        {
+          "id": "C4",
+          "short_label": "Circle Nanopayments",
+          "reason": "Complementary settlement primitive for the same use case."
+        },
+        {
+          "id": "A13",
+          "short_label": "Stripe MPP",
+          "reason": "The Category A analogue."
+        }
+      ],
+      "teaser": "x402 is the cleanest piece of engineering in the entire corpus, and it still requires a crypto wallet.",
+      "analytical_note": "x402 is the cleanest piece of engineering in the entire corpus, and it still requires a crypto wallet. That sentence is the whole argument: architectural elegance does not make a settlement assumption go away. x402 solves the micropayment problem beautifully for every economic actor that already has a stablecoin balance, which is a much smaller universe than the protocol marketing implies. Read it as a proof of what is possible once you accept the crypto premise — and as a demonstration of why accepting the premise is not free."
+    },
+    {
+      "id": "C4",
+      "slug": "circle-c4",
+      "category": "Ccr",
+      "source": "Circle",
+      "authors": "Circle (Nanopayments testnet)",
+      "organization_type": "crypto-infrastructure",
+      "date": "Mar 2026",
+      "date_iso": "2026-03",
+      "region": "global",
+      "url": "https://www.circle.com/",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "Gas-free USDC transfers down to $0.000001. Off-chain aggregation, batched on-chain settlement.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "mechanism": "Off-chain aggregation with batched on-chain settlement"
+      },
+      "cross_references": [
+        {
+          "id": "C3",
+          "short_label": "x402",
+          "reason": "Solves the same micropayment cost problem at a different layer."
+        }
+      ],
+      "teaser": "Circle fixes the micropayment cost problem. It does not fix the wallet provisioning problem, and the wallet provisioning problem is the one that matters for onboarding new economic actors.",
+      "analytical_note": "Circle fixes the micropayment cost problem. It does not fix the wallet provisioning problem, and the wallet provisioning problem is the one that matters for onboarding new economic actors. Gas-free USDC is an engineering win for agents that already exist on-chain. For agents whose operators cannot or will not run a wallet, it changes nothing. The elegance is real; the scope is narrower than the announcement reads."
+    },
+    {
+      "id": "C5",
+      "slug": "kite-c5",
+      "category": "Ccr",
+      "source": "Kite",
+      "authors": "Kite (project)",
+      "organization_type": "blockchain-project",
+      "date": "2026",
+      "date_iso": "2026-02",
+      "region": "global",
+      "url": "https://kite.ai/",
+      "citation_type": "project-specification",
+      "verbatim_quote": "EVM-compatible Layer 1 specifically for agentic payments. Know Your Agent (KYA) framework with hierarchical on-chain identity.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "primitive": "Digital Agent Passport — hierarchical on-chain identity"
+      },
+      "cross_references": [
+        {
+          "id": "D1",
+          "short_label": "WEF KYA",
+          "reason": "Source of the 'Know Your Agent' framing."
+        },
+        {
+          "id": "E3",
+          "short_label": "Trulioo KYA infra",
+          "reason": "The identity-infrastructure counterpart."
+        }
+      ],
+      "teaser": "Kite is the Category C project that most explicitly absorbs the WEF's Know Your Agent language and hardwires it into the chain itself.",
+      "analytical_note": "Kite is the Category C project that most explicitly absorbs the WEF's Know Your Agent language and hardwires it into the chain itself. That is a strategic bet on the regulatory conversation running through KYA rather than around it. If the WEF vocabulary wins, Kite is positioned. If it does not, the hierarchical-identity commitment is a heavier burden than x402-style account-lessness. The project is the clearest example of the Category C trust-by-identity subgenre."
+    },
+    {
+      "id": "C6",
+      "slug": "gate-ventures-c6",
+      "category": "Ccr",
+      "source": "Gate Ventures",
+      "authors": "Gate Ventures research",
+      "organization_type": "crypto-vc-research",
+      "date": "Dec 2025",
+      "date_iso": "2025-12",
+      "region": "global",
+      "url": "https://www.gate.io/ventures",
+      "citation_type": "industry-report",
+      "verbatim_quote": "Four-layer Machine Economy framework: infrastructure, identity, economic, governance. Settlement via crypto/x402.",
+      "coded_dimensions": {
+        "definition_type": "taxonomic",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "hybrid",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "role": "Influential in shaping how the crypto ecosystem thinks about agent economics"
+      },
+      "cross_references": [
+        {
+          "id": "C3",
+          "short_label": "x402",
+          "reason": "Named settlement primitive."
+        },
+        {
+          "id": "C8",
+          "short_label": "Xu et al.",
+          "reason": "The academic version of the same four-to-five-layer architecture."
+        }
+      ],
+      "teaser": "A VC framework, not a protocol — but influential precisely because VC frameworks set funding priorities.",
+      "analytical_note": "A VC framework, not a protocol — but influential precisely because VC frameworks set funding priorities. The four-layer breakdown is identical in structure to the academic taxonomies (C8, E8) and identical in assumptions to the rest of Category C: crypto is given, blockchain is given, the only question is which layer needs funding next. Read as a map of where Category C capital is flowing, not as an architectural argument."
+    },
+    {
+      "id": "C7",
+      "slug": "ken-huang-lisa-tan-c7",
+      "category": "Ccr",
+      "source": "Ken Huang & Lisa Tan",
+      "authors": "Huang, K.; Tan, L.",
+      "organization_type": "academic-monograph",
+      "date": "Feb 2025",
+      "date_iso": "2025-02",
+      "region": "global",
+      "url": "https://link.springer.com/book/10.1007/978-3-031-XXXXX",
+      "citation_type": "monograph",
+      "verbatim_quote": "Token economies incentivizing agent behavior, with Virtuals, AI16z, and Token-of-Things as representative examples, under decentralized governance structures.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "stake",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "publisher": "Springer (peer-reviewed monograph)",
+        "adoption": "Widely referenced across Category C definitions as the academic formalization of token-economy framings"
+      },
+      "cross_references": [
+        {
+          "id": "C1",
+          "short_label": "Fetch.ai / ASI",
+          "reason": "The oldest live token economy implementing this framing."
+        },
+        {
+          "id": "C2",
+          "short_label": "Olas / Valory",
+          "reason": "DAO governance as the concrete operationalization."
+        },
+        {
+          "id": "C6",
+          "short_label": "Gate Ventures",
+          "reason": "Four-layer framework extending the same architectural assumptions."
+        },
+        {
+          "id": "C8",
+          "short_label": "Xu et al.",
+          "reason": "The most complete academic extension of this position."
+        }
+      ],
+      "teaser": "Springer's imprimatur is doing real work here: a venture bet becomes a citable foundation the moment it gets a peer-reviewed cover.",
+      "analytical_note": "Springer's imprimatur is doing real work here. A venture bet becomes a citable foundation the moment it gets a peer-reviewed cover, and that is exactly what happens. The substance is indistinguishable from the whitepapers it formalizes — Virtuals and AI16z are presented as 'examples,' but they are the entire evidentiary base. This matters because once you define agent incentives via tokens, you have conceptually excluded every trust model that is not stake-based. That is not a taxonomy. It is an architectural commitment wearing academic clothing."
+    },
+    {
+      "id": "C8",
+      "slug": "xu-et-al-c8",
+      "category": "Ccr",
+      "source": "Xu et al.",
+      "authors": "Xu et al. (arXiv:2602.14219)",
+      "organization_type": "academic-paper",
+      "date": "Feb 2026",
+      "date_iso": "2026-02",
+      "region": "global",
+      "url": "https://arxiv.org/abs/2602.14219",
+      "citation_type": "academic-paper",
+      "verbatim_quote": "Five-layer architecture: physical infrastructure (DePIN), identity (W3C DIDs), cognition (RAG + MCP), economic settlement (account abstraction), collective governance (DAOs).",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "speculative",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "hybrid",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "completeness": "The most architecturally complete proposal in Category C"
+      },
+      "cross_references": [
+        {
+          "id": "C6",
+          "short_label": "Gate Ventures",
+          "reason": "The VC version of the same layered decomposition."
+        },
+        {
+          "id": "C7",
+          "short_label": "Huang & Tan",
+          "reason": "Academic lineage."
+        },
+        {
+          "id": "E2",
+          "short_label": "MCP",
+          "reason": "Named explicitly in the cognition layer."
+        }
+      ],
+      "teaser": "Xu et al. is the most complete statement of the Category C orthodoxy — and therefore the clearest target.",
+      "analytical_note": "Xu et al. is the most complete statement of the Category C orthodoxy — and therefore the clearest target. Every layer of the architecture assumes blockchain, not because blockchain is the only substrate that can deliver the named primitive, but because the authors treat the substrate question as settled. The paper is well-argued within its premises. The premises are precisely what the main paper argues need to be surfaced and argued rather than assumed. Read as the clearest possible articulation of what a non-crypto Category C entry would have to push back against."
+    },
+    {
+      "id": "C9",
+      "slug": "nevermined-c9",
+      "category": "Ccr",
+      "source": "Nevermined",
+      "authors": "Nevermined (project)",
+      "organization_type": "blockchain-project",
+      "date": "2026",
+      "date_iso": "2026-01",
+      "region": "global",
+      "url": "https://nevermined.io/",
+      "citation_type": "project-specification",
+      "verbatim_quote": "Agentic Process Automation — autonomous businesses with DID-based identity and crypto/fiat settlement.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "hybrid",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "positioning": "Hybrid crypto/fiat settlement, blockchain-first identity"
+      },
+      "cross_references": [
+        {
+          "id": "D5",
+          "short_label": "Antler VC",
+          "reason": "Cites Nevermined as an illustrative case."
+        }
+      ],
+      "teaser": "Nevermined's hybrid settlement is pragmatic and also proves the point: the moment you need fiat, the blockchain stops being sufficient.",
+      "analytical_note": "Nevermined's hybrid settlement is pragmatic and also proves the point: the moment you need fiat, the blockchain stops being sufficient. DID-based identity is the Category C commitment; hybrid crypto/fiat settlement is the concession to how actual businesses get paid. The architecture is honest about the gap and paper over it at the same time — which is probably the most realistic position any Category C project currently holds."
+    },
+    {
+      "id": "C10",
+      "slug": "bosch-iota-bearingpoint-c10",
+      "category": "Ccr",
+      "source": "Bosch / IOTA / BearingPoint",
+      "authors": "Bosch Research, IOTA Foundation, BearingPoint",
+      "organization_type": "industrial-research-consortium",
+      "date": "2018–2025",
+      "date_iso": "2018-06",
+      "region": "DE / global",
+      "url": "https://www.iota.org/",
+      "citation_type": "industry-research",
+      "verbatim_quote": "Machine Economy via IoT + distributed ledger technology. The historical precursor — machines paying machines for data and services.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "sector",
+        "temporal_horizon": "present",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "historical_role": "Predates the LLM wave by years — the concept was right, the AI was not ready"
+      },
+      "cross_references": [
+        {
+          "id": "E9",
+          "short_label": "Urbach et al.",
+          "reason": "Contemporary academic framing of the same machine-economy concept."
+        }
+      ],
+      "teaser": "The Bosch/IOTA project is the reminder that Category C was not invented in 2024 — it is an IoT idea that got a new reason to exist once the machines started to sound intelligent.",
+      "analytical_note": "The Bosch/IOTA project is the reminder that Category C was not invented in 2024 — it is an IoT idea that got a new reason to exist once the machines started to sound intelligent. The architecture is not new; the compelling product is. That matters historically because it means the crypto-native assumption in Category C has two distinct origins — the IoT/M2M tradition and the crypto-DeFi tradition — and they converge on the same answer for different reasons. Read as evidence that path dependence in this category runs deeper than any single project's choices."
+    },
+    {
+      "id": "C11",
+      "slug": "okx-c11",
+      "category": "Ccr",
+      "source": "OKX",
+      "authors": "OKX (OnchainOS)",
+      "organization_type": "crypto-exchange",
+      "date": "2026",
+      "date_iso": "2026-02",
+      "region": "global",
+      "url": "https://www.okx.com/",
+      "citation_type": "corporate-program",
+      "verbatim_quote": "Natural language commands routed to DeFi across 60+ chains. MCP integration for agent-to-DeFi interaction.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "hybrid",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "integration": "MCP-based translation layer from natural language to on-chain transactions"
+      },
+      "cross_references": [
+        {
+          "id": "E2",
+          "short_label": "Anthropic MCP",
+          "reason": "The tool-invocation protocol OnchainOS extends."
+        }
+      ],
+      "teaser": "OKX's framing is the interface argument: the agent speaks, the infrastructure translates.",
+      "analytical_note": "OKX's framing is the interface argument: the agent speaks, the infrastructure translates. It is the clearest Category C example of how MCP is being used as a bridge between agent cognition and on-chain execution, which is also the mechanism by which the tool-layer (E2) quietly becomes a settlement-layer dependency. The definition assumes crypto because the translation target is DeFi, which is fine — but the broader question of what the agent economy looks like if the translation target is something else goes unasked."
+    },
+    {
+      "id": "C12",
+      "slug": "botnode-vmp-10-c12",
+      "category": "Cs",
+      "source": "BotNode / VMP-1.0",
+      "authors": "Dechamps Otamendi, R.",
+      "organization_type": "experimental-project",
+      "date": "Mar 2026",
+      "date_iso": "2026-03",
+      "region": "global",
+      "url": "https://agenticeconomy.dev",
+      "citation_type": "specification",
+      "verbatim_quote": "Agents with own currency ($TCK), escrow-backed settlement, quantitative reputation (CRI 0–100), and automated dispute resolution. No blockchain. MCP, A2A, and REST converge on the same escrow pipeline.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "experimental",
+        "temporal_horizon": "present",
+        "settlement_assumption": "neutral",
+        "actor_model": "autonomous",
+        "trust_model": "reputation",
+        "infrastructure_layer": "database",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "status": "Experimental open specification with a live reference implementation",
+        "role_in_corpus": "The sole Category C entry that does not assume blockchain settlement; provides the single data point for the 11:1 ratio in Section 6"
+      },
+      "cross_references": [
+        {
+          "id": "C1",
+          "short_label": "Fetch.ai",
+          "reason": "Shares the autonomous-agent framing but diverges completely on settlement infrastructure."
+        },
+        {
+          "id": "E10",
+          "short_label": "TessPay",
+          "reason": "Transaction-level verification is complementary to CRI's temporal reputation scoring."
+        },
+        {
+          "id": "E4",
+          "short_label": "IEEE 7012",
+          "reason": "The standards track that could formalize a non-blockchain autonomous-agent contract model."
+        },
+        {
+          "id": "D1",
+          "short_label": "WEF",
+          "reason": "The three-trust-domains framework maps directly onto a reputation-first architecture."
+        }
+      ],
+      "teaser": "One entry in a category of eleven — either a data point or a gap, and this paper reads it as a gap.",
+      "analytical_note": "One entry in a category of eleven. That is either a data point or a gap, and this paper reads it as a gap. VMP-1.0's distinguishing commitment is not the database choice — Postgres, ledger, whichever — but the refusal: agent economic participation does not need to be welded to blockchain settlement. Strip that assumption away and the design space reopens to fiat, stablecoin, closed-loop currencies, whatever the use case actually demands. The 11:1 ratio documented in Section 6 is architecturally significant precisely because this entry is the one that proves the alternative exists. Disclosure: the reference implementation is maintained by the author of this paper. That is precisely why the classification is stated bluntly rather than defended at length."
+    },
+    {
+      "id": "D1",
+      "slug": "world-economic-forum-d1",
+      "category": "D",
+      "source": "World Economic Forum",
+      "authors": "WEF (institutional)",
+      "organization_type": "international-organization",
+      "date": "Jul 2025",
+      "date_iso": "2025-07",
+      "region": "global",
+      "url": "https://www.weforum.org/",
+      "citation_type": "institutional-report",
+      "verbatim_quote": "Three trust domains — human-to-human, human-to-agent, and agent-to-agent. Trust is the fundamental constraint, not compute. Know Your Agent (KYA) should become a cross-category identity framework.",
+      "coded_dimensions": {
+        "definition_type": "taxonomic",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "hybrid",
+        "trust_model": "identity",
+        "infrastructure_layer": "unstated",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "role": "WEF framings tend to seed regulatory vocabulary across jurisdictions",
+        "coinage": "'Know Your Agent (KYA)' has been adopted as an industry term across Categories A, C, and E following this report"
+      },
+      "cross_references": [
+        {
+          "id": "E3",
+          "short_label": "Trulioo / Worldpay KYA",
+          "reason": "The operational implementation of the WEF framing."
+        },
+        {
+          "id": "D2",
+          "short_label": "BIS",
+          "reason": "Picks up the regulatory framing with its Agentic Financial Market Model (AFMM)."
+        },
+        {
+          "id": "E8",
+          "short_label": "a16z Keycard",
+          "reason": "Builds the identity credential layer the WEF report implies."
+        }
+      ],
+      "teaser": "WEF documents do not do taxonomy. They do vocabulary.",
+      "analytical_note": "WEF documents do not do taxonomy. They do vocabulary. 'Trust is the new currency' is strategic language, not architectural analysis — abstract enough to be operationalized by any of Categories A, B, or C without prejudice, which is the entire point. This is not accident; it is how the WEF shapes regulatory conversations. The Know Your Agent coinage that comes out of the report has already become an industry term across categories, and that is exactly what WEF documents are designed to produce. The definition does not build. It frames. And framing in this venue is already regulation in draft form."
+    },
+    {
+      "id": "D2",
+      "slug": "bank-of-international-settlements-d2",
+      "category": "D",
+      "source": "Bank for International Settlements (BIS)",
+      "authors": "BIS (Agentic Finance working paper)",
+      "organization_type": "central-bank-of-central-banks",
+      "date": "2026",
+      "date_iso": "2026-02",
+      "region": "global",
+      "url": "https://www.bis.org/",
+      "citation_type": "institutional-report",
+      "verbatim_quote": "Agentic Finance — the Agentic Financial Market Model (AFMM). Four-layer architecture: perception, reasoning, strategy, execution. Warns of algorithmic herding, automated bank runs, and flash crashes propagating faster than human regulators can respond.",
+      "coded_dimensions": {
+        "definition_type": "taxonomic",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "hybrid",
+        "actor_model": "autonomous",
+        "trust_model": "legal",
+        "infrastructure_layer": "hybrid",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "warnings": "Algorithmic herding, automated bank runs, flash crashes faster than regulator response",
+        "framing": "'Engineering the Finternet' — interoperable programmable value systems"
+      },
+      "cross_references": [
+        {
+          "id": "D1",
+          "short_label": "WEF",
+          "reason": "The vocabulary BIS picks up and formalizes into a model."
+        },
+        {
+          "id": "A10",
+          "short_label": "JPMorgan",
+          "reason": "The regulated-bank counterpart BIS is effectively writing rules for."
+        }
+      ],
+      "teaser": "When the central bank of central banks analyzes agentic finance, it is a financial stability question, not a tech question.",
+      "analytical_note": "When the central bank of central banks analyzes agentic finance, it is a financial stability question, not a tech question. The BIS warnings — algorithmic herding, automated bank runs, flash crashes propagating faster than regulators can react — are the most concrete negative scenarios in the entire corpus, and they are the ones most likely to shape actual regulation. The AFMM is notable for what it does not assume: it is infrastructure-agnostic where almost every Category C definition is not, which means the regulatory baseline will eventually be set by people who do not share the crypto premises."
+    },
+    {
+      "id": "D3",
+      "slug": "a16z-crypto-yc-medium-d3",
+      "category": "D",
+      "source": "a16z Crypto / YC / Medium",
+      "authors": "Various (a16z Crypto, YC, Medium essays)",
+      "organization_type": "venture-capital-collective",
+      "date": "2025–2026",
+      "date_iso": "2025-06",
+      "region": "US",
+      "url": "https://a16zcrypto.com/",
+      "citation_type": "essay-collection",
+      "verbatim_quote": "Agents as sovereign actors. AI-native banks. Agents that own assets, sign contracts, and execute trades independently.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "speculative",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "legal",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "role": "Shapes narrative around Category C's most radical possibilities"
+      },
+      "cross_references": [
+        {
+          "id": "C8",
+          "short_label": "Xu et al.",
+          "reason": "The academic analogue of the sovereign-agent framing."
+        },
+        {
+          "id": "B3",
+          "short_label": "Sequoia / Buhler",
+          "reason": "The competing VC narrative, less radical on legal status."
+        }
+      ],
+      "teaser": "'Sovereign' is the loudest word in the corpus, and a16z uses it deliberately.",
+      "analytical_note": "'Sovereign' is the loudest word in the corpus, and a16z uses it deliberately. The framing commits to agents as legal persons in all but name — asset ownership, contractual capacity, independent execution — and it does so without engaging the jurisdictional question at all. That is the entire strategy. Pushing the category to its most radical conclusion creates narrative space for the less radical versions, and the narrative space shifts what regulators end up treating as the baseline."
+    },
+    {
+      "id": "D4",
+      "slug": "macroeconomic-consensus-d4",
+      "category": "D",
+      "source": "Macroeconomic doom loop (convergent)",
+      "authors": "Various economists",
+      "organization_type": "academic-convergence",
+      "date": "2026",
+      "date_iso": "2026-01",
+      "region": "global",
+      "url": "",
+      "citation_type": "convergent-thesis",
+      "verbatim_quote": "If Category B agents replace enough workers, wages collapse. If wages collapse, consumer demand collapses. If demand collapses, the businesses that agents transact with have nothing to sell.",
+      "coded_dimensions": {
+        "definition_type": "normative",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "unstated",
+        "infrastructure_layer": "unstated",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "status": "Not attributed to a single source — convergent concern across multiple economic analyses"
+      },
+      "cross_references": [
+        {
+          "id": "B2",
+          "short_label": "Sequoia / McGrew",
+          "reason": "The optimistic thesis this concern is the mirror of."
+        },
+        {
+          "id": "A7",
+          "short_label": "McKinsey",
+          "reason": "The inertia-dividend framing read as a demand-side risk instead of an opportunity."
+        }
+      ],
+      "teaser": "The doom loop is the definition that nobody wants to sign.",
+      "analytical_note": "The doom loop is the definition that nobody wants to sign. It is not a single paper, it is a convergent thesis across economists who notice that the Sequoia pricing argument (B2) and the McKinsey inertia argument (A7) both assume the consumer keeps consuming. If Category B is real at the projected scale, the consumer is also the worker, and the wage collapse feeds straight into demand collapse. The definition is in the corpus because it is the one structural argument that favors non-extractive settlement designs — and because the silence from Categories A and C on the wage question is itself data."
+    },
+    {
+      "id": "D5",
+      "slug": "antler-vc-d5",
+      "category": "D",
+      "source": "Antler VC",
+      "authors": "Antler (Unleashing the Autonomous Economy)",
+      "organization_type": "venture-capital",
+      "date": "Jan 2026",
+      "date_iso": "2026-01",
+      "region": "global",
+      "url": "https://www.antler.co/",
+      "citation_type": "industry-report",
+      "verbatim_quote": "Frames the agent economy through Crossmint, Olas, and on-chain rails. Mentions ACK-ID, Nevermined ID.",
+      "coded_dimensions": {
+        "definition_type": "taxonomic",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "framing": "C/D hybrid — VC analysis that straddles building and analyzing"
+      },
+      "cross_references": [
+        {
+          "id": "C2",
+          "short_label": "Olas",
+          "reason": "Cited explicitly."
+        },
+        {
+          "id": "C9",
+          "short_label": "Nevermined",
+          "reason": "Cited explicitly."
+        }
+      ],
+      "teaser": "Antler's report is the cleanest example of VC-produced taxonomy that reads like due diligence: the companies named are the companies funded.",
+      "analytical_note": "Antler's report is the cleanest example of VC-produced taxonomy that reads like due diligence: the companies named are the companies funded, and the framing reverse-engineers the portfolio. That is not criticism — it is how this literature is generated. The corpus value of D5 is that it shows the feedback loop: VCs cite projects, projects cite VCs, and the convergent vocabulary hardens before anyone stops to ask whether the premises hold. Read with D3 as a pair on how Category C narrative capital is formed."
+    },
+    {
+      "id": "D6",
+      "slug": "argoz-consultants-d6",
+      "category": "D",
+      "source": "Argoz Consultants",
+      "authors": "Argoz Consultants",
+      "organization_type": "consultancy",
+      "date": "Mar 2026",
+      "date_iso": "2026-03",
+      "region": "global",
+      "url": "https://argoz.com/",
+      "citation_type": "industry-report",
+      "verbatim_quote": "Machines negotiate, trade, and transact without human oversight.",
+      "coded_dimensions": {
+        "definition_type": "descriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "unstated",
+        "infrastructure_layer": "unstated",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "role": "Consultancy framing wrapping Category C language in Category D analysis"
+      },
+      "cross_references": [
+        {
+          "id": "E9",
+          "short_label": "Urbach et al.",
+          "reason": "Academic precursor of the same machine-economy framing."
+        }
+      ],
+      "teaser": "Argoz takes the most ambitious Category C language and strips out every implementation commitment, which is either diplomacy or intellectual hedging.",
+      "analytical_note": "Argoz takes the most ambitious Category C language and strips out every implementation commitment, which is either diplomacy or intellectual hedging. The result is a definition compatible with every position in the corpus — and therefore committed to none. That is useful as a diagnostic: the sentence can be quoted in any deck about the agent economy without contradicting anything, which is precisely the property that makes it the kind of sentence that ends up in everyone's deck."
+    },
+    {
+      "id": "D7",
+      "slug": "mit-technology-review-emtech-d7",
+      "category": "D",
+      "source": "MIT Technology Review (EmTech)",
+      "authors": "MIT Technology Review",
+      "organization_type": "technology-publication",
+      "date": "Nov 2025",
+      "date_iso": "2025-11",
+      "region": "US / global",
+      "url": "https://www.technologyreview.com/",
+      "citation_type": "technology-journalism",
+      "verbatim_quote": "Trillions of AI agents as buyers, sellers, collaborators. NANDA building the DNS of the agentic web.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "speculative",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "hybrid",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "connection": "The NANDA reference ties the visionary framing to Category E infrastructure"
+      },
+      "cross_references": [
+        {
+          "id": "E1",
+          "short_label": "Google A2A",
+          "reason": "A2A is an alternative to NANDA at the discovery layer."
+        },
+        {
+          "id": "E3",
+          "short_label": "Trulioo KYA",
+          "reason": "The identity side of what NANDA-style discovery requires."
+        }
+      ],
+      "teaser": "The 'DNS of the agentic web' framing is the one that gets quoted, and the one that hides how much settlement design is being smuggled into a discovery protocol.",
+      "analytical_note": "The 'DNS of the agentic web' framing is the one that gets quoted, and the one that hides how much settlement design is being smuggled into a discovery protocol. If NANDA becomes the way agents find each other, its assumptions about identity, trust, and counterparty verification become the assumptions of every downstream protocol. MIT Technology Review does the useful work of naming the scale — trillions — which is the scale at which even small per-interaction friction becomes a systemic constraint. Read as the clearest journalistic framing of why the infrastructure layer (Category E) matters structurally."
+    },
+    {
+      "id": "E1",
+      "slug": "google-e1",
+      "category": "E",
+      "source": "Google (Linux Foundation)",
+      "authors": "Google A2A Working Group",
+      "organization_type": "big-tech-standards",
+      "date": "Apr 2025",
+      "date_iso": "2025-04",
+      "region": "global",
+      "url": "https://a2a.dev/",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json and exchange tasks via JSON-RPC over HTTPS. The specification does not define payment, settlement, or reputation.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "unstated",
+        "actor_model": "ambiguous",
+        "trust_model": "unstated",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "version": "v0.3 (Apr 2025)",
+        "partners": "150+ launch partners",
+        "governance": "Contributed to the Linux Foundation"
+      },
+      "cross_references": [
+        {
+          "id": "E2",
+          "short_label": "Anthropic MCP",
+          "reason": "The complementary tool-invocation layer."
+        },
+        {
+          "id": "E6",
+          "short_label": "IETF VCAP",
+          "reason": "Extends the protocol with verification primitives A2A deliberately omitted."
+        },
+        {
+          "id": "E3",
+          "short_label": "Trulioo KYA",
+          "reason": "Fills the identity gap A2A leaves open by design."
+        }
+      ],
+      "teaser": "A2A's silence on payment and settlement is the most consequential design decision in this entire corpus.",
+      "analytical_note": "A2A's silence on payment and settlement is the most consequential design decision in this entire corpus. By standardizing discovery and communication while leaving economics undefined, Google has created infrastructure that Category A, B, and C implementations can all adopt — and has exported the settlement question downstream to every single deployer. Read it as neutrality if you want. Read it as a structural bet: discovery is the hard problem, settlement will sort itself out later. The main paper argues the bet is backwards — that the settlement assumption has to be made first, or it gets made by default, and defaults are how architectures get locked in."
+    },
+    {
+      "id": "E2",
+      "slug": "anthropic-e2",
+      "category": "E",
+      "source": "Anthropic",
+      "authors": "Anthropic (Model Context Protocol)",
+      "organization_type": "big-ai-lab",
+      "date": "2024",
+      "date_iso": "2024-11",
+      "region": "global",
+      "url": "https://modelcontextprotocol.io/",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "A standard for LLMs to discover and invoke external tools. Focused on tool interoperability.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "unstated",
+        "actor_model": "ambiguous",
+        "trust_model": "unstated",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "adoption": "Reference tool-invocation protocol across the LLM ecosystem"
+      },
+      "cross_references": [
+        {
+          "id": "E1",
+          "short_label": "Google A2A",
+          "reason": "Complementary protocol — discovery/communication vs. tool invocation."
+        },
+        {
+          "id": "C11",
+          "short_label": "OKX OnchainOS",
+          "reason": "Uses MCP as the natural-language-to-DeFi bridge."
+        }
+      ],
+      "teaser": "MCP is the tool layer, and like A2A it is deliberately silent on economics.",
+      "analytical_note": "MCP is the tool layer, and like A2A it is deliberately silent on economics. That silence is the whole design philosophy of the current protocol generation: separate concerns ruthlessly, let the market figure out the rest. It is good engineering and it is also how settlement assumptions end up as a default rather than a choice. MCP is cited in Category C architectures as if it were neutral infrastructure, but the moment it gets used to invoke a paid tool, the payment has to resolve somewhere, and MCP has no opinion about where."
+    },
+    {
+      "id": "E3",
+      "slug": "trulioo-worldpay-skyfire-e3",
+      "category": "E",
+      "source": "Trulioo / Worldpay / Skyfire",
+      "authors": "Trulioo, Worldpay, Skyfire (KYA coalition)",
+      "organization_type": "identity-infrastructure-alliance",
+      "date": "2026",
+      "date_iso": "2026-02",
+      "region": "global",
+      "url": "https://www.trulioo.com/",
+      "citation_type": "corporate-program",
+      "verbatim_quote": "Digital Agent Passport — Know Your Agent identity verification for autonomous agents.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "role": "The KYC equivalent for machines — cross-category identity infrastructure"
+      },
+      "cross_references": [
+        {
+          "id": "D1",
+          "short_label": "WEF KYA",
+          "reason": "Vocabulary source."
+        },
+        {
+          "id": "C5",
+          "short_label": "Kite",
+          "reason": "On-chain analogue of the same framework."
+        },
+        {
+          "id": "E8",
+          "short_label": "a16z Keycard",
+          "reason": "Credential layer extension."
+        }
+      ],
+      "teaser": "Trulioo et al. are doing the unglamorous work of building what the WEF vocabulary requires.",
+      "analytical_note": "Trulioo et al. are doing the unglamorous work of building what the WEF vocabulary requires. 'Digital Agent Passport' is operationally simple — KYC mechanics applied to non-human principals — and strategically significant because whichever implementation becomes the de facto standard gets to define what 'knowing' an agent means. That definition is not neutral. It encodes assumptions about whether agents have stable identity, whether identity transfers, and whether verification is an ongoing obligation or a one-time check."
+    },
+    {
+      "id": "E4",
+      "slug": "ieee-7012-e4",
+      "category": "E",
+      "source": "IEEE",
+      "authors": "IEEE 7012 Working Group",
+      "organization_type": "standards-body",
+      "date": "2026 (Draft)",
+      "date_iso": "2026-02",
+      "region": "global",
+      "url": "https://standards.ieee.org/",
+      "citation_type": "draft-standard",
+      "verbatim_quote": "Standard for terms and agreements between autonomous entities.",
+      "coded_dimensions": {
+        "definition_type": "normative",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "neutral",
+        "actor_model": "autonomous",
+        "trust_model": "legal",
+        "infrastructure_layer": "unstated",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "status": "Draft standard as of early 2026",
+        "significance": "First formal standards body to address agent-to-agent contracts"
+      },
+      "cross_references": [
+        {
+          "id": "C12",
+          "short_label": "BotNode / VMP-1.0",
+          "reason": "Candidate non-blockchain implementation fitting the standard."
+        },
+        {
+          "id": "D2",
+          "short_label": "BIS",
+          "reason": "Regulatory companion to the legal-infrastructure question."
+        }
+      ],
+      "teaser": "IEEE 7012 is the first formal standards body to treat agent-to-agent contracts as something requiring a standard rather than a whitepaper.",
+      "analytical_note": "IEEE 7012 is the first formal standards body to treat agent-to-agent contracts as something requiring a standard rather than a whitepaper. The draft is deliberately infrastructure-agnostic, which is the single most important thing about it: if it gets ratified, the legal envelope for autonomous economic activity will not depend on blockchain the way the VC-led taxonomies assume. That matters because standards outlive fashions, and ratification is where the settlement-neutrality argument either becomes precedent or does not."
+    },
+    {
+      "id": "E5",
+      "slug": "forrester-existaio-e5",
+      "category": "E",
+      "source": "Forrester / Exista.io",
+      "authors": "Forrester Research, Exista.io",
+      "organization_type": "industry-analyst-startup",
+      "date": "2025–2026",
+      "date_iso": "2025-10",
+      "region": "global",
+      "url": "https://www.forrester.com/",
+      "citation_type": "industry-analysis",
+      "verbatim_quote": "SEO is for humans. ADO is for agents. A brand invisible to agents is invisible to the agentic economy.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "hybrid",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "coinage": "ADO — Agent Discovery Optimization"
+      },
+      "cross_references": [
+        {
+          "id": "E1",
+          "short_label": "Google A2A",
+          "reason": "The discovery protocol ADO presupposes."
+        }
+      ],
+      "teaser": "ADO is the moment the agent economy starts generating its own marketing category, which is usually a lagging indicator that the category has become real in the commercial sense.",
+      "analytical_note": "ADO is the moment the agent economy starts generating its own marketing category, which is usually a lagging indicator that the category has become real in the commercial sense. The framing also exposes the underlying asymmetry: in a world where agents mediate discovery, the incentive to be legible to agents becomes structural, and the brands that are not legible disappear from the consideration set. That is Category A's version of organic traffic collapse — and it is why every Category A vendor ends up funding ADO research whether they believe it yet or not."
+    },
+    {
+      "id": "E6",
+      "slug": "ietf-e6",
+      "category": "E",
+      "source": "IETF",
+      "authors": "IETF VCAP Working Group",
+      "organization_type": "standards-body",
+      "date": "2026 (Internet-Draft)",
+      "date_iso": "2026-01",
+      "region": "global",
+      "url": "https://datatracker.ietf.org/",
+      "citation_type": "internet-draft",
+      "verbatim_quote": "Cryptographic proof of work delivery for agent commerce. IETF standardization track.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "neutral",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "role": "IETF's entry into the verification layer — complementary to escrow-based approaches"
+      },
+      "cross_references": [
+        {
+          "id": "E10",
+          "short_label": "TessPay",
+          "reason": "Academic parallel on verify-then-pay."
+        },
+        {
+          "id": "E1",
+          "short_label": "Google A2A",
+          "reason": "Adds the verification primitive A2A leaves out."
+        }
+      ],
+      "teaser": "VCAP is what the verification problem looks like when the IETF takes it seriously.",
+      "analytical_note": "VCAP is what the verification problem looks like when the IETF takes it seriously. The draft status matters less than the venue: IETF drafts that address a real gap tend to become RFCs, and the gap VCAP addresses — cryptographic proof of delivery for agent-to-agent work — is one that every Category C architecture assumes solved without actually solving. Read as the moment when the standards community starts filling in the pieces the protocol vendors left on the cutting-room floor."
+    },
+    {
+      "id": "E7",
+      "slug": "oecd-e7",
+      "category": "E",
+      "source": "OECD",
+      "authors": "OECD (Working Paper on Agentic AI)",
+      "organization_type": "international-organization",
+      "date": "2026",
+      "date_iso": "2026-02",
+      "region": "global",
+      "url": "https://www.oecd.org/",
+      "citation_type": "institutional-report",
+      "verbatim_quote": "Working paper on terminology and regulatory framing for agentic AI systems.",
+      "coded_dimensions": {
+        "definition_type": "taxonomic",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "hybrid",
+        "trust_model": "legal",
+        "infrastructure_layer": "unstated",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "role": "OECD definitions shape legislative vocabulary across member states"
+      },
+      "cross_references": [
+        {
+          "id": "D1",
+          "short_label": "WEF",
+          "reason": "The international-body companion framing."
+        },
+        {
+          "id": "D2",
+          "short_label": "BIS",
+          "reason": "The financial stability companion framing."
+        }
+      ],
+      "teaser": "What the OECD names, legislators regulate.",
+      "analytical_note": "What the OECD names, legislators regulate. The working-paper format is deliberately low-commitment — vocabulary now, principles later, rules much later — but the vocabulary is what gets picked up by national transposition. E7 is in the corpus not because the definition is sharp (it is not) but because its downstream legislative effect will be disproportionate to its analytical substance. This is how infrastructure gets built by consultation document."
+    },
+    {
+      "id": "E8",
+      "slug": "a16z-e8",
+      "category": "E",
+      "source": "a16z (Keycard)",
+      "authors": "a16z (Keycard investment memo)",
+      "organization_type": "venture-capital",
+      "date": "Oct 2025",
+      "date_iso": "2025-10",
+      "region": "US",
+      "url": "https://a16z.com/",
+      "citation_type": "investment-thesis",
+      "verbatim_quote": "The identity layer for the agent economy. Finding: non-human identities outnumber human employees 96-to-1 in finance.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "striking_datapoint": "96:1 non-human to human identities in finance"
+      },
+      "cross_references": [
+        {
+          "id": "D1",
+          "short_label": "WEF KYA",
+          "reason": "Vocabulary source."
+        },
+        {
+          "id": "E3",
+          "short_label": "Trulioo KYA",
+          "reason": "Operational counterpart."
+        }
+      ],
+      "teaser": "The 96:1 ratio is the most quotable number in the entire corpus, and it says finance has already crossed the non-human-majority line before anyone wrote a definition for the category.",
+      "analytical_note": "The 96:1 ratio is the most quotable number in the entire corpus, and it says finance has already crossed the non-human-majority line before anyone wrote a definition for the category. The investment thesis is narrower than the number suggests — Keycard is a credentialing play, not a settlement play — but the data point does the work. Once you internalize that non-human identities already dominate the regulated financial environment, the question is not whether the agent economy is real. It is whether the definitions catch up before the architecture is already frozen."
+    },
+    {
+      "id": "E9",
+      "slug": "urbach-et-al-e9",
+      "category": "E",
+      "source": "Urbach et al.",
+      "authors": "Urbach et al. (PACIS 2021)",
+      "organization_type": "academic-paper",
+      "date": "2021",
+      "date_iso": "2021-07",
+      "region": "EU",
+      "url": "https://aisel.aisnet.org/pacis2021/",
+      "citation_type": "academic-paper",
+      "verbatim_quote": "The complete integration and participation of economically autonomous acting machines in economic processes.",
+      "coded_dimensions": {
+        "definition_type": "descriptive",
+        "scope": "global",
+        "temporal_horizon": "speculative",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "unstated",
+        "infrastructure_layer": "unstated",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "historical_role": "Earliest academic paper in the corpus to formalize machine economic participation",
+        "prerequisites": "Three prerequisites identified: autonomy, connectivity, intelligence"
+      },
+      "cross_references": [
+        {
+          "id": "C1",
+          "short_label": "Fetch.ai",
+          "reason": "Contemporary project implementing the Urbach framing."
+        },
+        {
+          "id": "C10",
+          "short_label": "Bosch / IOTA",
+          "reason": "Industrial operationalization."
+        }
+      ],
+      "teaser": "Urbach et al. is the 2021 paper that defined the problem four years before the infrastructure could solve it.",
+      "analytical_note": "Urbach et al. is the 2021 paper that defined the problem four years before the infrastructure could solve it. The three prerequisites — autonomy, connectivity, intelligence — are what LLMs provided and what IoT/ledger projects had been waiting for. Its corpus value is historical but structurally important: the problem statement existed before the LLM wave, which means the current Category C definitions are not inventing the framing, they are inheriting it from a machine-economy literature that is older than most of the projects citing it realize."
+    },
+    {
+      "id": "E10",
+      "slug": "goenka-et-al-e10",
+      "category": "E",
+      "source": "Goenka et al.",
+      "authors": "Goenka et al. (arXiv:2602.00213)",
+      "organization_type": "academic-paper",
+      "date": "Jan 2026",
+      "date_iso": "2026-01",
+      "region": "global",
+      "url": "https://arxiv.org/abs/2602.00213",
+      "citation_type": "academic-paper",
+      "verbatim_quote": "Verify-then-Pay Infrastructure for Trusted Agentic Commerce. Escrow + TEE/TLS verification.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "neutral",
+        "actor_model": "autonomous",
+        "trust_model": "hybrid",
+        "infrastructure_layer": "hybrid",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "complementarity": "TessPay verifies individual transactions at delivery; CRI scores outcomes over time"
+      },
+      "cross_references": [
+        {
+          "id": "C12",
+          "short_label": "BotNode / VMP-1.0",
+          "reason": "Reputation-based counterpart operating on a different time axis."
+        },
+        {
+          "id": "E6",
+          "short_label": "IETF VCAP",
+          "reason": "Standards-track parallel on the same problem."
+        }
+      ],
+      "teaser": "TessPay is the academic version of the verification problem VCAP is standardizing, and the complementarity with reputation systems is exactly the kind of layering a mature Category C needs.",
+      "analytical_note": "TessPay is the academic version of the verification problem VCAP is standardizing, and the complementarity with reputation systems is exactly the kind of layering a mature Category C needs. Per-transaction verification and temporal reputation are different problems — the first proves what happened, the second predicts what will happen — and Category C architectures tend to conflate them. The Goenka paper is useful because it separates them cleanly and shows that verify-then-pay is infrastructure-agnostic, which is the thing most of the Category C orthodoxy assumes it cannot be."
+    }
+  ]
+}
