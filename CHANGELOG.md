@@ -6,7 +6,7 @@ Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versioning: 
 
 ## [3.0.0] — 2026-04-10
 
-**Full pivot from v1 → v3.** This release replaces the previous 11-operations deployment with a research-hub focused on the agentic economy: definitions, peer-reviewed papers, protocols, glossary, and a public API. Zero frameworks, zero build tools, zero tracking. Licensed CC BY-SA 4.0.
+**Full pivot from v1 → v3.** This release replaces the previous 11-operations deployment with a research-hub focused on the agentic economy: definitions, preprints, protocols, glossary, and a public API. Zero frameworks, zero build tools, zero tracking. Licensed CC BY-SA 4.0.
 
 ### Scope of the pivot
 
@@ -19,7 +19,7 @@ v1 was an operations-and-services site. v3 is a research corpus and reference hu
 - **30 glossary term pages** under `/term/` with Q&A content rendered as FAQPage structured data for rich results.
 - **17 main hub pages** rewritten from scratch with full meta + JSON-LD coverage:
   `index.html`, `about-agentic-economy.html`, `agentic-economy-101.html`, `agentic-economy-definitions.html`, `agentic-economy-glossary.html`, `agentic-economy-protocols.html`, `agentic-economy-timeline.html`, `agentic-economy-research.html`, `agentic-economy-infographic.html`, `agentic-economy-quiz.html`, `ask-agentic-economy.html`, `compare.html`, `embed-demo.html`, `field-reports.html`, `sandbox.html`, `validators.html`, `404.html`.
-- **Three peer-reviewed Zenodo papers** referenced with canonical DOIs throughout:
+- **Three Zenodo preprints** referenced with canonical DOIs throughout:
   - Commerce Readiness Index (CRI) — `10.5281/zenodo.19208083`
   - Taxonomy of the Agentic Economy — `10.5281/zenodo.19208278`
   - The Oracle Problem in Agent Commerce — `10.5281/zenodo.19208440`
@@ -45,7 +45,7 @@ v1 was an operations-and-services site. v3 is a research corpus and reference hu
 - **feed.xml** — RSS 2.0 feed with 5 items for the major research outputs.
 - **\_headers** — Cloudflare Pages headers: CSP, `X-Frame-Options: DENY`, `Referrer-Policy: strict-origin-when-cross-origin`, HSTS with `preload`, per-file-type cache-control (static assets 1y immutable, HTML no-cache), `Access-Control-Allow-Origin: *` for `/api/*`.
 - **\_redirects** — apex canonicalization for `.info` and `.us` and `www.*` → `agenticeconomy.dev`, clean-URL rewrites (strip `.html`), legacy v1 paths → closest v3 equivalent, `contrarian-take` → `410 Gone` (defense-in-depth, see below).
-- **E-E-A-T signals** throughout: author bylines with ORCID, affiliation (BotNode — The Lab: Where Theory Meets Code), peer-reviewed citations with DOIs, explicit dates, CC BY-SA 4.0 licensing, source code references.
+- **E-E-A-T signals** throughout: author bylines with ORCID, affiliation (AgenticEconomy.dev), preprint citations with DOIs, explicit dates, CC BY-SA 4.0 licensing, source code references.
 
 #### Infrastructure
 - Internal link checker (`03-Web-Tooling/link-check.js`) — verified 3602 internal links across 101 HTML files: **0 broken**.

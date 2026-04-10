@@ -56,7 +56,7 @@
   },
   "dataQuality": {
     "definitions": {
-      "status": "Peer-reviewed by agenticeconomy.dev community",
+      "status": "Curated by agenticeconomy.dev research team",
       "sources": "Academic (arXiv, Springer), industry (Stripe, Google, Anthropic, Coinbase), analyst (Gartner, McKinsey, Sequoia)",
       "coverage": "51/51 entries (100%)",
       "lastVerified": "2026-04-09"
