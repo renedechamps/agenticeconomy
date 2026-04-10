@@ -914,10 +914,15 @@ Keep responses concise (2-4 paragraphs max). Use specific data points. Link to r
         // State
         let conversationHistory = [];
         let isLoading = false;
+        const DEFAULT_GEMINI_KEY = 'AIzaSyCCTh1S5hwrQIr2MgvCc7dbHDBE-JRJrTM';
+
+        function getApiKey() {
+            return localStorage.getItem('gemini_api_key') || DEFAULT_GEMINI_KEY;
+        }
 
         // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            const hasApiKey = localStorage.getItem('gemini_api_key');
+            const hasApiKey = getApiKey();
             if (!hasApiKey) {
                 setupOverlay.style.display = 'flex';
                 chatInput.disabled = true;
@@ -1129,12 +1134,12 @@ Try asking me anything about the agentic economy. You can click the suggested qu
         }
 
         async function callGeminiAPI(userMessage) {
-            const apiKey = localStorage.getItem('gemini_api_key');
+            const apiKey = getApiKey();
             if (!apiKey) {
                 throw new Error('API key not configured');
             }
 
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key=${apiKey}`;
 
             // Build request with conversation context
             const messages = [
