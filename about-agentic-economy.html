@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — Agentic Economy · Agentic Economy</title>
-<meta name="description" content="About the Agentic Economy research project: Rene Dechamps Otamendi, methodology, BotNode lab, and how to cite the corpus. CC BY-SA 4.0.">
+<meta name="description" content="About the Agentic Economy research project: René Dechamps Otamendi, founder and researcher at AgenticEconomy.dev. Methodology, corpus, and how to cite. CC BY-SA 4.0.">
 <meta name="author" content="Rene Dechamps Otamendi">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://agenticeconomy.dev/about-agentic-economy">
@@ -13,7 +13,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="article">
 <meta property="og:title" content="About — Agentic Economy">
-<meta property="og:description" content="About the Agentic Economy research project: Rene Dechamps Otamendi, methodology, BotNode lab, and how to cite the corpus. CC BY-SA 4.0.">
+<meta property="og:description" content="About the Agentic Economy research project: René Dechamps Otamendi, founder and researcher at AgenticEconomy.dev. Methodology, corpus, and how to cite. CC BY-SA 4.0.">
 <meta property="og:url" content="https://agenticeconomy.dev/about-agentic-economy">
 <meta property="og:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
 <meta property="og:image:width" content="1200">
@@ -26,7 +26,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About — Agentic Economy">
-<meta name="twitter:description" content="About the Agentic Economy research project: Rene Dechamps Otamendi, methodology, BotNode lab, and how to cite the corpus. CC BY-SA 4.0.">
+<meta name="twitter:description" content="About the Agentic Economy research project: René Dechamps Otamendi, founder and researcher at AgenticEconomy.dev. Methodology, corpus, and how to cite. CC BY-SA 4.0.">
 <meta name="twitter:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
@@ -83,19 +83,20 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://renedechamps.com/#person",
-  "name": "Rene Dechamps Otamendi",
+  "name": "René Dechamps Otamendi",
+  "identifier": "https://orcid.org/0009-0007-1033-6519",
   "url": "https://renedechamps.com",
-  "jobTitle": "Serial entrepreneur and agentic economy researcher",
-  "description": "Serial entrepreneur (7 companies, OX2→LBi exit), analytics pioneer, founder of BotNode, researcher of the agentic economy.",
+  "jobTitle": "Founder and researcher",
   "sameAs": [
+    "https://renedechamps.com",
     "https://www.linkedin.com/in/renedechamps/",
     "https://github.com/renedechamps",
-    "https://zenodo.org/communities/agentic-economy"
+    "https://zenodo.org/communities/agentic-economy",
+    "https://orcid.org/0009-0007-1033-6519"
   ],
-  "affiliation": {
+  "worksFor": {
     "@type": "Organization",
-    "name": "BotNode",
-    "url": "https://botnode.io"
+    "@id": "https://agenticeconomy.dev/#organization"
   },
   "knowsAbout": [
     "Agentic Economy",
@@ -901,7 +902,7 @@
       <div class="nav-menu">
         <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
         <div class="nav-dropdown">
-          <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">&#9662;</span></button>
+          <button class="nav-item nav-dropdown-trigger" data-href="agentic-economy-research.html">Research <span class="arrow">&#9662;</span></button>
           <div class="dropdown-panel">
             <a href="agentic-economy-research.html">Papers</a>
               <a href="agentic-economy-definitions.html">51 Definitions</a>
@@ -936,7 +937,7 @@
   <section class="mission observe">
     <h2>Why This Exists</h2>
     <p>The agentic economy is being defined in real time by companies, researchers, and standards bodies on five continents. But they're not talking to each other. A payment network in San Francisco and a blockchain project in Zug are solving the same problem with incompatible assumptions. A regulator in Brussels and a researcher in Singapore are asking the same questions using different vocabulary.</p>
-    <p>agenticeconomy.dev is the connective tissue. An independent research hub that tracks every definition, maps every protocol, and identifies the fault lines that others haven't noticed yet. 51 definitions. 17 protocols. 3 peer-reviewed papers. Updated weekly.</p>
+    <p>agenticeconomy.dev is the connective tissue. An independent research hub that tracks every definition, maps every protocol, and identifies the fault lines that others haven't noticed yet. 51 definitions. 17 protocols. 3 preprints. Updated weekly.</p>
     <p>Not funded by any vendor. Not selling anything. Not promoting any specific technology or settlement layer. Just research.</p>
   </section>
 
@@ -991,7 +992,7 @@
           </style>
         </svg>
         <h3>3 Research Papers</h3>
-        <p>Original peer-reviewed research on Zenodo: the taxonomy, the Commerce Readiness Index, and the Oracle Problem.</p>
+        <p>Original preprint research on Zenodo: the taxonomy, the Commerce Readiness Index, and the Oracle Problem.</p>
       </a>
       <a href="#" class="track-card observe">
         <svg class="card-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1011,38 +1012,22 @@
     </div>
   </section>
 
-  <!-- Section 4: The Lab — BotNode -->
-  <section class="lab observe">
-    <div class="lab-header">
-      <h2>The Lab</h2>
-      <span class="lab-badge">WHERE THEORY MEETS CODE</span>
-    </div>
-    <p class="lab-intro">The research identifies problems. BotNode tests solutions. In public.</p>
-    <p>botnode.io is an open laboratory where the principles from our papers get stress-tested in actual code. Settlement Neutrality isn't just a theoretical framework; it's being built into a working protocol. The Commerce Readiness Index isn't just a scoring system; it's being applied to real agent interactions. The Oracle Problem isn't just a paper; it's engineering constraints that the VMP-1.0 specification addresses head-on.</p>
-    <p>Everything is open source. The entire codebase is on GitHub. Anyone can fork it, test it, break it, or build on top of it. BotNode isn't a product competing with Stripe or Coinbase. It's a proof of concept — a place to verify whether the ideas in the papers survive contact with reality.</p>
-    <div class="vmp-callout">
-      <div class="vmp-title"><span class="vmp-mono">VMP-1.0</span> — Verified Message Protocol</div>
-      <p>The open specification for agent-to-agent transaction verification. Test it yourself.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem">
-        <a href="https://botnode.io" target="_blank" rel="noopener" class="vmp-link">View on botnode.io →</a>
-        <a href="https://github.com/renedechamps/agenticeconomy" target="_blank" rel="noopener" class="vmp-link">Source on GitHub →</a>
-      </div>
-    </div>
-  </section>
+
 
   <!-- Section 5: The Researcher -->
   <section class="researcher observe">
     <h2>The Researcher</h2>
     <div class="researcher-content">
       <h3>René Dechamps Otamendi</h3>
-      <div class="title">Founder, BotNode · Independent Researcher · Serial Builder</div>
+      <div class="title">Founder and researcher at AgenticEconomy.dev</div>
       <p>Belgian-Spanish. Seven companies, one exit. René has been building since he was 13 — from undercutting a vending machine at a boarding school in Geneva to founding a digital agency with €20,000 and selling it to LBi International. He ran data science teams at BBVA, built analytics practices at Neo@Ogilvy, and co-founded Mind Your Group with Avinash Kaushik and Jim Sterne — the people who invented web analytics.</p>
       <p>In 2024 he noticed that every major tech company was building agent infrastructure but nobody agreed on what the agentic economy actually was. What began as a taxonomy exercise became a research program: 3 papers, 51 definitions catalogued, 17 protocols compared, and a formal framework (Settlement Neutrality) for evaluating whether any of it actually works. Same pattern. Bigger pieces.</p>
       <p>His research is published open access on Zenodo. He teaches, writes, and occasionally judges Eurovision (1993, nothing to do with analytics, better story than most). Based in Europe.</p>
       <div class="researcher-links">
+        <a href="https://orcid.org/0009-0007-1033-6519" target="_blank" rel="noopener" class="btn">ORCID 0009-0007-1033-6519 →</a>
         <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Dechamps%20Otamendi%22" target="_blank" rel="noopener" class="btn">Zenodo Profile →</a>
+        <a href="https://renedechamps.com" target="_blank" rel="noopener" class="btn">renedechamps.com →</a>
         <a href="https://linkedin.com/in/renedechamps" target="_blank" rel="noopener" class="btn">LinkedIn →</a>
-        <a href="https://botnode.io" target="_blank" rel="noopener" class="btn">BotNode →</a>
       </div>
     </div>
   </section>

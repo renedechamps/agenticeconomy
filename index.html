@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Agentic Economy · Agentic Economy</title>
-<meta name="description" content="The definitive research hub on the agentic economy: 51 definitions, 3 peer-reviewed papers, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
+<meta name="description" content="The definitive research hub on the agentic economy: 51 definitions, 3 Zenodo preprints, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
 <meta name="author" content="Rene Dechamps Otamendi">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://agenticeconomy.dev/">
@@ -13,7 +13,7 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Agentic Economy">
-<meta property="og:description" content="The definitive research hub on the agentic economy: 51 definitions, 3 peer-reviewed papers, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
+<meta property="og:description" content="The definitive research hub on the agentic economy: 51 definitions, 3 Zenodo preprints, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
 <meta property="og:url" content="https://agenticeconomy.dev/">
 <meta property="og:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
 <meta property="og:image:width" content="1200">
@@ -26,7 +26,7 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Agentic Economy">
-<meta name="twitter:description" content="The definitive research hub on the agentic economy: 51 definitions, 3 peer-reviewed papers, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
+<meta name="twitter:description" content="The definitive research hub on the agentic economy: 51 definitions, 3 Zenodo preprints, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
 <meta name="twitter:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
@@ -339,6 +339,15 @@
 
     .dropdown-panel.active {
       display: flex;
+    }
+    /* §9 — hover bridge for desktop: dropdown stays open on mouse-over */
+    @media (min-width: 769px) {
+      .nav-dropdown:hover .dropdown-panel {
+        display: flex;
+      }
+      .nav-dropdown:hover .nav-dropdown-trigger .arrow {
+        transform: rotate(180deg);
+      }
     }
 
     .dropdown-panel a {
@@ -911,7 +920,7 @@
     <div class="nav-menu">
       <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
       <div class="nav-dropdown">
-        <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">&#9662;</span></button>
+        <button class="nav-item nav-dropdown-trigger" data-href="agentic-economy-research.html">Research <span class="arrow">&#9662;</span></button>
         <div class="dropdown-panel">
           <a href="agentic-economy-research.html">Papers</a>
           <a href="agentic-economy-definitions.html">51 Definitions</a>
@@ -941,7 +950,7 @@
       <div class="hero-left fade-in">
         <span class="label">Research Hub</span>
         <h1>Mapping the agentic economy</h1>
-        <p class="hero-subtext">51 definitions surveyed. 6 categories identified. 2 fault lines discovered. 3 peer-reviewed papers published. The most comprehensive map of agent commerce protocols.</p>
+        <p class="hero-subtext">51 definitions surveyed. 6 categories identified. 2 fault lines discovered. 3 preprints published. The most comprehensive map of agent commerce protocols.</p>
         <div class="hero-cta">
           <a href="agentic-economy-research.html" class="button">Explore the Research</a>
           <a href="agentic-economy-101.html" class="hero-secondary">Start with the 101 →</a>
@@ -1051,7 +1060,7 @@
           <path d="M10 4V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <div class="stat-number">3</div>
-        <div class="stat-label">Peer-reviewed papers</div>
+        <div class="stat-label">Preprints</div>
       </div>
     </div>
   </div>
@@ -1241,6 +1250,11 @@
   // Dropdown Toggle
   dropdownTriggers.forEach(trigger => {
     trigger.addEventListener('click', (e) => {
+      // §6: if trigger has data-href and arrow wasn't clicked, navigate
+      if (trigger.dataset.href && !e.target.classList.contains('arrow')) {
+        window.location.href = trigger.dataset.href;
+        return;
+      }
       e.preventDefault();
       const panel = trigger.nextElementSibling;
       const parent = trigger.parentElement;

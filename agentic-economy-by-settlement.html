@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>By settlement assumption — 51 Agentic Economy Definitions · Agentic Economy</title>
+<meta name="description" content="The 51 definitions of the agentic economy grouped by settlement assumption: fiat, crypto-native, hybrid, neutral, or unstated.">
+<meta name="author" content="Rene Dechamps Otamendi">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://agenticeconomy.dev/agentic-economy-by-settlement">
+<meta name="theme-color" content="#04060e">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="website">
+<meta property="og:title" content="By settlement assumption — 51 Agentic Economy Definitions">
+<meta property="og:description" content="The 51 definitions of the agentic economy grouped by settlement assumption: fiat, crypto-native, hybrid, neutral, or unstated.">
+<meta property="og:url" content="https://agenticeconomy.dev/agentic-economy-by-settlement">
+<meta property="og:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
+<meta property="og:site_name" content="Agentic Economy">
+<meta property="article:author" content="https://renedechamps.com">
+<meta property="article:published_time" content="2026-04-10T00:00:00Z">
+<meta property="article:modified_time" content="2026-04-10T00:00:00Z">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="By settlement assumption — 51 Agentic Economy Definitions">
+<meta name="twitter:description" content="The 51 definitions of the agentic economy grouped by settlement assumption: fiat, crypto-native, hybrid, neutral, or unstated.">
+<meta name="twitter:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "By settlement assumption — 51 Agentic Economy Definitions",
+  "description": "The 51 definitions of the agentic economy grouped by settlement assumption: fiat, crypto-native, hybrid, neutral, or unstated.",
+  "url": "https://agenticeconomy.dev/agentic-economy-by-settlement",
+  "numberOfItems": 51,
+  "isPartOf": { "@id": "https://agenticeconomy.dev/#website" },
+  "publisher": { "@id": "https://agenticeconomy.dev/#organization" }
+}
+</script>
+<style>
+:root{
+  --bg-deep:#04060e;--bg-surface:#0a0e1a;--bg-card:#0f1525;
+  --border:rgba(255,255,255,.08);--border-strong:rgba(255,255,255,.14);
+  --text-primary:#e8eaed;--text-secondary:#b5b8c1;--text-muted:#6b7087;
+  --accent:#34d399;--accent-glow:rgba(52,211,153,.12);
+  --cat-a:#3b82f6;--cat-b:#a78bfa;--cat-ccr:#f59e0b;--cat-cs:#34d399;--cat-d:#f87171;--cat-e:#22d3ee;
+  --font-display:'Syne',sans-serif;
+  --font-body:'Outfit',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg-deep);color:var(--text-primary);
+  font-family:var(--font-body);font-size:15px;line-height:1.6;
+  min-height:100vh;
+  background-image:radial-gradient(ellipse at 20% 10%,rgba(52,211,153,.04),transparent 50%),radial-gradient(ellipse at 80% 90%,rgba(59,130,246,.03),transparent 50%);
+}
+a{color:inherit;text-decoration:none}
+
+/* ── Nav ───────────────────────────────────────────── */
+.site-nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(4,6,14,.75);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.nav-container{
+  max-width:1320px;margin:0 auto;padding:1rem 2rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+}
+.nav-brand{font-family:var(--font-display);font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+.nav-menu{display:flex;gap:1.8rem;align-items:center}
+.nav-item{font-size:.88rem;color:var(--text-secondary);transition:color .2s;background:none;border:none;cursor:pointer;font-family:inherit;padding:.3rem 0}
+.nav-item:hover{color:var(--text-primary)}
+.nav-dropdown{position:relative}
+.dropdown-panel{
+  position:absolute;top:100%;left:50%;transform:translateX(-50%);
+  background:var(--bg-surface);border:1px solid var(--border-strong);
+  border-radius:10px;padding:.6rem;min-width:190px;
+  opacity:0;pointer-events:none;transition:all .2s;margin-top:.5rem;
+  box-shadow:0 18px 40px rgba(0,0,0,.4);
+}
+.nav-dropdown:hover .dropdown-panel{opacity:1;pointer-events:all}
+.dropdown-panel a{display:block;padding:.55rem .85rem;font-size:.85rem;border-radius:6px;color:var(--text-secondary)}
+.dropdown-panel a:hover{background:var(--bg-card);color:var(--text-primary)}
+.arrow{font-size:.6rem;margin-left:.3rem}
+.nav-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.4rem;cursor:pointer}
+@media(max-width:900px){
+  .nav-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg-surface);border-bottom:1px solid var(--border);flex-direction:column;align-items:stretch;padding:1rem 2rem;gap:.6rem}
+  .nav-menu.open{display:flex}
+  .nav-toggle{display:block}
+}
+
+/* ── Hero ──────────────────────────────────────────── */
+.hero{max-width:900px;margin:0 auto;padding:5rem 2rem 2.5rem;text-align:center}
+.hero .tag{
+  display:inline-block;font-family:var(--font-mono);font-size:.68rem;
+  padding:.35rem .75rem;border-radius:999px;
+  background:var(--accent-glow);color:var(--accent);
+  text-transform:uppercase;letter-spacing:.08em;margin-bottom:1.25rem;
+}
+.hero h1{font-family:var(--font-display);font-weight:800;font-size:clamp(1.8rem,4.5vw,2.8rem);line-height:1.1;margin-bottom:.85rem;letter-spacing:-.02em}
+.hero h1 em{color:var(--accent);font-style:italic;font-weight:700}
+.hero p{font-size:1.02rem;color:var(--text-secondary);max-width:680px;margin:0 auto 1.5rem}
+
+/* ── Cross-nav ─────────────────────────────────────── */
+.xnav{
+  max-width:1180px;margin:0 auto 2.5rem;padding:0 2rem;
+  display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;
+}
+.xnav-label{
+  font-family:var(--font-mono);font-size:.66rem;color:var(--text-muted);
+  text-transform:uppercase;letter-spacing:.08em;
+  display:flex;align-items:center;margin-right:.8rem;
+}
+.xnav-item{
+  padding:.4rem .85rem;font-size:.78rem;
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:999px;color:var(--text-secondary);transition:all .2s;
+}
+.xnav-item:hover{border-color:var(--accent);color:var(--accent)}
+.xnav-item.active{background:var(--accent);color:#04060e;border-color:var(--accent);font-weight:500}
+
+/* ── Stat pills ────────────────────────────────────── */
+.stats-row{
+  max-width:1180px;margin:0 auto 2.5rem;padding:0 2rem;
+  display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;
+}
+.stat-pill{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.55rem .9rem;
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:10px;font-size:.78rem;color:var(--text-secondary);
+  transition:all .2s;
+}
+.stat-pill:hover{border-color:var(--accent);color:var(--text-primary);transform:translateY(-1px)}
+.sp-count{font-family:var(--font-mono);font-size:1rem;font-weight:500;color:var(--accent)}
+.sp-label{white-space:nowrap}
+
+/* ── Bucket sections ───────────────────────────────── */
+main{max-width:1240px;margin:0 auto;padding:0 2rem 5rem}
+.bucket{margin-bottom:4rem;scroll-margin-top:80px}
+.bucket-head{margin-bottom:.85rem}
+.bucket-head h2{
+  font-family:var(--font-display);font-weight:800;font-size:1.8rem;
+  display:flex;align-items:baseline;gap:.7rem;letter-spacing:-.01em;
+  margin-bottom:.5rem;
+}
+.bucket-count{
+  font-family:var(--font-mono);font-size:1rem;font-weight:400;
+  color:var(--accent);
+}
+.bucket-bar{
+  position:relative;height:4px;background:var(--bg-card);border-radius:2px;
+  max-width:480px;
+}
+.bucket-bar-fill{
+  position:absolute;inset:0;background:var(--accent);
+  border-radius:2px;
+}
+.bucket-bar-pct{
+  position:absolute;left:100%;margin-left:.6rem;top:-.5rem;
+  font-family:var(--font-mono);font-size:.68rem;color:var(--text-muted);white-space:nowrap;
+}
+.bucket-narrative{
+  font-size:.95rem;color:var(--text-secondary);line-height:1.65;
+  max-width:780px;margin:1rem 0 1.5rem;
+}
+
+/* ── Cards ─────────────────────────────────────────── */
+.card-grid{
+  display:grid;gap:.9rem;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+}
+.card{
+  display:block;
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:12px;padding:1.1rem 1.15rem 1rem;
+  transition:all .2s;position:relative;
+}
+.card:hover{border-color:var(--border-strong);transform:translateY(-2px)}
+.c-top{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--font-mono);font-size:.68rem;color:var(--text-muted);
+  margin-bottom:.65rem;
+}
+.c-id{color:var(--text-primary);font-weight:500}
+.c-badge{
+  display:inline-block;font-family:var(--font-mono);font-size:.62rem;
+  padding:.15rem .45rem;border-radius:4px;color:#04060e;font-weight:600;
+  margin-bottom:.5rem;
+}
+.c-source{
+  font-family:var(--font-display);font-weight:800;font-size:1.08rem;line-height:1.2;
+  margin-bottom:.25rem;
+}
+.c-sub{font-size:.78rem;color:var(--text-secondary);margin-bottom:.5rem}
+.c-teaser{
+  font-size:.82rem;color:var(--text-muted);line-height:1.5;
+  margin:.5rem 0 .85rem;
+  font-style:italic;
+}
+.c-expand{
+  font-family:var(--font-mono);font-size:.64rem;
+  color:var(--text-muted);margin-top:.2rem;
+  opacity:.65;transition:opacity .2s;
+}
+.card:hover .c-expand{opacity:1;color:var(--accent)}
+
+/* ── Footer ───────────────────────────────────────── */
+.site-footer{
+  border-top:1px solid var(--border);
+  padding:3rem 2rem 1.5rem;margin-top:2rem;
+  max-width:1320px;margin-left:auto;margin-right:auto;
+}
+.footer-grid{
+  display:grid;gap:2rem;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  margin-bottom:2rem;
+}
+.footer-col h4{font-family:var(--font-display);font-weight:800;font-size:.82rem;margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--text-primary)}
+.footer-col a{display:block;font-size:.82rem;color:var(--text-muted);padding:.25rem 0;transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{font-size:.75rem;color:var(--text-muted);text-align:center;padding-top:1.5rem;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-container">
+    <a href="agentic-economy-101.html" class="nav-brand">agenticeconomy.dev</a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-menu">
+      <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
+      <div class="nav-dropdown">
+        <button class="nav-item nav-dropdown-trigger" data-href="agentic-economy-research.html">Research <span class="arrow">&#9662;</span></button>
+        <div class="dropdown-panel">
+          <a href="agentic-economy-research.html">Papers</a>
+          <a href="agentic-economy-definitions.html">51 Definitions</a>
+          <a href="agentic-economy-timeline.html">Timeline</a>
+          <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
+        <div class="dropdown-panel">
+          <a href="agentic-economy-glossary.html">Glossary</a>
+          <a href="agentic-economy-quiz.html">Quiz</a>
+          <a href="agentic-economy-infographic.html">Infographic</a>
+          <a href="ask-agentic-economy.html">Ask the Corpus</a>
+        </div>
+      </div>
+      <a href="about-agentic-economy.html" class="nav-item">About</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <span class="tag">Filtered view</span>
+  <h1>By settlement assumption</h1>
+  <p>How does each definition assume value moves between parties? Fiat, crypto, hybrid, or simply unstated?</p>
+</section>
+
+<div class="xnav">
+  <span class="xnav-label">Explore by:</span>
+  <a href="agentic-economy-by-settlement.html" class="xnav-item active">settlement assumption</a><a href="agentic-economy-by-actor-model.html" class="xnav-item">actor model</a><a href="agentic-economy-by-trust-model.html" class="xnav-item">trust model</a><a href="agentic-economy-by-infrastructure.html" class="xnav-item">infrastructure layer</a><a href="agentic-economy-by-actor-type.html" class="xnav-item">organization type</a><a href="agentic-economy-by-region.html" class="xnav-item">region</a>
+</div>
+
+<div class="stats-row"><a class="stat-pill" href="#fiat"><span class="sp-count">13</span><span class="sp-label">Fiat</span></a><a class="stat-pill" href="#crypto-native"><span class="sp-count">12</span><span class="sp-label">Crypto-native</span></a><a class="stat-pill" href="#hybrid"><span class="sp-count">3</span><span class="sp-label">Hybrid</span></a><a class="stat-pill" href="#neutral"><span class="sp-count">4</span><span class="sp-label">Settlement-neutral</span></a><a class="stat-pill" href="#unstated"><span class="sp-count">19</span><span class="sp-label">Unstated</span></a></div>
+
+<main>
+
+    <section class="bucket" id="fiat">
+      <div class="bucket-head">
+        <h2>Fiat <span class="bucket-count">13</span></h2>
+        <div class="bucket-bar"><div class="bucket-bar-fill" style="width:25%"></div><span class="bucket-bar-pct">25% of corpus</span></div>
+      </div>
+      <p class="bucket-narrative">Definitions that assume money moves over traditional card networks, bank rails, or wallet operators — where the agent initiates payment but a human cardholder remains liable.</p>
+      <div class="card-grid">
+        
+    <a class="card" href="agentic-economy-definitions.html#A1">
+      <div class="c-top">
+        <span class="c-id">A1</span>
+        <span class="c-date">May 2025 / CACM Jan 2026</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Microsoft Research</div>
+      <div class="c-sub">Rothschild, Mobius, Hofman et al.</div>
+      <div class="c-teaser">This is the most cited definition in the corpus. It is also the least ambitious.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A2">
+      <div class="c-top">
+        <span class="c-id">A2</span>
+        <span class="c-date">Sep 2025</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Stripe / OpenAI</div>
+      <div class="c-sub">Agentic Commerce Protocol (ACP) Working Group</div>
+      <div class="c-teaser">ACP is the Category A victory lap. Stripe owns the merchant relationship, OpenAI owns the user, and the agent is a convenience layer between two pre-existing customers.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A3">
+      <div class="c-top">
+        <span class="c-id">A3</span>
+        <span class="c-date">Jan 2026</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Google / Shopify / Walmart</div>
+      <div class="c-sub">Universal Commerce Protocol (UCP) Working Group</div>
+      <div class="c-teaser">Google's response to ACP: same category, bigger surface area.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A4">
+      <div class="c-top">
+        <span class="c-id">A4</span>
+        <span class="c-date">2025</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Google / Mastercard / PayPal</div>
+      <div class="c-sub">AP2 Working Group</div>
+      <div class="c-teaser">AP2 is the most honest Category A definition: OAuth is not an economic model, it is a permission model, and the agent only spends what the human already granted.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A5">
+      <div class="c-top">
+        <span class="c-id">A5</span>
+        <span class="c-date">Mar 2026</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Visa</div>
+      <div class="c-sub">Visa (Agentic Ready program)</div>
+      <div class="c-teaser">Visa's biometric tether is the clearest admission in the corpus that the agentic economy is, at this layer, an interchange-defense project.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A6">
+      <div class="c-top">
+        <span class="c-id">A6</span>
+        <span class="c-date">Dec 2025</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Mastercard</div>
+      <div class="c-sub">Mastercard (Agent Pay)</div>
+      <div class="c-teaser">The agent has a budget, not a bank account. That is the whole definition, and the phrase deserves to be quoted every time someone calls this autonomy.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A7">
+      <div class="c-top">
+        <span class="c-id">A7</span>
+        <span class="c-date">Aug 2025</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">McKinsey &amp; Company</div>
+      <div class="c-sub">McKinsey (institutional)</div>
+      <div class="c-teaser">McKinsey names the thing many incumbents depend on and cannot say out loud: the 'inertia dividend.'</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A8">
+      <div class="c-top">
+        <span class="c-id">A8</span>
+        <span class="c-date">Jan 2026</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">IBM</div>
+      <div class="c-sub">IBM Think</div>
+      <div class="c-teaser">The IBM definition is the one that proves Category A has become the default.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A9">
+      <div class="c-top">
+        <span class="c-id">A9</span>
+        <span class="c-date">2025–2026</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Salesforce</div>
+      <div class="c-sub">Salesforce (corporate)</div>
+      <div class="c-teaser">Salesforce's definition is a Trojan horse: call it agentic, sell it as Einstein, and keep the seat licenses intact.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A10">
+      <div class="c-top">
+        <span class="c-id">A10</span>
+        <span class="c-date">2025–2026</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">JPMorgan</div>
+      <div class="c-sub">JPMorgan (corporate)</div>
+      <div class="c-teaser">JPMorgan's framing is the financial-services version of A1: the agent assists, the advisor approves, the compliance chain is untouched.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A11">
+      <div class="c-top">
+        <span class="c-id">A11</span>
+        <span class="c-date">2025–2026</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Nosto</div>
+      <div class="c-sub">Nosto (corporate)</div>
+      <div class="c-teaser">The Nosto definition is what happens when an existing recommendation engine gets rebaptized as 'agentic' without rebuilding anything.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#A12">
+      <div class="c-top">
+        <span class="c-id">A12</span>
+        <span class="c-date">2025</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Deloitte (commerce context)</div>
+      <div class="c-sub">Deloitte Insights</div>
+      <div class="c-teaser">Deloitte's commerce definition and Deloitte's workforce definition (B4) are internally incompatible, which is the single most telling fact about the state of the literature.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#B8">
+      <div class="c-top">
+        <span class="c-id">B8</span>
+        <span class="c-date">Feb 2025</span>
+      </div>
+      <div class="c-badge" style="background:#a78bfa">B</div>
+      <div class="c-source">NotoriousPLG</div>
+      <div class="c-sub">NotoriousPLG (analyst newsletter)</div>
+      <div class="c-teaser">NotoriousPLG's refinement is the useful one: outcome-based pricing is real, but it prices by vertical, not by compute.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+      </div>
+    </section>
+
+    <section class="bucket" id="crypto-native">
+      <div class="bucket-head">
+        <h2>Crypto-native <span class="bucket-count">12</span></h2>
+        <div class="bucket-bar"><div class="bucket-bar-fill" style="width:24%"></div><span class="bucket-bar-pct">24% of corpus</span></div>
+      </div>
+      <p class="bucket-narrative">Definitions where agents transact with stablecoins, L1 tokens, or L2-settled value — no human-held card in the loop, disputes handled by code or DAO, identity on-chain.</p>
+      <div class="card-grid">
+        
+    <a class="card" href="agentic-economy-definitions.html#C1">
+      <div class="c-top">
+        <span class="c-id">C1</span>
+        <span class="c-date">2021–2025</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">Fetch.ai / ASI Alliance</div>
+      <div class="c-sub">Fetch.ai (ASI Alliance)</div>
+      <div class="c-teaser">Fetch.ai is the project that has been doing this the longest, which makes its design choices historically load-bearing for the entire category.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#C2">
+      <div class="c-top">
+        <span class="c-id">C2</span>
+        <span class="c-date">2021–2025</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">Olas (Valory)</div>
+      <div class="c-sub">Valory (Olas Network)</div>
+      <div class="c-teaser">Olas is what the DAO governance model looks like when you take it seriously as economic infrastructure rather than as a slogan.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#C3">
+      <div class="c-top">
+        <span class="c-id">C3</span>
+        <span class="c-date">May 2025</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">Coinbase / Cloudflare</div>
+      <div class="c-sub">x402 Working Group</div>
+      <div class="c-teaser">x402 is the cleanest piece of engineering in the entire corpus, and it still requires a crypto wallet.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#C4">
+      <div class="c-top">
+        <span class="c-id">C4</span>
+        <span class="c-date">Mar 2026</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">Circle</div>
+      <div class="c-sub">Circle (Nanopayments testnet)</div>
+      <div class="c-teaser">Circle fixes the micropayment cost problem. It does not fix the wallet provisioning problem, and the wallet provisioning problem is the one that matters for onboarding new economic actors.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#C5">
+      <div class="c-top">
+        <span class="c-id">C5</span>
+        <span class="c-date">2026</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">Kite</div>
+      <div class="c-sub">Kite (project)</div>
+      <div class="c-teaser">Kite is the Category C project that most explicitly absorbs the WEF's Know Your Agent language and hardwires it into the chain itself.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#C6">
+      <div class="c-top">
+        <span class="c-id">C6</span>
+        <span class="c-date">Dec 2025</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">Gate Ventures</div>
+      <div class="c-sub">Gate Ventures research</div>
+      <div class="c-teaser">A VC framework, not a protocol — but influential precisely because VC frameworks set funding priorities.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#C7">
+      <div class="c-top">
+        <span class="c-id">C7</span>
+        <span class="c-date">Feb 2025</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">Ken Huang &amp; Lisa Tan</div>
+      <div class="c-sub">Huang, K.; Tan, L.</div>
+      <div class="c-teaser">Springer's imprimatur is doing real work here: a venture bet becomes a citable foundation the moment it gets a peer-reviewed cover.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#C8">
+      <div class="c-top">
+        <span class="c-id">C8</span>
+        <span class="c-date">Feb 2026</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">Xu et al.</div>
+      <div class="c-sub">Xu et al. (arXiv:2602.14219)</div>
+      <div class="c-teaser">Xu et al. is the most complete statement of the Category C orthodoxy — and therefore the clearest target.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#C10">
+      <div class="c-top">
+        <span class="c-id">C10</span>
+        <span class="c-date">2018–2025</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">Bosch / IOTA / BearingPoint</div>
+      <div class="c-sub">Bosch Research, IOTA Foundation, BearingPoint</div>
+      <div class="c-teaser">The Bosch/IOTA project is the reminder that Category C was not invented in 2024 — it is an IoT idea that got a new reason to exist once the machines started to sound intelligent.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#C11">
+      <div class="c-top">
+        <span class="c-id">C11</span>
+        <span class="c-date">2026</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">OKX</div>
+      <div class="c-sub">OKX (OnchainOS)</div>
+      <div class="c-teaser">OKX's framing is the interface argument: the agent speaks, the infrastructure translates.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#D3">
+      <div class="c-top">
+        <span class="c-id">D3</span>
+        <span class="c-date">2025–2026</span>
+      </div>
+      <div class="c-badge" style="background:#f87171">D</div>
+      <div class="c-source">a16z Crypto / YC / Medium</div>
+      <div class="c-sub">Various (a16z Crypto, YC, Medium essays)</div>
+      <div class="c-teaser">'Sovereign' is the loudest word in the corpus, and a16z uses it deliberately.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#D5">
+      <div class="c-top">
+        <span class="c-id">D5</span>
+        <span class="c-date">Jan 2026</span>
+      </div>
+      <div class="c-badge" style="background:#f87171">D</div>
+      <div class="c-source">Antler VC</div>
+      <div class="c-sub">Antler (Unleashing the Autonomous Economy)</div>
+      <div class="c-teaser">Antler's report is the cleanest example of VC-produced taxonomy that reads like due diligence: the companies named are the companies funded.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+      </div>
+    </section>
+
+    <section class="bucket" id="hybrid">
+      <div class="bucket-head">
+        <h2>Hybrid <span class="bucket-count">3</span></h2>
+        <div class="bucket-bar"><div class="bucket-bar-fill" style="width:6%"></div><span class="bucket-bar-pct">6% of corpus</span></div>
+      </div>
+      <p class="bucket-narrative">Definitions that explicitly straddle fiat and crypto — agents can pay either way depending on counterparty capability. The most realistic, but also the hardest to standardize.</p>
+      <div class="card-grid">
+        
+    <a class="card" href="agentic-economy-definitions.html#A13">
+      <div class="c-top">
+        <span class="c-id">A13</span>
+        <span class="c-date">Mar 2026</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Stripe / Tempo</div>
+      <div class="c-sub">Stripe Tempo (Machine Payment Protocol)</div>
+      <div class="c-teaser">MPP is the first serious Category A attempt to describe agent-to-agent payments without abandoning the card rails.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#C9">
+      <div class="c-top">
+        <span class="c-id">C9</span>
+        <span class="c-date">2026</span>
+      </div>
+      <div class="c-badge" style="background:#f59e0b">C<sub>cr</sub></div>
+      <div class="c-source">Nevermined</div>
+      <div class="c-sub">Nevermined (project)</div>
+      <div class="c-teaser">Nevermined's hybrid settlement is pragmatic and also proves the point: the moment you need fiat, the blockchain stops being sufficient.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#D2">
+      <div class="c-top">
+        <span class="c-id">D2</span>
+        <span class="c-date">2026</span>
+      </div>
+      <div class="c-badge" style="background:#f87171">D</div>
+      <div class="c-source">Bank for International Settlements (BIS)</div>
+      <div class="c-sub">BIS (Agentic Finance working paper)</div>
+      <div class="c-teaser">When the central bank of central banks analyzes agentic finance, it is a financial stability question, not a tech question.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+      </div>
+    </section>
+
+    <section class="bucket" id="neutral">
+      <div class="bucket-head">
+        <h2>Settlement-neutral <span class="bucket-count">4</span></h2>
+        <div class="bucket-bar"><div class="bucket-bar-fill" style="width:8%"></div><span class="bucket-bar-pct">8% of corpus</span></div>
+      </div>
+      <p class="bucket-narrative">Definitions that deliberately do not commit to a settlement mechanism: the framework works above the rails, leaving fiat, crypto, or machine-native currencies all valid.</p>
+      <div class="card-grid">
+        
+    <a class="card" href="agentic-economy-definitions.html#C12">
+      <div class="c-top">
+        <span class="c-id">C12</span>
+        <span class="c-date">Mar 2026</span>
+      </div>
+      <div class="c-badge" style="background:#34d399">C<sub>s</sub></div>
+      <div class="c-source">BotNode / VMP-1.0</div>
+      <div class="c-sub">Dechamps Otamendi, R.</div>
+      <div class="c-teaser">One entry in a category of eleven — either a data point or a gap, and this paper reads it as a gap.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#E4">
+      <div class="c-top">
+        <span class="c-id">E4</span>
+        <span class="c-date">2026 (Draft)</span>
+      </div>
+      <div class="c-badge" style="background:#22d3ee">E</div>
+      <div class="c-source">IEEE</div>
+      <div class="c-sub">IEEE 7012 Working Group</div>
+      <div class="c-teaser">IEEE 7012 is the first formal standards body to treat agent-to-agent contracts as something requiring a standard rather than a whitepaper.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#E6">
+      <div class="c-top">
+        <span class="c-id">E6</span>
+        <span class="c-date">2026 (Internet-Draft)</span>
+      </div>
+      <div class="c-badge" style="background:#22d3ee">E</div>
+      <div class="c-source">IETF</div>
+      <div class="c-sub">IETF VCAP Working Group</div>
+      <div class="c-teaser">VCAP is what the verification problem looks like when the IETF takes it seriously.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#E10">
+      <div class="c-top">
+        <span class="c-id">E10</span>
+        <span class="c-date">Jan 2026</span>
+      </div>
+      <div class="c-badge" style="background:#22d3ee">E</div>
+      <div class="c-source">Goenka et al.</div>
+      <div class="c-sub">Goenka et al. (arXiv:2602.00213)</div>
+      <div class="c-teaser">TessPay is the academic version of the verification problem VCAP is standardizing, and the complementarity with reputation systems is exactly the kind of layering a mature Category C needs.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+      </div>
+    </section>
+
+    <section class="bucket" id="unstated">
+      <div class="bucket-head">
+        <h2>Unstated <span class="bucket-count">19</span></h2>
+        <div class="bucket-bar"><div class="bucket-bar-fill" style="width:37%"></div><span class="bucket-bar-pct">37% of corpus</span></div>
+      </div>
+      <p class="bucket-narrative">Definitions that never say how settlement happens at all — most analytical, aspirational, or workforce framings fall here. The silence is itself data.</p>
+      <div class="card-grid">
+        
+    <a class="card" href="agentic-economy-definitions.html#A14">
+      <div class="c-top">
+        <span class="c-id">A14</span>
+        <span class="c-date">Feb 2026</span>
+      </div>
+      <div class="c-badge" style="background:#3b82f6">A</div>
+      <div class="c-source">Jason Cochran</div>
+      <div class="c-sub">Cochran, J.</div>
+      <div class="c-teaser">Cochran's insight is that the unit of value is the workflow, not the transaction — and that is why he ends up describing something that looks like Category B with a Category A byline.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#B1">
+      <div class="c-top">
+        <span class="c-id">B1</span>
+        <span class="c-date">2025–2026</span>
+      </div>
+      <div class="c-badge" style="background:#a78bfa">B</div>
+      <div class="c-source">Gartner</div>
+      <div class="c-sub">Gartner (institutional)</div>
+      <div class="c-teaser">The optimism and the skepticism come from the same analyst house, and the two forecasts are not reconciled anywhere.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#B2">
+      <div class="c-top">
+        <span class="c-id">B2</span>
+        <span class="c-date">May 2025</span>
+      </div>
+      <div class="c-badge" style="background:#a78bfa">B</div>
+      <div class="c-source">Sequoia Capital (Bob McGrew)</div>
+      <div class="c-sub">McGrew, B. (ex-OpenAI CTO)</div>
+      <div class="c-teaser">McGrew's thesis is clean and ruthless: if supply is near-infinite, price trends to marginal compute cost, and every software company priced on seats is sitting on a cliff.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#B3">
+      <div class="c-top">
+        <span class="c-id">B3</span>
+        <span class="c-date">May 2025</span>
+      </div>
+      <div class="c-badge" style="background:#a78bfa">B</div>
+      <div class="c-source">Sequoia Capital (Konstantine Buhler)</div>
+      <div class="c-sub">Buhler, K.</div>
+      <div class="c-teaser">Buhler's definition is the most ambitious in the corpus outside Category C, and it gives the whole structure away in one line: 'actually have their own economy.'</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#B4">
+      <div class="c-top">
+        <span class="c-id">B4</span>
+        <span class="c-date">2025</span>
+      </div>
+      <div class="c-badge" style="background:#a78bfa">B</div>
+      <div class="c-source">Deloitte (Agentic Enterprise)</div>
+      <div class="c-sub">Deloitte Insights</div>
+      <div class="c-teaser">Here the agent is an employee, not a shopper. Same firm, different deck, different taxonomy.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#B5">
+      <div class="c-top">
+        <span class="c-id">B5</span>
+        <span class="c-date">2025</span>
+      </div>
+      <div class="c-badge" style="background:#a78bfa">B</div>
+      <div class="c-source">Capgemini / OECD</div>
+      <div class="c-sub">Capgemini Research Institute, OECD (joint framing)</div>
+      <div class="c-teaser">The numbers are real; the framing is strictly enterprise-internal.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#B6">
+      <div class="c-top">
+        <span class="c-id">B6</span>
+        <span class="c-date">Mar 2026</span>
+      </div>
+      <div class="c-badge" style="background:#a78bfa">B</div>
+      <div class="c-source">Vilnius University</div>
+      <div class="c-sub">Vilnius University research group</div>
+      <div class="c-teaser">The Vilnius definition captures the intra-organizational layer of Category B — agents as a distributed workforce that coordinates with itself before it coordinates with humans.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#B7">
+      <div class="c-top">
+        <span class="c-id">B7</span>
+        <span class="c-date">2025</span>
+      </div>
+      <div class="c-badge" style="background:#a78bfa">B</div>
+      <div class="c-source">Pascal Bornet et al.</div>
+      <div class="c-sub">Bornet, P.; et al. (World Scientific)</div>
+      <div class="c-teaser">'AI as entrepreneur' is the point where Category B starts to rhyme with Category C.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#D1">
+      <div class="c-top">
+        <span class="c-id">D1</span>
+        <span class="c-date">Jul 2025</span>
+      </div>
+      <div class="c-badge" style="background:#f87171">D</div>
+      <div class="c-source">World Economic Forum</div>
+      <div class="c-sub">WEF (institutional)</div>
+      <div class="c-teaser">WEF documents do not do taxonomy. They do vocabulary.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#D4">
+      <div class="c-top">
+        <span class="c-id">D4</span>
+        <span class="c-date">2026</span>
+      </div>
+      <div class="c-badge" style="background:#f87171">D</div>
+      <div class="c-source">Macroeconomic doom loop (convergent)</div>
+      <div class="c-sub">Various economists</div>
+      <div class="c-teaser">The doom loop is the definition that nobody wants to sign.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#D6">
+      <div class="c-top">
+        <span class="c-id">D6</span>
+        <span class="c-date">Mar 2026</span>
+      </div>
+      <div class="c-badge" style="background:#f87171">D</div>
+      <div class="c-source">Argoz Consultants</div>
+      <div class="c-sub">Argoz Consultants</div>
+      <div class="c-teaser">Argoz takes the most ambitious Category C language and strips out every implementation commitment, which is either diplomacy or intellectual hedging.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#D7">
+      <div class="c-top">
+        <span class="c-id">D7</span>
+        <span class="c-date">Nov 2025</span>
+      </div>
+      <div class="c-badge" style="background:#f87171">D</div>
+      <div class="c-source">MIT Technology Review (EmTech)</div>
+      <div class="c-sub">MIT Technology Review</div>
+      <div class="c-teaser">The 'DNS of the agentic web' framing is the one that gets quoted, and the one that hides how much settlement design is being smuggled into a discovery protocol.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#E1">
+      <div class="c-top">
+        <span class="c-id">E1</span>
+        <span class="c-date">Apr 2025</span>
+      </div>
+      <div class="c-badge" style="background:#22d3ee">E</div>
+      <div class="c-source">Google (Linux Foundation)</div>
+      <div class="c-sub">Google A2A Working Group</div>
+      <div class="c-teaser">A2A's silence on payment and settlement is the most consequential design decision in this entire corpus.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#E2">
+      <div class="c-top">
+        <span class="c-id">E2</span>
+        <span class="c-date">2024</span>
+      </div>
+      <div class="c-badge" style="background:#22d3ee">E</div>
+      <div class="c-source">Anthropic</div>
+      <div class="c-sub">Anthropic (Model Context Protocol)</div>
+      <div class="c-teaser">MCP is the tool layer, and like A2A it is deliberately silent on economics.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#E3">
+      <div class="c-top">
+        <span class="c-id">E3</span>
+        <span class="c-date">2026</span>
+      </div>
+      <div class="c-badge" style="background:#22d3ee">E</div>
+      <div class="c-source">Trulioo / Worldpay / Skyfire</div>
+      <div class="c-sub">Trulioo, Worldpay, Skyfire (KYA coalition)</div>
+      <div class="c-teaser">Trulioo et al. are doing the unglamorous work of building what the WEF vocabulary requires.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#E5">
+      <div class="c-top">
+        <span class="c-id">E5</span>
+        <span class="c-date">2025–2026</span>
+      </div>
+      <div class="c-badge" style="background:#22d3ee">E</div>
+      <div class="c-source">Forrester / Exista.io</div>
+      <div class="c-sub">Forrester Research, Exista.io</div>
+      <div class="c-teaser">ADO is the moment the agent economy starts generating its own marketing category, which is usually a lagging indicator that the category has become real in the commercial sense.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#E7">
+      <div class="c-top">
+        <span class="c-id">E7</span>
+        <span class="c-date">2026</span>
+      </div>
+      <div class="c-badge" style="background:#22d3ee">E</div>
+      <div class="c-source">OECD</div>
+      <div class="c-sub">OECD (Working Paper on Agentic AI)</div>
+      <div class="c-teaser">What the OECD names, legislators regulate.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#E8">
+      <div class="c-top">
+        <span class="c-id">E8</span>
+        <span class="c-date">Oct 2025</span>
+      </div>
+      <div class="c-badge" style="background:#22d3ee">E</div>
+      <div class="c-source">a16z (Keycard)</div>
+      <div class="c-sub">a16z (Keycard investment memo)</div>
+      <div class="c-teaser">The 96:1 ratio is the most quotable number in the entire corpus, and it says finance has already crossed the non-human-majority line before anyone wrote a definition for the category.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+    <a class="card" href="agentic-economy-definitions.html#E9">
+      <div class="c-top">
+        <span class="c-id">E9</span>
+        <span class="c-date">2021</span>
+      </div>
+      <div class="c-badge" style="background:#22d3ee">E</div>
+      <div class="c-source">Urbach et al.</div>
+      <div class="c-sub">Urbach et al. (PACIS 2021)</div>
+      <div class="c-teaser">Urbach et al. is the 2021 paper that defined the problem four years before the infrastructure could solve it.</div>
+      <div class="c-expand">Open in corpus &rarr;</div>
+    </a>
+      </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Research</h4>
+      <a href="agentic-economy-research.html">Papers</a>
+      <a href="agentic-economy-definitions.html">51 Definitions</a>
+      <a href="agentic-economy-timeline.html">Timeline</a>
+      <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+    </div>
+    <div class="footer-col">
+      <h4>Filtered views</h4>
+      <a href="agentic-economy-by-settlement.html">By settlement</a>
+      <a href="agentic-economy-by-actor-model.html">By actor model</a>
+      <a href="agentic-economy-by-trust-model.html">By trust model</a>
+      <a href="agentic-economy-by-infrastructure.html">By infrastructure</a>
+      <a href="agentic-economy-by-actor-type.html">By organization type</a>
+      <a href="agentic-economy-by-region.html">By region</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="agentic-economy-glossary.html">Glossary</a>
+      <a href="agentic-economy-quiz.html">Quiz</a>
+      <a href="agentic-economy-infographic.html">Infographic</a>
+      <a href="ask-agentic-economy.html">Ask the Corpus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Project</h4>
+      <a href="about-agentic-economy.html">About</a>
+      <a href="https://github.com/renedechamps/agenticeconomy" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:rene@renedechamps.com">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Rene Dechamps Otamendi &middot; CC BY-SA 4.0 &middot; Part of the <a href="agentic-economy-definitions.html" style="color:var(--accent)">51 Definitions corpus</a></p>
+  </div>
+</footer>
+
+<script>
+document.querySelector('.nav-toggle').addEventListener('click',()=>{
+  document.querySelector('.nav-menu').classList.toggle('open');
+});
+document.querySelectorAll('.nav-dropdown-trigger').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    if(window.innerWidth<=900){e.preventDefault();btn.closest('.nav-dropdown').classList.toggle('open')}
+  });
+});
+</script>
+</body>
+</html>
