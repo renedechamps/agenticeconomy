@@ -166,13 +166,17 @@
         }
 
         section {
-            min-height: 100vh;
+            min-height: auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4rem;
+            padding: 3.5rem;
             opacity: 0;
             animation: fadeInUp 1s ease forwards;
+        }
+
+        #section-1 {
+            min-height: 100vh;
         }
 
         section.visible {
@@ -683,6 +687,17 @@
             }
         }
     
+        /* ── Tech company links ── */
+        .tech-link {
+          color: var(--accent);
+          text-decoration: none;
+          border-bottom: 1px solid rgba(52,211,153,0.3);
+          transition: border-color 0.2s;
+        }
+        .tech-link:hover {
+          border-bottom-color: var(--accent);
+        }
+
         /* ── Unified Footer ── */
 .site-footer{background:var(--bg-deep);padding:64px 0 32px;border-top:1px solid var(--border)}
 .footer-grid{max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
@@ -898,7 +913,7 @@
                     That's what the main paper is about.
                 </div>
                 <div style="text-align: center;">
-                    <a href="https://zenodo.org/records/19208278" class="paper-link" target="_blank" rel="noopener">Read "Two Economies, Not One" →</a>
+                    <a href="agentic-economy-research.html" class="paper-link">Read "Two Economies, Not One" →</a>
                 </div>
             </div>
         </section>
@@ -908,14 +923,14 @@
             <div class="section-content">
                 <h2>The biggest names in tech. Building the infrastructure.</h2>
                 <div class="builders-grid">
-                    <div class="builder-card">Stripe</div>
-                    <div class="builder-card">Google</div>
-                    <div class="builder-card">Visa</div>
-                    <div class="builder-card">Mastercard</div>
-                    <div class="builder-card">PayPal</div>
-                    <div class="builder-card">OpenAI</div>
-                    <div class="builder-card">IBM</div>
-                    <div class="builder-card">McKinsey</div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-stripe-openai-a2" class="tech-link">Stripe</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-google-e1" class="tech-link">Google</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-visa-a5" class="tech-link">Visa</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-mastercard-a6" class="tech-link">Mastercard</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-google-mastercard-paypal-a4" class="tech-link">PayPal</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-stripe-openai-a2" class="tech-link">OpenAI</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-ibm-a8" class="tech-link">IBM</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-mckinsey-a7" class="tech-link">McKinsey</a></div>
                     <div class="builder-card">Gartner</div>
                     <div class="builder-card">Sequoia</div>
                     <div class="builder-card">Deloitte</div>
@@ -926,7 +941,7 @@
                     <div class="builder-card">Fetch.ai</div>
                     <div class="builder-card">Olas</div>
                     <div class="builder-card">BotNode</div>
-                    <div class="builder-card">Anthropic</div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-anthropic-e2" class="tech-link">Anthropic</a></div>
                     <div class="builder-card">IEEE</div>
                     <div class="builder-card">IETF</div>
                     <div class="builder-card">Forrester</div>
