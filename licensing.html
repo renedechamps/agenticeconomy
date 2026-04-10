@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Licensing — Agentic Economy</title>
+<meta name="description" content="Licensing information for AgenticEconomy.dev. Corpus CC BY-SA 4.0, preprints CC BY 4.0. BibTeX citations for all three Zenodo papers.">
+<meta name="author" content="Rene Dechamps Otamendi">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://agenticeconomy.dev/licensing">
+<meta name="theme-color" content="#04060e">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg-deep: #04060e;
+      --bg-base: #080d1c;
+      --bg-surface: #0f1530;
+      --bg-card: #141a38;
+      --border: #1a2348;
+      --border-light: #233060;
+      --text-primary: #e8ecf4;
+      --text-secondary: #a0a9c0;
+      --text-muted: #8e99b8;
+      --accent: #34d399;
+      --accent-dim: #1a6b4d;
+      --accent-glow: rgba(52,211,153,0.12);
+      --accent-glow-strong: rgba(52,211,153,0.25);
+      --warm: #f59e0b;
+      --ease-out: cubic-bezier(0.16,1,0.3,1);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.7;
+      padding-top: 56px;
+      overflow-x: hidden;
+      font-size: 1.05rem;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 3rem;
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1.3;
+      color: var(--text-primary);
+      margin-bottom: 0.8rem;
+      margin-top: 2.5rem;
+    }
+
+    h4 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: 1.15rem;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: rgba(4, 6, 14, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 56px;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
+    }
+
+    .nav-container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-brand {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .nav-brand:hover {
+      text-decoration: none;
+      color: var(--accent);
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex: 1;
+    }
+
+    .nav-item {
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      white-space: nowrap;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.3s var(--ease-out);
+    }
+
+    .nav-item:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-dropdown-trigger .arrow {
+      display: inline-block;
+      font-size: 0.6rem;
+      transition: transform 0.3s var(--ease-out);
+    }
+
+    .nav-dropdown-trigger.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-panel {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 0;
+      min-width: 200px;
+      margin-top: 8px;
+      display: none;
+      flex-direction: column;
+      box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
+    }
+
+    .dropdown-panel.active {
+      display: flex;
+    }
+
+    @media (min-width: 769px) {
+      .nav-dropdown:hover .dropdown-panel {
+        display: flex;
+      }
+      .nav-dropdown:hover .nav-dropdown-trigger .arrow {
+        transform: rotate(180deg);
+      }
+    }
+
+    .dropdown-panel a {
+      padding: 10px 20px;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      transition: all 0.3s var(--ease-out);
+      border-left: 3px solid transparent;
+    }
+
+    .dropdown-panel a:hover {
+      color: var(--accent);
+      background-color: rgba(52, 211, 153, 0.08);
+      border-left-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent);
+    }
+
+    /* Page header */
+    .page-header {
+      padding: 64px 0 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-header .label {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 500;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .page-header .last-updated {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-top: 0.75rem;
+    }
+
+    /* Content */
+    .legal-content {
+      padding: 56px 0 80px;
+    }
+
+    .legal-body {
+      max-width: 760px;
+    }
+
+    .legal-body p {
+      color: var(--text-secondary);
+      margin-bottom: 1.2rem;
+    }
+
+    .legal-body ul {
+      color: var(--text-secondary);
+      margin-bottom: 1.2rem;
+      padding-left: 1.5rem;
+    }
+
+    .legal-body ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .legal-body h2 {
+      padding-top: 1rem;
+    }
+
+    .legal-body h2:first-child {
+      margin-top: 0;
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 3rem;
+      max-width: 480px;
+    }
+
+    .toc h3 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .toc ol {
+      padding-left: 1.25rem;
+    }
+
+    .toc li {
+      margin-bottom: 0.4rem;
+    }
+
+    .toc a {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .toc a:hover {
+      color: var(--accent);
+    }
+
+    /* License badge (text-only) */
+    .license-badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      border: 1px solid var(--accent-dim);
+      color: var(--accent);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      letter-spacing: 0.03em;
+    }
+
+    /* BibTeX block */
+    .bibtex-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-dim);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 1.5rem;
+      overflow-x: auto;
+    }
+
+    .bibtex-block pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      white-space: pre;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--bg-base);
+      border-top: 1px solid var(--border);
+      padding: 64px 0 32px;
+      margin-top: 96px;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      text-transform: none;
+    }
+
+    .footer-col a {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s var(--ease-out);
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .badge-soon {
+      display: inline-block;
+      background-color: rgba(245, 158, 11, 0.15);
+      color: var(--warm);
+      font-size: 0.65rem;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        background: var(--bg-base);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+
+      h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+</style>
+</head>
+<body>
+
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">agenticeconomy.dev</a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-menu">
+      <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
+      <div class="nav-dropdown">
+        <button class="nav-item nav-dropdown-trigger" data-href="agentic-economy-research.html">Research <span class="arrow">&#9662;</span></button>
+        <div class="dropdown-panel">
+          <a href="agentic-economy-research.html">Papers</a>
+          <a href="agentic-economy-definitions.html">51 Definitions</a>
+          <a href="agentic-economy-timeline.html">Timeline</a>
+          <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
+        <div class="dropdown-panel">
+          <a href="agentic-economy-glossary.html">Glossary</a>
+          <a href="agentic-economy-quiz.html">Quiz</a>
+          <a href="agentic-economy-infographic.html">Infographic</a>
+          <a href="ask-agentic-economy.html">Ask the Corpus</a>
+        </div>
+      </div>
+      <a href="about-agentic-economy.html" class="nav-item">About</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Header -->
+<div class="page-header">
+  <div class="container">
+    <nav class="breadcrumb"><a href="/">Home</a> / <a href="#">Legal</a> / Licensing</nav>
+    <span class="label">Legal</span>
+    <h1>Licensing</h1>
+    <p class="last-updated">Last updated: April 10, 2026</p>
+  </div>
+</div>
+
+<!-- Content -->
+<div class="legal-content">
+  <div class="container">
+    <div class="legal-body">
+
+      <div class="toc">
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#corpus">Corpus &amp; analytical notes</a></li>
+          <li><a href="#papers">Papers (preprints)</a></li>
+          <li><a href="#site-code">Site code</a></li>
+          <li><a href="#how-to-cite">How to cite (ORCID)</a></li>
+          <li><a href="#not-open">What is NOT open</a></li>
+        </ol>
+      </div>
+
+      <h2 id="corpus">1. Corpus &amp; analytical notes</h2>
+      <span class="license-badge">CC BY-SA 4.0</span>
+      <p>The agentic economy corpus — all 51+ surveyed definitions, the categorical analysis, the protocol matrix data, the glossary, and associated analytical notes — is published under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)</a>.</p>
+      <p>You are free to share (copy and redistribute) and adapt (remix, transform, build upon) this material for any purpose, including commercially, under the following conditions:</p>
+      <ul>
+        <li><strong>Attribution</strong> — you must give appropriate credit to René Dechamps Otamendi and AgenticEconomy.dev, provide a link to the license, and indicate if changes were made.</li>
+        <li><strong>ShareAlike</strong> — if you remix, transform, or build upon the material, you must distribute your contributions under the same CC BY-SA 4.0 license.</li>
+      </ul>
+
+      <h2 id="papers">2. Papers (preprints)</h2>
+      <span class="license-badge">CC BY 4.0</span>
+      <p>The three preprints published on Zenodo are licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>. Attribution is required; no share-alike condition applies to derivatives of the papers themselves.</p>
+      <p>Please use the following BibTeX citations:</p>
+
+      <div class="bibtex-block">
+        <pre>@misc{dechamps2025taxonomy,
+  author    = {Dechamps Otamendi, René},
+  title     = {Two Economies, Not One - A Taxonomy of the Agentic
+               Economy and the Case for Settlement Neutrality},
+  year      = {2025},
+  publisher = {Zenodo},
+  note      = {Preprint}
+}</pre>
+      </div>
+
+      <div class="bibtex-block">
+        <pre>@misc{dechamps2025cri,
+  author    = {Dechamps Otamendi, René},
+  title     = {Commerce Readiness Index for Agentic Economy Protocols},
+  year      = {2025},
+  publisher = {Zenodo},
+  note      = {Preprint}
+}</pre>
+      </div>
+
+      <div class="bibtex-block">
+        <pre>@misc{dechamps2025oracle,
+  author    = {Dechamps Otamendi, René},
+  title     = {The Oracle Problem in Agent-to-Agent Commerce},
+  year      = {2025},
+  publisher = {Zenodo},
+  note      = {Preprint}
+}</pre>
+      </div>
+
+      <h2 id="site-code">3. Site code</h2>
+      <p>&copy;2026 René Dechamps Otamendi · All rights reserved.</p>
+      <p>The HTML, CSS, JavaScript, and SVG artwork constituting this website are proprietary. They are not released under an open-source license. You may not copy, reproduce, or redistribute the site code without explicit written permission.</p>
+
+      <h2 id="how-to-cite">4. How to cite (ORCID)</h2>
+      <p>For general citations of this research hub:</p>
+      <p><strong>René Dechamps Otamendi</strong><br>
+      ORCID: <a href="https://orcid.org/0009-0007-1033-6519" target="_blank" rel="noopener">0009-0007-1033-6519</a><br>
+      AgenticEconomy.dev</p>
+      <p>For individual papers, use the BibTeX entries in §2 above and the DOI from each paper's Zenodo record.</p>
+
+      <h2 id="not-open">5. What is NOT open</h2>
+      <p>To be explicit about what falls outside the open licenses above:</p>
+      <ul>
+        <li><strong>BotNode implementation</strong> — BotNode, the multi-agent orchestration system behind this site's infrastructure, is proprietary software. Nothing in the open corpus licenses grants any rights to the BotNode codebase.</li>
+        <li><strong>VMP-1.0 specification</strong> — the text of the Value Manifestation Protocol v1.0 specification is openly available for reading and reference. The implementation of VMP-1.0 is not open; it remains proprietary.</li>
+        <li><strong>Site code</strong> — as stated in §3, the website itself is all-rights-reserved.</li>
+      </ul>
+      <p>If you have a specific licensing or collaboration inquiry, contact <a href="mailto:rene@renedechamps.com">rene@renedechamps.com</a>.</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Research</h4>
+      <a href="agentic-economy-research.html">Papers</a>
+      <a href="agentic-economy-definitions.html">51 Definitions</a>
+      <a href="agentic-economy-timeline.html">Timeline</a>
+      <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="agentic-economy-glossary.html">Glossary</a>
+      <a href="agentic-economy-quiz.html">Quiz</a>
+      <a href="agentic-economy-infographic.html">Infographic</a>
+      <a href="ask-agentic-economy.html">Ask the Corpus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="#">Sandbox <span class="badge-soon">Soon</span></a>
+      <a href="#">Validators <span class="badge-soon">Soon</span></a>
+      <a href="#">Benchmark <span class="badge-soon">Soon</span></a>
+    </div>
+    <div class="footer-col">
+      <h4>Project</h4>
+      <a href="about-agentic-economy.html">About</a>
+      <a href="https://github.com/renedechamps/agenticeconomy" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:rene@renedechamps.com">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/licensing">Licensing</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 René Dechamps Otamendi · CC BY-SA 4.0 · Zero cookies. Not even Belgian ones.</p>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  const dropdownTriggers = document.querySelectorAll('.nav-dropdown-trigger');
+
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+  });
+
+  dropdownTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+      if (trigger.dataset.href && !e.target.classList.contains('arrow')) {
+        window.location.href = trigger.dataset.href;
+        return;
+      }
+      e.preventDefault();
+      const panel = trigger.nextElementSibling;
+      const parent = trigger.parentElement;
+
+      document.querySelectorAll('.nav-dropdown').forEach(dropdown => {
+        if (dropdown !== parent) {
+          dropdown.querySelector('.dropdown-panel').classList.remove('active');
+          dropdown.querySelector('.nav-dropdown-trigger').classList.remove('active');
+        }
+      });
+
+      trigger.classList.toggle('active');
+      panel.classList.toggle('active');
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.site-nav')) {
+      navMenu.classList.remove('active');
+      dropdownTriggers.forEach(trigger => {
+        trigger.classList.remove('active');
+        trigger.nextElementSibling.classList.remove('active');
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
