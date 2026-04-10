@@ -740,6 +740,64 @@
       margin-bottom: 40px;
     }
 
+    .contact-form {
+      max-width: 640px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      padding: 10px 14px;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 140px;
+    }
+
+    .form-group select option {
+      background: var(--bg-surface);
+    }
+
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1039,23 +1097,33 @@
   <!-- Section 6: Contact -->
   <section class="contact observe">
     <h2>Get in Touch</h2>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>Research Inquiries</h3>
-        <p>Questions about the papers, methodology, or data.</p>
-        <a href="mailto:rene@renedechamps.com?subject=Research%20Inquiry%20—%20agenticeconomy.dev" class="contact-link">rene@renedechamps.com →</a>
+    <form action="/api/contact" method="POST" class="contact-form">
+      <input type="hidden" name="bot-field" style="display:none">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="cf-name">Your name</label>
+          <input id="cf-name" type="text" name="name" required placeholder="Jane Smith">
+        </div>
+        <div class="form-group">
+          <label for="cf-email">Your email</label>
+          <input id="cf-email" type="email" name="email" required placeholder="jane@example.com">
+        </div>
       </div>
-      <div class="contact-card">
-        <h3>Contribute</h3>
-        <p>Found a definition we missed? Built a protocol we should track? Have data to share?</p>
-        <a href="mailto:rene@renedechamps.com?subject=Contribution%20—%20agenticeconomy.dev" class="contact-link">rene@renedechamps.com →</a>
+      <div class="form-group">
+        <label for="cf-subject">Subject</label>
+        <select id="cf-subject" name="subject">
+          <option value="Research Inquiry">Research Inquiry</option>
+          <option value="Contribution">Contribute a definition or protocol</option>
+          <option value="Press/Speaking">Press &amp; Speaking</option>
+          <option value="Other">Other</option>
+        </select>
       </div>
-      <div class="contact-card">
-        <h3>Press & Speaking</h3>
-        <p>Interviews, podcast appearances, conference talks about the agentic economy.</p>
-        <a href="mailto:rene@renedechamps.com?subject=Press/Speaking%20—%20agenticeconomy.dev" class="contact-link">rene@renedechamps.com →</a>
+      <div class="form-group">
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" name="message" rows="6" required placeholder="Your message..."></textarea>
       </div>
-    </div>
+      <button type="submit" class="btn">Send message →</button>
+    </form>
   </section>
 
   <!-- Section 7: Colophon -->
