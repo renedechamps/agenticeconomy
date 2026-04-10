@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agentic Economy 101</title>
+
+    <!-- Font Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-deep: #04060e;
+            --bg-base: #080d1c;
+            --bg-surface: #0f1530;
+            --bg-card: #141a38;
+            --border: #1a2348;
+            --text-primary: #e8ecf4;
+            --text-secondary: #a0a9c0;
+            --text-muted: #6b7394;
+            --accent: #34d399;
+            --warm: #f59e0b;
+            --cat-a: #3b82f6;
+            --cat-b: #a78bfa;
+            --cat-ccr: #f59e0b;
+            --cat-cs: #34d399;
+            --cat-d: #f87171;
+            --cat-e: #22d3ee;
+        }
+
+        /* ── Site Navigation ── */
+        .site-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(4,6,14,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;padding:0 2rem}
+        .nav-container{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--accent);text-decoration:none;letter-spacing:-.02em}
+        .nav-menu{display:flex;align-items:center;gap:.25rem}
+        .nav-item{color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.88rem;padding:.45rem .75rem;border-radius:6px;transition:color .2s,background .2s;border:none;background:none;cursor:pointer;white-space:nowrap}
+        .nav-item:hover,.nav-item.active{color:var(--text-primary);background:var(--bg-surface)}
+        .nav-dropdown{position:relative}
+        .nav-dropdown-trigger{display:flex;align-items:center;gap:.3rem}
+        .arrow{font-size:.6rem;transition:transform .2s}
+        .nav-dropdown:hover .arrow{transform:rotate(180deg)}
+        .dropdown-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:.4rem 0;min-width:180px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+        .nav-dropdown:hover .dropdown-panel{display:block}
+        .dropdown-panel a{display:block;padding:.5rem 1rem;color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.85rem;transition:color .15s,background .15s,padding-left .15s}
+        .dropdown-panel a:hover{color:var(--accent);background:var(--bg-surface);padding-left:1.25rem}
+        .nav-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.4rem;cursor:pointer;padding:.5rem}
+        @media(max-width:768px){
+          .nav-toggle{display:block}
+          .nav-menu{display:none;position:absolute;top:56px;left:0;right:0;background:var(--bg-card);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem;gap:.15rem}
+          .nav-menu.open{display:flex}
+          .dropdown-panel{position:static;box-shadow:none;border:none;background:var(--bg-surface);border-radius:6px;margin:.25rem 0 .25rem 1rem;display:none}
+          .nav-dropdown.open .dropdown-panel{display:block}
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 56px;
+        }
+
+        /* Main content */
+        main {
+            margin-top: 0;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        section.visible {
+            opacity: 1;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-content {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        /* ===== SECTION 1: THE HOOK ===== */
+        #section-1 {
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .hook-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 5rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .hook-subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .hook-cta {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== SECTION 2: WHAT IS AN AI AGENT ===== */
+        #section-2 {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);
+        }
+
+        .agent-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            flex-wrap: wrap;
+        }
+
+        .agent-box {
+            text-align: center;
+            padding: 1.5rem 2rem;
+            background: var(--bg-surface);
+            border-radius: 8px;
+            min-width: 120px;
+        }
+
+        .agent-box.highlight {
+            background: rgba(52, 211, 153, 0.15);
+            border: 1px solid var(--accent);
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== SECTION 3: THE SPECTRUM ===== */
+        #section-3 {
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+        }
+
+        .spectrum {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .spectrum-bar {
+            height: 8px;
+            background: linear-gradient(90deg, var(--cat-a) 0%, var(--cat-b) 50%, var(--cat-ccr) 100%);
+            border-radius: 4px;
+            margin: 1.5rem 0;
+            position: relative;
+        }
+
+        .spectrum-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .spectrum-examples {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .spectrum-example {
+            padding: 1rem;
+            background: var(--bg-surface);
+            border-left: 3px solid var(--text-muted);
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .spectrum-example.pos-left {
+            border-left-color: var(--cat-a);
+            margin-left: 0;
+        }
+
+        .spectrum-example.pos-mid {
+            border-left-color: var(--cat-b);
+            margin-left: 20%;
+        }
+
+        .spectrum-example.pos-right {
+            border-left-color: var(--cat-ccr);
+            margin-left: 40%;
+        }
+
+        /* ===== SECTION 4: SIX CATEGORIES ===== */
+        #section-4 {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.05) 0%, rgba(52, 211, 153, 0.05) 100%);
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .category-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--text-muted);
+        }
+
+        .category-card.cat-a::before { background: var(--cat-a); }
+        .category-card.cat-b::before { background: var(--cat-b); }
+        .category-card.cat-ccr::before { background: var(--cat-ccr); }
+        .category-card.cat-cs::before { background: var(--cat-cs); }
+        .category-card.cat-d::before { background: var(--cat-d); }
+        .category-card.cat-e::before { background: var(--cat-e); }
+
+        .category-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 0 40px rgba(52, 211, 153, 0.15);
+        }
+
+        .category-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .category-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .category-def {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .category-example {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .category-count {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        /* ===== SECTION 5: SETTLEMENT PROBLEM ===== */
+        #section-5 {
+            background: linear-gradient(135deg, rgba(52, 211, 153, 0.05) 0%, rgba(248, 113, 113, 0.05) 100%);
+        }
+
+        .settlement-blocks {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .settlement-block {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .settlement-q {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .settlement-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .settlement-opt {
+            padding: 0.75rem;
+            background: var(--bg-surface);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            border-left: 2px solid var(--accent);
+        }
+
+        /* ===== SECTION 6: 11:1 RATIO ===== */
+        #section-6 {
+            background: linear-gradient(135deg, rgba(248, 113, 113, 0.05) 0%, rgba(34, 211, 238, 0.05) 100%);
+        }
+
+        .ratio-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: var(--warm);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .ratio-bar {
+            display: flex;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .ratio-block {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            background: var(--cat-ccr);
+        }
+
+        .ratio-block.green {
+            background: var(--cat-cs);
+        }
+
+        .ratio-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin: 2rem 0;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        .paper-link {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .paper-link:hover {
+            color: var(--text-primary);
+        }
+
+        /* ===== SECTION 7: WHO'S BUILDING ===== */
+        #section-7 {
+            background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+        }
+
+        .builders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .builder-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .builder-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-surface);
+        }
+
+        .builders-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin: 2rem 0;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* ===== SECTION 8: GO DEEPER ===== */
+        #section-8 {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(52, 211, 153, 0.05) 100%);
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .cta-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cta-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 0 40px rgba(52, 211, 153, 0.15);
+        }
+
+        .cta-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .cta-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            flex-grow: 1;
+        }
+
+        .cta-arrow {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-base);
+            border-top: 1px solid var(--border);
+            padding: 2rem 4rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Counter animation */
+        .counter {
+            display: inline-block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            nav .nav-left {
+                font-size: 1rem;
+            }
+
+            nav .nav-right {
+                gap: 1rem;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            section {
+                padding: 2rem;
+                min-height: auto;
+                padding-top: 100px;
+            }
+
+            .hook-number {
+                font-size: 3.5rem;
+            }
+
+            .ratio-number {
+                font-size: 3rem;
+            }
+
+            .categories-grid, .settlement-blocks, .builders-grid, .cta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <div class="nav-container">
+        <a href="agentic-economy-101.html" class="nav-brand">agenticeconomy.dev</a>
+        <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+        <div class="nav-menu">
+          <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
+          <div class="nav-dropdown">
+            <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">&#9662;</span></button>
+            <div class="dropdown-panel">
+              <a href="agentic-economy-definitions.html">51 Definitions</a>
+              <a href="agentic-economy-timeline.html">Timeline</a>
+              <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+              <a href="agentic-economy-research.html">Papers</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
+            <div class="dropdown-panel">
+              <a href="agentic-economy-glossary.html">Glossary</a>
+              <a href="agentic-economy-quiz.html">Quiz</a>
+              <a href="agentic-economy-infographic.html">Infographic</a>
+              <a href="ask-agentic-economy.html">Ask the Corpus</a>
+            </div>
+          </div>
+          <a href="about-agentic-economy.html" class="nav-item">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+        <!-- SECTION 1: THE HOOK -->
+        <section id="section-1">
+            <div class="section-content">
+                <div class="hook-number"><span class="counter" data-target="5">0</span>T</div>
+                <div class="hook-subtitle">That's McKinsey's estimate for agent-mediated commerce by 2030.</div>
+                <div class="hook-cta">In 10 minutes, you'll understand why.</div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: WHAT IS AN AI AGENT -->
+        <section id="section-2">
+            <div class="section-content">
+                <h2>An AI that can act</h2>
+                <p>An AI agent is software that can take actions in the world. Not just answer questions. Act. Book a flight. Compare prices. Pay for a service. Negotiate a contract. The difference between ChatGPT and an AI agent is the difference between advice and action.</p>
+                <p>That distinction sounds small. It isn't. The moment an agent can spend money, it needs payment rails. The moment it transacts with another agent, it needs identity, reputation, and dispute resolution. An entire economy has to exist.</p>
+                <p>That economy is being built right now. By 51 different organizations. With 51 different definitions of what it should look like.</p>
+                <div class="agent-diagram">
+                    <div class="agent-box">User</div>
+                    <div class="arrow">→</div>
+                    <div class="agent-box">Agent</div>
+                    <div class="arrow">→</div>
+                    <div class="agent-box highlight">Action</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: THE SPECTRUM -->
+        <section id="section-3">
+            <div class="section-content">
+                <h2>From assistant to autonomous</h2>
+                <div class="spectrum">
+                    <div class="spectrum-labels">
+                        <span>Agent helps you buy</span>
+                        <span>Agent works for you</span>
+                        <span>Agent acts alone</span>
+                    </div>
+                    <div class="spectrum-bar"></div>
+                    <div class="spectrum-examples">
+                        <div class="spectrum-example pos-left">
+                            <strong>Stripe ACP:</strong> Your agent finds a deal on Etsy and checks out using your card
+                        </div>
+                        <div class="spectrum-example pos-mid">
+                            <strong>Gartner's prediction:</strong> 15% of business decisions made by agents by 2028
+                        </div>
+                        <div class="spectrum-example pos-right">
+                            <strong>x402:</strong> Your agent pays another agent $0.001 for an API call, in USDC, in 500ms
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SIX CATEGORIES -->
+        <section id="section-4">
+            <div class="section-content">
+                <h2>Six categories. Six different economies.</h2>
+                <div class="categories-grid">
+                    <div class="category-card cat-a">
+                        <div class="category-label">Category A</div>
+                        <div class="category-name">Agent-Assisted Commerce</div>
+                        <div class="category-def">The agent buys for a human.</div>
+                        <div class="category-example">Stripe ACP, Visa, Mastercard</div>
+                        <div class="category-count">14 entries</div>
+                    </div>
+
+                    <div class="category-card cat-b">
+                        <div class="category-label">Category B</div>
+                        <div class="category-name">Agent-as-Workforce</div>
+                        <div class="category-def">The agent replaces a worker.</div>
+                        <div class="category-example">Gartner: 100M agents by 2028</div>
+                        <div class="category-count">8 entries</div>
+                    </div>
+
+                    <div class="category-card cat-ccr">
+                        <div class="category-label">Category C_cr</div>
+                        <div class="category-name">Autonomous A2A (Blockchain)</div>
+                        <div class="category-def">Agents transact on-chain.</div>
+                        <div class="category-example">x402, Olas, Fetch.ai</div>
+                        <div class="category-count">11 entries</div>
+                    </div>
+
+                    <div class="category-card cat-cs">
+                        <div class="category-label">Category C_s</div>
+                        <div class="category-name">Autonomous A2A (Non-Crypto)</div>
+                        <div class="category-def">Agents transact without blockchain.</div>
+                        <div class="category-example">BotNode VMP-1.0</div>
+                        <div class="category-count">1 entry</div>
+                    </div>
+
+                    <div class="category-card cat-d">
+                        <div class="category-label">Category D</div>
+                        <div class="category-name">Analytical & Regulatory</div>
+                        <div class="category-def">They analyze the consequences.</div>
+                        <div class="category-example">BIS, WEF, OECD</div>
+                        <div class="category-count">7 entries</div>
+                    </div>
+
+                    <div class="category-card cat-e">
+                        <div class="category-label">Category E</div>
+                        <div class="category-name">Infrastructure & Standards</div>
+                        <div class="category-def">They build the pipes.</div>
+                        <div class="category-example">Google A2A, Anthropic MCP</div>
+                        <div class="category-count">10 entries</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: SETTLEMENT PROBLEM -->
+        <section id="section-5">
+            <div class="section-content">
+                <h2>Three questions nobody agrees on</h2>
+                <div class="settlement-blocks">
+                    <div class="settlement-block">
+                        <div class="settlement-q">Who pays?</div>
+                        <div class="settlement-options">
+                            <div class="settlement-opt">Human wallet → Agent → Merchant (A)</div>
+                            <div class="settlement-opt">Agent wallet → Agent wallet (C)</div>
+                        </div>
+                    </div>
+
+                    <div class="settlement-block">
+                        <div class="settlement-q">With what?</div>
+                        <div class="settlement-options">
+                            <div class="settlement-opt">Fiat/cards (A)</div>
+                            <div class="settlement-opt">Crypto/stablecoins (C_cr)</div>
+                            <div class="settlement-opt">Machine-native currency (C_s)</div>
+                        </div>
+                    </div>
+
+                    <div class="settlement-block">
+                        <div class="settlement-q">Who arbitrates?</div>
+                        <div class="settlement-options">
+                            <div class="settlement-opt">Chargeback (A)</div>
+                            <div class="settlement-opt">Smart contract (C_cr)</div>
+                            <div class="settlement-opt">Deterministic rules (C_s)</div>
+                            <div class="settlement-opt">DAO (C_cr)</div>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: 3rem; text-align: center;">Every protocol in the agentic economy answers these three questions differently. Those answers define the economy it creates.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 6: 11:1 RATIO -->
+        <section id="section-6">
+            <div class="section-content">
+                <h2>The number that explains everything</h2>
+                <div class="ratio-number"><span class="counter" data-target="11">0</span>:1</div>
+                <div class="ratio-bar">
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block"></div>
+                    <div class="ratio-block green"></div>
+                </div>
+                <div class="ratio-text">
+                    Of the 12 definitions where agents transact autonomously, 11 assume blockchain. One does not. This ratio is not random. Agents can't open bank accounts. They need wallets. Wallets need blockchain. The logic is compelling. But it's incomplete.
+                </div>
+                <div class="ratio-text">
+                    That's what the main paper is about.
+                </div>
+                <div style="text-align: center;">
+                    <a href="https://zenodo.org/records/19208278" class="paper-link" target="_blank" rel="noopener">Read "Two Economies, Not One" →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: WHO'S BUILDING WHAT -->
+        <section id="section-7">
+            <div class="section-content">
+                <h2>The biggest names in tech. Building the infrastructure.</h2>
+                <div class="builders-grid">
+                    <div class="builder-card">Stripe</div>
+                    <div class="builder-card">Google</div>
+                    <div class="builder-card">Visa</div>
+                    <div class="builder-card">Mastercard</div>
+                    <div class="builder-card">PayPal</div>
+                    <div class="builder-card">OpenAI</div>
+                    <div class="builder-card">IBM</div>
+                    <div class="builder-card">McKinsey</div>
+                    <div class="builder-card">Gartner</div>
+                    <div class="builder-card">Sequoia</div>
+                    <div class="builder-card">Deloitte</div>
+                    <div class="builder-card">Capgemini</div>
+                    <div class="builder-card">Coinbase</div>
+                    <div class="builder-card">Cloudflare</div>
+                    <div class="builder-card">Circle</div>
+                    <div class="builder-card">Fetch.ai</div>
+                    <div class="builder-card">Olas</div>
+                    <div class="builder-card">BotNode</div>
+                    <div class="builder-card">Anthropic</div>
+                    <div class="builder-card">IEEE</div>
+                    <div class="builder-card">IETF</div>
+                    <div class="builder-card">Forrester</div>
+                </div>
+                <div class="builders-text">
+                    When Visa, Mastercard, Google, Stripe, Coinbase, and Anthropic are all building in the same space — this is real.
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: GO DEEPER -->
+        <section id="section-8">
+            <div class="section-content">
+                <h2>You're ready. Choose your path.</h2>
+                <div class="cta-grid">
+                    <a href="agentic-economy-definitions.html" class="cta-card">
+                        <div class="cta-title">Explore 51 Definitions</div>
+                        <div class="cta-desc">The complete corpus, searchable and filterable.</div>
+                        <div class="cta-arrow">→</div>
+                    </a>
+
+                    <a href="agentic-economy-timeline.html" class="cta-card">
+                        <div class="cta-title">See the Timeline</div>
+                        <div class="cta-desc">From 2018 to 2026, how it all unfolded.</div>
+                        <div class="cta-arrow">→</div>
+                    </a>
+
+                    <a href="agentic-economy-protocols.html" class="cta-card">
+                        <div class="cta-title">Compare Protocols</div>
+                        <div class="cta-desc">17 protocols, side by side.</div>
+                        <div class="cta-arrow">→</div>
+                    </a>
+
+                    <a href="https://zenodo.org/records/19208278" class="cta-card" target="_blank" rel="noopener">
+                        <div class="cta-title">Read the Paper</div>
+                        <div class="cta-desc">Two Economies, Not One — the full research.</div>
+                        <div class="cta-arrow">→</div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Read the research: <a href="https://zenodo.org/records/19208278" target="_blank" rel="noopener">zenodo.org/records/19208278</a>
+            <br>
+            Learn more: <a href="https://agenticeconomy.dev" target="_blank" rel="noopener">agenticeconomy.dev</a>
+        </p>
+    </footer>
+
+    <script>
+        // IntersectionObserver for scroll-triggered animations
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    // Trigger counter animation
+                    const counters = entry.target.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                        if (!counter.dataset.animated) {
+                            animateCounter(counter);
+                            counter.dataset.animated = 'true';
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Counter animation function
+        function animateCounter(element) {
+            const target = parseInt(element.dataset.target);
+            const duration = 2000; // 2 seconds
+            const start = Date.now();
+
+            function update() {
+                const elapsed = Date.now() - start;
+                const progress = Math.min(elapsed / duration, 1);
+                const current = Math.floor(progress * target);
+                element.textContent = current;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = target;
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+
+        // Smooth scroll behavior enhancement
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Nav toggle (mobile)
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+          document.querySelector('.nav-menu').classList.toggle('open');
+        });
+        // Dropdown toggle (mobile)
+        document.querySelectorAll('.nav-dropdown-trigger').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              btn.closest('.nav-dropdown').classList.toggle('open');
+            }
+          });
+        });
+        // Highlight current page
+        const currentPage = location.pathname.split('/').pop() || 'agentic-economy-101.html';
+        document.querySelectorAll('.site-nav a[href]').forEach(a => {
+          if (a.getAttribute('href') === currentPage) a.classList.add('active');
+        });
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+          }
+        });
+    </script>
+</body>
+</html>

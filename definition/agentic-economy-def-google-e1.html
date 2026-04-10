@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google: Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json,… · Agentic Economy</title>
+<meta name="description" content="Definition of the agentic economy by Google (Agent-to-Agent Protocol (A2A)): Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json, exchange tasks via JSON-RPC over HTTPS.">
+<meta name="author" content="Rene Dechamps Otamendi">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="keywords" content="agentic economy,Google,Infrastructure and Standards,A2A,Google,JSON-RPC,discovery">
+<link rel="canonical" href="https://agenticeconomy.dev/definition/agentic-economy-def-google-e1">
+<meta name="theme-color" content="#04060e">
+<meta name="color-scheme" content="dark">
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Google: Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json,…">
+<meta property="og:description" content="Definition of the agentic economy by Google (Agent-to-Agent Protocol (A2A)): Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json, exchange tasks via JSON-RPC over HTTPS.">
+<meta property="og:url" content="https://agenticeconomy.dev/definition/agentic-economy-def-google-e1">
+<meta property="og:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Agentic Economy">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="https://renedechamps.com">
+<meta property="article:published_time" content="2026-04-10T00:00:00Z">
+<meta property="article:modified_time" content="2026-04-10T00:00:00Z">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Google: Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json,…">
+<meta name="twitter:description" content="Definition of the agentic economy by Google (Agent-to-Agent Protocol (A2A)): Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json, exchange tasks via JSON-RPC over HTTPS.">
+<meta name="twitter:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
+<!-- Feed -->
+<link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
+<link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
+<link rel="sitemap" type="application/xml" href="https://agenticeconomy.dev/sitemap.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://agenticeconomy.dev/#organization",
+  "name": "Agentic Economy",
+  "url": "https://agenticeconomy.dev",
+  "logo": "https://agenticeconomy.dev/agentic-economy-two-economies.svg",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://renedechamps.com/#person",
+    "name": "Rene Dechamps Otamendi",
+    "url": "https://renedechamps.com"
+  },
+  "sameAs": [
+    "https://renedechamps.com",
+    "https://github.com/renedechamps/agenticeconomy",
+    "https://www.linkedin.com/in/renedechamps/",
+    "https://zenodo.org/communities/agentic-economy"
+  ],
+  "description": "The definitive research hub on the agentic economy"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "@id": "https://agenticeconomy.dev/definition/agentic-economy-def-google-e1#article",
+  "headline": "Google: Agent discovery and communication. Agents publish Agent Cards at /.well-known/ag…",
+  "description": "Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json, exchange tasks via JSON-RPC over HTTPS.",
+  "articleSection": "Infrastructure and Standards",
+  "author": {
+    "@type": "Organization",
+    "name": "Google",
+    "alternateName": "Agent-to-Agent Protocol (A2A)"
+  },
+  "publisher": {
+    "@id": "https://agenticeconomy.dev/#organization"
+  },
+  "datePublished": "2026-04-10",
+  "dateModified": "2026-04-10",
+  "url": "https://agenticeconomy.dev/definition/agentic-economy-def-google-e1",
+  "image": "https://agenticeconomy.dev/agentic-economy-two-economies.svg",
+  "keywords": [
+    "Google",
+    "Infrastructure and Standards",
+    "A2A",
+    "Google",
+    "JSON-RPC",
+    "discovery"
+  ],
+  "inLanguage": "en",
+  "isPartOf": {
+    "@id": "https://agenticeconomy.dev/#website"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://agenticeconomy.dev/definition/agentic-economy-def-google-e1"
+  },
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "citation": "Google — Agent-to-Agent Protocol (A2A) (Apr 2025)"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://agenticeconomy.dev/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "51 Definitions",
+      "item": "https://agenticeconomy.dev/agentic-economy-definitions"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Google",
+      "item": "https://agenticeconomy.dev/definition/agentic-economy-def-google-e1"
+    }
+  ]
+}
+</script>
+<style>
+:root{
+  --bg-deep:#04060e;--bg-base:#080d1c;--bg-surface:#0f1530;
+  --bg-card:#141a38;--border:#1a2348;--border-light:#233060;
+  --text-primary:#e8ecf4;--text-secondary:#a0a9c0;--text-muted:#8e99b8;
+  --accent:#34d399;--accent-dim:#1a6b4d;
+  --accent-glow:rgba(52,211,153,0.12);--accent-glow-strong:rgba(52,211,153,0.25);
+  --warm:#f59e0b;--ease-out:cubic-bezier(0.16,1,0.3,1);
+  --cat-a:#3b82f6;--cat-b:#a78bfa;--cat-ccr:#f59e0b;--cat-cs:#34d399;--cat-d:#f87171;--cat-e:#22d3ee;
+  --font-display:'Syne',sans-serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg-deep);color:var(--text-primary);font-family:var(--font-body);font-size:17px;line-height:1.6;min-height:100vh;padding-top:56px;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none;transition:opacity .2s}
+a:hover{opacity:.85}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.skip-link{position:absolute;top:-100%;left:1rem;z-index:10000;padding:.75rem 1.5rem;background:var(--accent);color:var(--bg-deep);font-weight:600;border-radius:0 0 8px 8px;transition:top .2s}
+.skip-link:focus{top:0}
+/* Nav */
+.site-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(4,6,14,.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;padding:0 2rem}
+.nav-container{max-width:1100px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{font-family:var(--font-display);font-weight:800;font-size:1.05rem;color:var(--accent);text-decoration:none;letter-spacing:-.02em}
+.nav-links{display:flex;gap:.25rem;align-items:center}
+.nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.88rem;padding:.45rem .75rem;border-radius:6px;transition:background .2s,color .2s}
+.nav-links a:hover{color:var(--text-primary);background:rgba(255,255,255,.04)}
+.nav-group{position:relative}
+.nav-group>button{background:none;border:0;color:var(--text-secondary);font-family:inherit;font-size:.88rem;padding:.45rem .75rem;cursor:pointer;display:inline-flex;align-items:center;gap:.25rem}
+.nav-group>button:hover{color:var(--text-primary)}
+.nav-group:hover>.dropdown,.nav-group:focus-within>.dropdown{display:block}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--bg-card);border:1px solid var(--border-light);border-radius:8px;padding:.5rem;min-width:200px;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.dropdown a{display:block;padding:.5rem .75rem;color:var(--text-secondary);font-size:.85rem;border-radius:4px}
+.dropdown a:hover{background:var(--border);color:var(--text-primary)}
+.nav-hamburger{display:none;background:none;border:0;color:var(--text-primary);font-size:1.4rem;cursor:pointer;padding:.25rem .5rem}
+@media(max-width:900px){
+  .nav-links{position:fixed;top:56px;left:0;right:0;background:var(--bg-base);border-bottom:1px solid var(--border);flex-direction:column;align-items:stretch;padding:.75rem 2rem 1.5rem;display:none}
+  .nav-links.open{display:flex}
+  .nav-links a,.nav-group>button{padding:.6rem .5rem;text-align:left;width:100%}
+  .nav-hamburger{display:inline-flex}
+  .dropdown{display:block;position:static;border:0;background:transparent;box-shadow:none;padding:.25rem 0 .25rem 1rem;min-width:unset}
+}
+/* Container + sections */
+main{min-height:60vh}
+.container{max-width:1100px;margin:0 auto;padding:3rem 2rem}
+.section-pad{padding:96px 0 80px}
+/* Footer */
+footer.site-footer{background:var(--bg-surface);border-top:1px solid var(--border);margin-top:4rem;padding:3rem 2rem 2rem}
+.footer-container{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.footer-col h4{font-family:var(--font-display);font-size:.85rem;font-weight:700;color:var(--text-primary);text-transform:uppercase;letter-spacing:.08em;margin-bottom:1rem}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:.5rem}
+.footer-col a{color:var(--text-muted);font-size:.85rem;text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{max-width:1100px;margin:2.5rem auto 0;padding-top:1.5rem;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:.8rem}
+@media(max-width:768px){.footer-container{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-container{grid-template-columns:1fr}}
+
+.breadcrumb{display:flex;gap:.5rem;flex-wrap:wrap;font-size:.88rem;color:var(--text-muted);margin-bottom:2.5rem}
+.breadcrumb a{color:var(--accent);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.breadcrumb span[aria-current]{color:var(--text-secondary)}
+.hero-section{margin-bottom:2.5rem}
+.cat-badge{display:inline-block;padding:.4rem .85rem;border-radius:6px;font-size:.78rem;font-weight:600;margin-bottom:1.5rem}
+h1{font-family:var(--font-display);font-size:2rem;font-weight:800;line-height:1.25;margin:1rem 0;color:var(--text-primary);letter-spacing:-.01em}
+h2{font-family:var(--font-display);font-size:1.25rem;font-weight:700;margin:2rem 0 1rem;color:var(--text-primary)}
+h3{font-family:var(--font-display);font-size:1rem;font-weight:600;margin-bottom:.75rem;color:var(--text-primary)}
+.source-line{color:var(--text-secondary);font-size:.95rem;margin:.5rem 0 0}
+.muted{color:var(--text-muted);font-size:.85rem}
+.content-grid{display:grid;grid-template-columns:1fr 320px;gap:2.5rem;margin:2rem 0}
+.main-content section{margin-bottom:2rem}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:1.75rem 1.5rem;margin-bottom:.5rem;transition:transform .2s var(--ease-out),border-color .2s}
+.card:hover{transform:translateY(-2px);border-color:var(--border-light)}
+.card p{font-size:.92rem;color:var(--text-secondary);line-height:1.65}
+.card p + p{margin-top:.75rem}
+.notes-section{background:var(--bg-surface);border-radius:12px;padding:1.75rem 1.75rem 1.75rem 1.5rem;margin:1.5rem 0}
+.notes-section p{color:var(--text-secondary);line-height:1.7}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{display:inline-block;padding:.35rem .75rem;background:var(--bg-surface);border:1px solid var(--border-light);border-radius:6px;font-size:.78rem;color:var(--text-secondary)}
+.related-defs{display:flex;flex-direction:column;gap:.75rem}
+.related-def{display:block;padding:1rem 1.25rem;background:var(--bg-card);border-radius:10px;text-decoration:none;color:var(--text-secondary);transition:all .2s}
+.related-def:hover{background:var(--bg-surface);color:var(--text-primary)}
+.related-def-source{font-weight:600;color:var(--text-primary);font-family:var(--font-display)}
+.nav-buttons{display:flex;gap:1rem;margin:2.5rem 0}
+.nav-btn{flex:1;padding:1rem 1.25rem;border:1px solid var(--border);background:var(--bg-card);color:var(--text-secondary);border-radius:10px;text-decoration:none;font-size:.88rem;display:flex;align-items:center;justify-content:center;transition:all .2s;text-align:center}
+.nav-btn:hover:not(.disabled){background:var(--bg-surface);color:var(--text-primary);border-color:var(--border-light)}
+.nav-btn.disabled{opacity:.35;cursor:not-allowed}
+.sidebar{display:flex;flex-direction:column;gap:1rem;position:sticky;top:72px;align-self:start}
+.sidebar .card{padding:1.25rem}
+.def-id{font-family:var(--font-mono);font-size:1.1rem;color:var(--accent)}
+.cta-section{background:rgba(52,211,153,.05);border:1px solid var(--accent-dim);border-radius:12px;padding:1.25rem;text-align:center}
+.cta-section p{color:var(--text-secondary);margin-bottom:.75rem}
+.cta-section a{display:inline-block;padding:.6rem 1.25rem;background:var(--accent);color:var(--bg-deep);border-radius:6px;text-decoration:none;font-weight:600}
+@media(max-width:900px){.content-grid{grid-template-columns:1fr}.sidebar{position:static}h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="site-nav" role="navigation" aria-label="Primary">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-brand">Agentic Economy</a>
+    <button class="nav-hamburger" aria-expanded="false" aria-controls="primary-menu" onclick="document.getElementById('primary-menu').classList.toggle('open');this.setAttribute('aria-expanded',this.getAttribute('aria-expanded')==='true'?'false':'true')">☰</button>
+    <div id="primary-menu" class="nav-links">
+      <a href="../agentic-economy-101.html">Start Here</a>
+      <div class="nav-group">
+        <button aria-haspopup="true">Research ▾</button>
+        <div class="dropdown">
+          <a href="../agentic-economy-research.html">Papers</a>
+          <a href="../agentic-economy-definitions.html">51 Definitions</a>
+          <a href="../agentic-economy-timeline.html">Timeline</a>
+          <a href="../agentic-economy-protocols.html">Protocol Matrix</a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button aria-haspopup="true">Resources ▾</button>
+        <div class="dropdown">
+          <a href="../agentic-economy-glossary.html">Glossary</a>
+          <a href="../agentic-economy-quiz.html">Quiz</a>
+          <a href="../agentic-economy-infographic.html">Infographic</a>
+          <a href="../ask-agentic-economy.html">Ask AI</a>
+          <a href="../api/index.html">API &amp; Embeds</a>
+        </div>
+      </div>
+      <a href="../about-agentic-economy.html">About</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+<div class="container">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="../index.html">Home</a> <span>/</span>
+    <a href="../agentic-economy-definitions.html">51 Definitions</a> <span>/</span>
+    <span aria-current="page">Google</span>
+  </nav>
+
+  <article itemscope itemtype="https://schema.org/ScholarlyArticle">
+    <header class="hero-section">
+      <div class="cat-badge" style="background:#22d3ee20;color:#22d3ee;border:1px solid #22d3ee40">E — Infrastructure and Standards</div>
+      <h1 itemprop="headline">"Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json, exchange tasks via JSON-RPC over HTTPS."</h1>
+      <p class="source-line">
+        <strong itemprop="author">Google</strong> — Agent-to-Agent Protocol (A2A)
+        <br><span class="muted">Apr 2025 · Last updated <time datetime="2026-04-10">2026-04-10</time> · Curated by <a href="../about-agentic-economy.html">Rene Dechamps Otamendi</a></span>
+      </p>
+    </header>
+
+    <div class="content-grid">
+      <div class="main-content" itemprop="articleBody">
+        <section class="notes-section" style="border-left:4px solid #22d3ee">
+          <h2>Source Context &amp; Analysis</h2>
+          <p>v0.3. 150+ partners. Does not specify payment or settlement. The discovery layer for agents -- but without economics.</p>
+        </section>
+
+        <section>
+          <h2>Tags</h2>
+          <div class="tags">
+            <span class="tag">A2A</span><span class="tag">Google</span><span class="tag">JSON-RPC</span><span class="tag">discovery</span>
+          </div>
+        </section>
+
+        <section>
+          <h2>Category E: Infrastructure and Standards</h2>
+          <div class="card">
+            <p>Horizontal layers: how agents find each other, verify identity, invoke tools, agree on terms.</p>
+            <p style="margin-top:1rem"><a href="../agentic-economy-definitions.html?cat=E">Browse all Infrastructure and Standards definitions →</a></p>
+          </div>
+        </section>
+
+        
+        <section>
+          <h2>Related Definitions</h2>
+          <div class="related-defs">
+            <a href="./agentic-economy-def-anthropic-e2.html" class="related-def" style="border-left:3px solid #22d3ee"><span class="related-def-source">Anthropic</span><br>A standard for LLMs to discover and invoke external tools. Focused on…</a><a href="./agentic-economy-def-trulioo-worldpay-skyfire-e3.html" class="related-def" style="border-left:3px solid #22d3ee"><span class="related-def-source">Trulioo / Worldpay / Skyfire</span><br>&quot;Digital Agent Passport&quot; -- Know Your Agent identity verification for…</a><a href="./agentic-economy-def-ieee-7012-e4.html" class="related-def" style="border-left:3px solid #22d3ee"><span class="related-def-source">IEEE 7012</span><br>Standard for terms and agreements between autonomous entities.</a><a href="./agentic-economy-def-forrester-existaio-e5.html" class="related-def" style="border-left:3px solid #22d3ee"><span class="related-def-source">Forrester / Exista.io</span><br>SEO is for humans. ADO is for agents. A brand invisible to agents is i…</a>
+          </div>
+        </section>
+
+        <nav class="nav-buttons" aria-label="Definition navigation">
+          <a href="./agentic-economy-def-mit-technology-review-emtech-d7.html" class="nav-btn">← MIT Technology Review EmTech</a>
+          <a href="./agentic-economy-def-anthropic-e2.html" class="nav-btn">Anthropic →</a>
+        </nav>
+      </div>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h3>Definition ID</h3>
+          <p class="def-id">E1</p>
+        </div>
+        <div class="card">
+          <h3>Category</h3>
+          <p style="color:#22d3ee;font-weight:600;">Infrastructure and Standards</p>
+          <p class="muted">Horizontal layers: how agents find each other, verify identity, invoke tools, agree on terms.</p>
+        </div>
+        <div class="card">
+          <h3>Cite this page</h3>
+          <p class="muted">Google — Agent-to-Agent Protocol (A2A) (Apr 2025). Retrieved from agenticeconomy.dev/definition/agentic-economy-def-google-e1.</p>
+        </div>
+        <div class="cta-section">
+          <p>Explore all definitions</p>
+          <a href="../agentic-economy-definitions.html">Browse 51 →</a>
+        </div>
+      </aside>
+    </div>
+  </article>
+</div>
+</main>
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>Research</h4>
+      <ul>
+        <li><a href="../agentic-economy-research.html">Papers</a></li>
+        <li><a href="../agentic-economy-definitions.html">51 Definitions</a></li>
+        <li><a href="../agentic-economy-timeline.html">Timeline</a></li>
+        <li><a href="../agentic-economy-protocols.html">Protocols</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="../agentic-economy-glossary.html">Glossary</a></li>
+        <li><a href="../agentic-economy-quiz.html">Quiz</a></li>
+        <li><a href="../agentic-economy-infographic.html">Infographic</a></li>
+        <li><a href="../agentic-economy-101.html">Start Here</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <ul>
+        <li><a href="../ask-agentic-economy.html">Ask AI</a></li>
+        <li><a href="../compare.html">Compare Protocols</a></li>
+        <li><a href="../embed-demo.html">Embed Demo</a></li>
+        <li><a href="../api/index.html">Open API</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Project</h4>
+      <ul>
+        <li><a href="../about-agentic-economy.html">About</a></li>
+        <li><a href="../agentic-economy-research.html">Methodology</a></li>
+        <li><a href="../llms.txt">llms.txt</a></li>
+        <li><a href="../feed.xml">RSS</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 Rene Dechamps Otamendi · CC BY-SA 4.0 · Zero cookies. Not even Belgian ones.
+  </div>
+</footer>
+</body>
+</html>

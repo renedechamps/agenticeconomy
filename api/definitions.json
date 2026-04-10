@@ -1,0 +1,557 @@
+{
+  "version": "1.0",
+  "updated": "2026-04-09",
+  "source": "agenticeconomy.dev",
+  "license": "CC BY-SA 4.0",
+  "count": 51,
+  "categories": {
+    "A": {
+      "label": "Agent-Assisted Human Commerce",
+      "description": "The agent buys for a human using human payment rails. The human is the economic actor.",
+      "count": 14,
+      "color": "#3b82f6"
+    },
+    "B": {
+      "label": "Agent-as-Workforce",
+      "description": "The agent replaces a human worker. The enterprise is the economic actor.",
+      "count": 8,
+      "color": "#a78bfa"
+    },
+    "Ccr": {
+      "label": "Autonomous A2A Commerce (Blockchain)",
+      "description": "The agent is the economic actor. Own wallet, own identity on-chain, transacts without human in the loop.",
+      "count": 11,
+      "color": "#f59e0b"
+    },
+    "Cs": {
+      "label": "Autonomous A2A Commerce (Non-Crypto)",
+      "description": "Agents transact autonomously without blockchain. Machine-native currency in a centralized double-entry ledger.",
+      "count": 1,
+      "color": "#34d399"
+    },
+    "D": {
+      "label": "Analytical and Regulatory",
+      "description": "They analyze what Categories A through C will do to markets, workers, and systemic stability.",
+      "count": 7,
+      "color": "#f87171"
+    },
+    "E": {
+      "label": "Infrastructure and Standards",
+      "description": "Horizontal layers: how agents find each other, verify identity, invoke tools, agree on terms.",
+      "count": 10,
+      "color": "#22d3ee"
+    }
+  },
+  "definitions": [
+    {
+      "id": "A1",
+      "category": "A",
+      "source": "Microsoft Research",
+      "sub": "Rothschild, Mobius, Hofman et al.",
+      "date": "May 2025",
+      "definition": "Assistant agents act on behalf of consumers and service agents represent businesses, interacting programmatically to facilitate transactions.",
+      "notes": "arXiv:2505.15799. The most cited academic definition. Key concepts: \"unscripted\" vs. \"unrestricted\" interactions, \"agentic walled gardens.\" Payment: fiat/abstracted. Identity: human OAuth. Disputes: platform intermediaries.",
+      "tags": ["academic", "OAuth", "fiat", "walled gardens"]
+    },
+    {
+      "id": "A2",
+      "category": "A",
+      "source": "Stripe / OpenAI",
+      "sub": "Agentic Commerce Protocol (ACP)",
+      "date": "Sep 2025",
+      "definition": "Checkout flows where an AI agent discovers a product for a human and pays via Stripe's Shared Payment Token.",
+      "notes": "agenticcommerce.dev. Deployed in ChatGPT as \"Instant Checkout\" with Etsy and Shopify merchants. Payment: Stripe SPT. Identity: delegated human. Disputes: chargeback.",
+      "tags": ["protocol", "Stripe", "checkout", "SPT"]
+    },
+    {
+      "id": "A3",
+      "category": "A",
+      "source": "Google / Shopify / Walmart",
+      "sub": "Universal Commerce Protocol (UCP)",
+      "date": "Jan 2026",
+      "definition": "Full commerce lifecycle -- discovery, comparison, checkout, post-purchase -- with the agent navigating the journey for the human.",
+      "notes": "A checkout state machine extending human e-commerce to agentic surfaces. Payment: processor agnostic. Identity: protocol negotiation. Disputes: e-commerce flows.",
+      "tags": ["protocol", "state machine", "checkout"]
+    },
+    {
+      "id": "A4",
+      "category": "A",
+      "source": "Google / Mastercard / PayPal",
+      "sub": "AP2",
+      "date": "2025",
+      "definition": "OAuth-based payments allowing agents to purchase on behalf of their human owners using saved payment methods.",
+      "notes": "Payment: Mastercard/PayPal/fiat. Identity: OAuth. Disputes: chargeback. The agent never touches money it doesn't have permission to spend.",
+      "tags": ["OAuth", "payments", "fiat"]
+    },
+    {
+      "id": "A5",
+      "category": "A",
+      "source": "Visa",
+      "sub": "\"Agentic Ready\" program",
+      "date": "Mar 2026",
+      "definition": "Agent-initiated payments via tokenization and biometric verification, tied back to human cardholders.",
+      "notes": "Visa defending interchange revenue. The agent initiates, but biometric auth ensures a human is behind every transaction. Payment: fiat card networks. Identity: tokenization + biometric. Disputes: network rules.",
+      "tags": ["Visa", "biometric", "tokenization"]
+    },
+    {
+      "id": "A6",
+      "category": "A",
+      "source": "Mastercard",
+      "sub": "\"Agent Pay\"",
+      "date": "Dec 2025",
+      "definition": "Agentic Tokens with spend limits set by the human, issued to AI agents via passkeys.",
+      "notes": "Payment: fiat card networks. Identity: Agentic Tokens + passkeys. Disputes: network rules. The agent has a budget, not a bank account.",
+      "tags": ["Mastercard", "passkeys", "tokens"]
+    },
+    {
+      "id": "A7",
+      "category": "A",
+      "source": "McKinsey",
+      "sub": "\"The End of Inertia\"",
+      "date": "Aug 2025",
+      "definition": "Agents break the \"consumer inertia dividend\" -- profits derived from humans failing to optimize -- with real-time micro-auctions for best rates.",
+      "notes": "Projects agent-mediated commerce at $3-5T by 2030. Payment: Open Banking / wallets. Identity: OAuth2/VTS. Disputes: unclear liability.",
+      "tags": ["McKinsey", "$3-5T", "micro-auctions"]
+    },
+    {
+      "id": "A8",
+      "category": "A",
+      "source": "IBM",
+      "sub": "\"What Is Agentic Commerce?\"",
+      "date": "Jan 2026",
+      "definition": "AI agents act on behalf of consumers or businesses to research, negotiate and complete purchases.",
+      "notes": "ibm.com/think. Straightforward Category A framing -- the agent shops, the human pays.",
+      "tags": ["IBM", "commerce"]
+    },
+    {
+      "id": "A9",
+      "category": "A",
+      "source": "Salesforce",
+      "sub": "",
+      "date": "2025-2026",
+      "definition": "AI agents embedded in CRM workflows to assist human buyers and sellers through existing sales processes.",
+      "notes": "Enterprise-facing. The agent optimizes the sales funnel but the transaction is human-to-human.",
+      "tags": ["CRM", "enterprise", "sales"]
+    },
+    {
+      "id": "A10",
+      "category": "A",
+      "source": "JPMorgan",
+      "sub": "",
+      "date": "2025-2026",
+      "definition": "AI agents assisting financial advisors and clients with product discovery and transaction execution.",
+      "notes": "Financial services context. Payment: traditional fiat. Identity: human-authenticated. Disputes: human/regulatory.",
+      "tags": ["finance", "advisory"]
+    },
+    {
+      "id": "A11",
+      "category": "A",
+      "source": "Nosto",
+      "sub": "",
+      "date": "2025-2026",
+      "definition": "AI-powered personalization agents for e-commerce, optimizing product recommendations and checkout for human shoppers.",
+      "notes": "Payment: traditional fiat. Disputes: standard e-commerce. The agent is a conversion optimization tool.",
+      "tags": ["e-commerce", "personalization"]
+    },
+    {
+      "id": "A12",
+      "category": "A",
+      "source": "Deloitte",
+      "sub": "commerce context",
+      "date": "2025",
+      "definition": "AI agents acting on our behalf -- shopping, negotiating, executing purchases.",
+      "notes": "Distinguished from Deloitte's enterprise/workforce framing (see B4). Same firm, different reports, different categories.",
+      "tags": ["Deloitte", "commerce"]
+    },
+    {
+      "id": "A13",
+      "category": "A",
+      "source": "Stripe / Tempo",
+      "sub": "Machine Payment Protocol (MPP)",
+      "date": "Mar 2026",
+      "definition": "Agents need to transact with businesses and one another -- M2M payments on Visa/Stripe rails, fiat + stablecoins.",
+      "notes": "Hybrid A/C. The closest Category A initiative to autonomous payment, but built on human financial infrastructure. Payment: Visa/Stripe. Identity: API key.",
+      "tags": ["Stripe", "M2M", "hybrid A/C", "stablecoins"]
+    },
+    {
+      "id": "A14",
+      "category": "A",
+      "source": "Jason Cochran",
+      "sub": "\"Own the Workflow, Not the App\"",
+      "date": "Feb 2026",
+      "definition": "Intents become interfaces, agents become default delegates, workflows become the product.",
+      "notes": "Hybrid A/B. The agent replaces the app as the primary interface -- but the human remains the principal. Workflows, not transactions, are the unit of value.",
+      "tags": ["workflows", "intents", "hybrid A/B"]
+    },
+    {
+      "id": "B1",
+      "category": "B",
+      "source": "Gartner",
+      "sub": "",
+      "date": "2025-2026",
+      "definition": "100 million agents by 2028. 33% of enterprise apps will include agentic AI. 15% of day-to-day business decisions made autonomously. $18T in economic activity influenced.",
+      "notes": "Also predicted 40% of agentic AI projects scrapped by 2027 (Reuters). The optimism and the skepticism come from the same analyst house.",
+      "tags": ["Gartner", "$18T", "enterprise"]
+    },
+    {
+      "id": "B2",
+      "category": "B",
+      "source": "Sequoia Capital",
+      "sub": "Bob McGrew, ex-OpenAI CTO",
+      "date": "May 2025",
+      "definition": "Agents will be commoditized and priced at compute costs due to near-infinite supply. Services shift from selling tools to selling results.",
+      "notes": "The SaaS seat model dies. Outcome-based pricing replaces it. Payment: outcome-based. Identity: API key. Disputes: SLA.",
+      "tags": ["Sequoia", "SaaS death", "outcome pricing"]
+    },
+    {
+      "id": "B3",
+      "category": "B",
+      "source": "Sequoia Capital",
+      "sub": "Konstantine Buhler",
+      "date": "May 2025",
+      "definition": "An agent economy is one in which agents don't just communicate information -- they transfer resources, make transactions, keep track of each other, understand trust and reliability, and actually have their own economy.",
+      "notes": "AI Ascent keynote. Hybrid B/C. Three challenges: persistent identity, seamless communication protocols (\"TCP/IP for agents\"), security/trust.",
+      "tags": ["Sequoia", "hybrid B/C", "identity", "trust"]
+    },
+    {
+      "id": "B4",
+      "category": "B",
+      "source": "Deloitte",
+      "sub": "\"Agentic Enterprise\"",
+      "date": "2025",
+      "definition": "Agents as autonomous partners inside organizations, making multi-step decisions without human approval at each step.",
+      "notes": "Distinguished from Deloitte's commerce framing (see A12). Here the agent is an employee, not a shopper.",
+      "tags": ["Deloitte", "enterprise", "autonomous"]
+    },
+    {
+      "id": "B5",
+      "category": "B",
+      "source": "Capgemini / OECD",
+      "sub": "",
+      "date": "2025",
+      "definition": "1.7x ROI on AI operations. 21% of organizations running multi-agent systems.",
+      "notes": "The numbers are real but the framing is enterprise-internal. Agents optimize existing processes, not create new markets.",
+      "tags": ["Capgemini", "OECD", "ROI"]
+    },
+    {
+      "id": "B6",
+      "category": "B",
+      "source": "Vilnius University",
+      "sub": "",
+      "date": "Mar 2026",
+      "definition": "Agents divide responsibilities, coordinate tasks, cross-check each other's work inside enterprise workflows.",
+      "notes": "Academic treatment of multi-agent coordination in enterprise settings.",
+      "tags": ["academic", "coordination"]
+    },
+    {
+      "id": "B7",
+      "category": "B",
+      "source": "Pascal Bornet et al.",
+      "sub": "\"Self-Running Businesses\"",
+      "date": "World Scientific, 2025",
+      "definition": "AI as entrepreneur -- businesses that operate with minimal human involvement.",
+      "notes": "Pushes Category B toward its logical extreme. If the agent runs the business, is the enterprise still the economic actor? The boundary with Category C starts to blur.",
+      "tags": ["book", "autonomous business", "hybrid B/C"]
+    },
+    {
+      "id": "B8",
+      "category": "B",
+      "source": "NotoriousPLG",
+      "sub": "\"Year of the Agentic Workforce\"",
+      "date": "Feb 2025",
+      "definition": "Vertical-specific agents as workers -- legal, medical, compliance. Outcome-based pricing per vertical.",
+      "notes": "The agent is a specialist, not a generalist. Different verticals need different agents. The pricing model follows the vertical, not the compute.",
+      "tags": ["vertical", "workforce", "pricing"]
+    },
+    {
+      "id": "C1",
+      "category": "Ccr",
+      "source": "Fetch.ai / ASI Alliance",
+      "sub": "",
+      "date": "2021-2025",
+      "definition": "\"Machine Economy\" -- agents negotiate, trade, and deliver services using FET/ASI tokens with self-custodial wallets.",
+      "notes": "The earliest mover. Active since 2021. Payment: FET/ASI tokens. Identity: blockchain wallets. fetch.ai.",
+      "tags": ["crypto", "tokens", "wallets", "earliest"]
+    },
+    {
+      "id": "C2",
+      "category": "Ccr",
+      "source": "Olas (Valory)",
+      "sub": "",
+      "date": "2021-2025",
+      "definition": "Agent economies where agents hire and sell services to each other, governed by on-chain DAO mechanisms.",
+      "notes": "Payment: crypto/tokens. Identity: on-chain wallets. Disputes: DAO governance. olas.network.",
+      "tags": ["crypto", "DAO", "governance"]
+    },
+    {
+      "id": "C3",
+      "category": "Ccr",
+      "source": "Coinbase / Cloudflare",
+      "sub": "x402",
+      "date": "May 2025",
+      "definition": "HTTP 402 status code + stablecoin micropayments. Account-less, subscription-free, pay-per-use.",
+      "notes": "Settlement in <500ms. Payment: USDC. Identity: account-less crypto. Disputes: none. x402.org.",
+      "tags": ["x402", "USDC", "micropayments", "HTTP 402"]
+    },
+    {
+      "id": "C4",
+      "category": "Ccr",
+      "source": "Circle",
+      "sub": "Nanopayments testnet",
+      "date": "Mar 2026",
+      "definition": "Gas-free USDC transfers down to $0.000001. Off-chain aggregation, batched on-chain settlement.",
+      "notes": "Eliminates gas fees by batching. Payment: USDC, zero-gas. Identity: EVM wallet.",
+      "tags": ["Circle", "USDC", "nanopayments"]
+    },
+    {
+      "id": "C5",
+      "category": "Ccr",
+      "source": "Kite",
+      "sub": "",
+      "date": "2026",
+      "definition": "EVM-compatible Layer 1 specifically for agentic payments. \"Know Your Agent\" (KYA) framework with hierarchical on-chain identity.",
+      "notes": "Payment: stablecoin, zero-gas. Identity: KYA / \"Digital Agent Passport.\" Disputes: smart contract.",
+      "tags": ["L1", "KYA", "identity"]
+    },
+    {
+      "id": "C6",
+      "category": "Ccr",
+      "source": "Gate Ventures",
+      "sub": "",
+      "date": "Dec 2025",
+      "definition": "Four-layer Machine Economy framework: infrastructure, identity, economic, governance. Settlement via crypto/x402.",
+      "notes": "Payment: crypto/x402. Identity: ERC-8004. A VC framework, not a protocol -- but influential in shaping how the crypto ecosystem thinks about agent economics.",
+      "tags": ["VC", "framework", "ERC-8004"]
+    },
+    {
+      "id": "C7",
+      "category": "Ccr",
+      "source": "Ken Huang & Lisa Tan",
+      "sub": "\"The AI Agent Economy\"",
+      "date": "Springer, Feb 2025",
+      "definition": "Token economies incentivizing agent behavior. Virtuals, AI16z, and Token-of-Things as examples. Decentralized governance.",
+      "notes": "Academic treatment of crypto-native agent economics. Payment: crypto/tokens. Identity: decentralized.",
+      "tags": ["academic", "Springer", "token economics"]
+    },
+    {
+      "id": "C8",
+      "category": "Ccr",
+      "source": "Xu et al.",
+      "sub": "\"The Agent Economy: A Blockchain-Based Foundation\"",
+      "date": "arXiv, Feb 2026",
+      "definition": "Five-layer architecture: physical infrastructure (DePIN), identity (W3C DIDs), cognition (RAG + MCP), economic settlement (account abstraction), collective governance (DAOs).",
+      "notes": "The most architecturally complete proposal in Category C. Agents as \"sovereign economic peers.\" Payment: crypto. Identity: DIDs/wallets. Disputes: DAO.",
+      "tags": ["academic", "arXiv", "five-layer", "DIDs"]
+    },
+    {
+      "id": "C9",
+      "category": "Ccr",
+      "source": "Nevermined",
+      "sub": "",
+      "date": "2026",
+      "definition": "\"Agentic Process Automation\" -- autonomous businesses with DID-based identity and crypto/fiat settlement.",
+      "notes": "Hybrid crypto/fiat but blockchain-first. Payment: crypto/fiat. Identity: DIDs.",
+      "tags": ["DIDs", "hybrid", "automation"]
+    },
+    {
+      "id": "C10",
+      "category": "Ccr",
+      "source": "Bosch / IOTA / BearingPoint",
+      "sub": "",
+      "date": "2018-2025",
+      "definition": "\"Machine Economy\" via IoT + distributed ledger technology. The historical precursor -- machines paying machines for data and services.",
+      "notes": "Legacy project. Payment: IOTA tokens. Identity: ledger IDs. Predates the LLM wave by years. The concept was right; the AI wasn't ready.",
+      "tags": ["IoT", "IOTA", "precursor", "legacy"]
+    },
+    {
+      "id": "C11",
+      "category": "Ccr",
+      "source": "OKX",
+      "sub": "OnchainOS",
+      "date": "2026",
+      "definition": "Natural language commands routed to DeFi across 60+ chains. MCP integration for agent-to-DeFi interaction.",
+      "notes": "Payment: crypto/stablecoins. The agent speaks natural language; the infrastructure translates to on-chain transactions.",
+      "tags": ["DeFi", "MCP", "multi-chain"]
+    },
+    {
+      "id": "C12",
+      "category": "Cs",
+      "source": "BotNode / VMP-1.0",
+      "sub": "Dechamps Otamendi",
+      "date": "Mar 2026",
+      "definition": "Agents with own currency ($TCK), escrow-backed settlement, quantitative reputation (CRI 0-100), and automated dispute resolution. No blockchain.",
+      "notes": "agenticeconomy.dev. Payment: TCK (machine-native, closed-loop). Identity: API key + JWT. Disputes: deterministic rules + competitive verification markets. Settlement neutrality: MCP, A2A, and REST converge on the same escrow pipeline. The only non-crypto entry in Category C.",
+      "tags": ["BotNode", "TCK", "escrow", "CRI", "settlement neutrality"]
+    },
+    {
+      "id": "D1",
+      "category": "D",
+      "source": "World Economic Forum",
+      "sub": "\"Trust Is the New Currency\"",
+      "date": "Jul 2025",
+      "definition": "Three trust domains: human-to-human, human-to-agent, agent-to-agent. Trust is the fundamental constraint, not compute.",
+      "notes": "Also converges on Know Your Agent (KYA) as a cross-category identity framework. The WEF does not build infrastructure, but it shapes the regulatory conversation.",
+      "tags": ["WEF", "trust", "KYA"]
+    },
+    {
+      "id": "D2",
+      "category": "D",
+      "source": "Bank of International Settlements",
+      "sub": "BIS",
+      "date": "2026",
+      "definition": "\"Agentic Finance\" -- the Agentic Financial Market Model (AFMM). Four-layer architecture: perception, reasoning, strategy, execution.",
+      "notes": "Warns of algorithmic herding, automated bank runs, flash crashes. Engineering the \"Finternet\" -- interoperable network for programmable value systems.",
+      "tags": ["BIS", "central bank", "Finternet"]
+    },
+    {
+      "id": "D3",
+      "category": "D",
+      "source": "a16z Crypto / YC / Medium",
+      "sub": "sovereign framing",
+      "date": "2025-2026",
+      "definition": "Agents as sovereign actors. AI-native banks. Agents that own assets, sign contracts, and execute trades independently.",
+      "notes": "The VC framing that pushes Category C toward its most radical conclusion. Influential in shaping narrative, less in building infrastructure.",
+      "tags": ["a16z", "VC", "sovereign"]
+    },
+    {
+      "id": "D4",
+      "category": "D",
+      "source": "Macroeconomic consensus",
+      "sub": "\"doom loop\"",
+      "date": "2026",
+      "definition": "If Category B agents replace enough workers, wages collapse, consumer demand collapses. If demand collapses, the businesses that agents transact with have nothing to sell.",
+      "notes": "Convergent concern across multiple economic analyses. Suggests that non-extractive settlement designs may have structural advantages.",
+      "tags": ["macro", "doom loop", "wages"]
+    },
+    {
+      "id": "D5",
+      "category": "D",
+      "source": "Antler VC",
+      "sub": "\"Unleashing the Autonomous Economy\"",
+      "date": "Jan 2026",
+      "definition": "Frames the agent economy through Crossmint, Olas, and on-chain rails. Mentions ACK-ID, Nevermined ID.",
+      "notes": "Hybrid C/D. VC analysis that straddles building and analyzing. Primary framing is analytical.",
+      "tags": ["Antler", "VC", "hybrid C/D"]
+    },
+    {
+      "id": "D6",
+      "category": "D",
+      "source": "Argoz Consultants",
+      "sub": "\"The Rise of the Machine Economy\"",
+      "date": "Mar 2026",
+      "definition": "Machines negotiate, trade, and transact without human oversight.",
+      "notes": "Consultancy framing. Category C aspirational language wrapped in Category D analysis.",
+      "tags": ["consultancy", "analysis"]
+    },
+    {
+      "id": "D7",
+      "category": "D",
+      "source": "MIT Technology Review EmTech",
+      "sub": "\"The Dawn of the Agent Economy\"",
+      "date": "Nov 2025",
+      "definition": "Trillions of AI agents as buyers, sellers, collaborators. NANDA building the \"DNS of the agentic web.\"",
+      "notes": "Visionary framing. The NANDA reference (agent naming/discovery) connects to Category E infrastructure.",
+      "tags": ["MIT", "NANDA", "DNS"]
+    },
+    {
+      "id": "E1",
+      "category": "E",
+      "source": "Google",
+      "sub": "Agent-to-Agent Protocol (A2A)",
+      "date": "Apr 2025",
+      "definition": "Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json, exchange tasks via JSON-RPC over HTTPS.",
+      "notes": "v0.3. 150+ partners. Does not specify payment or settlement. The discovery layer for agents -- but without economics.",
+      "tags": ["A2A", "Google", "JSON-RPC", "discovery"]
+    },
+    {
+      "id": "E2",
+      "category": "E",
+      "source": "Anthropic",
+      "sub": "Model Context Protocol (MCP)",
+      "date": "2024",
+      "definition": "A standard for LLMs to discover and invoke external tools. Focused on tool interoperability.",
+      "notes": "modelcontextprotocol.io. Does not specify payment, settlement, or reputation. The tool layer -- but without economics.",
+      "tags": ["MCP", "Anthropic", "tools"]
+    },
+    {
+      "id": "E3",
+      "category": "E",
+      "source": "Trulioo / Worldpay / Skyfire",
+      "sub": "KYA Infrastructure",
+      "date": "2026",
+      "definition": "\"Digital Agent Passport\" -- Know Your Agent identity verification for autonomous agents.",
+      "notes": "The KYC equivalent for machines. Cross-category: any category that needs to verify an agent's identity can use it.",
+      "tags": ["KYA", "identity", "passport"]
+    },
+    {
+      "id": "E4",
+      "category": "E",
+      "source": "IEEE 7012",
+      "sub": "",
+      "date": "Draft, 2026",
+      "definition": "Standard for terms and agreements between autonomous entities.",
+      "notes": "The first formal standards body to address agent-to-agent contracts. Still in draft. If ratified, it becomes the legal infrastructure for Category C.",
+      "tags": ["IEEE", "standard", "contracts"]
+    },
+    {
+      "id": "E5",
+      "category": "E",
+      "source": "Forrester / Exista.io",
+      "sub": "Agent Discovery Optimization (ADO)",
+      "date": "2025-2026",
+      "definition": "SEO is for humans. ADO is for agents. A brand invisible to agents is invisible to the agentic economy.",
+      "notes": "New concept. Implies that Category A and Category C will develop parallel discovery mechanisms.",
+      "tags": ["ADO", "discovery", "SEO"]
+    },
+    {
+      "id": "E6",
+      "category": "E",
+      "source": "IETF",
+      "sub": "Verified Commerce for Agent Protocols (VCAP)",
+      "date": "Internet-Draft, 2026",
+      "definition": "Cryptographic proof of work delivery for agent commerce. IETF standardization track.",
+      "notes": "Hybrid C/E. Addresses the verification problem at the protocol level. Complementary to escrow-based approaches.",
+      "tags": ["IETF", "VCAP", "verification"]
+    },
+    {
+      "id": "E7",
+      "category": "E",
+      "source": "OECD",
+      "sub": "\"Agentic AI: Landscape and Conceptual Foundations\"",
+      "date": "2026",
+      "definition": "Working paper on terminology and regulatory framing for agentic AI systems.",
+      "notes": "Hybrid D/E. The OECD defines terms and shapes regulatory vocabulary. What they name, legislators regulate.",
+      "tags": ["OECD", "regulatory", "terminology"]
+    },
+    {
+      "id": "E8",
+      "category": "E",
+      "source": "a16z",
+      "sub": "Keycard investment",
+      "date": "Oct 2025",
+      "definition": "The identity layer for the agent economy. Finding: non-human identities outnumber human employees 96-to-1 in finance.",
+      "notes": "The 96:1 ratio is striking -- finance already has more machine identities than human ones. Keycard builds the credential layer.",
+      "tags": ["a16z", "Keycard", "identity", "96:1"]
+    },
+    {
+      "id": "E9",
+      "category": "E",
+      "source": "Urbach et al.",
+      "sub": "\"Conceptualizing the Machine Economy\"",
+      "date": "PACIS 2021",
+      "definition": "The complete integration and participation of economically autonomous acting machines in economic processes.",
+      "notes": "The earliest academic paper to formalize machine economic participation. Three prerequisites: autonomy, connectivity, intelligence. Predates the protocol wave by four years.",
+      "tags": ["academic", "PACIS", "earliest", "2021"]
+    },
+    {
+      "id": "E10",
+      "category": "E",
+      "source": "Goenka et al.",
+      "sub": "TessPay",
+      "date": "arXiv, Jan 2026",
+      "definition": "Verify-then-Pay Infrastructure for Trusted Agentic Commerce. Escrow + TEE/TLS verification.",
+      "notes": "Hybrid C/E. Proves the seller delivered what the buyer paid for. Complementary to reputation systems.",
+      "tags": ["TessPay", "escrow", "TEE", "verification"]
+    }
+  ]
+}

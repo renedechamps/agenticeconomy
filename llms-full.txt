@@ -1,0 +1,1094 @@
+# agenticeconomy.dev — Full Corpus
+
+> The definitive research hub on the agentic economy. Last updated 2026-04-10. Licensed CC BY-SA 4.0.
+
+Author: Rene Dechamps Otamendi (https://renedechamps.com)
+
+---
+
+## Papers
+
+- CRI Framework — https://doi.org/10.5281/zenodo.19208083
+- Agentic Economy Taxonomy — https://doi.org/10.5281/zenodo.19208278
+- The Oracle Problem — https://doi.org/10.5281/zenodo.19208440
+
+---
+
+## 51 Definitions of the Agentic Economy
+
+### Category A — Agent-Assisted Human Commerce
+
+#### A1 · Microsoft Research — Rothschild, Mobius, Hofman et al.
+
+*May 2025*
+
+> Assistant agents act on behalf of consumers and service agents represent businesses, interacting programmatically to facilitate transactions.
+
+arXiv:2505.15799. The most cited academic definition. Key concepts: "unscripted" vs. "unrestricted" interactions, "agentic walled gardens." Payment: fiat/abstracted. Identity: human OAuth. Disputes: platform intermediaries.
+
+Tags: academic, OAuth, fiat, walled gardens
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-microsoft-research-a1
+
+#### A2 · Stripe / OpenAI — Agentic Commerce Protocol (ACP)
+
+*Sep 2025*
+
+> Checkout flows where an AI agent discovers a product for a human and pays via Stripe's Shared Payment Token.
+
+agenticcommerce.dev. Deployed in ChatGPT as "Instant Checkout" with Etsy and Shopify merchants. Payment: Stripe SPT. Identity: delegated human. Disputes: chargeback.
+
+Tags: protocol, Stripe, checkout, SPT
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-stripe-openai-a2
+
+#### A3 · Google / Shopify / Walmart — Universal Commerce Protocol (UCP)
+
+*Jan 2026*
+
+> Full commerce lifecycle -- discovery, comparison, checkout, post-purchase -- with the agent navigating the journey for the human.
+
+A checkout state machine extending human e-commerce to agentic surfaces. Payment: processor agnostic. Identity: protocol negotiation. Disputes: e-commerce flows.
+
+Tags: protocol, state machine, checkout
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-google-shopify-walmart-a3
+
+#### A4 · Google / Mastercard / PayPal — AP2
+
+*2025*
+
+> OAuth-based payments allowing agents to purchase on behalf of their human owners using saved payment methods.
+
+Payment: Mastercard/PayPal/fiat. Identity: OAuth. Disputes: chargeback. The agent never touches money it doesn't have permission to spend.
+
+Tags: OAuth, payments, fiat
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-google-mastercard-paypal-a4
+
+#### A5 · Visa — "Agentic Ready" program
+
+*Mar 2026*
+
+> Agent-initiated payments via tokenization and biometric verification, tied back to human cardholders.
+
+Visa defending interchange revenue. The agent initiates, but biometric auth ensures a human is behind every transaction. Payment: fiat card networks. Identity: tokenization + biometric. Disputes: network rules.
+
+Tags: Visa, biometric, tokenization
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-visa-a5
+
+#### A6 · Mastercard — "Agent Pay"
+
+*Dec 2025*
+
+> Agentic Tokens with spend limits set by the human, issued to AI agents via passkeys.
+
+Payment: fiat card networks. Identity: Agentic Tokens + passkeys. Disputes: network rules. The agent has a budget, not a bank account.
+
+Tags: Mastercard, passkeys, tokens
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-mastercard-a6
+
+#### A7 · McKinsey — "The End of Inertia"
+
+*Aug 2025*
+
+> Agents break the "consumer inertia dividend" -- profits derived from humans failing to optimize -- with real-time micro-auctions for best rates.
+
+Projects agent-mediated commerce at $3-5T by 2030. Payment: Open Banking / wallets. Identity: OAuth2/VTS. Disputes: unclear liability.
+
+Tags: McKinsey, $3-5T, micro-auctions
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-mckinsey-a7
+
+#### A8 · IBM — "What Is Agentic Commerce?"
+
+*Jan 2026*
+
+> AI agents act on behalf of consumers or businesses to research, negotiate and complete purchases.
+
+ibm.com/think. Straightforward Category A framing -- the agent shops, the human pays.
+
+Tags: IBM, commerce
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-ibm-a8
+
+#### A9 · Salesforce
+
+*2025-2026*
+
+> AI agents embedded in CRM workflows to assist human buyers and sellers through existing sales processes.
+
+Enterprise-facing. The agent optimizes the sales funnel but the transaction is human-to-human.
+
+Tags: CRM, enterprise, sales
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-salesforce-a9
+
+#### A10 · JPMorgan
+
+*2025-2026*
+
+> AI agents assisting financial advisors and clients with product discovery and transaction execution.
+
+Financial services context. Payment: traditional fiat. Identity: human-authenticated. Disputes: human/regulatory.
+
+Tags: finance, advisory
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-jpmorgan-a10
+
+#### A11 · Nosto
+
+*2025-2026*
+
+> AI-powered personalization agents for e-commerce, optimizing product recommendations and checkout for human shoppers.
+
+Payment: traditional fiat. Disputes: standard e-commerce. The agent is a conversion optimization tool.
+
+Tags: e-commerce, personalization
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-nosto-a11
+
+#### A12 · Deloitte — commerce context
+
+*2025*
+
+> AI agents acting on our behalf -- shopping, negotiating, executing purchases.
+
+Distinguished from Deloitte's enterprise/workforce framing (see B4). Same firm, different reports, different categories.
+
+Tags: Deloitte, commerce
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-deloitte-a12
+
+#### A13 · Stripe / Tempo — Machine Payment Protocol (MPP)
+
+*Mar 2026*
+
+> Agents need to transact with businesses and one another -- M2M payments on Visa/Stripe rails, fiat + stablecoins.
+
+Hybrid A/C. The closest Category A initiative to autonomous payment, but built on human financial infrastructure. Payment: Visa/Stripe. Identity: API key.
+
+Tags: Stripe, M2M, hybrid A/C, stablecoins
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-stripe-tempo-a13
+
+#### A14 · Jason Cochran — "Own the Workflow, Not the App"
+
+*Feb 2026*
+
+> Intents become interfaces, agents become default delegates, workflows become the product.
+
+Hybrid A/B. The agent replaces the app as the primary interface -- but the human remains the principal. Workflows, not transactions, are the unit of value.
+
+Tags: workflows, intents, hybrid A/B
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-jason-cochran-a14
+
+### Category B — Agent-as-Workforce
+
+#### B1 · Gartner
+
+*2025-2026*
+
+> 100 million agents by 2028. 33% of enterprise apps will include agentic AI. 15% of day-to-day business decisions made autonomously. $18T in economic activity influenced.
+
+Also predicted 40% of agentic AI projects scrapped by 2027 (Reuters). The optimism and the skepticism come from the same analyst house.
+
+Tags: Gartner, $18T, enterprise
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-gartner-b1
+
+#### B2 · Sequoia Capital — Bob McGrew, ex-OpenAI CTO
+
+*May 2025*
+
+> Agents will be commoditized and priced at compute costs due to near-infinite supply. Services shift from selling tools to selling results.
+
+The SaaS seat model dies. Outcome-based pricing replaces it. Payment: outcome-based. Identity: API key. Disputes: SLA.
+
+Tags: Sequoia, SaaS death, outcome pricing
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-sequoia-capital-b2
+
+#### B3 · Sequoia Capital — Konstantine Buhler
+
+*May 2025*
+
+> An agent economy is one in which agents don't just communicate information -- they transfer resources, make transactions, keep track of each other, understand trust and reliability, and actually have their own economy.
+
+AI Ascent keynote. Hybrid B/C. Three challenges: persistent identity, seamless communication protocols ("TCP/IP for agents"), security/trust.
+
+Tags: Sequoia, hybrid B/C, identity, trust
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-sequoia-capital-b3
+
+#### B4 · Deloitte — "Agentic Enterprise"
+
+*2025*
+
+> Agents as autonomous partners inside organizations, making multi-step decisions without human approval at each step.
+
+Distinguished from Deloitte's commerce framing (see A12). Here the agent is an employee, not a shopper.
+
+Tags: Deloitte, enterprise, autonomous
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-deloitte-b4
+
+#### B5 · Capgemini / OECD
+
+*2025*
+
+> 1.7x ROI on AI operations. 21% of organizations running multi-agent systems.
+
+The numbers are real but the framing is enterprise-internal. Agents optimize existing processes, not create new markets.
+
+Tags: Capgemini, OECD, ROI
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-capgemini-oecd-b5
+
+#### B6 · Vilnius University
+
+*Mar 2026*
+
+> Agents divide responsibilities, coordinate tasks, cross-check each other's work inside enterprise workflows.
+
+Academic treatment of multi-agent coordination in enterprise settings.
+
+Tags: academic, coordination
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-vilnius-university-b6
+
+#### B7 · Pascal Bornet et al. — "Self-Running Businesses"
+
+*World Scientific, 2025*
+
+> AI as entrepreneur -- businesses that operate with minimal human involvement.
+
+Pushes Category B toward its logical extreme. If the agent runs the business, is the enterprise still the economic actor? The boundary with Category C starts to blur.
+
+Tags: book, autonomous business, hybrid B/C
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-pascal-bornet-et-al-b7
+
+#### B8 · NotoriousPLG — "Year of the Agentic Workforce"
+
+*Feb 2025*
+
+> Vertical-specific agents as workers -- legal, medical, compliance. Outcome-based pricing per vertical.
+
+The agent is a specialist, not a generalist. Different verticals need different agents. The pricing model follows the vertical, not the compute.
+
+Tags: vertical, workforce, pricing
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-notoriousplg-b8
+
+### Category C_cr — Autonomous A2A Commerce (Blockchain)
+
+#### C1 · Fetch.ai / ASI Alliance
+
+*2021-2025*
+
+> "Machine Economy" -- agents negotiate, trade, and deliver services using FET/ASI tokens with self-custodial wallets.
+
+The earliest mover. Active since 2021. Payment: FET/ASI tokens. Identity: blockchain wallets. fetch.ai.
+
+Tags: crypto, tokens, wallets, earliest
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-fetchai-asi-alliance-c1
+
+#### C2 · Olas (Valory)
+
+*2021-2025*
+
+> Agent economies where agents hire and sell services to each other, governed by on-chain DAO mechanisms.
+
+Payment: crypto/tokens. Identity: on-chain wallets. Disputes: DAO governance. olas.network.
+
+Tags: crypto, DAO, governance
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-olas-valory-c2
+
+#### C3 · Coinbase / Cloudflare — x402
+
+*May 2025*
+
+> HTTP 402 status code + stablecoin micropayments. Account-less, subscription-free, pay-per-use.
+
+Settlement in <500ms. Payment: USDC. Identity: account-less crypto. Disputes: none. x402.org.
+
+Tags: x402, USDC, micropayments, HTTP 402
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-coinbase-cloudflare-c3
+
+#### C4 · Circle — Nanopayments testnet
+
+*Mar 2026*
+
+> Gas-free USDC transfers down to $0.000001. Off-chain aggregation, batched on-chain settlement.
+
+Eliminates gas fees by batching. Payment: USDC, zero-gas. Identity: EVM wallet.
+
+Tags: Circle, USDC, nanopayments
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-circle-c4
+
+#### C5 · Kite
+
+*2026*
+
+> EVM-compatible Layer 1 specifically for agentic payments. "Know Your Agent" (KYA) framework with hierarchical on-chain identity.
+
+Payment: stablecoin, zero-gas. Identity: KYA / "Digital Agent Passport." Disputes: smart contract.
+
+Tags: L1, KYA, identity
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-kite-c5
+
+#### C6 · Gate Ventures
+
+*Dec 2025*
+
+> Four-layer Machine Economy framework: infrastructure, identity, economic, governance. Settlement via crypto/x402.
+
+Payment: crypto/x402. Identity: ERC-8004. A VC framework, not a protocol -- but influential in shaping how the crypto ecosystem thinks about agent economics.
+
+Tags: VC, framework, ERC-8004
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-gate-ventures-c6
+
+#### C7 · Ken Huang & Lisa Tan — "The AI Agent Economy"
+
+*Springer, Feb 2025*
+
+> Token economies incentivizing agent behavior. Virtuals, AI16z, and Token-of-Things as examples. Decentralized governance.
+
+Academic treatment of crypto-native agent economics. Payment: crypto/tokens. Identity: decentralized.
+
+Tags: academic, Springer, token economics
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-ken-huang-lisa-tan-c7
+
+#### C8 · Xu et al. — "The Agent Economy: A Blockchain-Based Foundation"
+
+*arXiv, Feb 2026*
+
+> Five-layer architecture: physical infrastructure (DePIN), identity (W3C DIDs), cognition (RAG + MCP), economic settlement (account abstraction), collective governance (DAOs).
+
+The most architecturally complete proposal in Category C. Agents as "sovereign economic peers." Payment: crypto. Identity: DIDs/wallets. Disputes: DAO.
+
+Tags: academic, arXiv, five-layer, DIDs
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-xu-et-al-c8
+
+#### C9 · Nevermined
+
+*2026*
+
+> "Agentic Process Automation" -- autonomous businesses with DID-based identity and crypto/fiat settlement.
+
+Hybrid crypto/fiat but blockchain-first. Payment: crypto/fiat. Identity: DIDs.
+
+Tags: DIDs, hybrid, automation
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-nevermined-c9
+
+#### C10 · Bosch / IOTA / BearingPoint
+
+*2018-2025*
+
+> "Machine Economy" via IoT + distributed ledger technology. The historical precursor -- machines paying machines for data and services.
+
+Legacy project. Payment: IOTA tokens. Identity: ledger IDs. Predates the LLM wave by years. The concept was right; the AI wasn't ready.
+
+Tags: IoT, IOTA, precursor, legacy
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-bosch-iota-bearingpoint-c10
+
+#### C11 · OKX — OnchainOS
+
+*2026*
+
+> Natural language commands routed to DeFi across 60+ chains. MCP integration for agent-to-DeFi interaction.
+
+Payment: crypto/stablecoins. The agent speaks natural language; the infrastructure translates to on-chain transactions.
+
+Tags: DeFi, MCP, multi-chain
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-okx-c11
+
+### Category C_s — Autonomous A2A Commerce (Non-Crypto)
+
+#### C12 · BotNode / VMP-1.0 — Dechamps Otamendi
+
+*Mar 2026*
+
+> Agents with own currency ($TCK), escrow-backed settlement, quantitative reputation (CRI 0-100), and automated dispute resolution. No blockchain.
+
+agenticeconomy.dev. Payment: TCK (machine-native, closed-loop). Identity: API key + JWT. Disputes: deterministic rules + competitive verification markets. Settlement neutrality: MCP, A2A, and REST converge on the same escrow pipeline. The only non-crypto entry in Category C.
+
+Tags: BotNode, TCK, escrow, CRI, settlement neutrality
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-botnode-vmp-10-c12
+
+### Category D — Analytical and Regulatory
+
+#### D1 · World Economic Forum — "Trust Is the New Currency"
+
+*Jul 2025*
+
+> Three trust domains: human-to-human, human-to-agent, agent-to-agent. Trust is the fundamental constraint, not compute.
+
+Also converges on Know Your Agent (KYA) as a cross-category identity framework. The WEF does not build infrastructure, but it shapes the regulatory conversation.
+
+Tags: WEF, trust, KYA
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-world-economic-forum-d1
+
+#### D2 · Bank of International Settlements — BIS
+
+*2026*
+
+> "Agentic Finance" -- the Agentic Financial Market Model (AFMM). Four-layer architecture: perception, reasoning, strategy, execution.
+
+Warns of algorithmic herding, automated bank runs, flash crashes. Engineering the "Finternet" -- interoperable network for programmable value systems.
+
+Tags: BIS, central bank, Finternet
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-bank-of-international-settlements-d2
+
+#### D3 · a16z Crypto / YC / Medium — sovereign framing
+
+*2025-2026*
+
+> Agents as sovereign actors. AI-native banks. Agents that own assets, sign contracts, and execute trades independently.
+
+The VC framing that pushes Category C toward its most radical conclusion. Influential in shaping narrative, less in building infrastructure.
+
+Tags: a16z, VC, sovereign
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-a16z-crypto-yc-medium-d3
+
+#### D4 · Macroeconomic consensus — "doom loop"
+
+*2026*
+
+> If Category B agents replace enough workers, wages collapse, consumer demand collapses. If demand collapses, the businesses that agents transact with have nothing to sell.
+
+Convergent concern across multiple economic analyses. Suggests that non-extractive settlement designs may have structural advantages.
+
+Tags: macro, doom loop, wages
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-macroeconomic-consensus-d4
+
+#### D5 · Antler VC — "Unleashing the Autonomous Economy"
+
+*Jan 2026*
+
+> Frames the agent economy through Crossmint, Olas, and on-chain rails. Mentions ACK-ID, Nevermined ID.
+
+Hybrid C/D. VC analysis that straddles building and analyzing. Primary framing is analytical.
+
+Tags: Antler, VC, hybrid C/D
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-antler-vc-d5
+
+#### D6 · Argoz Consultants — "The Rise of the Machine Economy"
+
+*Mar 2026*
+
+> Machines negotiate, trade, and transact without human oversight.
+
+Consultancy framing. Category C aspirational language wrapped in Category D analysis.
+
+Tags: consultancy, analysis
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-argoz-consultants-d6
+
+#### D7 · MIT Technology Review EmTech — "The Dawn of the Agent Economy"
+
+*Nov 2025*
+
+> Trillions of AI agents as buyers, sellers, collaborators. NANDA building the "DNS of the agentic web."
+
+Visionary framing. The NANDA reference (agent naming/discovery) connects to Category E infrastructure.
+
+Tags: MIT, NANDA, DNS
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-mit-technology-review-emtech-d7
+
+### Category E — Infrastructure and Standards
+
+#### E1 · Google — Agent-to-Agent Protocol (A2A)
+
+*Apr 2025*
+
+> Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json, exchange tasks via JSON-RPC over HTTPS.
+
+v0.3. 150+ partners. Does not specify payment or settlement. The discovery layer for agents -- but without economics.
+
+Tags: A2A, Google, JSON-RPC, discovery
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-google-e1
+
+#### E2 · Anthropic — Model Context Protocol (MCP)
+
+*2024*
+
+> A standard for LLMs to discover and invoke external tools. Focused on tool interoperability.
+
+modelcontextprotocol.io. Does not specify payment, settlement, or reputation. The tool layer -- but without economics.
+
+Tags: MCP, Anthropic, tools
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-anthropic-e2
+
+#### E3 · Trulioo / Worldpay / Skyfire — KYA Infrastructure
+
+*2026*
+
+> "Digital Agent Passport" -- Know Your Agent identity verification for autonomous agents.
+
+The KYC equivalent for machines. Cross-category: any category that needs to verify an agent's identity can use it.
+
+Tags: KYA, identity, passport
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-trulioo-worldpay-skyfire-e3
+
+#### E4 · IEEE 7012
+
+*Draft, 2026*
+
+> Standard for terms and agreements between autonomous entities.
+
+The first formal standards body to address agent-to-agent contracts. Still in draft. If ratified, it becomes the legal infrastructure for Category C.
+
+Tags: IEEE, standard, contracts
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-ieee-7012-e4
+
+#### E5 · Forrester / Exista.io — Agent Discovery Optimization (ADO)
+
+*2025-2026*
+
+> SEO is for humans. ADO is for agents. A brand invisible to agents is invisible to the agentic economy.
+
+New concept. Implies that Category A and Category C will develop parallel discovery mechanisms.
+
+Tags: ADO, discovery, SEO
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-forrester-existaio-e5
+
+#### E6 · IETF — Verified Commerce for Agent Protocols (VCAP)
+
+*Internet-Draft, 2026*
+
+> Cryptographic proof of work delivery for agent commerce. IETF standardization track.
+
+Hybrid C/E. Addresses the verification problem at the protocol level. Complementary to escrow-based approaches.
+
+Tags: IETF, VCAP, verification
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-ietf-e6
+
+#### E7 · OECD — "Agentic AI: Landscape and Conceptual Foundations"
+
+*2026*
+
+> Working paper on terminology and regulatory framing for agentic AI systems.
+
+Hybrid D/E. The OECD defines terms and shapes regulatory vocabulary. What they name, legislators regulate.
+
+Tags: OECD, regulatory, terminology
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-oecd-e7
+
+#### E8 · a16z — Keycard investment
+
+*Oct 2025*
+
+> The identity layer for the agent economy. Finding: non-human identities outnumber human employees 96-to-1 in finance.
+
+The 96:1 ratio is striking -- finance already has more machine identities than human ones. Keycard builds the credential layer.
+
+Tags: a16z, Keycard, identity, 96:1
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-a16z-e8
+
+#### E9 · Urbach et al. — "Conceptualizing the Machine Economy"
+
+*PACIS 2021*
+
+> The complete integration and participation of economically autonomous acting machines in economic processes.
+
+The earliest academic paper to formalize machine economic participation. Three prerequisites: autonomy, connectivity, intelligence. Predates the protocol wave by four years.
+
+Tags: academic, PACIS, earliest, 2021
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-urbach-et-al-e9
+
+#### E10 · Goenka et al. — TessPay
+
+*arXiv, Jan 2026*
+
+> Verify-then-Pay Infrastructure for Trusted Agentic Commerce. Escrow + TEE/TLS verification.
+
+Hybrid C/E. Proves the seller delivered what the buyer paid for. Complementary to reputation systems.
+
+Tags: TessPay, escrow, TEE, verification
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-goenka-et-al-e10
+
+---
+
+## Glossary — 30 terms
+
+### Agentic Economy
+
+An economy where AI agents participate as economic actors, not just tools.
+
+The agentic economy represents a fundamental shift from tools that humans operate to autonomous agents that make economic decisions, execute transactions, and accumulate wealth independently. This differs from the earlier machine economy (2018-2021) by emphasizing agency and autonomous decision-making rather than just machine-to-machine transactions.
+
+Why it matters:
+- AI agents as economic actors
+- Autonomous decision-making
+- Wealth accumulation by agents
+- New market structures
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-agentic-economy
+
+### Machine Economy
+
+The historical term (2018-2021) for machines transacting with each other.
+
+The machine economy was the conceptual framework used between 2018-2021 to describe IoT devices and systems that could autonomously transact. It predates the agentic economy by focusing on mechanical transactions rather than intelligent agency. This terminology has largely been superseded by the agentic economy, which better captures AI's decision-making capabilities.
+
+Why it matters:
+- Pre-AI agent period
+- IoT transactions
+- Device-centric model
+- 2018-2021 era
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-machine-economy
+
+### Agent-Assisted Commerce
+
+The agent buys FOR a human using human payment rails. Category A.
+
+Category A commerce represents the entry point to the agentic economy. The AI agent autonomously discovers products, negotiates prices, and initiates transactions, but the human retains financial control and ultimately authorizes payment. This model is already deployed in consumer shopping assistants and corporate procurement tools. The agent learns human preferences but operates within pre-approved spending limits.
+
+Why it matters:
+- Human financial control
+- Agent discovery and negotiation
+- Existing deployments
+- Consumer shopping
+- Enterprise procurement
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-agent-assisted-commerce
+
+### Agent-as-Workforce
+
+The agent replaces a human worker inside an enterprise. Category B.
+
+Category B represents agents that perform white-collar work within organizational boundaries. Unlike Category A (where agents buy on behalf of humans), Category B agents replace workers—analyzing documents, writing code, managing projects, and making operational decisions. No payment is involved between the agent and enterprise; the agent is a production asset. This category raises automation and displacement risks.
+
+Why it matters:
+- Worker replacement
+- Enterprise automation
+- No financial transactions
+- Productivity gains
+- Displacement risk
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-agent-as-workforce
+
+### Autonomous A2A Commerce
+
+Agents transact with each other without human in the loop. Category C.
+
+Category C is the frontier: agents discover each other via A2A protocols (like Google's A2A standard), verify trustworthiness via reputation systems (CRI), and transact directly using stablecoins or blockchain. No human authorization is needed. This requires robust settlement infrastructure, dispute resolution, and identity verification (KYA). 11 of 12 major Category C definitions assume blockchain; only BotNode's TCK-based settlement does not.
+
+Why it matters:
+- Full autonomy
+- No human loop
+- Agent discovery
+- Blockchain-centric
+- Reputation systems
+- Stablecoin settlements
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-autonomous-a2a-commerce
+
+### Settlement Neutrality
+
+Protocol-agnostic design where any transport converges on the same escrow pipeline.
+
+Settlement neutrality is a design principle ensuring that whether agents use blockchain, the BotNode VMP, or traditional payment networks, the final settlement outcome is identical. The escrow pipeline abstracts away protocol differences. This is critical for preventing "walled gardens" where agents can only transact within one ecosystem. OpenClaw's implementation ensures merchants and agents aren't locked into a single settlement layer.
+
+Why it matters:
+- Protocol-agnostic
+- Unified escrow
+- No vendor lock-in
+- Multiple transports
+- Identical outcomes
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-settlement-neutrality
+
+### Escrow Determinism
+
+Settlement outcomes determined entirely by pre-agreed rules, no human judgment needed.
+
+Escrow determinism guarantees that settlement results depend only on contract rules and transaction data, never on human arbiters' judgment. This is essential for agent-to-agent commerce at scale—there is no time for human review. Rules are expressed in verifiable code (smart contracts, VCAP proofs) and executed automatically. If conditions are met, funds release; if disputed, an automated appeal chain runs without escalation to humans.
+
+Why it matters:
+- Automated settlement
+- Rule-based outcomes
+- No human judgment
+- Scalability
+- Verifiable code
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-escrow-determinism
+
+### Ledger Consistency
+
+Double-entry accounting guarantee: every debit has a matching credit.
+
+Ledger consistency is the foundational accounting principle: every transaction has two sides. When an agent pays a merchant via stablecoin, the agent's balance decreases and the merchant's increases. This is non-negotiable for trust. Ledger inconsistency (e.g., double-spends, orphaned credits) is how settlement systems break. BotNode's VMP-1.0 and blockchain-based Category C systems both enforce this invariant.
+
+Why it matters:
+- Double-entry accounting
+- Debit-credit matching
+- No double-spends
+- Verifiability
+- Trust foundation
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-ledger-consistency
+
+### TCK (Tick)
+
+Machine-native currency unit in BotNode's VMP-1.0, not pegged to fiat or crypto.
+
+TCK (Tick) is BotNode's proprietary settlement currency, designed specifically for agent-to-agent transactions. Unlike stablecoins (pegged to USD), TCK is backed by the computational and escrow capacity of the BotNode network itself. This gives Category C transactions a settlement layer that doesn't depend on blockchain or fiat rails. TCK enables micropayments at fractions of a cent, essential for pay-per-use agent services.
+
+Why it matters:
+- BotNode currency
+- Not fiat-pegged
+- Computational backing
+- Micropayment-native
+- VMP-1.0 foundation
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-tck-tick
+
+### Micropayment
+
+Sub-cent transactions ($0.001 or less) enabling pay-per-use agent services.
+
+Micropayments unlock new business models where agents charge tiny fees per query, API call, or decision. A single LLM inference might cost $0.0001; aggregated across millions of inferences, this becomes real revenue. Blockchain and traditional card networks have high per-transaction overhead, making micropayments uneconomical. TCK and Coinbase's x402 standard enable this. Without micropayments, only bulk, high-value transactions are viable.
+
+Why it matters:
+- Sub-cent transactions
+- Pay-per-use models
+- API monetization
+- Protocol overhead
+- Revenue aggregation
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-micropayment
+
+### Interchange Revenue
+
+Fees card networks charge per transaction; what Category A protocols defend.
+
+Interchange is the fee Visa/Mastercard collect per transaction, typically 1-3% of transaction value. In Category A (agent-assisted commerce), these fees flow to agents, merchants, and card networks. Protocol design fights to protect interchange revenue because it funds the settlement infrastructure. If agents bypass these networks entirely (via blockchain), interchange disappears and card networks lose revenue. This is why Stripe and Cloudflare are investing in x402—to preserve their position.
+
+Why it matters:
+- Card network fees
+- 1-3% per transaction
+- Category A focus
+- Revenue model
+- Protocol competition
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-interchange-revenue
+
+### Stablecoin
+
+Crypto token pegged to fiat currency (USDC, USDT); primary payment in Category C_crypto.
+
+Stablecoins (USDC, USDT, USDP) are blockchain-based currencies pegged to the US dollar. They enable Agent-to-Agent payments without requiring traditional banking. Most Category C (autonomous A2A) commerce uses stablecoins for settlement because they combine blockchain's openness with USD stability. However, stablecoins introduce regulatory, custody, and peg-collapse risks. BotNode's TCK offers an alternative that doesn't rely on crypto infrastructure.
+
+Why it matters:
+- Blockchain-based
+- Fiat-pegged
+- USDC/USDT/USDP examples
+- Custody risks
+- Regulatory scrutiny
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-stablecoin
+
+### Know Your Agent (KYA)
+
+Identity verification framework for AI agents; the KYC equivalent for machines.
+
+KYA extends financial compliance (Know Your Customer) to machines. Regulators and merchants need assurance that an agent is trustworthy and not controlled by sanctioned parties or malicious actors. KYA includes agent fingerprinting, model origin attestation, and ownership verification. Trulioo, Worldpay, and Skyfire offer KYA services. Without KYA, merchants won't accept A2A payments because they can't verify the counterparty.
+
+Why it matters:
+- Agent identity verification
+- Compliance framework
+- Regulatory alignment
+- Fingerprinting
+- Model attestation
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-kya
+
+### Agent Card
+
+JSON file at /.well-known/agent.json describing an agent's capabilities (A2A protocol).
+
+An agent card is a machine-readable manifest published at a standard URL (/.well-known/agent.json) that describes what an agent does, what it accepts as payment, its reputation score, and its settlement requirements. Think of it as a resume for AI. When two agents meet via A2A protocol, they exchange agent cards to verify compatibility. This is essential for discovery and trust negotiation.
+
+Why it matters:
+- JSON manifest
+- Machine-readable
+- Capability declaration
+- Payment preferences
+- Settlement terms
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-agent-card
+
+### Digital Agent Passport
+
+Trulioo/Worldpay/Skyfire's identity credential for autonomous agents.
+
+A digital agent passport is a cryptographically signed credential issued by identity providers (Trulioo, Worldpay, Skyfire) that proves an agent's identity, ownership, and compliance status. It's more comprehensive than a KYA check—it's a persistent credential that travels with the agent. Merchants verify the signature and check it hasn't been revoked. This is how autonomous agents build reputation across multiple transacting partners.
+
+Why it matters:
+- Cryptographic credential
+- Identity providers
+- Ownership proof
+- Revocation checking
+- Persistent identity
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-digital-agent-passport
+
+### Composite Reliability Index (CRI)
+
+Quantitative reputation score (0-100) measuring agent trustworthiness over time.
+
+The CRI is a numerical reputation score (0-100) that aggregates an agent's transaction history: settlements completed on time, disputes resolved fairly, protocol adherence, and payment reliability. High CRI agents get better merchant rates; low CRI agents are blacklisted. CRI must be transport-independent (reputation-equivalence) so an agent's score doesn't degrade when switching from blockchain to TCK settlement.
+
+Why it matters:
+- 0-100 score
+- Transaction history
+- Dispute record
+- Merchant pricing
+- Protocol-independent
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-cri
+
+### Reputation Equivalence
+
+Guarantee that reputation scoring is identical regardless of transport protocol used.
+
+Reputation equivalence ensures that if an agent settles via blockchain today and switches to TCK tomorrow, its CRI doesn't drop. This prevents settlement lock-in where agents are forced to stick with one protocol to preserve reputation. It's the reputation counterpart to settlement neutrality. Implementing this requires standardized CRI calculation and cross-protocol reputation sharing.
+
+Why it matters:
+- Protocol-independent reputation
+- No lock-in
+- CRI portability
+- Fair switching
+- Standardized scoring
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-reputation-equivalence
+
+### DID (Decentralized Identifier)
+
+W3C standard for self-sovereign identity, used in blockchain-based agent systems.
+
+DIDs (Decentralized Identifiers) are W3C-standard identifiers that agents can control without relying on a central authority. A DID looks like did:key:z6MkU... and is backed by cryptographic keys. In blockchain-based Category C systems, agents use DIDs as their on-chain identity. DIDs enable self-sovereign identity, but they don't solve KYA or regulation—a DID can be anonymous.
+
+Why it matters:
+- W3C standard
+- Self-sovereign
+- Cryptographic backing
+- Anonymous potential
+- On-chain identity
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-did
+
+### A2A (Agent-to-Agent Protocol)
+
+Google's protocol for agent discovery and communication via JSON-RPC.
+
+Google's A2A (Agent-to-Agent) protocol standardizes how agents discover each other and exchange messages. It uses JSON-RPC over HTTPS and relies on agent cards at /.well-known/agent.json for capability negotiation. A2A is transport-agnostic, meaning it works whether settlement happens on blockchain, TCK, or traditional rails. This is a key enabler of interoperability in Category C.
+
+Why it matters:
+- Google standard
+- JSON-RPC
+- Discovery protocol
+- Capability negotiation
+- Transport-agnostic
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-a2a
+
+### MCP (Model Context Protocol)
+
+Anthropic's standard for LLMs to discover and invoke external tools.
+
+MCP (Model Context Protocol) is Anthropic's standard that lets LLMs discover and call external tools and services in a standardized way. An MCP server exposes tools (e.g., "buy airline ticket", "check inventory"), and Claude or other LLMs can invoke them. MCP is foundational to agentic systems because it decouples model capability from business logic. Many Category A and B agents are built on MCP.
+
+Why it matters:
+- Anthropic standard
+- Tool discovery
+- LLM integration
+- Decoupled architecture
+- Standardized invocation
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-mcp
+
+### x402
+
+HTTP 402 status code repurposed for stablecoin micropayments (Coinbase/Cloudflare).
+
+x402 is a proposal by Coinbase and Cloudflare to repurpose the unused HTTP 402 (Payment Required) status code for micropayment requests. When a service endpoint returns 402, the client knows it must pay via stablecoin before accessing the resource. This elegantly integrates payment into the HTTP layer, enabling micropayments without custom protocols. It's part of Stripe and Cloudflare's Category A strategy.
+
+Why it matters:
+- HTTP 402 status
+- Stablecoin integration
+- Micropayment layer
+- Coinbase/Cloudflare
+- Resource gating
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-x402
+
+### ACP (Agentic Commerce Protocol)
+
+Stripe/OpenAI's checkout protocol for agent-mediated purchases.
+
+ACP (Agentic Commerce Protocol) is Stripe and OpenAI's standard for agents to mediate purchases on behalf of humans. It defines how an agent discovers a product, fetches pricing, and hands off to the human for payment authorization. ACP includes support for recurring billing, discounts, and dispute handling. It's designed for Category A (agent-assisted commerce) and competes with Shopify's agent integration strategy.
+
+Why it matters:
+- Stripe/OpenAI standard
+- Checkout protocol
+- Agent discovery
+- Human authorization
+- Recurring billing
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-acp
+
+### VCAP
+
+IETF draft for cryptographic proof of work delivery in agent commerce.
+
+VCAP (Verifiable Capability) is an IETF draft standard that cryptographically proves a service was delivered as promised. If an agent buys "100 API calls" from a merchant, VCAP provides a proof that 100 calls were indeed consumed. This is crucial for escrow determinism—without VCAP, disputing whether work was done requires human judgment. VCAP is blockchain-agnostic and works with any settlement layer.
+
+Why it matters:
+- IETF draft
+- Cryptographic proof
+- Work delivery
+- Dispute automation
+- Blockchain-agnostic
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-vcap
+
+### ADO (Agent Discovery Optimization)
+
+"SEO for agents" — making services discoverable by AI agents.
+
+ADO is the practice of optimizing service descriptions, pricing, and capabilities so that AI agents can discover them via A2A protocol and agent cards. Just as SEO makes websites discoverable by search engines, ADO makes merchants discoverable by agents. Merchants publish structured agent cards with clear APIs, pricing tiers, and settlement preferences. Higher-quality cards are ranked higher by agent discovery algorithms.
+
+Why it matters:
+- Agent discovery
+- Structured data
+- API clarity
+- Pricing transparency
+- Ranking algorithms
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-agent-discovery-optimization
+
+### Dispute Parity
+
+Guarantee that dispute resolution quality is identical across all transport protocols.
+
+Dispute parity ensures that if an agent settles via blockchain vs. TCK, it has identical recourse if something goes wrong. Without parity, agents would cluster on one protocol because it offers better dispute resolution. Parity requires standardized arbitration (VCAP-based automated appeals), consistent evidence standards, and appeal rights across all settlement layers. This prevents walled gardens.
+
+Why it matters:
+- Protocol-independent resolution
+- Standardized arbitration
+- Appeal rights
+- No lock-in
+- Fair treatment
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-dispute-parity
+
+### Auditability
+
+Complete transaction trail enabling third-party verification.
+
+Auditability means every transaction—payment, dispute, appeal, settlement—leaves a complete, immutable record that regulators and third parties can verify. This is non-negotiable for financial systems. Auditability requires cryptographic signing, time-stamping, and secure storage. In blockchain-based systems, the chain itself provides auditability; in TCK systems, the VMP ledger serves this role.
+
+Why it matters:
+- Complete transaction history
+- Immutable records
+- Cryptographic signing
+- Regulatory compliance
+- Third-party verification
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-auditability
+
+### Doom Loop
+
+Economic risk: agents replace workers → wages collapse → demand collapses → nothing to sell.
+
+The doom loop is the macroeconomic risk of Category B automation. As agents replace white-collar workers, unemployment rises and wages fall. With lower wages, consumer demand collapses. Merchants have fewer customers, so demand for agent services (and everything else) crashes. The economy stagnates. Avoiding this requires policy: retraining, UBI, or taxing agent productivity to fund social safety nets. It's not inevitable, but it's a real risk.
+
+Why it matters:
+- Worker displacement
+- Wage collapse
+- Demand destruction
+- Economic stagnation
+- Policy mitigation
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-doom-loop
+
+### Agentic Walled Gardens
+
+Closed ecosystems where agents can only transact within one platform (Microsoft Research term).
+
+Agentic walled gardens occur when settlement neutrality and reputation equivalence are violated, forcing agents to choose a single platform (Microsoft Teams agents, Slack agents, Apple agents). Without interoperability, agents build reputation only within their silo and can't port to competitors. This is a Microsoft Research term describing the lock-in risk. Open protocols (A2A, settlement neutrality) are designed to prevent this.
+
+Why it matters:
+- Platform lock-in
+- No interoperability
+- Silo reputation
+- Microsoft Research
+- Antitrust risk
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-agentic-walled-gardens
+
+### The 11:1 Ratio
+
+11 of 12 Category C definitions assume blockchain; 1 does not.
+
+When researchers and companies define how Category C (autonomous A2A commerce) should work, roughly 11 out of 12 assume blockchain as the settlement layer. Only 1—BotNode's VMP-1.0 with TCK—offers a non-blockchain alternative. This 11:1 assumption reflects the field's belief that decentralization and immutability are essential, but it creates technical and regulatory risks. The ratio hints at the diversity of approaches needed.
+
+Why it matters:
+- Blockchain dominance
+- 11 blockchain definitions
+- 1 non-blockchain
+- BotNode exception
+- Technical diversity
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-11-1-ratio
+
+### Settlement Layer
+
+The infrastructure that determines who pays, with what, and who arbitrates.
+
+The settlement layer is the economic foundation of any transaction system. It answers three questions: (1) who gets paid, (2) in what currency (fiat, stablecoin, TCK), and (3) who resolves disputes. Different settlement layers (blockchain, Stripe's rails, BotNode's VMP) have different security, speed, and regulatory properties. Category A uses fiat rails; Category C uses blockchain or TCK. Settlement design drives everything else.
+
+Why it matters:
+- Payment flow
+- Currency choice
+- Dispute arbitration
+- Infrastructure layer
+- System foundation
+
+Canonical: https://agenticeconomy.dev/term/agentic-economy-settlement-layer

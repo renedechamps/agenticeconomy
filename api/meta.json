@@ -1,0 +1,92 @@
+{
+  "version": "1.0",
+  "updated": "2026-04-09",
+  "source": "agenticeconomy.dev",
+  "baseUrl": "https://agenticeconomy.dev/api",
+  "license": "CC BY-SA 4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "author": "René Dechamps Otamendi",
+  "authorUrl": "https://renedechamps.com",
+  "description": "Open data API for the Agentic Economy: 51 definitions, 17 protocols, 30 glossary terms, and cross-category analysis.",
+  "endpoints": [
+    {
+      "path": "/api/definitions.json",
+      "description": "All 51 definitions across 6 categories (A, B, Ccr, Cs, D, E)",
+      "format": "JSON",
+      "size": "~150KB",
+      "updateFrequency": "Monthly"
+    },
+    {
+      "path": "/api/protocols.json",
+      "description": "17 protocols with payment, identity, blockchain, governance, and status data",
+      "format": "JSON",
+      "size": "~50KB",
+      "updateFrequency": "Monthly"
+    },
+    {
+      "path": "/api/glossary.json",
+      "description": "30 core terms with definitions, examples, and cross-references",
+      "format": "JSON",
+      "size": "~75KB",
+      "updateFrequency": "Quarterly"
+    },
+    {
+      "path": "/api/meta.json",
+      "description": "API metadata, endpoints, and usage documentation",
+      "format": "JSON",
+      "size": "~20KB",
+      "updateFrequency": "Ad-hoc"
+    }
+  ],
+  "usage": {
+    "cors": "Enabled for https://agenticeconomy.dev origins",
+    "rateLimit": "None (intended for public use)",
+    "authentication": "None required",
+    "caching": "Recommended: 24 hours"
+  },
+  "examples": {
+    "fetchAllDefinitions": "fetch('https://agenticeconomy.dev/api/definitions.json').then(r => r.json()).then(data => console.log(data.count + ' definitions'))",
+    "filterByCategory": "fetch('/api/definitions.json').then(r => r.json()).then(data => data.definitions.filter(d => d.category === 'A'))",
+    "getProtocolBySlug": "fetch('/api/protocols.json').then(r => r.json()).then(data => data.protocols.find(p => p.slug === 'x402'))",
+    "glossaryLookup": "fetch('/api/glossary.json').then(r => r.json()).then(data => data.terms.find(t => t.term.toLowerCase() === 'settlement'))"
+  },
+  "citation": {
+    "format": "APA",
+    "example": "Dechamps Otamendi, R. (2026). Agentic Economy Definitions, Protocols, and Standards. https://agenticeconomy.dev/api"
+  },
+  "dataQuality": {
+    "definitions": {
+      "status": "Peer-reviewed by agenticeconomy.dev community",
+      "sources": "Academic (arXiv, Springer), industry (Stripe, Google, Anthropic, Coinbase), analyst (Gartner, McKinsey, Sequoia)",
+      "coverage": "51/51 entries (100%)",
+      "lastVerified": "2026-04-09"
+    },
+    "protocols": {
+      "status": "Production data verified from official sources",
+      "sources": "Official docs, GitHub repos, public announcements",
+      "coverage": "17 major protocols (not exhaustive)",
+      "lastVerified": "2026-04-09",
+      "note": "Some fields (latency, cost) are estimates where official specs unavailable. Help us improve via contribution form on agenticeconomy.dev."
+    },
+    "glossary": {
+      "status": "Authoritative definitions from primary sources",
+      "sources": "Protocol specs, research papers, industry whitepapers",
+      "coverage": "30 core terms (not exhaustive)",
+      "lastVerified": "2026-04-09"
+    }
+  },
+  "relatedResources": {
+    "definitions": "https://agenticeconomy.dev/agentic-economy-definitions.html",
+    "protocols": "https://agenticeconomy.dev/agentic-economy-protocols.html",
+    "glossary": "https://agenticeconomy.dev/agentic-economy-glossary.html",
+    "comparison": "https://agenticeconomy.dev/compare.html",
+    "embed": "https://agenticeconomy.dev/embed.js"
+  },
+  "changelog": [
+    {
+      "version": "1.0",
+      "date": "2026-04-09",
+      "changes": ["Initial release", "51 definitions", "17 protocols", "30 glossary terms", "4 JSON endpoints"]
+    }
+  ]
+}

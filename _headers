@@ -1,0 +1,58 @@
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+/*.html
+  Cache-Control: public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800
+
+/definition/*
+  Cache-Control: public, max-age=3600, s-maxage=86400
+
+/term/*
+  Cache-Control: public, max-age=3600, s-maxage=86400
+
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.pdf
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/api/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, OPTIONS
+  Cache-Control: public, max-age=3600
+
+/feed.xml
+  Content-Type: application/rss+xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/sitemap.xml
+  Content-Type: application/xml; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/llms.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600
+
+/llms-full.txt
+  Content-Type: text/plain; charset=utf-8
+  Cache-Control: public, max-age=3600

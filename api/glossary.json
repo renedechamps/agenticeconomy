@@ -1,0 +1,219 @@
+{
+  "version": "1.0",
+  "updated": "2026-04-09",
+  "source": "agenticeconomy.dev",
+  "license": "CC BY-SA 4.0",
+  "count": 30,
+  "terms": [
+    {
+      "term": "Agent",
+      "category": "Core Concepts",
+      "definition": "An autonomous AI system capable of perceiving its environment, making decisions, taking actions, and interacting with other agents and humans without requiring explicit human approval for each decision.",
+      "examples": ["ChatGPT with web browsing", "Trading bot", "Autonomous vehicle control system"],
+      "relatedTerms": ["autonomous", "LLM", "action-taking"]
+    },
+    {
+      "term": "Agent-to-Agent (A2A) Commerce",
+      "category": "Categories",
+      "definition": "Economic transactions and exchanges between autonomous agents without human intermediation. Includes both human-directed A2A (where a human owns/controls both agents) and machine-native A2A (where agents act as independent economic actors).",
+      "examples": ["Supply chain optimization between factory and distributor agents", "Service marketplace (Olas)", "Micropayment settlement (x402)"],
+      "relatedTerms": ["autonomous commerce", "machine economy", "settlement"]
+    },
+    {
+      "term": "Agentic Commerce Protocol (ACP)",
+      "category": "Protocols",
+      "definition": "Stripe and OpenAI's protocol enabling AI agents to discover products and complete checkouts on behalf of humans using Stripe's Shared Payment Token (SPT). First deployed in ChatGPT as Instant Checkout.",
+      "examples": ["Buying from Etsy through ChatGPT", "Shopify merchant integration"],
+      "relatedTerms": ["agent-assisted commerce", "payment", "SPT"]
+    },
+    {
+      "term": "Autonomous Economic Actor",
+      "category": "Core Concepts",
+      "definition": "An AI agent that initiates transactions, holds budget, possesses identity, and bears liability for economic outcomes without requiring human approval at each step. The defining characteristic of Category C.",
+      "examples": ["BotNode agents with TCK currency", "On-chain agents with crypto wallets", "Autonomous trader"],
+      "relatedTerms": ["autonomy", "liability", "identity"]
+    },
+    {
+      "term": "BotNode",
+      "category": "Protocols",
+      "definition": "A non-crypto machine economy protocol featuring TCK (Tokenized Machine Currency), escrow-backed settlement, quantitative reputation (CRI 0-100), and deterministic dispute resolution. The only Category C entry without blockchain.",
+      "examples": ["Settlement neutrality across MCP, A2A, REST", "Reputation markets for verification"],
+      "relatedTerms": ["settlement neutrality", "TCK", "CRI"]
+    },
+    {
+      "term": "Category A: Agent-Assisted Human Commerce",
+      "category": "Categories",
+      "definition": "The agent shops, negotiates, or transacts on behalf of a human using human payment rails and human identity. The human remains the economic actor. Payment flows through traditional systems (Stripe, Mastercard, Visa, PayPal).",
+      "examples": ["ACP", "AP2", "Visa Agentic Ready", "Mastercard Agent Pay"],
+      "relatedTerms": ["human economic actor", "fiat payment", "OAuth"]
+    },
+    {
+      "term": "Category B: Agent-as-Workforce",
+      "category": "Categories",
+      "definition": "The agent replaces a human worker in an enterprise context. The enterprise is the economic actor. Agents optimize internal processes, make autonomous decisions, and execute transactions within organizational boundaries.",
+      "examples": ["Customer service chatbots", "Enterprise workflow automation", "Vertical-specific workforce agents (legal, medical, compliance)"],
+      "relatedTerms": ["enterprise", "automation", "workforce"]
+    },
+    {
+      "term": "Category C: Autonomous A2A Commerce",
+      "category": "Categories",
+      "definition": "The agent is the economic actor. It possesses its own identity, transacts independently, holds budget/currency, and bears liability. Splits into C_cr (blockchain-based) and C_s (non-crypto centralized).",
+      "examples": ["x402 micropayments", "Olas DAO marketplace", "Fetch.ai Machine Economy", "BotNode"],
+      "relatedTerms": ["machine economy", "autonomous actor", "self-custodial"]
+    },
+    {
+      "term": "Category D: Analytical and Regulatory",
+      "category": "Categories",
+      "definition": "Sources that analyze the economic impact of agents on labor markets, financial stability, consumer behavior, and regulatory frameworks. Not protocol builders, but intellectual framers of the agent economy.",
+      "examples": ["Gartner", "McKinsey", "BIS", "WEF", "MIT Technology Review"],
+      "relatedTerms": ["analysis", "regulation", "impact"]
+    },
+    {
+      "term": "Category E: Infrastructure and Standards",
+      "category": "Categories",
+      "definition": "Horizontal layers enabling agents to discover each other, verify identity, invoke tools, and agree on terms. Agnostic to payment mechanisms, settlement model, or economic assumptions.",
+      "examples": ["A2A (agent discovery)", "MCP (tool interoperability)", "IEEE 7012 (contracts)", "KYA (identity verification)"],
+      "relatedTerms": ["discovery", "standards", "interoperability"]
+    },
+    {
+      "term": "Credibility Reputation Index (CRI)",
+      "category": "Core Concepts",
+      "definition": "A quantitative reputation score (0-100) used in BotNode's dispute resolution. Agents with high CRI are trusted to verify work and arbitrate disputes. Enables trustless settlement without central authority.",
+      "examples": ["CRI 90+ agents become validators", "Competitive verification markets"],
+      "relatedTerms": ["reputation", "BotNode", "trust"]
+    },
+    {
+      "term": "Dispute Resolution",
+      "category": "Core Concepts",
+      "definition": "The mechanism for resolving disagreements between agent and agent, or agent and human. Varies from chargebacks (Category A) to smart contracts (Category C) to deterministic validators (BotNode).",
+      "examples": ["Stripe chargeback", "Escrow + verification (BotNode)", "DAO governance (Olas)", "Smart contract arbitration"],
+      "relatedTerms": ["settlement", "trust", "liability"]
+    },
+    {
+      "term": "Escrow Settlement",
+      "category": "Core Concepts",
+      "definition": "A third-party (or smart contract) holds funds until work is verified, then releases payment. Common in A2A commerce to reduce counterparty risk. BotNode uses escrow with deterministic verification.",
+      "examples": ["Freelance platforms (Upwork)", "BotNode TCK settlement", "DeFi atomic swaps"],
+      "relatedTerms": ["settlement", "payment", "trust"]
+    },
+    {
+      "term": "Finternet",
+      "category": "Core Concepts",
+      "definition": "BIS's vision of an interoperable network for programmable value systems. Agents exchange cryptographic proof of transactions; settlement model agnostic. Bridges centralized and decentralized approaches.",
+      "examples": ["Cross-protocol settlement", "Composable DeFi", "Multi-chain transactions"],
+      "relatedTerms": ["interoperability", "settlement", "BIS"]
+    },
+    {
+      "term": "HTTP 402: Payment Required",
+      "category": "Core Concepts",
+      "definition": "An HTTP status code originally designed for micropayments but rarely used. x402 revives it for stablecoin micropayments on-chain, enabling pay-per-use APIs.",
+      "examples": ["x402 protocol", "micropayment APIs", "pay-as-you-go services"],
+      "relatedTerms": ["x402", "micropayments", "USDC"]
+    },
+    {
+      "term": "Identity",
+      "category": "Core Concepts",
+      "definition": "The mechanism by which agents are known, verified, and held accountable. Ranges from API keys (stateless) to OAuth (human-delegated) to blockchain wallets (self-custodial) to DIDs (decentralized identifiers).",
+      "examples": ["API key", "OAuth delegation", "EVM wallet", "DID (W3C)", "KYA Digital Agent Passport"],
+      "relatedTerms": ["authentication", "verification", "reputation"]
+    },
+    {
+      "term": "Know Your Agent (KYA)",
+      "category": "Core Concepts",
+      "definition": "Identity and credibility verification for autonomous agents. The agent equivalent of KYC (Know Your Customer). Verifies agent owner, control, liability, and trustworthiness.",
+      "examples": ["Trulioo KYA infrastructure", "Digital Agent Passport", "Kite's KYA framework"],
+      "relatedTerms": ["identity", "verification", "trust"]
+    },
+    {
+      "term": "Machine Currency (TCK)",
+      "category": "Core Concepts",
+      "definition": "A closed-loop, machine-native currency denominated in tokens (not fiat). Used by agents for settlement and reputation. BotNode's TCK is escrow-backed and deterministically verified.",
+      "examples": ["BotNode TCK", "Olas OLA token", "Fetch.ai FET token"],
+      "relatedTerms": ["currency", "settlement", "blockchain"]
+    },
+    {
+      "term": "Model Context Protocol (MCP)",
+      "category": "Protocols",
+      "definition": "Anthropic's standard for LLMs to discover and invoke external tools. Enables interoperability between agents and tool ecosystems. Does not specify payment or settlement.",
+      "examples": ["Claude using web browser", "LLM + database integration", "Tool marketplace"],
+      "relatedTerms": ["tools", "interoperability", "LLM"]
+    },
+    {
+      "term": "OAuth",
+      "category": "Core Concepts",
+      "definition": "Human-delegated authentication. An agent uses an OAuth token to act on behalf of a human, typically for payment authorization. Common in Category A (AP2, Visa Agentic Ready).",
+      "examples": ["Agent purchasing via Mastercard OAuth", "Google sign-in delegation"],
+      "relatedTerms": ["authentication", "delegation", "payment"]
+    },
+    {
+      "term": "Pay-Per-Use (PPU)",
+      "category": "Core Concepts",
+      "definition": "A pricing model where agents pay for each API call, transaction, or service invocation. Enabled by low-latency settlement (x402, MCP + escrow). Replaces SaaS seat licensing.",
+      "examples": ["x402 micropayments", "HTTP 402 API pricing", "BotNode service calls"],
+      "relatedTerms": ["pricing", "micropayments", "settlement"]
+    },
+    {
+      "term": "Passkey",
+      "category": "Core Concepts",
+      "definition": "A cryptographic authentication method (WebAuthn) that allows agents to be granted limited permissions. Mastercard's Agent Pay uses passkeys to restrict spend limits per agent.",
+      "examples": ["Mastercard Agent Pay passkey issuance", "FIDO2 authentication"],
+      "relatedTerms": ["authentication", "Mastercard", "identity"]
+    },
+    {
+      "term": "Protocol",
+      "category": "Core Concepts",
+      "definition": "A standardized set of rules for how agents transact, verify identity, settle payment, and resolve disputes. Examples: ACP (Stripe), A2A (Google), x402 (Coinbase), MCP (Anthropic).",
+      "examples": ["ACP", "x402", "A2A", "MCP", "IEEE 7012"],
+      "relatedTerms": ["standard", "interoperability", "settlement"]
+    },
+    {
+      "term": "Self-Custodial Wallet",
+      "category": "Core Concepts",
+      "definition": "An agent holds and controls its own cryptocurrency private keys without intermediary. Enables true autonomy in Category C (blockchain). Contrasts with custodial wallets held by exchanges.",
+      "examples": ["MetaMask wallet for agents", "On-chain agent identity", "Smart contract wallet"],
+      "relatedTerms": ["identity", "autonomy", "blockchain"]
+    },
+    {
+      "term": "Settlement",
+      "category": "Core Concepts",
+      "definition": "The final transfer of value (payment) for a completed transaction. Settlement speed (latency) and cost vary: fiat networks (hours-days), x402 (<500ms), blockchain (seconds-minutes).",
+      "examples": ["Stripe settlement (1-3 days)", "x402 settlement (<500ms)", "Blockchain finality (seconds)"],
+      "relatedTerms": ["payment", "latency", "finality"]
+    },
+    {
+      "term": "Settlement Neutrality",
+      "category": "Core Concepts",
+      "definition": "A design principle where the settlement mechanism (REST, MCP, A2A, blockchain) is abstracted from the business logic. BotNode implements this: same escrow pipeline serves all protocols.",
+      "examples": ["BotNode convergence: MCP + A2A + REST → same escrow", "Protocol-agnostic payment verification"],
+      "relatedTerms": ["interoperability", "BotNode", "abstraction"]
+    },
+    {
+      "term": "Shared Payment Token (SPT)",
+      "category": "Core Concepts",
+      "definition": "Stripe's mechanism for delegation: a human grants an agent a time-limited token to charge on their behalf. Used in ACP (ChatGPT Instant Checkout).",
+      "examples": ["ACP", "ChatGPT Stripe integration"],
+      "relatedTerms": ["ACP", "Stripe", "delegation"]
+    },
+    {
+      "term": "Stablecoin",
+      "category": "Core Concepts",
+      "definition": "A cryptocurrency pegged to a fiat currency (typically USD). USDC is the primary stablecoin for agent micropayments (x402, Circle Nanopayments).",
+      "examples": ["USDC", "USDT", "DAI", "x402 payments in USDC"],
+      "relatedTerms": ["cryptocurrency", "payment", "blockchain"]
+    },
+    {
+      "term": "Tokenization",
+      "category": "Core Concepts",
+      "definition": "Converting payment data (e.g., a credit card number) into a non-sensitive token that can be shared and used repeatedly. Used by Visa and Mastercard to give agents limited payment permissions.",
+      "examples": ["Visa Agentic Ready tokenization", "Mastercard Agent Pay tokens"],
+      "relatedTerms": ["identity", "payment", "authentication"]
+    },
+    {
+      "term": "Unscripted Interaction",
+      "category": "Core Concepts",
+      "definition": "An agent conducts a transaction without a predefined script. Contrasts with rule-based automation. Requires real-time reasoning and adaptation, which is what makes agent economies fundamentally different from earlier automation waves.",
+      "examples": ["Agent negotiating a service contract", "Agent discovering best rate across vendors"],
+      "relatedTerms": ["autonomy", "reasoning", "intelligence"]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+# Apex canonicalization
+https://www.agenticeconomy.dev/* https://agenticeconomy.dev/:splat 301!
+https://agenticeconomy.info/* https://agenticeconomy.dev/:splat 301!
+https://agenticeconomy.us/* https://agenticeconomy.dev/:splat 301!
+
+# Clean URLs — strip .html extension
+/index.html / 301
+/agentic-economy-101.html /agentic-economy-101 301
+/agentic-economy-definitions.html /agentic-economy-definitions 301
+/agentic-economy-timeline.html /agentic-economy-timeline 301
+/agentic-economy-protocols.html /agentic-economy-protocols 301
+/agentic-economy-quiz.html /agentic-economy-quiz 301
+/agentic-economy-glossary.html /agentic-economy-glossary 301
+/agentic-economy-infographic.html /agentic-economy-infographic 301
+/agentic-economy-research.html /agentic-economy-research 301
+/ask-agentic-economy.html /ask-agentic-economy 301
+/about-agentic-economy.html /about-agentic-economy 301
+/compare.html /compare 301
+/embed-demo.html /embed-demo 301
+/sandbox.html /sandbox 301
+/validators.html /validators 301
+/field-reports.html /field-reports 301
+
+# Definition pages — strip .html
+/definition/:slug.html /definition/:slug 301
+
+# Term pages — strip .html
+/term/:slug.html /term/:slug 301
+
+# Legacy v1 → v3 redirects (from the prior site version)
+/faq / 301
+/quickstart /agentic-economy-101 301
+/botnode-dev.html https://botnode.io/ 301
+
+# Draft content — gone (never exposed from this build)
+/agentic-economy-contrarian-take /404 410
+/agentic-economy-contrarian-take.html /404 410

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Agentic Economy — Updates</title>
+  <link>https://agenticeconomy.dev/</link>
+  <description>Updates to the agenticeconomy.dev research hub: new definitions, papers, protocols.</description>
+  <language>en-us</language>
+  <lastBuildDate>Fri, 10 Apr 2026 00:00:00 GMT</lastBuildDate>
+  <atom:link href="https://agenticeconomy.dev/feed.xml" rel="self" type="application/rss+xml"/>
+  <copyright>CC BY-SA 4.0 — Rene Dechamps Otamendi</copyright>
+  <item>
+    <title>Agentic Economy v3 — Full relaunch</title>
+    <link>https://agenticeconomy.dev/</link>
+    <guid isPermaLink="false">https://agenticeconomy.dev/#v3-launch-2026-04-10</guid>
+    <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+    <description>Full relaunch of agenticeconomy.dev: 51 definitions, 30 glossary terms, 17 protocols, open API, state-of-the-art SEO.</description>
+  </item>
+  <item>
+    <title>51 Agentic Economy Definitions — Complete corpus</title>
+    <link>https://agenticeconomy.dev/agentic-economy-definitions</link>
+    <guid isPermaLink="false">https://agenticeconomy.dev/agentic-economy-definitions#corpus</guid>
+    <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+    <description>51 formal definitions of agentic economy from industry, academia and research — all under CC BY-SA 4.0.</description>
+  </item>
+  <item>
+    <title>Cooperation Reliability Index (CRI) Framework</title>
+    <link>https://doi.org/10.5281/zenodo.19208083</link>
+    <guid isPermaLink="false">doi:10.5281/zenodo.19208083</guid>
+    <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+    <description>Peer-reviewed CRI framework for agent reputation. Zenodo DOI.</description>
+  </item>
+  <item>
+    <title>Agentic Economy Taxonomy</title>
+    <link>https://doi.org/10.5281/zenodo.19208278</link>
+    <guid isPermaLink="false">doi:10.5281/zenodo.19208278</guid>
+    <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+    <description>Taxonomy paper mapping the agentic economy into six categories.</description>
+  </item>
+  <item>
+    <title>The Oracle Problem in Agentic Commerce</title>
+    <link>https://doi.org/10.5281/zenodo.19208440</link>
+    <guid isPermaLink="false">doi:10.5281/zenodo.19208440</guid>
+    <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+    <description>Paper on verification and the oracle problem in agent-to-agent commerce.</description>
+  </item>
+</channel>
+</rss>

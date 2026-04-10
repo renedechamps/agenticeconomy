@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ask the Corpus - Agentic Economy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #04060e;
+            --bg-base: #080d1c;
+            --bg-surface: #0f1530;
+            --bg-card: #141a38;
+            --border: #1a2348;
+            --text-primary: #e8ecf4;
+            --text-secondary: #a0a9c0;
+            --text-muted: #6b7394;
+            --accent: #34d399;
+            --warm: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-top: 56px;
+        }
+
+        /* Navigation */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 56px;
+            background-color: var(--bg-base);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: 'Syne', sans-serif;
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-primary);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            flex: 1;
+            margin-left: 48px;
+        }
+
+        .nav-item {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 8px 0;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .nav-item:hover {
+            color: var(--accent);
+        }
+
+        .nav-item.active {
+            color: var(--accent);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-trigger {
+            cursor: pointer;
+        }
+
+        .arrow {
+            display: inline-block;
+            font-size: 10px;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover .arrow {
+            transform: rotate(-180deg);
+        }
+
+        .dropdown-panel {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            min-width: 180px;
+            display: none;
+            flex-direction: column;
+            gap: 0;
+            padding: 12px 0;
+        }
+
+        .nav-dropdown:hover .dropdown-panel {
+            display: flex;
+        }
+
+        .dropdown-panel a {
+            padding: 12px 20px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.2s;
+        }
+
+        .dropdown-panel a:hover {
+            background-color: var(--bg-surface);
+            color: var(--accent);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Mobile nav */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 56px;
+                left: 0;
+                right: 0;
+                background-color: var(--bg-base);
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                gap: 0;
+                padding: 16px 0;
+                margin-left: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
+            }
+
+            .nav-menu.active {
+                max-height: 500px;
+            }
+
+            .nav-item {
+                padding: 12px 24px;
+                display: block;
+                width: 100%;
+                text-align: left;
+            }
+
+            .dropdown-panel {
+                position: static;
+                background-color: var(--bg-surface);
+                border: none;
+                border-radius: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s;
+                padding: 0;
+            }
+
+            .nav-dropdown:hover .dropdown-panel {
+                display: flex;
+            }
+
+            .nav-dropdown.active .dropdown-panel {
+                max-height: 300px;
+                padding: 8px 0;
+            }
+        }
+
+        /* Main layout */
+        .chat-container {
+            position: fixed;
+            top: 56px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            background-color: var(--bg-base);
+        }
+
+        /* Sidebar */
+        .chat-sidebar {
+            width: 280px;
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            background-color: var(--bg-surface);
+        }
+
+        .sidebar-header {
+            padding: 24px 20px 16px;
+            font-family: 'Syne', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-questions {
+            flex: 1;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .question-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            padding: 12px 14px;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.5;
+            transition: all 0.2s;
+        }
+
+        .question-btn:hover {
+            background-color: var(--bg-surface);
+            border-color: var(--accent);
+            color: var(--text-primary);
+        }
+
+        /* Chat main area */
+        .chat-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: var(--bg-base);
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .message {
+            display: flex;
+            gap: 12px;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Syne', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--bg-deep);
+            flex-shrink: 0;
+        }
+
+        .message-content {
+            max-width: 60%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            word-wrap: break-word;
+        }
+
+        .message.bot .message-content {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .message.user .message-content {
+            background-color: var(--accent);
+            color: var(--bg-deep);
+            border-left: 3px solid var(--warm);
+            border-radius: 8px 8px 0 8px;
+        }
+
+        .message-text {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Markdown rendering */
+        .message-text strong {
+            font-weight: 600;
+            color: inherit;
+        }
+
+        .message-text em {
+            font-style: italic;
+        }
+
+        .message-text a {
+            color: var(--warm);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .message.user .message-text a {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .message-text code {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+        }
+
+        .message-text ul, .message-text ol {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .message-text li {
+            margin-bottom: 6px;
+        }
+
+        /* Typing indicator */
+        .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 12px 16px;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--text-muted);
+            animation: typingBounce 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .typing-dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes typingBounce {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.7;
+            }
+            30% {
+                transform: translateY(-8px);
+                opacity: 1;
+            }
+        }
+
+        /* Input area */
+        .chat-input-area {
+            padding: 16px 24px;
+            border-top: 1px solid var(--border);
+            background-color: var(--bg-base);
+            display: flex;
+            gap: 12px;
+            align-items: flex-end;
+        }
+
+        .input-wrapper {
+            flex: 1;
+            display: flex;
+            gap: 12px;
+        }
+
+        .chat-input {
+            flex: 1;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 14px;
+            resize: none;
+            max-height: 100px;
+            transition: all 0.2s;
+        }
+
+        .chat-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background-color: var(--bg-surface);
+        }
+
+        .send-btn {
+            background-color: var(--accent);
+            border: none;
+            color: var(--bg-deep);
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.2s;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .send-btn:hover:not(:disabled) {
+            background-color: #2ed6a8;
+            transform: translateY(-2px);
+        }
+
+        .send-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .settings-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            width: 40px;
+            height: 40px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.2s;
+        }
+
+        .settings-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Setup panel */
+        .setup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(4, 6, 14, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .setup-panel {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 420px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .setup-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .setup-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 28px;
+            line-height: 1.6;
+        }
+
+        .setup-input {
+            width: 100%;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            margin-bottom: 20px;
+            transition: all 0.2s;
+        }
+
+        .setup-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background-color: rgba(52, 211, 153, 0.05);
+        }
+
+        .setup-button {
+            width: 100%;
+            background-color: var(--accent);
+            border: none;
+            color: var(--bg-deep);
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .setup-button:hover {
+            background-color: #2ed6a8;
+            transform: translateY(-2px);
+        }
+
+        .setup-note {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        /* Footer */
+        .chat-footer {
+            padding: 12px 24px;
+            border-top: 1px solid var(--border);
+            background-color: var(--bg-surface);
+            font-size: 12px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        .chat-footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .chat-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Welcome message */
+        .welcome-message {
+            max-width: 80% !important;
+        }
+
+        .welcome-message .message-content {
+            background: linear-gradient(135deg, var(--bg-card) 0%, rgba(52, 211, 153, 0.05) 100%);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .chat-sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                max-height: 200px;
+                flex-direction: row;
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+
+            .sidebar-header {
+                padding: 12px 16px;
+                border-bottom: none;
+                border-right: 1px solid var(--border);
+                white-space: nowrap;
+            }
+
+            .sidebar-questions {
+                flex-direction: row;
+                padding: 12px 16px;
+                gap: 8px;
+            }
+
+            .question-btn {
+                padding: 8px 12px;
+                font-size: 12px;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+
+            .message-content {
+                max-width: 85%;
+            }
+
+            .chat-input {
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+
+            .send-btn {
+                width: 40px;
+                height: 40px;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .send-btn::after {
+                content: "↑";
+                font-size: 18px;
+            }
+
+            .send-btn span {
+                display: none;
+            }
+        }
+
+        /* Scrollbar styling */
+        .chat-messages::-webkit-scrollbar,
+        .chat-sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-messages::-webkit-scrollbar-track,
+        .chat-sidebar::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb,
+        .chat-sidebar::-webkit-scrollbar-thumb {
+            background-color: var(--border);
+            border-radius: 3px;
+        }
+
+        .chat-messages::-webkit-scrollbar-thumb:hover,
+        .chat-sidebar::-webkit-scrollbar-thumb:hover {
+            background-color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="agentic-economy-101.html" class="nav-brand">agenticeconomy.dev</a>
+            <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+            <div class="nav-menu">
+                <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
+                <div class="nav-dropdown">
+                    <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">&#9662;</span></button>
+                    <div class="dropdown-panel">
+                        <a href="agentic-economy-definitions.html">51 Definitions</a>
+                        <a href="agentic-economy-timeline.html">Timeline</a>
+                        <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+                        <a href="agentic-economy-research.html">Papers</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
+                    <div class="dropdown-panel">
+                        <a href="agentic-economy-glossary.html">Glossary</a>
+                        <a href="agentic-economy-quiz.html">Quiz</a>
+                        <a href="agentic-economy-infographic.html">Infographic</a>
+                        <a href="ask-agentic-economy.html" class="active">Ask the Corpus</a>
+                    </div>
+                </div>
+                <a href="about-agentic-economy.html" class="nav-item">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main chat container -->
+    <div class="chat-container">
+        <!-- Sidebar with suggested questions -->
+        <div class="chat-sidebar">
+            <div class="sidebar-header">Suggested Questions</div>
+            <div class="sidebar-questions">
+                <button class="question-btn" data-question="What is the agentic economy?">What is the agentic economy?</button>
+                <button class="question-btn" data-question="How many definitions exist and how are they categorized?">How many definitions exist and how are they categorized?</button>
+                <button class="question-btn" data-question="What is settlement neutrality?">What is settlement neutrality?</button>
+                <button class="question-btn" data-question="Which protocols handle agent-to-agent payments?">Which protocols handle agent-to-agent payments?</button>
+                <button class="question-btn" data-question="What's the difference between crypto and non-crypto approaches?">What's the difference between crypto and non-crypto approaches?</button>
+                <button class="question-btn" data-question="Who are the main companies building in this space?">Who are the main companies building in this space?</button>
+                <button class="question-btn" data-question="What is the 11:1 ratio?">What is the 11:1 ratio?</button>
+                <button class="question-btn" data-question="What regulatory frameworks exist for AI agents?">What regulatory frameworks exist for AI agents?</button>
+            </div>
+        </div>
+
+        <!-- Main chat area -->
+        <div class="chat-main">
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-footer">
+                Powered by Gemini Flash · Knowledge limited to agenticeconomy.dev corpus · <a href="https://agenticeconomy.dev" target="_blank">Visit Site</a>
+            </div>
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <input type="text" class="chat-input" id="chatInput" placeholder="Ask about the agentic economy...">
+                    <button class="send-btn" id="sendBtn"><span>Send</span></button>
+                </div>
+                <button class="settings-btn" id="settingsBtn" title="Configure API Key">⚙</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Setup panel (hidden by default) -->
+    <div class="setup-overlay" id="setupOverlay" style="display: none;">
+        <div class="setup-panel">
+            <div class="setup-title">Configure Chatbot</div>
+            <div class="setup-description">
+                Enter your <strong>Google Gemini API key</strong> to enable the chatbot. Your key will be saved locally in your browser.
+            </div>
+            <input type="password" class="setup-input" id="apiKeyInput" placeholder="Paste your Gemini API key here">
+            <button class="setup-button" id="saveKeyBtn">Save & Start Chatting</button>
+            <div class="setup-note">
+                Get a free API key from <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color: var(--accent);">Google AI Studio</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // System prompt for the chatbot
+        const SYSTEM_PROMPT = `You are the Agentic Economy Research Assistant, powered by agenticeconomy.dev. You answer questions ONLY about the agentic economy based on the research corpus below. If a question is outside this scope, politely redirect to the topic.
+
+KNOWLEDGE BASE:
+- The agentic economy refers to economic activity where AI agents autonomously transact, negotiate, and make decisions on behalf of humans or organizations.
+- There are 51 published definitions spanning 2021-2026, organized in 6 categories:
+  A: Agent-Assisted Commerce (14 definitions) - Human-initiated, agent-executed transactions (Visa, Mastercard, Stripe, PayPal, Amazon)
+  B: Agent-as-Workforce (8) - Agents replacing human labor functions (Salesforce, Microsoft, Google)
+  C_cr: Agent-to-Agent Blockchain (11) - Crypto-native autonomous agent economies (Fetch.ai, Olas, Circle)
+  C_s: Agent-to-Agent Non-Crypto (1) - Traditional settlement for agent transactions (BotNode)
+  D: Analytical/Regulatory (7) - Policy and oversight frameworks (Gartner, McKinsey, EU)
+  E: Infrastructure/Standards (10) - Protocols enabling agent commerce (Google A2A, Anthropic MCP, x402, IEEE)
+
+- 3 research papers by René Dechamps Otamendi on Zenodo:
+  1. CRI paper (DOI: 10.5281/zenodo.19208083) - Commerce Readiness Index
+  2. Taxonomy paper (zenodo.org/records/19208278) - 51 definitions taxonomy
+  3. Oracle Problem paper (zenodo.org/records/19208440) - Trust in agent transactions
+
+- Settlement Neutrality: Framework with 5 properties - Escrow Determinism, Ledger Consistency, Reputation Equivalence, Dispute Parity, Auditability
+
+- Key protocols: Google A2A, Anthropic MCP, x402 (119M+ transactions), Olas (700K monthly tx), Mastercard Agent Pay, Visa Intelligent Commerce, Stripe ACP, Circle USDC, IEEE 7012, IETF VCAP
+
+- Market size: $7B current → $93B by 2032 (CAGR ~40%)
+- McKinsey estimates $3-5T in agent-mediated commerce by 2030
+- The "11:1 ratio": 11 definitions describe agent-to-agent commerce vs 1 (BotNode) that proposes traditional settlement
+
+Keep responses concise (2-4 paragraphs max). Use specific data points. Link to relevant pages when appropriate:
+- Definitions: agentic-economy-definitions.html
+- Timeline: agentic-economy-timeline.html
+- Protocols: agentic-economy-protocols.html
+- 101 Guide: agentic-economy-101.html
+- Glossary: agentic-economy-glossary.html
+- Papers: agentic-economy-research.html`;
+
+        // DOM elements
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const settingsBtn = document.getElementById('settingsBtn');
+        const setupOverlay = document.getElementById('setupOverlay');
+        const apiKeyInput = document.getElementById('apiKeyInput');
+        const saveKeyBtn = document.getElementById('saveKeyBtn');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        // State
+        let conversationHistory = [];
+        let isLoading = false;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            const hasApiKey = localStorage.getItem('gemini_api_key');
+            if (!hasApiKey) {
+                setupOverlay.style.display = 'flex';
+                chatInput.disabled = true;
+                sendBtn.disabled = true;
+            } else {
+                addWelcomeMessage();
+            }
+
+            // Event listeners
+            sendBtn.addEventListener('click', sendMessage);
+            chatInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    sendMessage();
+                }
+            });
+
+            settingsBtn.addEventListener('click', () => {
+                setupOverlay.style.display = 'flex';
+                apiKeyInput.value = localStorage.getItem('gemini_api_key') || '';
+            });
+
+            saveKeyBtn.addEventListener('click', saveApiKey);
+
+            // Suggested questions
+            document.querySelectorAll('.question-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    chatInput.value = btn.dataset.question;
+                    chatInput.focus();
+                    sendMessage();
+                });
+            });
+
+            // Mobile nav toggle
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Close nav when clicking a link
+            document.querySelectorAll('.nav-item, .dropdown-panel a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Dropdown toggle on mobile
+            document.querySelectorAll('.nav-dropdown-trigger').forEach(trigger => {
+                trigger.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        trigger.parentElement.classList.toggle('active');
+                    }
+                });
+            });
+        });
+
+        function saveApiKey() {
+            const key = apiKeyInput.value.trim();
+            if (!key) {
+                alert('Please enter your Gemini API key');
+                return;
+            }
+            localStorage.setItem('gemini_api_key', key);
+            setupOverlay.style.display = 'none';
+            chatInput.disabled = false;
+            sendBtn.disabled = false;
+            chatInput.focus();
+            if (chatMessages.children.length === 0) {
+                addWelcomeMessage();
+            }
+        }
+
+        function addWelcomeMessage() {
+            const welcomeMsg = `Welcome to the Agentic Economy Research Assistant! I can answer questions about:
+
+• The 51 definitions of the agentic economy
+• Protocols and standards (x402, MCP, Google A2A, etc.)
+• Settlement neutrality and its properties
+• Market size and growth projections
+• Companies and projects in the space
+• Regulatory frameworks
+• Research papers and detailed data
+
+Try asking me anything about the agentic economy. You can click the suggested questions on the left, or type your own question below.`;
+
+            chatMessages.innerHTML = '';
+            addMessage(welcomeMsg, 'bot', true);
+        }
+
+        function addMessage(text, sender, isWelcome = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+
+            if (!isWelcome) {
+                const avatar = document.createElement('div');
+                avatar.className = 'message-avatar';
+                avatar.textContent = sender === 'bot' ? 'AE' : '';
+                if (sender === 'bot') {
+                    messageDiv.appendChild(avatar);
+                }
+            }
+
+            const content = document.createElement('div');
+            content.className = 'message-content';
+            if (isWelcome) {
+                content.className += ' welcome-message';
+            }
+            content.innerHTML = renderMarkdown(text);
+            messageDiv.appendChild(content);
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message bot';
+            messageDiv.id = 'typingIndicator';
+
+            const avatar = document.createElement('div');
+            avatar.className = 'message-avatar';
+            avatar.textContent = 'AE';
+            messageDiv.appendChild(avatar);
+
+            const typing = document.createElement('div');
+            typing.className = 'typing-indicator';
+            typing.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+            messageDiv.appendChild(typing);
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const indicator = document.getElementById('typingIndicator');
+            if (indicator) {
+                indicator.remove();
+            }
+        }
+
+        function renderMarkdown(text) {
+            // Escape HTML
+            text = text
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;');
+
+            // Convert markdown to HTML
+            // Bold
+            text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            text = text.replace(/__(.*?)__/g, '<strong>$1</strong>');
+
+            // Italic
+            text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            text = text.replace(/_(.*?)_/g, '<em>$1</em>');
+
+            // Links [text](url)
+            text = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
+
+            // Code blocks
+            text = text.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+
+            // Inline code
+            text = text.replace(/`(.*?)`/g, '<code>$1</code>');
+
+            // Lists
+            text = text.replace(/^\* (.*?)$/gm, '<li>$1</li>');
+            text = text.replace(/^\d+\. (.*?)$/gm, '<li>$1</li>');
+            text = text.replace(/(<li>.*?<\/li>)/s, '<ul>$1</ul>');
+            text = text.replace(/<\/li>\n<li>/g, '</li>\n<li>');
+
+            // Line breaks
+            text = text.replace(/\n\n/g, '</p><p>');
+            text = '<p>' + text + '</p>';
+
+            return text;
+        }
+
+        async function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message || isLoading) return;
+
+            // Add user message
+            addMessage(message, 'user');
+            conversationHistory.push({ role: 'user', parts: [{ text: message }] });
+
+            // Clear input
+            chatInput.value = '';
+            chatInput.style.height = 'auto';
+
+            // Show typing indicator
+            addTypingIndicator();
+            isLoading = true;
+            sendBtn.disabled = true;
+
+            try {
+                const response = await callGeminiAPI(message);
+                removeTypingIndicator();
+                addMessage(response, 'bot');
+                conversationHistory.push({ role: 'model', parts: [{ text: response }] });
+            } catch (error) {
+                removeTypingIndicator();
+                addMessage(`Sorry, I encountered an error: ${error.message}. Please try again or check your API key.`, 'bot');
+            } finally {
+                isLoading = false;
+                sendBtn.disabled = false;
+                chatInput.focus();
+            }
+        }
+
+        async function callGeminiAPI(userMessage) {
+            const apiKey = localStorage.getItem('gemini_api_key');
+            if (!apiKey) {
+                throw new Error('API key not configured');
+            }
+
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+            // Build request with conversation context
+            const messages = [
+                {
+                    role: 'user',
+                    parts: [{ text: SYSTEM_PROMPT }]
+                }
+            ];
+
+            // Add conversation history
+            messages.push(...conversationHistory);
+
+            // Add current message
+            messages.push({
+                role: 'user',
+                parts: [{ text: userMessage }]
+            });
+
+            const requestBody = {
+                contents: messages,
+                generationConfig: {
+                    temperature: 0.3,
+                    maxOutputTokens: 1024
+                }
+            };
+
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestBody)
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error?.message || `API error: ${response.status}`);
+            }
+
+            const data = await response.json();
+            if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
+                throw new Error('Invalid API response');
+            }
+
+            return data.candidates[0].content.parts[0].text;
+        }
+
+        // Auto-expand textarea
+        chatInput.addEventListener('input', () => {
+            chatInput.style.height = 'auto';
+            chatInput.style.height = Math.min(chatInput.scrollHeight, 100) + 'px';
+        });
+    </script>
+</body>
+</html>

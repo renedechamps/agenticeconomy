@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>17 Agentic Economy Protocols — Matrix · Agentic Economy</title>
+<meta name="description" content="Side-by-side comparison of 17 agentic-economy protocols: x402, ACP, A2A, MCP, AP2, VCAP, NANDA and more. Payment, identity, disputes, settlement.">
+<meta name="author" content="Rene Dechamps Otamendi">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://agenticeconomy.dev/agentic-economy-protocols">
+<meta name="theme-color" content="#04060e">
+<meta name="color-scheme" content="dark">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="17 Agentic Economy Protocols — Matrix">
+<meta property="og:description" content="Side-by-side comparison of 17 agentic-economy protocols: x402, ACP, A2A, MCP, AP2, VCAP, NANDA and more. Payment, identity, disputes, settlement.">
+<meta property="og:url" content="https://agenticeconomy.dev/agentic-economy-protocols">
+<meta property="og:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Agentic Economy">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="https://renedechamps.com">
+<meta property="article:published_time" content="2026-04-10T00:00:00Z">
+<meta property="article:modified_time" content="2026-04-10T00:00:00Z">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="17 Agentic Economy Protocols — Matrix">
+<meta name="twitter:description" content="Side-by-side comparison of 17 agentic-economy protocols: x402, ACP, A2A, MCP, AP2, VCAP, NANDA and more. Payment, identity, disputes, settlement.">
+<meta name="twitter:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
+<!-- Feed -->
+<link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
+<link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
+<link rel="sitemap" type="application/xml" href="https://agenticeconomy.dev/sitemap.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://agenticeconomy.dev/#organization",
+  "name": "Agentic Economy",
+  "url": "https://agenticeconomy.dev",
+  "logo": "https://agenticeconomy.dev/agentic-economy-two-economies.svg",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://renedechamps.com/#person",
+    "name": "Rene Dechamps Otamendi",
+    "url": "https://renedechamps.com"
+  },
+  "sameAs": [
+    "https://renedechamps.com",
+    "https://github.com/renedechamps/agenticeconomy",
+    "https://www.linkedin.com/in/renedechamps/",
+    "https://zenodo.org/communities/agentic-economy"
+  ],
+  "description": "The definitive research hub on the agentic economy"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": "https://agenticeconomy.dev/agentic-economy-protocols#list",
+  "name": "17 Agentic Economy Protocols",
+  "numberOfItems": 17,
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "x402"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "ACP"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "UCP"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "AP2"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "A2A"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "MCP"
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "KYA"
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "VCAP"
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "ADO"
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "name": "VMP-1.0"
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "name": "MPP"
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "name": "NANDA"
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "name": "IEEE 7012"
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "name": "OnchainOS"
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "name": "Agent Pay"
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "name": "Agentic Ready"
+    },
+    {
+      "@type": "ListItem",
+      "position": 17,
+      "name": "TessPay"
+    }
+  ]
+}
+</script>
+<style>
+        /* CSS Reset & Custom Properties */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-deep: #04060e;
+            --bg-base: #080d1c;
+            --bg-surface: #0f1530;
+            --bg-card: #141a38;
+            --border: #1a2348;
+            --text-primary: #e8ecf4;
+            --text-secondary: #a0a9c0;
+            --text-muted: #8e99b8;
+            --accent: #34d399;
+            --warm: #f59e0b;
+            --border-light: #233060;
+            --accent-dim: #1a6b4d;
+            --accent-glow: rgba(52,211,153,0.12);
+            --accent-glow-strong: rgba(52,211,153,0.25);
+            --ease-out: cubic-bezier(0.16,1,0.3,1);
+
+            --cat-a: #3b82f6;
+            --cat-b: #a78bfa;
+            --cat-ccr: #f59e0b;
+            --cat-cs: #34d399;
+            --cat-d: #f87171;
+            --cat-e: #22d3ee;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding-top: 56px;
+        }
+
+        /* ── Site Navigation ── */
+        .site-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(4,6,14,0.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;padding:0 2rem}
+        .nav-container{max-width: 1100px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--accent);text-decoration:none;letter-spacing:-.02em}
+        .nav-menu{display:flex;align-items:center;gap:.25rem}
+        .nav-item{color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.88rem;padding:.45rem .75rem;border-radius:6px;transition:color .2s,background .2s;border:none;background:none;cursor:pointer;white-space:nowrap}
+        .nav-item:hover,.nav-item.active{color:var(--text-primary);background:var(--bg-surface)}
+        .nav-dropdown{position:relative}
+        .nav-dropdown-trigger{display:flex;align-items:center;gap:.3rem}
+        .arrow{font-size:.6rem;transition:transform .2s}
+        .nav-dropdown:hover .arrow{transform:rotate(180deg)}
+        .dropdown-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;padding:.4rem 0;min-width:180px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+        .nav-dropdown:hover .dropdown-panel{display:block}
+        .dropdown-panel a{display:block;padding:.5rem 1rem;color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.85rem;transition:color .15s,background .15s,padding-left .15s}
+        .dropdown-panel a:hover{color:var(--accent);background:var(--bg-surface);padding-left:1.25rem}
+        .nav-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.4rem;cursor:pointer;padding:.5rem}
+        @media(max-width:768px){
+          .nav-toggle{display:block}
+          .nav-menu{display:none;position:absolute;top:56px;left:0;right:0;background:var(--bg-card);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem;gap:.15rem}
+          .nav-menu.open{display:flex}
+          .dropdown-panel{position:static;box-shadow:none;border:none;background:var(--bg-surface);border-radius:6px;margin:.25rem 0 .25rem 1rem;display:none}
+          .nav-dropdown.open .dropdown-panel{display:block}
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--bg-base);
+            border-bottom: 1px solid var(--border);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Controls Section */
+        .controls-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .toggle-btn {
+            padding: 0.6rem 1.2rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .toggle-btn.active {
+            background-color: var(--accent);
+            border-color: var(--accent);
+            color: var(--bg-deep);
+        }
+
+        .toggle-btn:hover:not(.active) {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Filter Section */
+        .filters-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .filters-section h3 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            color: var(--text-primary);
+        }
+
+        .filter-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .filter-pill {
+            padding: 0.6rem 1.2rem;
+            border: 1.5px solid;
+            border-radius: 6px;
+            background-color: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .filter-pill[data-category="all"] {
+            border-color: var(--text-secondary);
+            color: var(--text-secondary);
+        }
+
+        .filter-pill[data-category="all"]:hover,
+        .filter-pill[data-category="all"].active {
+            border-color: var(--accent);
+            color: var(--accent);
+            background-color: rgba(52, 211, 153, 0.1);
+        }
+
+        .filter-pill[data-category="A"] {
+            border-color: var(--cat-a);
+            color: var(--cat-a);
+        }
+
+        .filter-pill[data-category="A"]:hover,
+        .filter-pill[data-category="A"].active {
+            background-color: rgba(59, 130, 246, 0.15);
+        }
+
+        .filter-pill[data-category="C_cr"] {
+            border-color: var(--cat-ccr);
+            color: var(--cat-ccr);
+        }
+
+        .filter-pill[data-category="C_cr"]:hover,
+        .filter-pill[data-category="C_cr"].active {
+            background-color: rgba(245, 158, 11, 0.15);
+        }
+
+        .filter-pill[data-category="C_s"] {
+            border-color: var(--cat-cs);
+            color: var(--cat-cs);
+        }
+
+        .filter-pill[data-category="C_s"]:hover,
+        .filter-pill[data-category="C_s"].active {
+            background-color: rgba(52, 211, 153, 0.15);
+        }
+
+        .filter-pill[data-category="E"] {
+            border-color: var(--cat-e);
+            color: var(--cat-e);
+        }
+
+        .filter-pill[data-category="E"]:hover,
+        .filter-pill[data-category="E"].active {
+            background-color: rgba(34, 211, 238, 0.15);
+        }
+
+        /* Card Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Protocol Card */
+        .protocol-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .protocol-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--cat-a);
+        }
+
+        .protocol-card[data-category="C_cr"]::before {
+            background-color: var(--cat-ccr);
+        }
+
+        .protocol-card[data-category="C_s"]::before {
+            background-color: var(--cat-cs);
+        }
+
+        .protocol-card[data-category="E"]::before {
+            background-color: var(--cat-e);
+        }
+
+        .protocol-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            box-shadow: 0 8px 24px rgba(52, 211, 153, 0.15);
+        }
+
+        .protocol-card[data-category="C_cr"]:hover {
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
+        }
+
+        .protocol-card[data-category="C_s"]:hover {
+            box-shadow: 0 8px 24px rgba(52, 211, 153, 0.15);
+        }
+
+        .protocol-card[data-category="E"]:hover {
+            box-shadow: 0 8px 24px rgba(34, 211, 238, 0.15);
+        }
+
+        .card-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+
+        .card-source {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .card-badges {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .category-badge.A { background-color: rgba(59, 130, 246, 0.2); color: var(--cat-a); }
+        .category-badge.C_cr { background-color: rgba(245, 158, 11, 0.2); color: var(--cat-ccr); }
+        .category-badge.C_s { background-color: rgba(52, 211, 153, 0.2); color: var(--cat-cs); }
+        .category-badge.E { background-color: rgba(34, 211, 238, 0.2); color: var(--cat-e); }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .status-badge.production { background-color: rgba(52, 211, 153, 0.2); color: #10b981; }
+        .status-badge.pilot { background-color: rgba(59, 130, 246, 0.2); color: var(--cat-a); }
+        .status-badge.testnet { background-color: rgba(245, 158, 11, 0.2); color: var(--cat-ccr); }
+        .status-badge.development { background-color: rgba(168, 139, 250, 0.2); color: var(--cat-b); }
+        .status-badge.announced { background-color: rgba(107, 115, 148, 0.2); color: var(--text-muted); }
+        .status-badge.draft { background-color: rgba(248, 113, 113, 0.2); color: #ef4444; }
+
+        .card-stats {
+            padding: 1rem 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-value {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .stat-value.missing {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .card-expand-btn {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border);
+            background: none;
+            border: none;
+            color: var(--accent);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .card-expand-btn:hover {
+            background-color: rgba(52, 211, 153, 0.05);
+        }
+
+        .expand-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .protocol-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .card-details {
+            display: none;
+            padding: 1rem 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .protocol-card.expanded .card-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .detail-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .detail-value {
+            color: var(--text-primary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+
+        .detail-value.missing {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Compare Mode */
+        .compare-checkbox {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            display: none;
+        }
+
+        .protocol-card.compare-mode {
+            cursor: default;
+        }
+
+        .protocol-card.compare-mode .compare-checkbox {
+            display: block;
+        }
+
+        .protocol-card.selected {
+            border-color: var(--accent);
+            box-shadow: inset 0 0 0 2px var(--accent);
+        }
+
+        .compare-button-wrapper {
+            display: none;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .compare-button-wrapper.visible {
+            display: flex;
+        }
+
+        .compare-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent);
+            color: var(--bg-deep);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .compare-btn:hover {
+            background-color: #2ec9a0;
+        }
+
+        .compare-btn.secondary {
+            background-color: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .compare-btn.secondary:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .compare-count {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-weight: 500;
+            display: none;
+        }
+
+        .compare-count.visible {
+            display: block;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            display: none;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-top: 2rem;
+            overflow-x: auto;
+        }
+
+        .comparison-table.visible {
+            display: block;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th {
+            background-color: var(--bg-card);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border-bottom: 2px solid var(--border);
+            position: sticky;
+            left: 0;
+            min-width: 150px;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .comparison-table tr:hover {
+            background-color: rgba(52, 211, 153, 0.05);
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+        }
+
+        .empty-state h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        /* Contribution Form Section */
+        .contribution-section {
+            margin-top: 4rem;
+            padding: 2rem;
+            background-color: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+
+        .contribution-section h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .contribution-section p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-submit {
+            padding: 0.75rem 1.5rem;
+            background-color: var(--accent);
+            color: var(--bg-deep);
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .form-submit:hover {
+            background-color: #2ec9a0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-base);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .card-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .protocol-card.expanded .card-details {
+                grid-template-columns: 1fr;
+            }
+
+            .controls-section {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .search-box {
+                min-width: 100%;
+            }
+
+            .view-toggle {
+                width: 100%;
+            }
+
+            .toggle-btn {
+                flex: 1;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 0.75rem;
+            }
+        }
+    
+        /* ── Unified Footer ── */
+.site-footer{background:var(--bg-deep);padding:64px 0 32px;border-top:1px solid var(--border)}
+.footer-grid{max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.footer-col h4{font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:500;color:var(--text-muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem}
+.footer-col a{display:block;color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.9rem;padding:.3rem 0;transition:color .2s}
+.footer-col a:hover{color:var(--accent)}
+.footer-col .badge-soon{font-size:.65rem;background:var(--bg-card);color:var(--text-muted);padding:2px 8px;border-radius:4px;margin-left:8px}
+.footer-bottom{max-width:1100px;margin:0 auto;padding:24px 24px 0;margin-top:32px;border-top:1px solid var(--border);text-align:center}
+.footer-bottom p{color:var(--text-muted);font-size:.85rem;font-family:'Outfit',sans-serif}
+@media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <div class="nav-container">
+        <a href="agentic-economy-101.html" class="nav-brand">agenticeconomy.dev</a>
+        <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+        <div class="nav-menu">
+          <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
+          <div class="nav-dropdown">
+            <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">&#9662;</span></button>
+            <div class="dropdown-panel">
+              <a href="agentic-economy-research.html">Papers</a>
+              <a href="agentic-economy-definitions.html">51 Definitions</a>
+              <a href="agentic-economy-timeline.html">Timeline</a>
+              <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
+            <div class="dropdown-panel">
+              <a href="agentic-economy-glossary.html">Glossary</a>
+              <a href="agentic-economy-quiz.html">Quiz</a>
+              <a href="agentic-economy-infographic.html">Infographic</a>
+              <a href="ask-agentic-economy.html">Ask the Corpus</a>
+            </div>
+          </div>
+          <a href="about-agentic-economy.html" class="nav-item">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Protocol Comparison Matrix</h1>
+        <p>How 17 protocols handle payment, identity, disputes, and governance. Side-by-side, with real data.</p>
+    </section>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Filter Section -->
+        <div class="filters-section">
+            <h3>Filter by Category</h3>
+            <div class="filter-pills">
+                <button class="filter-pill active" data-category="all">All Protocols</button>
+                <button class="filter-pill" data-category="A">Category A</button>
+                <button class="filter-pill" data-category="C_cr">Crypto</button>
+                <button class="filter-pill" data-category="C_s">Settlement</button>
+                <button class="filter-pill" data-category="E">Infrastructure</button>
+            </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="controls-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search protocols...">
+            </div>
+            <div class="view-toggle">
+                <button class="toggle-btn active" data-mode="browse">Browse</button>
+                <button class="toggle-btn" data-mode="compare">Compare</button>
+            </div>
+        </div>
+
+        <!-- Compare Controls -->
+        <div class="compare-button-wrapper" id="compareButtonWrapper">
+            <span class="compare-count" id="compareCount">0 selected</span>
+            <button class="compare-btn" id="compareBtn" disabled>Compare Selected</button>
+            <button class="compare-btn secondary" id="clearCompareBtn">Clear Selection</button>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="cards-grid" id="cardsGrid"></div>
+
+        <!-- Comparison Table -->
+        <div class="comparison-table" id="comparisonTable"></div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <h3>No protocols found</h3>
+            <p>Try adjusting your search or filters</p>
+        </div>
+
+        <!-- Contribution Section -->
+        <section class="contribution-section">
+            <h2>Help Us Fill the Gaps</h2>
+            <p>Some data points are not publicly available. If you have insider knowledge or can point us to official sources, help us complete the matrix. All contributions are verified before publication.</p>
+
+            <form id="contributionForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="protocol">Protocol Name</label>
+                        <select id="protocol" required>
+                            <option value="">Select a protocol...</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="dataField">Data Field</label>
+                        <select id="dataField" required>
+                            <option value="">Select a field...</option>
+                            <option value="latency">Latency</option>
+                            <option value="cost">Cost per Transaction</option>
+                            <option value="blockchain">Blockchain Required</option>
+                            <option value="openSource">Open Source</option>
+                            <option value="partners">Partners / Volume</option>
+                            <option value="api">API Type</option>
+                            <option value="governance">Governance Model</option>
+                            <option value="status">Status</option>
+                            <option value="differentiator">Key Differentiator</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="value">Value</label>
+                    <textarea id="value" placeholder="Provide the data or correction..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="sourceUrl">Source URL (required)</label>
+                    <input type="url" id="sourceUrl" placeholder="https://..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email (required)</label>
+                    <input type="email" id="email" placeholder="your@email.com" required>
+                </div>
+
+                <button type="submit" class="form-submit">Submit Contribution</button>
+            </form>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <script>
+        // Protocol Data
+        const protocols = [
+            // Category A
+            {
+                id: 1,
+                name: "ACP",
+                source: "Stripe/OpenAI",
+                category: "A",
+                latency: "seconds (Stripe processing)",
+                cost: "Stripe fees (2.9%+$0.30)",
+                blockchain: "No",
+                openSource: "Partially (agenticcommerce.dev)",
+                partners: "1M+ Shopify merchants eligible, 12 live",
+                api: "REST, Stripe SDK",
+                governance: "Stripe/OpenAI",
+                status: "Production (scaled back)",
+                differentiator: "First ChatGPT-native checkout"
+            },
+            {
+                id: 2,
+                name: "UCP",
+                source: "Google/Shopify/Walmart",
+                category: "A",
+                latency: "—",
+                cost: "Processor fees",
+                blockchain: "No",
+                openSource: "Spec public",
+                partners: "20+ (Adyen, Amex, Best Buy, Macy's, Visa, Zalando)",
+                api: "REST, native + embedded modes",
+                governance: "Google-led consortium",
+                status: "Rolling out",
+                differentiator: "Full commerce lifecycle state machine"
+            },
+            {
+                id: 3,
+                name: "AP2",
+                source: "Google/Mastercard/PayPal",
+                category: "A",
+                latency: "—",
+                cost: "Card network fees",
+                blockchain: "No",
+                openSource: "No",
+                partners: "60+",
+                api: "OAuth-based",
+                governance: "Multi-company",
+                status: "Production",
+                differentiator: "OAuth delegation, agent never touches money"
+            },
+            {
+                id: 4,
+                name: "Visa \"Agentic Ready\"",
+                source: "Visa",
+                category: "A",
+                latency: "Card network speed",
+                cost: "Interchange fees",
+                blockchain: "No",
+                openSource: "No",
+                partners: "20+ European banks (Santander, HSBC, Revolut, Barclays)",
+                api: "Visa APIs + tokenization",
+                governance: "Visa",
+                status: "Pilot (Europe)",
+                differentiator: "Biometric verification ties agent to human"
+            },
+            {
+                id: 5,
+                name: "Mastercard \"Agent Pay\"",
+                source: "Mastercard",
+                category: "A",
+                latency: "Card network speed",
+                cost: "Interchange fees",
+                blockchain: "No",
+                openSource: "No",
+                partners: "US all issuers, Europe pilot (Santander live), Australia (CBA, Westpac)",
+                api: "Tokenization + passkeys",
+                governance: "Mastercard",
+                status: "Production (multi-region)",
+                differentiator: "Agentic Tokens with spend limits via passkeys"
+            },
+            {
+                id: 6,
+                name: "MPP",
+                source: "Stripe/Tempo",
+                category: "A",
+                latency: "—",
+                cost: "Stripe/Visa fees",
+                blockchain: "No (fiat + stablecoins optional)",
+                openSource: "—",
+                partners: "—",
+                api: "—",
+                governance: "Stripe/Tempo",
+                status: "Announced",
+                differentiator: "Hybrid fiat+stablecoin on human rails"
+            },
+            // Category C_crypto
+            {
+                id: 7,
+                name: "x402",
+                source: "Coinbase/Cloudflare",
+                category: "C_cr",
+                latency: "<500ms",
+                cost: "Zero protocol fee",
+                blockchain: "Yes",
+                openSource: "Yes (x402.org, GitHub)",
+                partners: "x402 Foundation, 119M+ tx on Base, $600M annualized",
+                api: "HTTP 402, REST",
+                governance: "x402 Foundation (Coinbase+Cloudflare)",
+                status: "Production",
+                differentiator: "HTTP-native micropayments, zero fees"
+            },
+            {
+                id: 8,
+                name: "Circle Nanopayments",
+                source: "Circle",
+                category: "C_cr",
+                latency: "Near-instant (off-chain)",
+                cost: "Down to $0.000001",
+                blockchain: "Yes (batched settlement)",
+                openSource: "—",
+                partners: "12 chains supported",
+                api: "REST",
+                governance: "Circle",
+                status: "Testnet",
+                differentiator: "Gas-free nano-transfers, batched on-chain settlement"
+            },
+            {
+                id: 9,
+                name: "Kite",
+                source: "Kite",
+                category: "C_cr",
+                latency: "Sub-second (L1)",
+                cost: "Zero gas",
+                blockchain: "Yes (EVM L1)",
+                openSource: "—",
+                partners: "100K+ testnet wallets",
+                api: "EVM + x402 native",
+                governance: "Kite team",
+                status: "Testnet → Mainnet Q1 2026",
+                differentiator: "Purpose-built L1 for agent payments + KYA identity"
+            },
+            {
+                id: 10,
+                name: "Olas",
+                source: "Valory",
+                category: "C_cr",
+                latency: "Gnosis chain speed",
+                cost: "Minimal gas",
+                blockchain: "Yes",
+                openSource: "Yes (GitHub)",
+                partners: "700K+ monthly tx, $13.8M Series A",
+                api: "Python SDK",
+                governance: "DAO",
+                status: "Production",
+                differentiator: "DAO-governed agent-to-agent service marketplace"
+            },
+            {
+                id: 11,
+                name: "Fetch.ai/ASI",
+                source: "Fetch.ai",
+                category: "C_cr",
+                latency: "Chain speed",
+                cost: "FET token fees",
+                blockchain: "Yes",
+                openSource: "Yes (GitHub)",
+                partners: "NVIDIA advisor, ASI Alliance",
+                api: "Python SDK, Almanac",
+                governance: "ASI Alliance",
+                status: "DevNet (mainnet late 2026)",
+                differentiator: "Earliest mover (2021), NVIDIA partnership"
+            },
+            // Category C_settlement
+            {
+                id: 12,
+                name: "BotNode/VMP-1.0",
+                source: "BotNode",
+                category: "C_s",
+                latency: "<100ms",
+                cost: "TCK-denominated (no fiat fees)",
+                blockchain: "No",
+                openSource: "—",
+                partners: "—",
+                api: "REST + MCP + A2A",
+                governance: "BotNode",
+                status: "Development",
+                differentiator: "Only non-crypto C entry. Settlement neutrality, CRI reputation, deterministic validators"
+            },
+            // Category E
+            {
+                id: 13,
+                name: "A2A",
+                source: "Google",
+                category: "E",
+                latency: "N/A (discovery)",
+                cost: "Free",
+                blockchain: "No",
+                openSource: "Yes (GitHub, Apache 2.0)",
+                partners: "150+ orgs",
+                api: "JSON-RPC over HTTPS",
+                governance: "Linux Foundation",
+                status: "Production (v0.3)",
+                differentiator: "Agent discovery standard, Agent Cards at /.well-known/agent.json"
+            },
+            {
+                id: 14,
+                name: "MCP",
+                source: "Anthropic",
+                category: "E",
+                latency: "N/A (tools)",
+                cost: "Free",
+                blockchain: "No",
+                openSource: "Yes (GitHub)",
+                partners: "Massive ecosystem",
+                api: "JSON-RPC, stdio/SSE",
+                governance: "Anthropic",
+                status: "Production",
+                differentiator: "Universal tool interoperability for LLMs"
+            },
+            {
+                id: 15,
+                name: "IEEE 7012",
+                source: "IEEE",
+                category: "E",
+                latency: "N/A",
+                cost: "N/A",
+                blockchain: "N/A",
+                openSource: "Standard (IEEE)",
+                partners: "IEEE members",
+                api: "N/A (legal standard)",
+                governance: "IEEE SA",
+                status: "Draft",
+                differentiator: "First formal standard for agent-to-agent agreements"
+            },
+            {
+                id: 16,
+                name: "IETF VCAP",
+                source: "IETF",
+                category: "E",
+                latency: "N/A",
+                cost: "N/A",
+                blockchain: "No",
+                openSource: "Internet-Draft",
+                partners: "IETF community",
+                api: "Protocol spec",
+                governance: "IETF",
+                status: "Draft",
+                differentiator: "Cryptographic proof of work delivery"
+            },
+            {
+                id: 17,
+                name: "KYA",
+                source: "Trulioo/Worldpay/Skyfire",
+                category: "E",
+                latency: "N/A (identity)",
+                cost: "Per-verification",
+                blockchain: "No",
+                openSource: "No",
+                partners: "Trulioo, Worldpay, Skyfire",
+                api: "REST",
+                governance: "Multi-company",
+                status: "Development",
+                differentiator: "\"Digital Agent Passport\" — KYC for machines"
+            }
+        ];
+
+        let currentFilter = "all";
+        let currentSearch = "";
+        let currentMode = "browse";
+        let selectedProtocols = [];
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            populateProtocolDropdown();
+            renderCards();
+            setupFilterListeners();
+            setupFormListener();
+            setupSearchListener();
+            setupViewToggle();
+            setupCompareListeners();
+        });
+
+        // Populate protocol dropdown
+        function populateProtocolDropdown() {
+            const select = document.getElementById('protocol');
+            protocols.forEach(p => {
+                const option = document.createElement('option');
+                option.value = p.id;
+                option.textContent = `${p.name} (${p.source})`;
+                select.appendChild(option);
+            });
+        }
+
+        // Setup filter listeners
+        function setupFilterListeners() {
+            document.querySelectorAll('.filter-pill').forEach(pill => {
+                pill.addEventListener('click', function() {
+                    document.querySelectorAll('.filter-pill').forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                    currentFilter = this.dataset.category;
+                    selectedProtocols = [];
+                    renderCards();
+                    updateCompareControls();
+                });
+            });
+        }
+
+        // Setup search listener
+        function setupSearchListener() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', function() {
+                currentSearch = this.value.toLowerCase();
+                selectedProtocols = [];
+                renderCards();
+                updateCompareControls();
+            });
+        }
+
+        // Setup view toggle
+        function setupViewToggle() {
+            document.querySelectorAll('.toggle-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    currentMode = this.dataset.mode;
+                    selectedProtocols = [];
+                    renderCards();
+                    updateCompareControls();
+                });
+            });
+        }
+
+        // Setup compare listeners
+        function setupCompareListeners() {
+            document.getElementById('compareBtn').addEventListener('click', showComparison);
+            document.getElementById('clearCompareBtn').addEventListener('click', clearSelection);
+        }
+
+        // Setup form listener
+        function setupFormListener() {
+            document.getElementById('contributionForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const protocol = document.getElementById('protocol').value;
+                const dataField = document.getElementById('dataField').value;
+                const value = document.getElementById('value').value;
+                const sourceUrl = document.getElementById('sourceUrl').value;
+                const email = document.getElementById('email').value;
+
+                const subject = `Matrix Contribution: ${protocols.find(p => p.id == protocol).name}`;
+                const body = `Protocol: ${protocols.find(p => p.id == protocol).name}\nField: ${dataField}\nValue: ${value}\nSource: ${sourceUrl}\nSubmitter: ${email}`;
+
+                window.location.href = `mailto:rene@renedechamps.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+                this.reset();
+            });
+        }
+
+        // Get status badge class
+        function getStatusBadgeClass(status) {
+            const lowerStatus = status.toLowerCase();
+            if (lowerStatus.includes('production')) return 'status-badge production';
+            if (lowerStatus.includes('pilot')) return 'status-badge pilot';
+            if (lowerStatus.includes('testnet')) return 'status-badge testnet';
+            if (lowerStatus.includes('development')) return 'status-badge development';
+            if (lowerStatus.includes('announced')) return 'status-badge announced';
+            if (lowerStatus.includes('draft')) return 'status-badge draft';
+            return 'status-badge announced';
+        }
+
+        // Format data
+        function formatData(value) {
+            if (!value || value === '—') {
+                return { text: '—', missing: true };
+            }
+            return { text: value, missing: false };
+        }
+
+        // Render cards
+        function renderCards() {
+            const grid = document.getElementById('cardsGrid');
+            grid.innerHTML = '';
+
+            let filtered = protocols;
+            if (currentFilter !== 'all') {
+                filtered = filtered.filter(p => p.category === currentFilter);
+            }
+
+            if (currentSearch) {
+                filtered = filtered.filter(p =>
+                    p.name.toLowerCase().includes(currentSearch) ||
+                    p.source.toLowerCase().includes(currentSearch)
+                );
+            }
+
+            if (filtered.length === 0) {
+                document.getElementById('emptyState').style.display = 'block';
+                grid.style.display = 'none';
+                return;
+            }
+
+            document.getElementById('emptyState').style.display = 'none';
+            grid.style.display = 'grid';
+
+            filtered.forEach(protocol => {
+                const card = createProtocolCard(protocol);
+                grid.appendChild(card);
+            });
+        }
+
+        // Create protocol card
+        function createProtocolCard(protocol) {
+            const card = document.createElement('div');
+            card.className = 'protocol-card';
+            card.dataset.category = protocol.category;
+            card.dataset.id = protocol.id;
+
+            const latencyData = formatData(protocol.latency);
+            const costData = formatData(protocol.cost);
+            const blockchainData = formatData(protocol.blockchain);
+            const openSourceData = formatData(protocol.openSource);
+
+            const cardHTML = `
+                <input type="checkbox" class="compare-checkbox" data-id="${protocol.id}">
+                <div class="card-header">
+                    <div class="card-title">${protocol.name}</div>
+                    <div class="card-source">${protocol.source}</div>
+                    <div class="card-badges">
+                        <span class="category-badge ${protocol.category}">${protocol.category}</span>
+                        <span class="${getStatusBadgeClass(protocol.status)}">${protocol.status.split('(')[0].trim()}</span>
+                    </div>
+                </div>
+                <div class="card-stats">
+                    <div class="stat-item">
+                        <div class="stat-label">Blockchain</div>
+                        <div class="stat-value ${blockchainData.missing ? 'missing' : ''}">${blockchainData.text}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Latency</div>
+                        <div class="stat-value ${latencyData.missing ? 'missing' : ''}">${latencyData.text}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Cost</div>
+                        <div class="stat-value ${costData.missing ? 'missing' : ''}">${costData.text}</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">Open Source</div>
+                        <div class="stat-value ${openSourceData.missing ? 'missing' : ''}">${openSourceData.text}</div>
+                    </div>
+                </div>
+                <button class="card-expand-btn" onclick="toggleCardExpand(this)">
+                    <span>Show More Details</span>
+                    <span class="expand-icon">▼</span>
+                </button>
+                <div class="card-details">
+                    <div class="detail-group">
+                        <div class="detail-label">Partners / Volume</div>
+                        <div class="detail-value ${formatData(protocol.partners).missing ? 'missing' : ''}">${formatData(protocol.partners).text}</div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">API</div>
+                        <div class="detail-value ${formatData(protocol.api).missing ? 'missing' : ''}">${formatData(protocol.api).text}</div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Governance</div>
+                        <div class="detail-value ${formatData(protocol.governance).missing ? 'missing' : ''}">${formatData(protocol.governance).text}</div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Full Status</div>
+                        <div class="detail-value">${protocol.status}</div>
+                    </div>
+                    <div class="detail-group">
+                        <div class="detail-label">Differentiator</div>
+                        <div class="detail-value">${protocol.differentiator}</div>
+                    </div>
+                </div>
+            `;
+
+            card.innerHTML = cardHTML;
+
+            // Add checkbox listener for compare mode
+            const checkbox = card.querySelector('.compare-checkbox');
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    if (selectedProtocols.length < 4) {
+                        selectedProtocols.push(protocol.id);
+                        card.classList.add('selected');
+                    } else {
+                        this.checked = false;
+                    }
+                } else {
+                    selectedProtocols = selectedProtocols.filter(id => id !== protocol.id);
+                    card.classList.remove('selected');
+                }
+                updateCompareControls();
+            });
+
+            return card;
+        }
+
+        // Toggle card expand
+        function toggleCardExpand(btn) {
+            const card = btn.closest('.protocol-card');
+            card.classList.toggle('expanded');
+            btn.textContent = card.classList.contains('expanded') ? 'Show Less Details' : 'Show More Details';
+            if (!btn.querySelector('.expand-icon')) {
+                const icon = document.createElement('span');
+                icon.className = 'expand-icon';
+                icon.textContent = '▼';
+                btn.appendChild(icon);
+            }
+        }
+
+        // Update compare controls
+        function updateCompareControls() {
+            const wrapper = document.getElementById('compareButtonWrapper');
+            const count = document.getElementById('compareCount');
+            const btn = document.getElementById('compareBtn');
+            const comparisonTable = document.getElementById('comparisonTable');
+
+            if (currentMode === 'compare') {
+                wrapper.classList.add('visible');
+                document.querySelectorAll('.protocol-card').forEach(card => {
+                    card.classList.add('compare-mode');
+                    const checkbox = card.querySelector('.compare-checkbox');
+                    if (selectedProtocols.includes(parseInt(card.dataset.id))) {
+                        card.classList.add('selected');
+                        checkbox.checked = true;
+                    } else {
+                        card.classList.remove('selected');
+                        checkbox.checked = false;
+                    }
+                });
+                count.classList.add('visible');
+                count.textContent = `${selectedProtocols.length} selected`;
+                btn.disabled = selectedProtocols.length < 2;
+                comparisonTable.classList.remove('visible');
+            } else {
+                wrapper.classList.remove('visible');
+                document.querySelectorAll('.protocol-card').forEach(card => {
+                    card.classList.remove('compare-mode');
+                });
+                comparisonTable.classList.remove('visible');
+                selectedProtocols = [];
+            }
+        }
+
+        // Show comparison
+        function showComparison() {
+            const selectedData = protocols.filter(p => selectedProtocols.includes(p.id));
+            if (selectedData.length < 2) return;
+
+            const fields = [
+                { key: 'category', label: 'Category' },
+                { key: 'latency', label: 'Latency' },
+                { key: 'cost', label: 'Cost' },
+                { key: 'blockchain', label: 'Blockchain' },
+                { key: 'openSource', label: 'Open Source' },
+                { key: 'partners', label: 'Partners / Volume' },
+                { key: 'api', label: 'API' },
+                { key: 'governance', label: 'Governance' },
+                { key: 'status', label: 'Status' },
+                { key: 'differentiator', label: 'Differentiator' }
+            ];
+
+            let tableHTML = '<table><thead><tr><th>Field</th>';
+            selectedData.forEach(p => {
+                tableHTML += `<th>${p.name}<br><small>${p.source}</small></th>`;
+            });
+            tableHTML += '</tr></thead><tbody>';
+
+            fields.forEach(field => {
+                tableHTML += `<tr><td>${field.label}</td>`;
+                selectedData.forEach(p => {
+                    const value = formatData(p[field.key]);
+                    tableHTML += `<td class="${value.missing ? 'missing' : ''}">${value.text}</td>`;
+                });
+                tableHTML += '</tr>';
+            });
+
+            tableHTML += '</tbody></table>';
+
+            const comparisonTable = document.getElementById('comparisonTable');
+            comparisonTable.innerHTML = tableHTML;
+            comparisonTable.classList.add('visible');
+
+            // Scroll to table
+            setTimeout(() => {
+                comparisonTable.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        // Clear selection
+        function clearSelection() {
+            selectedProtocols = [];
+            document.querySelectorAll('.compare-checkbox').forEach(cb => cb.checked = false);
+            document.querySelectorAll('.protocol-card').forEach(card => card.classList.remove('selected'));
+            updateCompareControls();
+        }
+
+        // Nav toggle (mobile)
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+          document.querySelector('.nav-menu').classList.toggle('open');
+        });
+        // Dropdown toggle (mobile)
+        document.querySelectorAll('.nav-dropdown-trigger').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              btn.closest('.nav-dropdown').classList.toggle('open');
+            }
+          });
+        });
+        // Highlight current page
+        const currentPage = location.pathname.split('/').pop() || 'agentic-economy-101.html';
+        document.querySelectorAll('.site-nav a[href]').forEach(a => {
+          if (a.getAttribute('href') === currentPage) a.classList.add('active');
+        });
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+          }
+        });
+    </script>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Research</h4>
+      <a href="agentic-economy-research.html">Papers</a>
+      <a href="agentic-economy-definitions.html">51 Definitions</a>
+      <a href="agentic-economy-timeline.html">Timeline</a>
+      <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="agentic-economy-glossary.html">Glossary</a>
+      <a href="agentic-economy-quiz.html">Quiz</a>
+      <a href="agentic-economy-infographic.html">Infographic</a>
+      <a href="ask-agentic-economy.html">Ask the Corpus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="#">Sandbox <span class="badge-soon">Soon</span></a>
+      <a href="#">Validators <span class="badge-soon">Soon</span></a>
+      <a href="#">Benchmark <span class="badge-soon">Soon</span></a>
+    </div>
+    <div class="footer-col">
+      <h4>Project</h4>
+      <a href="about-agentic-economy.html">About</a>
+      <a href="https://github.com/renedechamps/agenticeconomy" target="_blank" rel="noopener">GitHub</a>
+      <a href="mailto:rene@renedechamps.com">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 René Dechamps Otamendi · CC BY-SA 4.0 · Zero cookies. Not even Belgian ones.</p>
+  </div>
+</footer>
+
+    </body>
+</html>

@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — agenticeconomy.dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ===== CSS Variables ===== */
+    :root {
+      --bg-deep: #04060e;
+      --bg-base: #080d1c;
+      --bg-surface: #0f1530;
+      --bg-card: #141a38;
+      --border: #1a2348;
+      --text-primary: #e8ecf4;
+      --text-secondary: #a0a9c0;
+      --text-muted: #6b7394;
+      --accent: #34d399;
+      --warm: #f59e0b;
+    }
+
+    /* ===== Global Reset ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-deep);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-top: 56px;
+      overflow-x: hidden;
+    }
+
+    /* ===== Navigation ===== */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 56px;
+      background-color: rgba(8, 13, 28, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      white-space: nowrap;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .nav-item {
+      font-size: 14px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      font-weight: 500;
+    }
+
+    .nav-item:hover {
+      color: var(--accent);
+    }
+
+    .nav-item.active {
+      color: var(--accent);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-dropdown-trigger {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .arrow {
+      font-size: 10px;
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .nav-dropdown:hover .arrow {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-panel {
+      position: absolute;
+      top: 100%;
+      left: -12px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 0;
+      min-width: 180px;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-8px);
+      transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      margin-top: 8px;
+    }
+
+    .nav-dropdown:hover .dropdown-panel {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .dropdown-panel a {
+      display: block;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .dropdown-panel a:hover {
+      color: var(--accent);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: absolute;
+        top: 56px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        background-color: var(--bg-base);
+        border-bottom: 1px solid var(--border);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      .nav-menu.open {
+        max-height: 600px;
+        padding: 20px 0;
+      }
+
+      .nav-item {
+        padding: 12px 20px;
+        width: 100%;
+        text-align: left;
+        border: none;
+      }
+
+      .nav-dropdown {
+        width: 100%;
+      }
+
+      .nav-dropdown-trigger {
+        width: 100%;
+        padding: 12px 20px;
+      }
+
+      .dropdown-panel {
+        position: static;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        transform: none;
+        border: none;
+        background: rgba(15, 21, 48, 0.8);
+        padding: 0;
+        box-shadow: none;
+        transition: max-height 0.2s ease, opacity 0.2s ease;
+        margin: 0;
+      }
+
+      .nav-dropdown.open .dropdown-panel {
+        opacity: 1;
+        visibility: visible;
+        max-height: 300px;
+      }
+
+      .dropdown-panel a {
+        padding: 8px 20px 8px 40px;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+    }
+
+    /* ===== Hero Section ===== */
+    .hero {
+      background: linear-gradient(135deg, rgba(4, 6, 14, 1) 0%, rgba(8, 13, 28, 1) 50%, rgba(15, 21, 48, 0.3) 100%);
+      padding: 80px 20px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-content {
+      max-width: 800px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .hero h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 48px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+
+    .hero .subtitle {
+      font-size: 18px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 60px 20px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero .subtitle {
+        font-size: 16px;
+      }
+    }
+
+    /* ===== Section Wrapper ===== */
+    section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+    }
+
+    section:nth-of-type(2) { animation-delay: 0.1s; }
+    section:nth-of-type(3) { animation-delay: 0.2s; }
+    section:nth-of-type(4) { animation-delay: 0.3s; }
+    section:nth-of-type(5) { animation-delay: 0.4s; }
+    section:nth-of-type(6) { animation-delay: 0.5s; }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ===== Section Titles ===== */
+    section h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 32px;
+      letter-spacing: -0.5px;
+    }
+
+    section h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      letter-spacing: -0.3px;
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 20px;
+      }
+
+      section h2 {
+        font-size: 28px;
+      }
+    }
+
+    /* ===== The Mission Section ===== */
+    .mission {
+      border-top: 1px solid var(--border);
+    }
+
+    .mission p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.8;
+      max-width: 700px;
+    }
+
+    /* ===== What We Track Grid ===== */
+    .track-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .track-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .track-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(52, 211, 153, 0.1), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .track-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      box-shadow: 0 0 20px rgba(52, 211, 153, 0.15);
+    }
+
+    .track-card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .track-card h3 {
+      margin-bottom: 12px;
+      color: var(--accent);
+    }
+
+    .track-card p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== The Researcher Section ===== */
+    .researcher {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .researcher-content {
+      max-width: 700px;
+    }
+
+    .researcher h3 {
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .researcher .title {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .researcher p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.8;
+    }
+
+    .researcher-contact {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .researcher-contact p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .contact-email {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-email:hover {
+      text-decoration: underline;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 12px rgba(52, 211, 153, 0.1);
+    }
+
+    /* ===== Contribute Section ===== */
+    .contribute {
+      background: linear-gradient(135deg, rgba(52, 211, 153, 0.05) 0%, rgba(245, 158, 11, 0.05) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contribute p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin-bottom: 24px;
+      line-height: 1.8;
+    }
+
+    .contribute-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background-color: var(--accent);
+      color: var(--bg-deep);
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .contribute-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(52, 211, 153, 0.25);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background-color: var(--bg-base);
+      border-top: 1px solid var(--border);
+      padding: 48px 20px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      letter-spacing: -0.3px;
+    }
+
+    .footer-brand .accent {
+      color: var(--accent);
+    }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      font-size: 13px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      color: var(--accent);
+    }
+
+    /* ===== Intersection Observer Animations ===== */
+    .observe {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .observe.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="agentic-economy-101.html" class="nav-brand">agenticeconomy.dev</a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <div class="nav-menu">
+        <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
+        <div class="nav-dropdown">
+          <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">&#9662;</span></button>
+          <div class="dropdown-panel">
+            <a href="agentic-economy-definitions.html">51 Definitions</a>
+            <a href="agentic-economy-timeline.html">Timeline</a>
+            <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+            <a href="agentic-economy-research.html">Papers</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
+          <div class="dropdown-panel">
+            <a href="agentic-economy-glossary.html">Glossary</a>
+            <a href="agentic-economy-quiz.html">Quiz</a>
+            <a href="agentic-economy-infographic.html">Infographic</a>
+            <a href="ask-agentic-economy.html">Ask the Corpus</a>
+          </div>
+        </div>
+        <a href="about-agentic-economy.html" class="nav-item active">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>About This Project</h1>
+      <div class="subtitle">Mapping the economy that doesn't exist yet.</div>
+      <p>The agentic economy is being defined right now — by researchers, companies, and standards bodies working in parallel. This site connects those dots.</p>
+    </div>
+  </div>
+
+  <!-- The Mission -->
+  <section class="mission observe">
+    <h2>The Mission</h2>
+    <p>The agentic economy is being defined in real time by dozens of companies, researchers, and standards bodies — but nobody is connecting the dots.</p>
+    <p>agenticeconomy.dev is an independent, open research hub that tracks, categorizes, and analyzes how AI agents are reshaping commerce, payments, and economic activity.</p>
+    <p>Not funded by any vendor. Not selling anything. Just research.</p>
+  </section>
+
+  <!-- What We Track -->
+  <section class="observe">
+    <h2>What We Track</h2>
+    <div class="track-grid">
+      <a href="agentic-economy-definitions.html" class="track-card observe">
+        <span class="card-icon">📚</span>
+        <h3>51 Definitions</h3>
+        <p>Every published definition of the agentic economy, categorized and cross-referenced.</p>
+      </a>
+      <a href="agentic-economy-protocols.html" class="track-card observe">
+        <span class="card-icon">🔗</span>
+        <h3>17 Protocols</h3>
+        <p>Technical standards for agent commerce, compared side-by-side.</p>
+      </a>
+      <a href="agentic-economy-research.html" class="track-card observe">
+        <span class="card-icon">📄</span>
+        <h3>3 Research Papers</h3>
+        <p>Original academic research on Zenodo (CRI, Taxonomy, Oracle Problem).</p>
+      </a>
+      <a href="agentic-economy-timeline.html" class="track-card observe">
+        <span class="card-icon">⏱️</span>
+        <h3>The Timeline</h3>
+        <p>How we got from chatbots to autonomous economic agents, 2018-2026.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- The Researcher -->
+  <section class="researcher observe">
+    <div class="researcher-content">
+      <h3>René Dechamps Otamendi</h3>
+      <div class="title">Founder of BotNode · Independent Researcher</div>
+      <p>Independent researcher focused on how AI agents will transact, settle, and build trust. Author of the 51-definition taxonomy, the Commerce Readiness Index, and the Oracle Problem paper.</p>
+      <div class="researcher-contact">
+        <p>Contact: <a href="mailto:rene@renedechamps.com" class="contact-email">rene@renedechamps.com</a></p>
+        <div class="button-group">
+          <a href="https://zenodo.org" target="_blank" rel="noopener" class="btn">Zenodo Profile</a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+          <a href="https://botnode.dev" target="_blank" rel="noopener" class="btn">BotNode</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contribute -->
+  <section class="contribute observe">
+    <h2>Contribute</h2>
+    <p>This corpus grows with the field. If you've published a definition, built a protocol, or spotted something we missed — tell us.</p>
+    <a href="mailto:rene@renedechamps.com?subject=Contribution%20to%20agenticeconomy.dev" class="contribute-btn">Send a Contribution</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="observe">
+    <div class="footer-content">
+      <div class="footer-brand">agenticeconomy.dev <span class="accent">·</span> An independent research project by <span class="accent">BotNode</span></div>
+      <div class="footer-tagline">ZERO COOKIES · ZERO TRACKERS · ZERO FRAMEWORKS</div>
+      <div class="footer-links">
+        <a href="https://zenodo.org" target="_blank" rel="noopener" class="footer-link">Zenodo Papers</a>
+        <a href="https://botnode.dev" target="_blank" rel="noopener" class="footer-link">BotNode</a>
+        <a href="agentic-economy-101.html" class="footer-link">Start Here</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const navDropdowns = document.querySelectorAll('.nav-dropdown');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    // Close menu when nav item clicked
+    const navItems = document.querySelectorAll('.nav-item:not(.nav-dropdown-trigger)');
+    navItems.forEach(item => {
+      item.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+      });
+    });
+
+    // Mobile dropdown toggle
+    navDropdowns.forEach(dropdown => {
+      const trigger = dropdown.querySelector('.nav-dropdown-trigger');
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        dropdown.classList.toggle('open');
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.observe').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossary of the Agentic Economy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #04060e;
+            --bg-base: #080d1c;
+            --bg-surface: #0f1530;
+            --bg-card: #141a38;
+            --border: #1a2348;
+            --text-primary: #e8ecf4;
+            --text-secondary: #a0a9c0;
+            --text-muted: #6b7394;
+            --accent: #34d399;
+            --warm: #f59e0b;
+            --color-a: #3b82f6;
+            --color-b: #a78bfa;
+            --color-ccr: #f59e0b;
+            --color-cs: #34d399;
+            --color-d: #f87171;
+            --color-e: #22d3ee;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-base) 100%);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding-top: 56px;
+        }
+
+        /* ── Site Navigation ── */
+        .site-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(4,6,14,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;padding:0 2rem}
+        .nav-container{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--accent);text-decoration:none;letter-spacing:-.02em}
+        .nav-menu{display:flex;align-items:center;gap:.25rem}
+        .nav-item{color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.88rem;padding:.45rem .75rem;border-radius:6px;transition:color .2s,background .2s;border:none;background:none;cursor:pointer;white-space:nowrap}
+        .nav-item:hover,.nav-item.active{color:var(--text-primary);background:var(--bg-surface)}
+        .nav-dropdown{position:relative}
+        .nav-dropdown-trigger{display:flex;align-items:center;gap:.3rem}
+        .arrow{font-size:.6rem;transition:transform .2s}
+        .nav-dropdown:hover .arrow{transform:rotate(180deg)}
+        .dropdown-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:.4rem 0;min-width:180px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+        .nav-dropdown:hover .dropdown-panel{display:block}
+        .dropdown-panel a{display:block;padding:.5rem 1rem;color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.85rem;transition:color .15s,background .15s,padding-left .15s}
+        .dropdown-panel a:hover{color:var(--accent);background:var(--bg-surface);padding-left:1.25rem}
+        .nav-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.4rem;cursor:pointer;padding:.5rem}
+        @media(max-width:768px){
+          .nav-toggle{display:block}
+          .nav-menu{display:none;position:absolute;top:56px;left:0;right:0;background:var(--bg-card);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem;gap:.15rem}
+          .nav-menu.open{display:flex}
+          .dropdown-panel{position:static;box-shadow:none;border:none;background:var(--bg-surface);border-radius:6px;margin:.25rem 0 .25rem 1rem;display:none}
+          .nav-dropdown.open .dropdown-panel{display:block}
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1200px;
+            margin: 4rem auto 3rem;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        /* Search Box */
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            padding: 0 2rem;
+        }
+
+        #searchBox {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        #searchBox:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.1);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Category Sections */
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-section h2 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .category-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        /* Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .term-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .term-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), var(--warm));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .term-card:hover {
+            border-color: var(--accent);
+            background: rgba(52, 211, 153, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .term-card:hover::before {
+            opacity: 1;
+        }
+
+        .term-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .term-card-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .term-icon {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+        .term-definition {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .term-usage {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .term-usage a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .term-usage a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            text-align: center;
+        }
+
+        footer p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        footer a:hover {
+            color: var(--warm);
+        }
+
+        /* Animations for icons */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .icon-pulse { animation: pulse 2s ease-in-out infinite; }
+        .icon-rotate { animation: rotate 3s linear infinite; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            nav .container {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.85rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Search result filtering */
+        .term-card.hidden {
+            display: none;
+        }
+
+        .category-section.empty {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <div class="nav-container">
+        <a href="agentic-economy-101.html" class="nav-brand">agenticeconomy.dev</a>
+        <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+        <div class="nav-menu">
+          <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
+          <div class="nav-dropdown">
+            <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">&#9662;</span></button>
+            <div class="dropdown-panel">
+              <a href="agentic-economy-definitions.html">51 Definitions</a>
+              <a href="agentic-economy-timeline.html">Timeline</a>
+              <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+              <a href="agentic-economy-research.html">Papers</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
+            <div class="dropdown-panel">
+              <a href="agentic-economy-glossary.html">Glossary</a>
+              <a href="agentic-economy-quiz.html">Quiz</a>
+              <a href="agentic-economy-infographic.html">Infographic</a>
+              <a href="ask-agentic-economy.html">Ask the Corpus</a>
+            </div>
+          </div>
+          <a href="about-agentic-economy.html" class="nav-item">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Glossary of the Agentic Economy</h1>
+        <p>30 key terms, defined. Click any term to see which of the 51 definitions use it.</p>
+    </div>
+
+    <div class="search-container">
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search terms... (e.g., 'settlement', 'protocol')"
+        >
+    </div>
+
+    <div class="container">
+        <!-- Economy Types -->
+        <div class="category-section">
+            <h2>
+                <span class="category-dot" style="background: var(--color-a);"></span>
+                Economy Types
+            </h2>
+            <div class="cards-grid">
+                <div class="term-card" data-term="agentic-economy">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Agentic Economy</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="16" stroke="#34d399" stroke-width="2"/>
+                            <circle cx="20" cy="20" r="6" fill="#34d399"/>
+                            <circle cx="28" cy="20" r="2" fill="#34d399"/>
+                            <circle cx="12" cy="20" r="2" fill="#34d399"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">An economy where AI agents participate as economic actors, not just tools.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=agentic-economy">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="machine-economy">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Machine Economy</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="24" height="24" stroke="#3b82f6" stroke-width="2" rx="2"/>
+                            <circle cx="20" cy="20" r="4" fill="#3b82f6"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">The historical term (2018-2021) for machines transacting with each other.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=machine-economy">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="agent-assisted-commerce">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Agent-Assisted Commerce</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 20L18 28L30 12" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">The agent buys FOR a human using human payment rails. Category A.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=agent-assisted-commerce">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="agent-as-workforce">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Agent-as-Workforce</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="12" r="4" stroke="#a78bfa" stroke-width="2"/>
+                            <rect x="16" y="18" width="8" height="8" stroke="#a78bfa" stroke-width="2" rx="1"/>
+                            <line x1="16" y1="26" x2="12" y2="32" stroke="#a78bfa" stroke-width="2"/>
+                            <line x1="24" y1="26" x2="28" y2="32" stroke="#a78bfa" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">The agent replaces a human worker inside an enterprise. Category B.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=agent-as-workforce">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="autonomous-a2a-commerce">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Autonomous A2A Commerce</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="14" cy="20" r="5" stroke="#34d399" stroke-width="2"/>
+                            <circle cx="26" cy="20" r="5" stroke="#34d399" stroke-width="2"/>
+                            <path d="M19 19L25 21M25 19L19 21" stroke="#34d399" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Agents transact with each other without human in the loop. Category C.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=autonomous-a2a-commerce">Used in corpus →</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settlement & Payment -->
+        <div class="category-section">
+            <h2>
+                <span class="category-dot" style="background: var(--color-ccr);"></span>
+                Settlement & Payment
+            </h2>
+            <div class="cards-grid">
+                <div class="term-card" data-term="settlement-neutrality">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Settlement Neutrality</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 8V32M8 20H32" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="20" cy="20" r="2" fill="#f59e0b"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Protocol-agnostic design where any transport converges on the same escrow pipeline.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=settlement-neutrality">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="escrow-determinism">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Escrow Determinism</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="12" width="20" height="16" stroke="#f59e0b" stroke-width="2" rx="1"/>
+                            <line x1="20" y1="12" x2="20" y2="28" stroke="#f59e0b" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Settlement outcomes determined entirely by pre-agreed rules, no human judgment needed.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=escrow-determinism">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="ledger-consistency">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Ledger Consistency</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="8" width="24" height="24" stroke="#f59e0b" stroke-width="2" rx="2"/>
+                            <line x1="12" y1="15" x2="28" y2="15" stroke="#f59e0b" stroke-width="1"/>
+                            <line x1="12" y1="20" x2="28" y2="20" stroke="#f59e0b" stroke-width="1"/>
+                            <line x1="12" y1="25" x2="28" y2="25" stroke="#f59e0b" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Double-entry accounting guarantee: every debit has a matching credit.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=ledger-consistency">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="tck-tick">
+                    <div class="term-card-header">
+                        <div class="term-card-title">TCK (Tick)</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="10" stroke="#f59e0b" stroke-width="2"/>
+                            <text x="20" y="24" text-anchor="middle" font-size="14" fill="#f59e0b" font-weight="bold">τ</text>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Machine-native currency unit in BotNode's VMP-1.0, not pegged to fiat or crypto.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=tck-tick">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="micropayment">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Micropayment</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="8" stroke="#f59e0b" stroke-width="2" fill="none"/>
+                            <text x="20" y="23" text-anchor="middle" font-size="10" fill="#f59e0b" font-weight="bold">¢</text>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Sub-cent transactions ($0.001 or less) enabling pay-per-use agent services.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=micropayment">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="interchange-revenue">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Interchange Revenue</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="14" width="10" height="12" stroke="#f59e0b" stroke-width="2" rx="1"/>
+                            <rect x="22" y="14" width="10" height="12" stroke="#f59e0b" stroke-width="2" rx="1"/>
+                            <path d="M18 20H22" stroke="#f59e0b" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Fees card networks charge per transaction; what Category A protocols defend.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=interchange-revenue">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="stablecoin">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Stablecoin</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="10" stroke="#f59e0b" stroke-width="2"/>
+                            <path d="M16 18C16 16.9 17.3 16 18.5 16C19.2 16 19.8 16.3 20 16.8C20.2 16.3 20.8 16 21.5 16C22.7 16 24 16.9 24 18" stroke="#f59e0b" stroke-width="1.5"/>
+                            <line x1="20" y1="23" x2="20" y2="28" stroke="#f59e0b" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Crypto token pegged to fiat currency (USDC, USDT); primary payment in Category C_crypto.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=stablecoin">Used in corpus →</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Identity & Trust -->
+        <div class="category-section">
+            <h2>
+                <span class="category-dot" style="background: var(--color-cs);"></span>
+                Identity & Trust
+            </h2>
+            <div class="cards-grid">
+                <div class="term-card" data-term="kya">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Know Your Agent (KYA)</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="14" r="4" stroke="#34d399" stroke-width="2"/>
+                            <path d="M12 24C12 20 15.6 18 20 18C24.4 18 28 20 28 24" stroke="#34d399" stroke-width="2"/>
+                            <circle cx="20" cy="20" r="8" stroke="#34d399" stroke-width="1" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Identity verification framework for AI agents; the KYC equivalent for machines.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=kya">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="agent-card">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Agent Card</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="12" width="20" height="16" stroke="#34d399" stroke-width="2" rx="1"/>
+                            <circle cx="15" cy="18" r="2" fill="#34d399"/>
+                            <line x1="19" y1="18" x2="28" y2="18" stroke="#34d399" stroke-width="1"/>
+                            <line x1="19" y1="22" x2="28" y2="22" stroke="#34d399" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">JSON file at /.well-known/agent.json describing an agent's capabilities (A2A protocol).</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=agent-card">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="digital-agent-passport">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Digital Agent Passport</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="10" width="20" height="20" stroke="#34d399" stroke-width="2" rx="1"/>
+                            <rect x="14" y="14" width="6" height="6" stroke="#34d399" stroke-width="1" fill="#34d399" opacity="0.3"/>
+                            <line x1="14" y1="23" x2="26" y2="23" stroke="#34d399" stroke-width="1"/>
+                            <line x1="14" y1="26" x2="26" y2="26" stroke="#34d399" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Trulioo/Worldpay/Skyfire's identity credential for autonomous agents.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=digital-agent-passport">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="cri">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Composite Reliability Index (CRI)</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 28 Q 20 10 30 28" stroke="#34d399" stroke-width="2" fill="none"/>
+                            <circle cx="20" cy="20" r="3" fill="#34d399"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Quantitative reputation score (0-100) measuring agent trustworthiness over time.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=cri">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="reputation-equivalence">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Reputation Equivalence</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="15" cy="20" r="5" stroke="#34d399" stroke-width="2"/>
+                            <circle cx="25" cy="20" r="5" stroke="#34d399" stroke-width="2"/>
+                            <path d="M20 18L20 22" stroke="#34d399" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Guarantee that reputation scoring is identical regardless of transport protocol used.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=reputation-equivalence">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="did">
+                    <div class="term-card-header">
+                        <div class="term-card-title">DID (Decentralized Identifier)</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="8" stroke="#34d399" stroke-width="2"/>
+                            <path d="M15 20L20 25L25 15" stroke="#34d399" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">W3C standard for self-sovereign identity, used in blockchain-based agent systems.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=did">Used in corpus →</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Protocols & Infrastructure -->
+        <div class="category-section">
+            <h2>
+                <span class="category-dot" style="background: var(--color-d);"></span>
+                Protocols & Infrastructure
+            </h2>
+            <div class="cards-grid">
+                <div class="term-card" data-term="a2a">
+                    <div class="term-card-header">
+                        <div class="term-card-title">A2A (Agent-to-Agent Protocol)</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="12" width="8" height="12" stroke="#f87171" stroke-width="2" rx="1"/>
+                            <rect x="24" y="12" width="8" height="12" stroke="#f87171" stroke-width="2" rx="1"/>
+                            <path d="M16 18L24 18" stroke="#f87171" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Google's protocol for agent discovery and communication via JSON-RPC.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=a2a">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="mcp">
+                    <div class="term-card-header">
+                        <div class="term-card-title">MCP (Model Context Protocol)</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="10" width="20" height="20" stroke="#f87171" stroke-width="2" rx="2"/>
+                            <line x1="15" y1="15" x2="25" y2="15" stroke="#f87171" stroke-width="1"/>
+                            <line x1="15" y1="20" x2="25" y2="20" stroke="#f87171" stroke-width="1"/>
+                            <line x1="15" y1="25" x2="25" y2="25" stroke="#f87171" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Anthropic's standard for LLMs to discover and invoke external tools.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=mcp">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="x402">
+                    <div class="term-card-header">
+                        <div class="term-card-title">x402</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="20" y="26" text-anchor="middle" font-family="JetBrains Mono" font-size="16" fill="#f87171" font-weight="bold">402</text>
+                        </svg>
+                    </div>
+                    <div class="term-definition">HTTP 402 status code repurposed for stablecoin micropayments (Coinbase/Cloudflare).</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=x402">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="acp">
+                    <div class="term-card-header">
+                        <div class="term-card-title">ACP (Agentic Commerce Protocol)</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="10" stroke="#f87171" stroke-width="2"/>
+                            <path d="M16 18L20 22L24 16" stroke="#f87171" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Stripe/OpenAI's checkout protocol for agent-mediated purchases.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=acp">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="vcap">
+                    <div class="term-card-header">
+                        <div class="term-card-title">VCAP</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="12" y="10" width="16" height="20" stroke="#f87171" stroke-width="2" rx="1"/>
+                            <path d="M16 15H24M16 20H24M16 25H20" stroke="#f87171" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">IETF draft for cryptographic proof of work delivery in agent commerce.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=vcap">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="ado">
+                    <div class="term-card-header">
+                        <div class="term-card-title">ADO (Agent Discovery Optimization)</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="20" cy="20" r="10" stroke="#f87171" stroke-width="2"/>
+                            <path d="M18 18L22 20L18 22" stroke="#f87171" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">"SEO for agents" — making services discoverable by AI agents.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=ado">Used in corpus →</a></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Governance & Risk -->
+        <div class="category-section">
+            <h2>
+                <span class="category-dot" style="background: var(--color-e);"></span>
+                Governance & Risk
+            </h2>
+            <div class="cards-grid">
+                <div class="term-card" data-term="dispute-parity">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Dispute Parity</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="10" width="10" height="12" stroke="#22d3ee" stroke-width="2"/>
+                            <rect x="22" y="10" width="10" height="12" stroke="#22d3ee" stroke-width="2"/>
+                            <line x1="13" y1="22" x2="27" y2="22" stroke="#22d3ee" stroke-width="2"/>
+                            <path d="M20 26L20 32" stroke="#22d3ee" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Guarantee that dispute resolution quality is identical across all transport protocols.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=dispute-parity">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="auditability">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Auditability</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="8" width="20" height="24" stroke="#22d3ee" stroke-width="2" rx="1"/>
+                            <line x1="14" y1="14" x2="26" y2="14" stroke="#22d3ee" stroke-width="1"/>
+                            <line x1="14" y1="18" x2="26" y2="18" stroke="#22d3ee" stroke-width="1"/>
+                            <line x1="14" y1="22" x2="24" y2="22" stroke="#22d3ee" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Complete transaction trail enabling third-party verification.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=auditability">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="doom-loop">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Doom Loop</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 8C29.4 8 32 14.7 32 20C32 28 26.6 32 20 32C11 32 8 25.3 8 20C8 12 13.4 8 20 8" stroke="#22d3ee" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M22 14L26 20L22 26" stroke="#22d3ee" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Economic risk: agents replace workers → wages collapse → demand collapses → nothing to sell.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=doom-loop">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="agentic-walled-gardens">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Agentic Walled Gardens</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="10" width="20" height="20" stroke="#22d3ee" stroke-width="2" rx="2"/>
+                            <line x1="15" y1="10" x2="15" y2="6" stroke="#22d3ee" stroke-width="1.5"/>
+                            <line x1="25" y1="10" x2="25" y2="6" stroke="#22d3ee" stroke-width="1.5"/>
+                            <line x1="15" y1="30" x2="15" y2="34" stroke="#22d3ee" stroke-width="1.5"/>
+                            <line x1="25" y1="30" x2="25" y2="34" stroke="#22d3ee" stroke-width="1.5"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">Closed ecosystems where agents can only transact within one platform (Microsoft Research term).</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=agentic-walled-gardens">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="11-1-ratio">
+                    <div class="term-card-header">
+                        <div class="term-card-title">The 11:1 Ratio</div>
+                        <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <text x="15" y="24" font-family="JetBrains Mono" font-size="12" fill="#22d3ee" font-weight="bold">11</text>
+                            <text x="20" y="24" font-family="JetBrains Mono" font-size="10" fill="#22d3ee">:</text>
+                            <text x="25" y="24" font-family="JetBrains Mono" font-size="12" fill="#22d3ee" font-weight="bold">1</text>
+                        </svg>
+                    </div>
+                    <div class="term-definition">11 of 12 Category C definitions assume blockchain; 1 does not.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=11-1-ratio">Used in corpus →</a></div>
+                </div>
+
+                <div class="term-card" data-term="settlement-layer">
+                    <div class="term-card-header">
+                        <div class="term-card-title">Settlement Layer</div>
+                        <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="14" width="24" height="4" stroke="#22d3ee" stroke-width="2" rx="1"/>
+                            <line x1="8" y1="10" x2="32" y2="10" stroke="#22d3ee" stroke-width="1"/>
+                            <line x1="8" y1="22" x2="32" y2="22" stroke="#22d3ee" stroke-width="1"/>
+                            <line x1="8" y1="26" x2="32" y2="26" stroke="#22d3ee" stroke-width="1"/>
+                            <line x1="8" y1="30" x2="32" y2="30" stroke="#22d3ee" stroke-width="1"/>
+                        </svg>
+                    </div>
+                    <div class="term-definition">The infrastructure that determines who pays, with what, and who arbitrates.</div>
+                    <div class="term-usage"><a href="agentic-economy-definitions.html?search=settlement-layer">Used in corpus →</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Glossary of the Agentic Economy — 30 key terms defining an emerging field</p>
+            <p>
+                <a href="https://zenodo.org" target="_blank" rel="noopener">Zenodo</a> ·
+                <a href="https://agenticeconomy.dev" target="_blank" rel="noopener">agenticeconomy.dev</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const searchBox = document.getElementById('searchBox');
+        const termCards = document.querySelectorAll('.term-card');
+        const categorySections = document.querySelectorAll('.category-section');
+
+        searchBox.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+
+            termCards.forEach(card => {
+                const title = card.querySelector('.term-card-title').textContent.toLowerCase();
+                const definition = card.querySelector('.term-definition').textContent.toLowerCase();
+
+                if (searchTerm === '' || title.includes(searchTerm) || definition.includes(searchTerm)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Hide category sections if all cards are hidden
+            categorySections.forEach(section => {
+                const visibleCards = section.querySelectorAll('.term-card:not(.hidden)');
+                if (visibleCards.length === 0) {
+                    section.style.display = 'none';
+                } else {
+                    section.style.display = 'block';
+                }
+            });
+        });
+
+        // Click card to navigate to corpus search
+        termCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const termText = card.dataset.term;
+                window.location.href = `agentic-economy-definitions.html?search=${termText}`;
+            });
+        });
+
+        // Nav toggle (mobile)
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+          document.querySelector('.nav-menu').classList.toggle('open');
+        });
+        // Dropdown toggle (mobile)
+        document.querySelectorAll('.nav-dropdown-trigger').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              btn.closest('.nav-dropdown').classList.toggle('open');
+            }
+          });
+        });
+        // Highlight current page
+        const currentPage = location.pathname.split('/').pop() || 'agentic-economy-101.html';
+        document.querySelectorAll('.site-nav a[href]').forEach(a => {
+          if (a.getAttribute('href') === currentPage) a.classList.add('active');
+        });
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+          }
+        });
+    </script>
+</body>
+</html>

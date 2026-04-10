@@ -1,0 +1,47 @@
+# agenticeconomy.dev
+
+> The definitive research hub on the agentic economy. 51 definitions, 3 peer-reviewed papers, 30 glossary terms, 17 protocols, open API, open data (CC BY-SA 4.0).
+
+## Overview
+
+- Site: https://agenticeconomy.dev
+- Author: Rene Dechamps Otamendi (<https://renedechamps.com>)
+- License: CC BY-SA 4.0
+- Last updated: 2026-04-10
+
+## Core resources
+
+- [Start Here: Agentic Economy 101](https://agenticeconomy.dev/agentic-economy-101)
+- [51 Definitions corpus](https://agenticeconomy.dev/agentic-economy-definitions)
+- [Protocol Matrix (17 protocols)](https://agenticeconomy.dev/agentic-economy-protocols)
+- [Glossary (30 terms)](https://agenticeconomy.dev/agentic-economy-glossary)
+- [Timeline 2018-2026](https://agenticeconomy.dev/agentic-economy-timeline)
+- [Research & Papers](https://agenticeconomy.dev/agentic-economy-research)
+
+## Papers (Zenodo DOIs)
+
+- CRI Framework — https://doi.org/10.5281/zenodo.19208083
+- Taxonomy — https://doi.org/10.5281/zenodo.19208278
+- Oracle Problem — https://doi.org/10.5281/zenodo.19208440
+
+## Open data API
+
+- [definitions.json](https://agenticeconomy.dev/api/definitions.json)
+- [protocols.json](https://agenticeconomy.dev/api/protocols.json)
+- [glossary.json](https://agenticeconomy.dev/api/glossary.json)
+- [meta.json](https://agenticeconomy.dev/api/meta.json)
+- [API docs](https://agenticeconomy.dev/api/)
+
+## Tools
+
+- [Which Economy Is Your Agent In? (Quiz)](https://agenticeconomy.dev/agentic-economy-quiz)
+- [Compare protocols](https://agenticeconomy.dev/compare)
+- [Embed any definition](https://agenticeconomy.dev/embed-demo)
+- [Ask the Agentic Economy (chatbot)](https://agenticeconomy.dev/ask-agentic-economy)
+
+## Optional
+
+- [About the project](https://agenticeconomy.dev/about-agentic-economy)
+- [RSS feed](https://agenticeconomy.dev/feed.xml)
+- [Sitemap](https://agenticeconomy.dev/sitemap.xml)
+- [Full llms.txt](https://agenticeconomy.dev/llms-full.txt)

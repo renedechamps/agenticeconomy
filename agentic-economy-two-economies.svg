@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&display=swap');
+
+      .title-text {
+        font-family: 'Syne', sans-serif;
+        font-size: 48px;
+        font-weight: 800;
+        fill: #e8ecf4;
+        letter-spacing: -0.5px;
+      }
+
+      .section-title {
+        font-family: 'Syne', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        fill: #e8ecf4;
+      }
+
+      .section-subtitle {
+        font-family: 'Outfit', sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        fill: #a0a9c0;
+      }
+
+      .stat-label {
+        font-family: 'Outfit', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        fill: #6b7394;
+      }
+
+      .stat-number {
+        font-family: 'Syne', sans-serif;
+        font-size: 56px;
+        font-weight: 800;
+        fill: #e8ecf4;
+      }
+
+      .player-text {
+        font-family: 'Outfit', sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        fill: #e8ecf4;
+      }
+
+      .divider-text {
+        font-family: 'Syne', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        fill: #6b7394;
+      }
+
+      .divider-subtext {
+        font-family: 'Outfit', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        fill: #a0a9c0;
+      }
+
+      .category-label {
+        font-family: 'Outfit', sans-serif;
+        font-size: 11px;
+        font-weight: 600;
+        fill: #e8ecf4;
+      }
+
+      .category-count {
+        font-family: 'Syne', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        fill: #e8ecf4;
+      }
+
+      .category-org {
+        font-family: 'Outfit', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        fill: #a0a9c0;
+      }
+
+      .footer-text {
+        font-family: 'Outfit', sans-serif;
+        font-size: 12px;
+        font-weight: 400;
+        fill: #6b7394;
+      }
+
+      .footer-accent {
+        font-family: 'Outfit', sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        fill: #34d399;
+      }
+
+      .branding-main {
+        font-family: 'Outfit', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        fill: #34d399;
+      }
+
+      .branding-sub {
+        font-family: 'Outfit', sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        fill: #34d399;
+      }
+    </style>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="1200" height="630" fill="#04060e"/>
+
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" class="title-text">The Two Economies</text>
+
+  <!-- Left Section: Human Economy -->
+  <g>
+    <!-- Container background -->
+    <rect x="50" y="110" width="280" height="480" rx="8" fill="#0f1530" stroke="#1a2348" stroke-width="1"/>
+
+    <!-- Accent top border -->
+    <rect x="50" y="110" width="280" height="3" rx="1.5" fill="#3b82f6"/>
+
+    <!-- Section title -->
+    <text x="190" y="155" text-anchor="middle" class="section-title" fill="#3b82f6">The Human Economy</text>
+
+    <!-- Subtitle -->
+    <text x="190" y="180" text-anchor="middle" class="section-subtitle">The agent works for humans</text>
+
+    <!-- Big number -->
+    <text x="190" y="240" text-anchor="middle" class="stat-number" fill="#3b82f6">22</text>
+    <text x="190" y="255" text-anchor="middle" class="stat-label">14 A + 8 B entries</text>
+
+    <!-- Key players -->
+    <text x="70" y="310" class="stat-label">Key Players</text>
+    <text x="70" y="335" class="player-text">• Stripe</text>
+    <text x="70" y="360" class="player-text">• Visa</text>
+    <text x="70" y="385" class="player-text">• Mastercard</text>
+
+    <!-- Key stat -->
+    <text x="70" y="430" class="stat-label">Market Projection</text>
+    <text x="70" y="455" class="player-text">$3–5T by 2030</text>
+    <text x="70" y="475" class="stat-label">(McKinsey)</text>
+  </g>
+
+  <!-- Center Divider -->
+  <g>
+    <!-- Vertical line -->
+    <line x1="600" y1="130" x2="600" y2="570" stroke="#1a2348" stroke-width="1"/>
+
+    <!-- Divider text -->
+    <text x="600" y="280" text-anchor="middle" class="divider-text">vs.</text>
+    <text x="600" y="315" text-anchor="middle" class="divider-subtext">51 definitions. 2 fault lines.</text>
+  </g>
+
+  <!-- Right Section: Machine Economy -->
+  <g>
+    <!-- Blockchain subsection -->
+    <rect x="870" y="110" width="280" height="220" rx="8" fill="#0f1530" stroke="#1a2348" stroke-width="1"/>
+
+    <!-- Accent top border (amber) -->
+    <rect x="870" y="110" width="280" height="3" rx="1.5" fill="#f59e0b"/>
+
+    <!-- Blockchain title -->
+    <text x="1010" y="155" text-anchor="middle" class="section-title" fill="#f59e0b">The Machine Economy</text>
+
+    <!-- Blockchain subsection label -->
+    <g>
+      <rect x="890" y="175" width="60" height="28" rx="4" fill="rgba(245, 158, 11, 0.1)" stroke="#f59e0b" stroke-width="1"/>
+      <text x="920" y="197" text-anchor="middle" class="category-count" fill="#f59e0b">11</text>
+      <text x="920" y="211" text-anchor="middle" class="category-label" fill="#f59e0b">Blockchain</text>
+    </g>
+
+    <!-- Blockchain orgs -->
+    <text x="970" y="190" class="category-org">Coinbase</text>
+    <text x="970" y="210" class="category-org">Olas</text>
+    <text x="970" y="230" class="category-org">Fetch.ai</text>
+
+    <!-- Non-crypto subsection -->
+    <rect x="870" y="370" width="280" height="220" rx="8" fill="#0f1530" stroke="#1a2348" stroke-width="1"/>
+
+    <!-- Accent top border (green) -->
+    <rect x="870" y="370" width="280" height="3" rx="1.5" fill="#34d399"/>
+
+    <!-- Non-crypto label -->
+    <g>
+      <rect x="890" y="430" width="60" height="28" rx="4" fill="rgba(52, 211, 153, 0.1)" stroke="#34d399" stroke-width="1"/>
+      <text x="920" y="452" text-anchor="middle" class="category-count" fill="#34d399">1</text>
+      <text x="920" y="466" text-anchor="middle" class="category-label" fill="#34d399">Non-Crypto</text>
+    </g>
+
+    <!-- Non-crypto org -->
+    <text x="970" y="445" class="category-org">BotNode</text>
+
+    <!-- Ratio highlight -->
+    <g>
+      <rect x="890" y="500" width="240" height="60" rx="4" fill="rgba(34, 211, 238, 0.05)" stroke="#22d3ee" stroke-width="1" stroke-dasharray="2,2"/>
+      <text x="910" y="525" class="category-label" fill="#22d3ee">The ratio that defines</text>
+      <text x="910" y="545" class="category-label" fill="#22d3ee">the emerging field</text>
+    </g>
+  </g>
+
+  <!-- Bottom bar with Categories D & E -->
+  <g>
+    <rect x="50" y="570" width="1100" height="60" fill="#0a0d15" stroke="#1a2348" stroke-width="1" rx="4"/>
+    <text x="70" y="597" class="footer-text">Categories D (7) and E (10) analyze and build the infrastructure for</text>
+    <text x="970" y="597" class="footer-text" text-anchor="end">both economies</text>
+  </g>
+
+  <!-- Bottom-left branding (must be inside content area) -->
+  <text x="70" y="597" class="branding-main">agenticeconomy.dev</text>
+
+  <!-- Top-right branding -->
+  <text x="1100" y="135" text-anchor="end" class="branding-sub">agenticeconomy.dev/corpus</text>
+</svg>

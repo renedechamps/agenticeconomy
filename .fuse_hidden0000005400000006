@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Economy Is Your Agent In?</title>
+
+    <!-- Font Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-deep: #04060e;
+            --bg-base: #080d1c;
+            --bg-surface: #0f1530;
+            --bg-card: #141a38;
+            --border: #1a2348;
+            --text-primary: #e8ecf4;
+            --text-secondary: #a0a9c0;
+            --text-muted: #6b7394;
+            --accent: #34d399;
+            --warm: #f59e0b;
+            --cat-a: #3b82f6;
+            --cat-b: #a78bfa;
+            --cat-ccr: #f59e0b;
+            --cat-cs: #34d399;
+            --cat-d: #f87171;
+            --cat-e: #22d3ee;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            overflow-x: hidden;
+            padding-top: 56px;
+        }
+
+        /* ── Site Navigation ── */
+        .site-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(4,6,14,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;padding:0 2rem}
+        .nav-container{max-width:1200px;margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between}
+        .nav-brand{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:var(--accent);text-decoration:none;letter-spacing:-.02em}
+        .nav-menu{display:flex;align-items:center;gap:.25rem}
+        .nav-item{color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.88rem;padding:.45rem .75rem;border-radius:6px;transition:color .2s,background .2s;border:none;background:none;cursor:pointer;white-space:nowrap}
+        .nav-item:hover,.nav-item.active{color:var(--text-primary);background:var(--bg-surface)}
+        .nav-dropdown{position:relative}
+        .nav-dropdown-trigger{display:flex;align-items:center;gap:.3rem}
+        .arrow{font-size:.6rem;transition:transform .2s}
+        .nav-dropdown:hover .arrow{transform:rotate(180deg)}
+        .dropdown-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--bg-card);border:1px solid var(--border);border-radius:10px;padding:.4rem 0;min-width:180px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+        .nav-dropdown:hover .dropdown-panel{display:block}
+        .dropdown-panel a{display:block;padding:.5rem 1rem;color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.85rem;transition:color .15s,background .15s,padding-left .15s}
+        .dropdown-panel a:hover{color:var(--accent);background:var(--bg-surface);padding-left:1.25rem}
+        .nav-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.4rem;cursor:pointer;padding:.5rem}
+        @media(max-width:768px){
+          .nav-toggle{display:block}
+          .nav-menu{display:none;position:absolute;top:56px;left:0;right:0;background:var(--bg-card);border-bottom:1px solid var(--border);flex-direction:column;padding:1rem;gap:.15rem}
+          .nav-menu.open{display:flex}
+          .dropdown-panel{position:static;box-shadow:none;border:none;background:var(--bg-surface);border-radius:6px;margin:.25rem 0 .25rem 1rem;display:none}
+          .nav-dropdown.open .dropdown-panel{display:block}
+        }
+
+        /* Main content */
+        main {
+            margin-top: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        /* Progress bar */
+        .progress-container {
+            margin-bottom: 3rem;
+        }
+
+        .progress-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--bg-card);
+            border-radius: 2px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--cat-a) 0%, var(--cat-b) 50%, var(--cat-ccr) 100%);
+            transition: width 0.5s ease;
+        }
+
+        /* Question section */
+        .question-section {
+            animation: fadeInQuestion 0.5s ease;
+        }
+
+        @keyframes fadeInQuestion {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .question-text {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .answers-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .answer-card {
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .answer-card:hover {
+            border-color: var(--text-secondary);
+            background: var(--bg-surface);
+            transform: translateX(4px);
+        }
+
+        .answer-card.selected {
+            border-color: var(--text-primary);
+            background: var(--bg-surface);
+        }
+
+        /* Category-specific styling */
+        .answer-card.cat-a.selected {
+            border-color: var(--cat-a);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        .answer-card.cat-b.selected {
+            border-color: var(--cat-b);
+            box-shadow: 0 0 20px rgba(167, 139, 250, 0.3);
+        }
+
+        .answer-card.cat-ccr.selected {
+            border-color: var(--cat-ccr);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .answer-card.cat-cs.selected {
+            border-color: var(--cat-cs);
+            box-shadow: 0 0 20px rgba(52, 211, 153, 0.3);
+        }
+
+        .answer-card.cat-d.selected {
+            border-color: var(--cat-d);
+            box-shadow: 0 0 20px rgba(248, 113, 113, 0.3);
+        }
+
+        .answer-card.cat-e.selected {
+            border-color: var(--cat-e);
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+        }
+
+        .answer-text {
+            font-size: 1rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .answer-card:hover .answer-text {
+            color: var(--accent);
+        }
+
+        /* Results section */
+        .results-section {
+            animation: fadeInResults 0.6s ease;
+        }
+
+        @keyframes fadeInResults {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .result-card {
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            border: 2px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .result-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+        }
+
+        .result-card.cat-a::before { background: var(--cat-a); }
+        .result-card.cat-b::before { background: var(--cat-b); }
+        .result-card.cat-ccr::before { background: var(--cat-ccr); }
+        .result-card.cat-cs::before { background: var(--cat-cs); }
+        .result-card.cat-d::before { background: var(--cat-d); }
+        .result-card.cat-e::before { background: var(--cat-e); }
+
+        .result-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .result-letter {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            min-width: 60px;
+        }
+
+        .result-letter.cat-a { color: var(--cat-a); }
+        .result-letter.cat-b { color: var(--cat-b); }
+        .result-letter.cat-ccr { color: var(--cat-ccr); }
+        .result-letter.cat-cs { color: var(--cat-cs); }
+        .result-letter.cat-d { color: var(--cat-d); }
+        .result-letter.cat-e { color: var(--cat-e); }
+
+        .result-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .result-description {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .result-companies {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .result-companies-label {
+            font-family: 'Syne', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-companies-list {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .result-stat {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .result-cta {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .result-btn {
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg-surface);
+            color: var(--text-primary);
+            text-decoration: none;
+            text-align: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .result-btn:hover {
+            border-color: var(--accent);
+            background: var(--bg-card);
+            transform: translateY(-2px);
+        }
+
+        .result-btn.primary {
+            background: var(--bg-card);
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .result-btn.primary:hover {
+            background: rgba(52, 211, 153, 0.1);
+        }
+
+        /* Retake button */
+        .retake-section {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .retake-btn {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--bg-surface);
+            color: var(--text-secondary);
+            text-decoration: none;
+            text-align: center;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .retake-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Confetti animation */
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            animation: confetti-fall 2.5s ease-out forwards;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-base);
+            border-top: 1px solid var(--border);
+            padding: 2rem 4rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 4rem;
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--text-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            nav .nav-left {
+                font-size: 1rem;
+            }
+
+            nav .nav-right {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .question-text {
+                font-size: 1.4rem;
+            }
+
+            .answer-card {
+                min-height: 70px;
+                padding: 1.25rem;
+            }
+
+            .answer-text {
+                font-size: 0.95rem;
+            }
+
+            .result-card {
+                padding: 2rem;
+            }
+
+            .result-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .result-letter {
+                font-size: 2rem;
+            }
+
+            .result-name {
+                font-size: 1.4rem;
+            }
+
+            footer {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        /* Hide/show utilities */
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+      <div class="nav-container">
+        <a href="agentic-economy-101.html" class="nav-brand">agenticeconomy.dev</a>
+        <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+        <div class="nav-menu">
+          <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
+          <div class="nav-dropdown">
+            <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">&#9662;</span></button>
+            <div class="dropdown-panel">
+              <a href="agentic-economy-definitions.html">51 Definitions</a>
+              <a href="agentic-economy-timeline.html">Timeline</a>
+              <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+              <a href="agentic-economy-research.html">Papers</a>
+            </div>
+          </div>
+          <div class="nav-dropdown">
+            <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
+            <div class="dropdown-panel">
+              <a href="agentic-economy-glossary.html">Glossary</a>
+              <a href="agentic-economy-quiz.html">Quiz</a>
+              <a href="agentic-economy-infographic.html">Infographic</a>
+              <a href="ask-agentic-economy.html">Ask the Corpus</a>
+            </div>
+          </div>
+          <a href="about-agentic-economy.html" class="nav-item">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+        <div class="quiz-container">
+            <!-- Quiz Title -->
+            <div id="quiz-title" style="margin-bottom: 3rem;">
+                <h1 style="font-family: 'Syne', sans-serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; line-height: 1.2;">Which Economy Is Your Agent In?</h1>
+                <p style="font-size: 1.05rem; color: var(--text-secondary); margin-bottom: 0;">Take a 7-question quiz to find your category in the Agentic Economy.</p>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="progress-container">
+                <div class="progress-label">Question <span id="current-question">1</span> of 7</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+                </div>
+            </div>
+
+            <!-- Quiz content -->
+            <div id="quiz-content">
+                <!-- Questions will be inserted here -->
+            </div>
+
+            <!-- Results -->
+            <div id="results-section" class="hidden results-section">
+                <!-- Results will be inserted here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Read the research: <a href="https://zenodo.org/records/19208278" target="_blank" rel="noopener">zenodo.org/records/19208278</a>
+            <br>
+            Learn more: <a href="https://agenticeconomy.dev" target="_blank" rel="noopener">agenticeconomy.dev</a>
+        </p>
+    </footer>
+
+    <script>
+        // Quiz data structure
+        const quizData = [
+            {
+                question: "What does your agent DO?",
+                answers: [
+                    { text: "Buys products or services for a human user", points: { A: 3 } },
+                    { text: "Performs tasks inside a company (filing, coding, compliance)", points: { B: 3 } },
+                    { text: "Transacts directly with other agents", points: { C: 3 } },
+                    { text: "Analyzes markets or regulatory risks", points: { D: 3 } }
+                ]
+            },
+            {
+                question: "Who controls the wallet / payment method?",
+                answers: [
+                    { text: "The human user (credit card, bank account, OAuth)", points: { A: 3 } },
+                    { text: "The enterprise (budget allocation, SLA-based)", points: { B: 2, A: 1 } },
+                    { text: "The agent itself (crypto wallet, own currency)", points: { C: 3 } },
+                    { text: "No payment involved", points: { E: 2, D: 1 } }
+                ]
+            },
+            {
+                question: "Does your agent need blockchain?",
+                answers: [
+                    { text: "No — fiat rails, credit cards, bank transfers", points: { A: 2 } },
+                    { text: "Yes — crypto wallets, stablecoins, smart contracts", points: { Ccr: 3 } },
+                    { text: "No, but it needs its own non-fiat currency", points: { Cs: 3 } },
+                    { text: "Not applicable — it's infrastructure", points: { E: 2 } }
+                ]
+            },
+            {
+                question: "How are disputes resolved?",
+                answers: [
+                    { text: "Chargebacks / existing consumer protection", points: { A: 2 } },
+                    { text: "SLAs and enterprise contracts", points: { B: 2 } },
+                    { text: "Smart contract escrow / DAO governance", points: { Ccr: 3 } },
+                    { text: "Deterministic rules / automated validators", points: { Cs: 3 } },
+                    { text: "Not applicable", points: { E: 1 } }
+                ]
+            },
+            {
+                question: "Who is the economic actor?",
+                answers: [
+                    { text: "The human — the agent is a tool", points: { A: 3 } },
+                    { text: "The company — the agent is an employee", points: { B: 3 } },
+                    { text: "The agent itself — it's a sovereign participant", points: { Ccr: 2, Cs: 1 } },
+                    { text: "Nobody — we're analyzing, not building", points: { D: 3 } }
+                ]
+            },
+            {
+                question: "What's your agent's identity?",
+                answers: [
+                    { text: "Delegated from the human (OAuth, passkeys)", points: { A: 2 } },
+                    { text: "Enterprise SSO / API key", points: { B: 2, E: 1 } },
+                    { text: "On-chain wallet / DID", points: { Ccr: 3 } },
+                    { text: "API key + JWT / protocol-agnostic", points: { Cs: 2, E: 1 } },
+                    { text: "Agent Card (A2A) / tool manifest (MCP)", points: { E: 3 } }
+                ]
+            },
+            {
+                question: "What's your primary concern?",
+                answers: [
+                    { text: "Consumer experience and checkout conversion", points: { A: 2 } },
+                    { text: "Enterprise ROI and operational efficiency", points: { B: 2 } },
+                    { text: "Agent autonomy and decentralized governance", points: { Ccr: 2 } },
+                    { text: "Regulatory compliance and risk", points: { D: 2 } },
+                    { text: "Interoperability and standards", points: { E: 2 } }
+                ]
+            }
+        ];
+
+        // Category definitions and info
+        const categoryInfo = {
+            A: {
+                name: "Agent-Assisted Commerce",
+                letter: "A",
+                description: "Your agent helps humans make purchasing decisions and complete transactions. The human retains control of the wallet and payment method. Think of agents that shop for you, compare prices, and check out using your credentials.",
+                companies: ["Stripe ACP", "Visa", "Mastercard", "PayPal"],
+                stat: "14 of 51 definitions",
+                corpus_query: "A"
+            },
+            B: {
+                name: "Agent-as-Workforce",
+                letter: "B",
+                description: "Your agent replaces or augments human workers inside an organization. It's an employee or contractor that handles internal workflows, compliance tasks, and decision-making within enterprise guardrails.",
+                companies: ["Gartner (100M agents by 2028)", "IBM", "OpenAI"],
+                stat: "8 of 51 definitions",
+                corpus_query: "B"
+            },
+            Ccr: {
+                name: "Autonomous A2A (Blockchain)",
+                letter: "C_cr",
+                description: "Your agent transacts directly with other agents using blockchain. Agents hold their own crypto wallets, negotiate with each other, and settle on-chain. Smart contracts and DAOs arbitrate disputes.",
+                companies: ["x402", "Olas", "Fetch.ai", "Coinbase"],
+                stat: "11 of 51 definitions",
+                corpus_query: "Ccr"
+            },
+            Cs: {
+                name: "Autonomous A2A (Non-Crypto)",
+                letter: "C_s",
+                description: "Your agent transacts autonomously with other agents without using blockchain. It uses deterministic rules, protocol-agnostic identity, and machine-native currencies for settlement and dispute resolution.",
+                companies: ["BotNode VMP-1.0"],
+                stat: "1 of 51 definitions",
+                corpus_query: "Cs"
+            },
+            D: {
+                name: "Analytical & Regulatory",
+                letter: "D",
+                description: "You're analyzing the agentic economy rather than building in it. You work on policy, risk assessment, compliance frameworks, and the societal implications of autonomous agents.",
+                companies: ["BIS", "WEF", "OECD", "Deloitte"],
+                stat: "7 of 51 definitions",
+                corpus_query: "D"
+            },
+            E: {
+                name: "Infrastructure & Standards",
+                letter: "E",
+                description: "You're building the foundational pipes that other agents and economies depend on. You work on protocols, standards, APIs, and interoperability layers that multiple economies will use.",
+                companies: ["Google A2A", "Anthropic MCP", "Cloudflare", "IEEE"],
+                stat: "10 of 51 definitions",
+                corpus_query: "E"
+            }
+        };
+
+        // State
+        let currentQuestion = 0;
+        let scores = { A: 0, B: 0, Ccr: 0, Cs: 0, D: 0, E: 0 };
+        let answered = false;
+
+        // Initialize quiz
+        function initQuiz() {
+            renderQuestion();
+        }
+
+        // Render current question
+        function renderQuestion() {
+            const question = quizData[currentQuestion];
+            const quizContent = document.getElementById('quiz-content');
+            const progress = ((currentQuestion + 1) / quizData.length) * 100;
+
+            document.getElementById('current-question').textContent = currentQuestion + 1;
+            document.getElementById('progress-fill').style.width = progress + '%';
+
+            const answersHTML = question.answers.map((answer, idx) => {
+                const category = Object.keys(answer.points)[0];
+                return `
+                    <div class="answer-card cat-${category}" data-index="${idx}" onclick="selectAnswer(${idx})">
+                        <div class="answer-text">${answer.text}</div>
+                    </div>
+                `;
+            }).join('');
+
+            quizContent.innerHTML = `
+                <div class="question-section">
+                    <div class="question-text">${question.question}</div>
+                    <div class="answers-grid">
+                        ${answersHTML}
+                    </div>
+                </div>
+            `;
+
+            answered = false;
+        }
+
+        // Handle answer selection
+        function selectAnswer(index) {
+            if (answered) return;
+            answered = true;
+
+            const question = quizData[currentQuestion];
+            const answer = question.answers[index];
+
+            // Add points
+            Object.keys(answer.points).forEach(category => {
+                scores[category] += answer.points[category];
+            });
+
+            // Mark as selected
+            const cards = document.querySelectorAll('.answer-card');
+            cards[index].classList.add('selected');
+
+            // Move to next question or show results
+            setTimeout(() => {
+                if (currentQuestion < quizData.length - 1) {
+                    currentQuestion++;
+                    renderQuestion();
+                } else {
+                    showResults();
+                }
+            }, 500);
+        }
+
+        // Show results
+        function showResults() {
+            // Calculate winner
+            let winner = null;
+            let maxScore = 0;
+
+            const categoryPriority = ['Cs', 'Ccr', 'C', 'A', 'B', 'D', 'E']; // More specific wins ties
+
+            for (const category in scores) {
+                if (scores[category] > maxScore) {
+                    maxScore = scores[category];
+                    winner = category;
+                } else if (scores[category] === maxScore && winner) {
+                    // Apply tiebreaker
+                    const winnerPriority = categoryPriority.indexOf(winner);
+                    const candidatePriority = categoryPriority.indexOf(category);
+                    if (candidatePriority < winnerPriority && candidatePriority !== -1) {
+                        winner = category;
+                    }
+                }
+            }
+
+            const info = categoryInfo[winner];
+            const resultURL = `agentic-economy-definitions.html?filter=${info.corpus_query}`;
+            const shareText = `My AI agent is in Category ${info.letter} (${info.name}) of the Agentic Economy. Find yours: https://agenticeconomy.dev/agentic-economy-quiz.html via @agenticeconomy`;
+
+            const resultsSection = document.getElementById('results-section');
+            resultsSection.innerHTML = `
+                <div class="result-card cat-${winner}">
+                    <div class="result-header">
+                        <div class="result-letter cat-${winner}">${info.letter}</div>
+                        <div>
+                            <div class="result-name">${info.name}</div>
+                        </div>
+                    </div>
+
+                    <div class="result-description">${info.description}</div>
+
+                    <div class="result-companies">
+                        <div class="result-companies-label">You're in good company:</div>
+                        <div class="result-companies-list">${info.companies.join(' • ')}</div>
+                    </div>
+
+                    <div class="result-stat">${info.stat} in this category</div>
+
+                    <div class="result-cta">
+                        <a href="${resultURL}" class="result-btn primary">Explore all Category ${info.letter} definitions →</a>
+                        <button class="result-btn" onclick="copyToClipboard('${shareText}')">Share your result</button>
+                    </div>
+                </div>
+
+                <div class="retake-section">
+                    <button class="retake-btn" onclick="retakeQuiz()">Retake Quiz</button>
+                </div>
+            `;
+
+            document.getElementById('quiz-title').classList.add('hidden');
+            document.getElementById('progress-container')?.classList.add('hidden');
+            document.getElementById('quiz-content').classList.add('hidden');
+            resultsSection.classList.remove('hidden');
+
+            // Trigger confetti
+            createConfetti();
+        }
+
+        // Confetti animation
+        function createConfetti() {
+            const confettiPieces = 30;
+            const colors = ['#3b82f6', '#a78bfa', '#f59e0b', '#34d399', '#f87171', '#22d3ee'];
+
+            for (let i = 0; i < confettiPieces; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 10 + 5 + 'px';
+                confetti.style.height = confetti.style.width;
+                confetti.style.borderRadius = '50%';
+                confetti.style.opacity = Math.random() * 0.7 + 0.3;
+                confetti.style.animation = `confetti-fall ${Math.random() * 1.5 + 2}s ease-out forwards`;
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), 3000);
+            }
+        }
+
+        // Copy to clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Copied to clipboard!');
+            });
+        }
+
+        // Retake quiz
+        function retakeQuiz() {
+            currentQuestion = 0;
+            scores = { A: 0, B: 0, Ccr: 0, Cs: 0, D: 0, E: 0 };
+            answered = false;
+
+            document.getElementById('quiz-title').classList.remove('hidden');
+            document.getElementById('quiz-content').classList.remove('hidden');
+            document.getElementById('results-section').classList.add('hidden');
+
+            renderQuestion();
+        }
+
+        // Start quiz on load
+        window.addEventListener('load', initQuiz);
+
+        // Nav toggle (mobile)
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+          document.querySelector('.nav-menu').classList.toggle('open');
+        });
+        // Dropdown toggle (mobile)
+        document.querySelectorAll('.nav-dropdown-trigger').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              btn.closest('.nav-dropdown').classList.toggle('open');
+            }
+          });
+        });
+        // Highlight current page
+        const currentPage = location.pathname.split('/').pop() || 'agentic-economy-101.html';
+        document.querySelectorAll('.site-nav a[href]').forEach(a => {
+          if (a.getAttribute('href') === currentPage) a.classList.add('active');
+        });
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown.open').forEach(d => d.classList.remove('open'));
+          }
+        });
+    </script>
+</body>
+</html>

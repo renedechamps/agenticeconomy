@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agentic Economy Validators — Coming Q3 2026 · Agentic Economy</title>
+<meta name="description" content="Validator network for autonomous agent reputation. Coming Q3 2026. Research and specification.">
+<meta name="author" content="Rene Dechamps Otamendi">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://agenticeconomy.dev/validators">
+<meta name="theme-color" content="#04060e">
+<meta name="color-scheme" content="dark">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Agentic Economy Validators — Coming Q3 2026">
+<meta property="og:description" content="Validator network for autonomous agent reputation. Coming Q3 2026. Research and specification.">
+<meta property="og:url" content="https://agenticeconomy.dev/validators">
+<meta property="og:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Agentic Economy">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="https://renedechamps.com">
+<meta property="article:published_time" content="2026-04-10T00:00:00Z">
+<meta property="article:modified_time" content="2026-04-10T00:00:00Z">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Agentic Economy Validators — Coming Q3 2026">
+<meta name="twitter:description" content="Validator network for autonomous agent reputation. Coming Q3 2026. Research and specification.">
+<meta name="twitter:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
+<!-- Feed -->
+<link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
+<link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
+<link rel="sitemap" type="application/xml" href="https://agenticeconomy.dev/sitemap.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://agenticeconomy.dev/#organization",
+  "name": "Agentic Economy",
+  "url": "https://agenticeconomy.dev",
+  "logo": "https://agenticeconomy.dev/agentic-economy-two-economies.svg",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://renedechamps.com/#person",
+    "name": "Rene Dechamps Otamendi",
+    "url": "https://renedechamps.com"
+  },
+  "sameAs": [
+    "https://renedechamps.com",
+    "https://github.com/renedechamps/agenticeconomy",
+    "https://www.linkedin.com/in/renedechamps/",
+    "https://zenodo.org/communities/agentic-economy"
+  ],
+  "description": "The definitive research hub on the agentic economy"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://agenticeconomy.dev/validators#webpage",
+  "url": "https://agenticeconomy.dev/validators",
+  "name": "Agentic Economy Validators — Coming Q3 2026",
+  "description": "Validator network for autonomous agent reputation. Coming Q3 2026. Research and specification.",
+  "isPartOf": {
+    "@id": "https://agenticeconomy.dev/#website"
+  },
+  "publisher": {
+    "@id": "https://agenticeconomy.dev/#organization"
+  },
+  "inLanguage": "en",
+  "datePublished": "2026-04-10",
+  "dateModified": "2026-04-10"
+}
+</script>
+<style>
+    :root {
+      --bg-deep: #04060e;
+      --bg-base: #080d1c;
+      --bg-surface: #0f1530;
+      --bg-card: #141a38;
+      --border: #1a2348;
+      --border-light: #233060;
+      --text-primary: #e8ecf4;
+      --text-secondary: #a0a9c0;
+      --text-muted: #8e99b8;
+      --accent: #34d399;
+      --accent-dim: #1a6b4d;
+      --accent-glow: rgba(52,211,153,0.12);
+      --accent-glow-strong: rgba(52,211,153,0.25);
+      --warm: #f59e0b;
+      --ease-out: cubic-bezier(0.16,1,0.3,1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      padding-top: 56px;
+    }
+
+    /* Navigation */
+    .site-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(4,6,14,0.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: color 0.3s var(--ease-out);
+    }
+
+    .nav-brand:hover {
+      color: var(--accent);
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 24px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .nav-item {
+      display: inline-block;
+      padding: 8px 16px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.3s var(--ease-out);
+      border-radius: 6px;
+      position: relative;
+    }
+
+    .nav-item:hover,
+    .nav-item.active {
+      color: var(--accent);
+    }
+
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .nav-dropdown-trigger {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px 16px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+      font-family: 'Outfit', sans-serif;
+      transition: color 0.3s var(--ease-out);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-dropdown-trigger:hover {
+      color: var(--accent);
+    }
+
+    .nav-dropdown-trigger .arrow {
+      display: inline-block;
+      font-size: 10px;
+      transition: transform 0.3s var(--ease-out);
+    }
+
+    .nav-dropdown-trigger.active .arrow {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-panel {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: var(--bg-surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      min-width: 200px;
+      margin-top: 8px;
+      padding: 12px 0;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: opacity 0.3s var(--ease-out), visibility 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+      pointer-events: none;
+    }
+
+    .nav-dropdown.active .dropdown-panel {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    .dropdown-panel a {
+      display: block;
+      padding: 12px 20px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s var(--ease-out), background 0.3s var(--ease-out);
+    }
+
+    .dropdown-panel a:hover {
+      color: var(--accent);
+      background: rgba(52,211,153,0.08);
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-surface);
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s var(--ease-out);
+      }
+
+      .nav-menu.active {
+        max-height: 500px;
+      }
+
+      .nav-item,
+      .nav-dropdown-trigger {
+        width: 100%;
+        padding: 12px 20px;
+        border-radius: 0;
+      }
+
+      .dropdown-panel {
+        position: static;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        background: var(--bg-card);
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 0;
+        transform: none;
+        transition: opacity 0.3s var(--ease-out), visibility 0.3s var(--ease-out), max-height 0.3s var(--ease-out);
+      }
+
+      .nav-dropdown.active .dropdown-panel {
+        opacity: 1;
+        visibility: visible;
+        max-height: 300px;
+      }
+    }
+
+    /* Main Content */
+    .page-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: calc(100vh - 56px - 300px);
+      text-align: center;
+    }
+
+    .coming-soon-label {
+      display: inline-block;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 6px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .subtext {
+      color: var(--text-secondary);
+      font-size: 18px;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+
+    .svg-illustration {
+      margin: 40px 0;
+      display: inline-block;
+    }
+
+    .shield-icon {
+      width: 120px;
+      height: 120px;
+      stroke: var(--accent);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    .email-prompt {
+      margin-top: 40px;
+      padding: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      max-width: 500px;
+    }
+
+    .email-prompt p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .email-link {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--bg-deep);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s var(--ease-out);
+    }
+
+    .email-link:hover {
+      background: #2cc08b;
+      box-shadow: 0 0 20px rgba(52,211,153,0.3);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--bg-base);
+      border-top: 1px solid var(--border);
+      padding: 60px 20px 30px;
+      margin-top: 80px;
+    }
+
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+    }
+
+    .footer-col h4 {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-col a {
+      display: block;
+      padding: 8px 0;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s var(--ease-out);
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .badge-soon {
+      display: inline-block;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-left: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .subtext {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="site-nav">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">agenticeconomy.dev</a>
+      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+      <div class="nav-menu">
+        <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
+        <div class="nav-dropdown">
+          <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">&#9662;</span></button>
+          <div class="dropdown-panel">
+            <a href="agentic-economy-research.html">Papers</a>
+            <a href="agentic-economy-definitions.html">51 Definitions</a>
+            <a href="agentic-economy-timeline.html">Timeline</a>
+            <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
+          <div class="dropdown-panel">
+            <a href="agentic-economy-glossary.html">Glossary</a>
+            <a href="agentic-economy-quiz.html">Quiz</a>
+            <a href="agentic-economy-infographic.html">Infographic</a>
+            <a href="ask-agentic-economy.html">Ask the Corpus</a>
+          </div>
+        </div>
+        <a href="about-agentic-economy.html" class="nav-item">About</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="page-container">
+    <div class="coming-soon-label">Coming Soon</div>
+    <h1>Validators</h1>
+    <p class="subtext">Open-source validators for agent transaction messages. Check VMP-1.0 compliance, verify signatures, validate reputation claims.</p>
+
+    <svg class="svg-illustration" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+      <!-- Shield background -->
+      <path d="M 60 10 L 90 25 L 90 60 Q 90 85 60 105 Q 30 85 30 60 L 30 25 Z" class="shield-icon" />
+      <!-- Checkmark inside shield -->
+      <path d="M 45 60 L 55 70 L 75 50" stroke="var(--accent)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+    <div class="email-prompt">
+      <p>Want early access?</p>
+      <a href="mailto:rene@renedechamps.com?subject=Validators%20Early%20Access" class="email-link">Request Access</a>
+    </div>
+
+    <p style="margin-top: 40px; color: var(--text-muted); font-size: 14px;">Expected: Q3 2026</p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Research</h4>
+        <a href="agentic-economy-research.html">Papers</a>
+        <a href="agentic-economy-definitions.html">51 Definitions</a>
+        <a href="agentic-economy-timeline.html">Timeline</a>
+        <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="agentic-economy-glossary.html">Glossary</a>
+        <a href="agentic-economy-quiz.html">Quiz</a>
+        <a href="agentic-economy-infographic.html">Infographic</a>
+        <a href="ask-agentic-economy.html">Ask the Corpus</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <a href="sandbox.html">Sandbox <span class="badge-soon">Soon</span></a>
+        <a href="validators.html">Validators <span class="badge-soon">Soon</span></a>
+        <a href="#">Benchmark <span class="badge-soon">Soon</span></a>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <a href="about-agentic-economy.html">About</a>
+        <a href="https://github.com/renedechamps/agenticeconomy" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:rene@renedechamps.com">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 René Dechamps Otamendi · CC BY-SA 4.0 · Zero cookies. Not even Belgian ones.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+
+    // Dropdown toggle
+    const dropdownTriggers = document.querySelectorAll('.nav-dropdown-trigger');
+    dropdownTriggers.forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const dropdown = trigger.closest('.nav-dropdown');
+        dropdown.classList.toggle('active');
+        trigger.classList.toggle('active');
+      });
+    });
+
+    // Close dropdowns on click outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.nav-dropdown')) {
+        dropdownTriggers.forEach(trigger => {
+          trigger.classList.remove('active');
+          trigger.closest('.nav-dropdown').classList.remove('active');
+        });
+      }
+    });
+
+    // Close menu when clicking a link
+    const navLinks = document.querySelectorAll('.nav-item, .dropdown-panel a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('active');
+        dropdownTriggers.forEach(trigger => {
+          trigger.classList.remove('active');
+          trigger.closest('.nav-dropdown').classList.remove('active');
+        });
+      });
+    });
+
+    // Highlight current page
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

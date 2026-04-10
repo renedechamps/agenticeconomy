@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Embed Any Definition — Widget Demo · Agentic Economy</title>
+<meta name="description" content="Live demo of the embeddable definition widget. Add any of the 51 agentic-economy definitions to your page with a single script tag. Free, CC BY-SA 4.0.">
+<meta name="author" content="Rene Dechamps Otamendi">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://agenticeconomy.dev/embed-demo">
+<meta name="theme-color" content="#04060e">
+<meta name="color-scheme" content="dark">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Embed Any Definition — Widget Demo">
+<meta property="og:description" content="Live demo of the embeddable definition widget. Add any of the 51 agentic-economy definitions to your page with a single script tag. Free, CC BY-SA 4.0.">
+<meta property="og:url" content="https://agenticeconomy.dev/embed-demo">
+<meta property="og:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Agentic Economy">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="https://renedechamps.com">
+<meta property="article:published_time" content="2026-04-10T00:00:00Z">
+<meta property="article:modified_time" content="2026-04-10T00:00:00Z">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Embed Any Definition — Widget Demo">
+<meta name="twitter:description" content="Live demo of the embeddable definition widget. Add any of the 51 agentic-economy definitions to your page with a single script tag. Free, CC BY-SA 4.0.">
+<meta name="twitter:image" content="https://agenticeconomy.dev/agentic-economy-two-economies.svg">
+<!-- Feed -->
+<link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
+<link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
+<link rel="sitemap" type="application/xml" href="https://agenticeconomy.dev/sitemap.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://agenticeconomy.dev/#organization",
+  "name": "Agentic Economy",
+  "url": "https://agenticeconomy.dev",
+  "logo": "https://agenticeconomy.dev/agentic-economy-two-economies.svg",
+  "founder": {
+    "@type": "Person",
+    "@id": "https://renedechamps.com/#person",
+    "name": "Rene Dechamps Otamendi",
+    "url": "https://renedechamps.com"
+  },
+  "sameAs": [
+    "https://renedechamps.com",
+    "https://github.com/renedechamps/agenticeconomy",
+    "https://www.linkedin.com/in/renedechamps/",
+    "https://zenodo.org/communities/agentic-economy"
+  ],
+  "description": "The definitive research hub on the agentic economy"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://agenticeconomy.dev/embed-demo#webpage",
+  "url": "https://agenticeconomy.dev/embed-demo",
+  "name": "Embed Any Definition — Widget Demo",
+  "description": "Live demo of the embeddable definition widget. Add any of the 51 agentic-economy definitions to your page with a single script tag. Free, CC BY-SA 4.0.",
+  "isPartOf": {
+    "@id": "https://agenticeconomy.dev/#website"
+  },
+  "publisher": {
+    "@id": "https://agenticeconomy.dev/#organization"
+  },
+  "inLanguage": "en",
+  "datePublished": "2026-04-10",
+  "dateModified": "2026-04-10"
+}
+</script>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-deep: #04060e;
+            --bg-base: #080d1c;
+            --bg-surface: #0f1530;
+            --bg-card: #141a38;
+            --border: #1a2348;
+            --text-primary: #e8ecf4;
+            --text-secondary: #a0a9c0;
+            --text-muted: #8e99b8;
+            --accent: #34d399;
+            --accent-dim: #1a6b4d;
+            --accent-glow: rgba(52,211,153,0.12);
+            --cat-a: #3b82f6;
+            --cat-b: #a78bfa;
+            --cat-ccr: #f59e0b;
+            --cat-cs: #34d399;
+            --cat-d: #f87171;
+            --cat-e: #22d3ee;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .site-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: rgba(4, 6, 14, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            height: 56px;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: 'Syne', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.88rem;
+            padding: 0.45rem 0.75rem;
+            border-radius: 6px;
+            transition: color 0.2s, background 0.2s;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--text-primary);
+            background: var(--bg-surface);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-trigger {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .arrow {
+            font-size: 0.6rem;
+            transition: transform 0.2s;
+        }
+
+        .nav-dropdown:hover .arrow {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-panel {
+            display: none;
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 0.4rem 0;
+            min-width: 180px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-dropdown:hover .dropdown-panel {
+            display: block;
+        }
+
+        .dropdown-panel a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            transition: color 0.15s, background 0.15s, padding-left 0.15s;
+        }
+
+        .dropdown-panel a:hover {
+            color: var(--accent);
+            background: var(--bg-surface);
+            padding-left: 1.25rem;
+        }
+
+        body {
+            padding-top: 56px;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hero h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent), var(--cat-e));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Embed Section */
+        .embed-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+        }
+
+        .embed-header {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+        }
+
+        .embed-preview {
+            flex: 0 0 auto;
+            max-width: 400px;
+        }
+
+        .embed-code {
+            flex: 1;
+        }
+
+        .embed-section h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .code-block {
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        .code-block code {
+            display: block;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .copy-btn {
+            background: var(--accent);
+            color: var(--bg-deep);
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .copy-btn:hover {
+            background: #2ec9a0;
+        }
+
+        .copy-btn.copied {
+            background: #22c55e;
+        }
+
+        /* Grid */
+        .embeds-grid {
+            display: grid;
+            gap: 3rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            background: var(--bg-base);
+            padding: 64px 0 32px;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col a {
+            display: block;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            padding: 0.3rem 0;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 24px 0;
+            margin-top: 32px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .embed-header {
+                flex-direction: column;
+            }
+
+            .embed-preview {
+                max-width: 100%;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .theme-toggle {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .theme-btn {
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .theme-btn.active {
+            background: var(--accent);
+            color: var(--bg-deep);
+            border-color: var(--accent);
+        }
+
+        .theme-btn:hover {
+            border-color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-container">
+            <a href="agentic-economy-101.html" class="nav-brand">agenticeconomy.dev</a>
+            <div class="nav-menu">
+                <a href="agentic-economy-101.html" class="nav-item">Start Here</a>
+                <div class="nav-dropdown">
+                    <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">▼</span></button>
+                    <div class="dropdown-panel">
+                        <a href="agentic-economy-research.html">Papers</a>
+                        <a href="agentic-economy-definitions.html">51 Definitions</a>
+                        <a href="agentic-economy-timeline.html">Timeline</a>
+                        <a href="agentic-economy-protocols.html">Protocol Matrix</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">▼</span></button>
+                    <div class="dropdown-panel">
+                        <a href="agentic-economy-glossary.html">Glossary</a>
+                        <a href="compare.html">Compare Protocols</a>
+                        <a href="api/">API</a>
+                        <a href="embed-demo.html" class="active">Embed Demo</a>
+                    </div>
+                </div>
+                <a href="about-agentic-economy.html" class="nav-item">About</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="container">
+        <div class="hero">
+            <h1>Definition Embed Widget</h1>
+            <p>Copy-to-clipboard embed codes. Add definition cards to your site in seconds.</p>
+        </div>
+
+        <!-- Theme Toggle -->
+        <div style="text-align: center; margin-bottom: 3rem;">
+            <p style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 0.9rem;">View embeds in different themes:</p>
+            <div class="theme-toggle" style="justify-content: center;">
+                <button class="theme-btn active" data-theme="dark">Dark</button>
+                <button class="theme-btn" data-theme="light">Light</button>
+            </div>
+        </div>
+
+        <!-- Embed Examples -->
+        <div class="embeds-grid">
+            <div class="embed-section" id="embed-A1">
+                <div class="embed-header">
+                    <div class="embed-preview">
+                        <h3>Agent-Assisted Commerce (Category A)</h3>
+                        <div class="ae-embed" data-id="A1" data-theme="dark"></div>
+                    </div>
+                    <div class="embed-code">
+                        <h3>Embed Code</h3>
+                        <div class="code-block"><code>&lt;div class="ae-embed" data-id="A1"&gt;&lt;/div&gt;
+&lt;script src="https://agenticeconomy.dev/embed.js"&gt;&lt;/script&gt;</code></div>
+                        <button class="copy-btn" onclick="copyCode(this, 'A1')">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="embed-section" id="embed-C3">
+                <div class="embed-header">
+                    <div class="embed-preview">
+                        <h3>Autonomous A2A Commerce (Blockchain)</h3>
+                        <div class="ae-embed" data-id="C3" data-theme="dark"></div>
+                    </div>
+                    <div class="embed-code">
+                        <h3>Embed Code</h3>
+                        <div class="code-block"><code>&lt;div class="ae-embed" data-id="C3"&gt;&lt;/div&gt;
+&lt;script src="https://agenticeconomy.dev/embed.js"&gt;&lt;/script&gt;</code></div>
+                        <button class="copy-btn" onclick="copyCode(this, 'C3')">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="embed-section" id="embed-E1">
+                <div class="embed-header">
+                    <div class="embed-preview">
+                        <h3>Infrastructure (Category E)</h3>
+                        <div class="ae-embed" data-id="E1" data-theme="dark"></div>
+                    </div>
+                    <div class="embed-code">
+                        <h3>Embed Code</h3>
+                        <div class="code-block"><code>&lt;div class="ae-embed" data-id="E1"&gt;&lt;/div&gt;
+&lt;script src="https://agenticeconomy.dev/embed.js"&gt;&lt;/script&gt;</code></div>
+                        <button class="copy-btn" onclick="copyCode(this, 'E1')">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="embed-section" id="embed-B1">
+                <div class="embed-header">
+                    <div class="embed-preview">
+                        <h3>Agent-as-Workforce (Category B)</h3>
+                        <div class="ae-embed" data-id="B1" data-theme="dark"></div>
+                    </div>
+                    <div class="embed-code">
+                        <h3>Embed Code</h3>
+                        <div class="code-block"><code>&lt;div class="ae-embed" data-id="B1"&gt;&lt;/div&gt;
+&lt;script src="https://agenticeconomy.dev/embed.js"&gt;&lt;/script&gt;</code></div>
+                        <button class="copy-btn" onclick="copyCode(this, 'B1')">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="embed-section" id="embed-D1">
+                <div class="embed-header">
+                    <div class="embed-preview">
+                        <h3>Analytical & Regulatory (Category D)</h3>
+                        <div class="ae-embed" data-id="D1" data-theme="dark"></div>
+                    </div>
+                    <div class="embed-code">
+                        <h3>Embed Code</h3>
+                        <div class="code-block"><code>&lt;div class="ae-embed" data-id="D1"&gt;&lt;/div&gt;
+&lt;script src="https://agenticeconomy.dev/embed.js"&gt;&lt;/script&gt;</code></div>
+                        <button class="copy-btn" onclick="copyCode(this, 'D1')">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="embed-section" id="embed-C12">
+                <div class="embed-header">
+                    <div class="embed-preview">
+                        <h3>Non-Crypto Settlement (Category Cs)</h3>
+                        <div class="ae-embed" data-id="C12" data-theme="dark"></div>
+                    </div>
+                    <div class="embed-code">
+                        <h3>Embed Code</h3>
+                        <div class="code-block"><code>&lt;div class="ae-embed" data-id="C12"&gt;&lt;/div&gt;
+&lt;script src="https://agenticeconomy.dev/embed.js"&gt;&lt;/script&gt;</code></div>
+                        <button class="copy-btn" onclick="copyCode(this, 'C12')">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Usage Instructions -->
+        <section style="margin-top: 4rem; padding: 2rem; background: var(--bg-surface); border: 1px solid var(--border); border-radius: 12px;">
+            <h2 style="font-family: 'Syne', sans-serif; font-size: 1.5rem; margin-bottom: 1rem;">How to Use</h2>
+            <ol style="color: var(--text-secondary); line-height: 1.8;">
+                <li style="margin-bottom: 1rem;">Copy the embed code from any example above.</li>
+                <li style="margin-bottom: 1rem;">Paste it into your HTML where you want the card to appear.</li>
+                <li style="margin-bottom: 1rem;">The widget loads the definition and renders the card automatically.</li>
+                <li style="margin-bottom: 1rem;">Optional: Add <code style="background: var(--bg-card); padding: 2px 4px; border-radius: 3px;">data-theme="light"</code> for light mode.</li>
+            </ol>
+
+            <h3 style="font-family: 'Syne', sans-serif; font-size: 1.2rem; margin-top: 2rem; margin-bottom: 0.5rem;">All 51 Definition IDs</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">Pick any ID from the corpus:</p>
+            <p style="color: var(--text-muted); font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; line-height: 1.8;">
+                A1, A2, A3, A4, A5, A6, A7, A8, A9, A10, A11, A12, A13, A14,
+                B1, B2, B3, B4, B5, B6, B7, B8,
+                C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12,
+                D1, D2, D3, D4, D5, D6, D7,
+                E1, E2, E3, E4, E5, E6, E7, E8, E9, E10
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>API</h4>
+                <a href="api/">Documentation</a>
+                <a href="api/definitions.json">Definitions JSON</a>
+                <a href="api/protocols.json">Protocols JSON</a>
+                <a href="api/glossary.json">Glossary JSON</a>
+            </div>
+            <div class="footer-col">
+                <h4>Research</h4>
+                <a href="agentic-economy-definitions.html">Definitions</a>
+                <a href="agentic-economy-protocols.html">Protocols</a>
+                <a href="agentic-economy-glossary.html">Glossary</a>
+                <a href="agentic-economy-research.html">Papers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="compare.html">Compare Protocols</a>
+                <a href="agentic-economy-101.html">Start Here</a>
+                <a href="about-agentic-economy.html">About</a>
+                <a href="https://renedechamps.com">René's Site</a>
+            </div>
+            <div class="footer-col">
+                <h4>License</h4>
+                <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+                <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--text-muted);">Attribution required. Share modifications under same license.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>agenticeconomy.dev | Open research on agentic commerce, autonomous economic actors, and machine economies</p>
+        </div>
+    </footer>
+
+    <script src="embed.js"></script>
+    <script>
+        function copyCode(btn, id) {
+            const code = `<div class="ae-embed" data-id="${id}"></div>
+<script src="https://agenticeconomy.dev/embed.js"><\/script>`;
+            navigator.clipboard.writeText(code).then(() => {
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // Theme toggle
+        document.querySelectorAll('.theme-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const theme = btn.dataset.theme;
+                document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                document.querySelectorAll('.ae-embed').forEach(embed => {
+                    embed.setAttribute('data-theme', theme);
+                });
+
+                // Refresh embeds
+                document.querySelectorAll('.ae-embed').forEach(embed => {
+                    embed.innerHTML = '';
+                });
+                if (window.aeEmbedInit) window.aeEmbedInit();
+            });
+        });
+    </script>
+</body>
+</html>
