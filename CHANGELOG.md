@@ -4,6 +4,42 @@ All notable changes to agenticeconomy.dev.
 
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versioning: [SemVer](https://semver.org/).
 
+## [3.1.1] — 2026-04-15
+
+**Real 1200×630 PNG social card.** Proper raster `og:image` so X, LinkedIn, Discord, Slack, iMessage and Google Business Profile show a clean branded preview instead of the SVG placeholder.
+
+### Added
+
+- **`/og-image.png`** (1200×630, 50 KB) — dark-navy gradient matching the v3 theme with emerald (`#34d399`) accents. Renders the brand "AgenticEconomy.dev", the tagline "The Agentic Economy — Definitions, preprints, and protocols for agent-mediated commerce.", and the credibility stats row: **51 definitions · 3 preprints · 30 glossary terms · CC BY-SA**. Legible at thumbnail size (300×157). Generated deterministically by a new tooling script (`03-Web-Tooling/generate-og-image.py`, pure Pillow — no external deps).
+- **`og:image:type`** meta tag (`image/png`) on all pages.
+- **`og:image:alt` + `twitter:image:alt`** descriptive alt text on every page — accessibility improvement + extra keyword signal for social preview indexers.
+- **Per-post `ogImageAlt` override** in `generate-blog.js` — the blog post now exposes a post-specific image alt derived from its `heroAlt` field, instead of inheriting the site-wide alt.
+
+### Changed
+
+- `SITE.ogImage` → `https://agenticeconomy.dev/og-image.png` (was `/agentic-economy-two-economies.svg`, which several social platforms refused to render as a card preview because SVG is not in their supported og:image content-type allowlist).
+- `headMeta()` in `shared-template.js` now accepts `opts.ogImageAlt` and falls back to `SITE.ogImageAlt` — matches the existing pattern for `ogImage`.
+- Every main, definition, glossary, and blog listing page regenerated (146 HTML files) to pick up the new og:image + alt + content-type tags.
+
+### Unchanged (by design)
+
+- The blog post at `/blog/what-is-the-agentic-economy/` still uses its own 1200×630 hero PNG as `og:image` — post-specific social cards are a best practice and the hero is already the correct dimensions.
+- `Organization.logo` in JSON-LD still points to the existing brand SVG (separate identity from the social card; logo ≠ og:image).
+
+### Stats
+
+- 1 new asset: `og-image.png` (1200×630, 50 KB)
+- 146 HTML files regenerated · 4,329 internal links verified · 0 real broken
+- No content changes, no schema changes, no new pages
+
+### Not yet in this release
+
+- **Post 2** ("Why Agent Reputation Is Harder Than You Think") — held for v3.2.0.
+- **Post 3** ("You Can't Verify Quality With an LLM") — held for v3.3.0.
+- **Ask chatbot Gemini backend** — still awaiting API key.
+
+---
+
 ## [3.1.0] — 2026-04-15
 
 **Blog section launch + ORCID injection.** First blog post goes live as a companion explainer to the Taxonomy paper. Author identity is now fully wired in structured data across the site.
