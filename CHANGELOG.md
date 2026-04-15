@@ -4,6 +4,63 @@ All notable changes to agenticeconomy.dev.
 
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versioning: [SemVer](https://semver.org/).
 
+## [3.1.0] — 2026-04-15
+
+**Blog section launch + ORCID injection.** First blog post goes live as a companion explainer to the Taxonomy paper. Author identity is now fully wired in structured data across the site.
+
+### Added
+
+#### Blog section (new)
+- **`/blog/` — Blog listing page** with `Blog` JSON-LD (links to all posts), hero intro, "Coming next" card pointing to the RSS feed.
+- **Post 1: [What Is the Agentic Economy? Five Categories, Two Fault Lines](https://agenticeconomy.dev/blog/what-is-the-agentic-economy/)** — 1,087-word paper explainer (5 min read) for the Taxonomy paper (DOI 10.5281/zenodo.19208278). Includes:
+  - Full `BlogPosting` JSON-LD with author Person (ORCID, affiliation, sameAs), publisher Organization, citation → ScholarlyArticle, license CC BY-SA 4.0, wordCount, articleSection, keywords.
+  - `BreadcrumbList` JSON-LD (Home → Blog → post).
+  - Google Scholar citation meta tags (`citation_title`, `citation_author`, `citation_publication_date`, `citation_doi`, `citation_public_url`).
+  - Article-specific OG/Twitter meta + `article:section`, `article:tag` per tag, `article:author`.
+  - Hero image (`agentic-economy-five-categories-taxonomy.png`, 262 KB) with proper `og:image` references.
+  - Auto-generated Table of Contents from `<h2>` headings.
+  - Reading time estimate (based on 220 wpm).
+  - Share buttons (X/Twitter, LinkedIn, email, copy-link) — all URL-intent based, no third-party scripts, no tracking.
+  - Author bio card with ORCID badge, affiliation, avatar, and bio-links to About / Papers / personal site.
+  - "Read next" related-links grid (4 cards: paper, 51 definitions, protocol matrix, Settlement Neutrality glossary term).
+  - Prev/Next post navigation (hidden when no siblings — will appear when posts 2 & 3 ship).
+- **Blog images directory** at `/blog/images/` with immutable cache headers inherited from existing `/*.png` rule.
+
+#### ORCID + author identity
+- **ORCID `0009-0007-1033-6519`** injected into:
+  - `SITE.authorOrcid`, `SITE.authorOrcidUrl`, `SITE.orgSameAs`, `SITE.authorSameAs` in `shared-template.js`.
+  - `Organization.sameAs` across every page.
+  - New `personJsonLd()` helper exports full Person schema: name, url, identifier (PropertyValue with ORCID propertyID), jobTitle, affiliation (BotNode — The Lab), sameAs (renedechamps.com + ORCID + GitHub + LinkedIn + Zenodo community).
+  - `BlogPosting.author` in Post 1.
+- **Author affiliation**: "BotNode — The Lab: Where Theory Meets Code" now surfaced in Person schema.
+
+#### Navigation
+- **Top-level `Blog` link** added to primary nav between `Resources▾` and `About` on all 101 pages.
+- **`Blog` link** added to the "Project" column in the site footer on all pages.
+
+### Changed
+
+- `SITE.modifiedDate` bumped to `2026-04-15`.
+- `feed.xml` now leads with the blog post (with `<author>` and `<category>` per tag) before the original v3-launch items.
+- `sitemap.xml` grew from 100 → 102 URLs (+ `/blog/` and `/blog/what-is-the-agentic-economy/`, both `priority=0.8`).
+- `llms.txt` gained a `## Blog` section linking to the listing and every post.
+- `llms-full.txt` grew by ~5 KB — Post 1 full text is embedded as markdown under a `## Blog` heading for LLM ingestion.
+
+### Stats
+
+- 146 HTML files (was 101) — 3 new blog files + 42 regenerated definition/term/main pages with updated nav
+- 4,329 internal links verified · 0 broken
+- 102 URLs in sitemap
+- Post 1 wordCount: 1,087 · reading time: 5 min
+
+### Not yet in this release
+
+- **Post 2** ("Why Agent Reputation Is Harder Than You Think") and **Post 3** ("You Can't Verify Quality With an LLM") — held for subsequent releases.
+- **og:image social card PNG** (1200×630) — still references the SVG placeholder; needs a proper raster card for X/LinkedIn/Discord unfurls.
+- **Ask chatbot Gemini backend** — still awaiting API key.
+
+---
+
 ## [3.0.0] — 2026-04-10
 
 **Full pivot from v1 → v3.** This release replaces the previous 11-operations deployment with a research-hub focused on the agentic economy: definitions, preprints, protocols, glossary, and a public API. Zero frameworks, zero build tools, zero tracking. Licensed CC BY-SA 4.0.

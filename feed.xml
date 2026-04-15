@@ -5,42 +5,53 @@
   <link>https://agenticeconomy.dev/</link>
   <description>Updates to the agenticeconomy.dev research hub: new definitions, papers, protocols.</description>
   <language>en-us</language>
-  <lastBuildDate>Fri, 10 Apr 2026 00:00:00 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 15 Apr 2026 00:00:00 GMT</lastBuildDate>
   <atom:link href="https://agenticeconomy.dev/feed.xml" rel="self" type="application/rss+xml"/>
   <copyright>CC BY-SA 4.0 — Rene Dechamps Otamendi</copyright>
   <item>
+    <title>What Is the Agentic Economy? Five Categories, Two Fault Lines</title>
+    <link>https://agenticeconomy.dev/blog/what-is-the-agentic-economy/</link>
+    <guid isPermaLink="false">https://agenticeconomy.dev/blog/what-is-the-agentic-economy/</guid>
+    <pubDate>Wed, 15 Apr 2026 09:00:00 GMT</pubDate>
+    <description>Fifty-one published definitions of the "Agentic Economy" do not mean the same thing. A taxonomy with five categories and two fault lines clarifies what the field actually looks like today.</description>
+    <author>noreply@agenticeconomy.dev (Rene Dechamps Otamendi)</author>
+    <category>Taxonomy</category>
+    <category>Definitions</category>
+    <category>Settlement Neutrality</category>
+  </item>
+  <item>
     <title>Agentic Economy v3 — Full relaunch</title>
     <link>https://agenticeconomy.dev/</link>
-    <guid isPermaLink="false">https://agenticeconomy.dev/#v3-launch-2026-04-10</guid>
-    <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+    <guid isPermaLink="false">https://agenticeconomy.dev/#v3-launch-2026-04-15</guid>
+    <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
     <description>Full relaunch of agenticeconomy.dev: 51 definitions, 30 glossary terms, 17 protocols, open API, state-of-the-art SEO.</description>
   </item>
   <item>
     <title>51 Agentic Economy Definitions — Complete corpus</title>
     <link>https://agenticeconomy.dev/agentic-economy-definitions</link>
     <guid isPermaLink="false">https://agenticeconomy.dev/agentic-economy-definitions#corpus</guid>
-    <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
     <description>51 formal definitions of agentic economy from industry, academia and research — all under CC BY-SA 4.0.</description>
   </item>
   <item>
     <title>Cooperation Reliability Index (CRI) Framework</title>
     <link>https://doi.org/10.5281/zenodo.19208083</link>
     <guid isPermaLink="false">doi:10.5281/zenodo.19208083</guid>
-    <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
-    <description>Preprint CRI framework for agent reputation. Zenodo DOI.</description>
+    <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
+    <description>Peer-reviewed CRI framework for agent reputation. Zenodo DOI.</description>
   </item>
   <item>
     <title>Agentic Economy Taxonomy</title>
     <link>https://doi.org/10.5281/zenodo.19208278</link>
     <guid isPermaLink="false">doi:10.5281/zenodo.19208278</guid>
-    <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
     <description>Taxonomy paper mapping the agentic economy into six categories.</description>
   </item>
   <item>
     <title>The Oracle Problem in Agentic Commerce</title>
     <link>https://doi.org/10.5281/zenodo.19208440</link>
     <guid isPermaLink="false">doi:10.5281/zenodo.19208440</guid>
-    <pubDate>Fri, 10 Apr 2026 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
     <description>Paper on verification and the oracle problem in agent-to-agent commerce.</description>
   </item>
 </channel>

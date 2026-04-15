@@ -31,3 +31,7 @@ https://agenticeconomy.us/* https://agenticeconomy.dev/:splat 301!
 /faq / 301
 /quickstart /agentic-economy-101 301
 /botnode-dev.html https://botnode.io/ 301
+
+# Draft content — gone (never exposed from this build)
+/agentic-economy-contrarian-take /404 410
+/agentic-economy-contrarian-take.html /404 410

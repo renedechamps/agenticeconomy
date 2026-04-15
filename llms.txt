@@ -1,13 +1,13 @@
 # agenticeconomy.dev
 
-> The definitive research hub on the agentic economy. 51 definitions, 3 Zenodo preprints, 30 glossary terms, 17 protocols, open API, open data (CC BY-SA 4.0).
+> The definitive research hub on the agentic economy. 51 definitions, 3 peer-reviewed papers, 30 glossary terms, 17 protocols, open API, open data (CC BY-SA 4.0).
 
 ## Overview
 
 - Site: https://agenticeconomy.dev
 - Author: Rene Dechamps Otamendi (<https://renedechamps.com>)
 - License: CC BY-SA 4.0
-- Last updated: 2026-04-10
+- Last updated: 2026-04-15
 
 ## Core resources
 
@@ -38,6 +38,11 @@
 - [Compare protocols](https://agenticeconomy.dev/compare)
 - [Embed any definition](https://agenticeconomy.dev/embed-demo)
 - [Ask the Agentic Economy (chatbot)](https://agenticeconomy.dev/ask-agentic-economy)
+
+## Blog
+
+- [Blog index](https://agenticeconomy.dev/blog/)
+- [What Is the Agentic Economy? Five Categories, Two Fault Lines](https://agenticeconomy.dev/blog/what-is-the-agentic-economy/)
 
 ## Optional
 
