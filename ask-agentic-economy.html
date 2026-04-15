@@ -563,110 +563,6 @@
             cursor: not-allowed;
         }
 
-        .settings-btn {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            width: 40px;
-            height: 40px;
-            border-radius: 6px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            transition: all 0.2s;
-        }
-
-        .settings-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
-        }
-
-        /* Setup panel */
-        .setup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(4, 6, 14, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-        }
-
-        .setup-panel {
-            background-color: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 40px;
-            max-width: 420px;
-            width: 90%;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .setup-title {
-            font-family: 'Syne', sans-serif;
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--text-primary);
-            margin-bottom: 12px;
-        }
-
-        .setup-description {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 28px;
-            line-height: 1.6;
-        }
-
-        .setup-input {
-            width: 100%;
-            background-color: var(--bg-surface);
-            border: 1px solid var(--border);
-            color: var(--text-primary);
-            padding: 12px 16px;
-            border-radius: 6px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 12px;
-            margin-bottom: 20px;
-            transition: all 0.2s;
-        }
-
-        .setup-input:focus {
-            outline: none;
-            border-color: var(--accent);
-            background-color: rgba(52, 211, 153, 0.05);
-        }
-
-        .setup-button {
-            width: 100%;
-            background-color: var(--accent);
-            border: none;
-            color: var(--bg-deep);
-            padding: 12px 24px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.2s;
-            font-family: 'Outfit', sans-serif;
-        }
-
-        .setup-button:hover {
-            background-color: #2ed6a8;
-            transform: translateY(-2px);
-        }
-
-        .setup-note {
-            font-size: 12px;
-            color: var(--text-muted);
-            margin-top: 16px;
-            text-align: center;
-        }
-
         /* Footer */
         .chat-footer {
             padding: 12px 24px;
@@ -850,93 +746,28 @@
                     <input type="text" class="chat-input" id="chatInput" placeholder="Ask about the agentic economy...">
                     <button class="send-btn" id="sendBtn"><span>Send</span></button>
                 </div>
-                <button class="settings-btn" id="settingsBtn" title="Configure API Key">⚙</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Setup panel (hidden by default) -->
-    <div class="setup-overlay" id="setupOverlay" style="display: none;">
-        <div class="setup-panel">
-            <div class="setup-title">Configure Chatbot</div>
-            <div class="setup-description">
-                Enter your <strong>Google Gemini API key</strong> to enable the chatbot. Your key will be saved locally in your browser.
-            </div>
-            <input type="password" class="setup-input" id="apiKeyInput" placeholder="Paste your Gemini API key here">
-            <button class="setup-button" id="saveKeyBtn">Save & Start Chatting</button>
-            <div class="setup-note">
-                Get a free API key from <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color: var(--accent);">Google AI Studio</a>
             </div>
         </div>
     </div>
 
     <script>
-        // System prompt for the chatbot
-        const SYSTEM_PROMPT = `You are the Agentic Economy Research Assistant, powered by agenticeconomy.dev. You answer questions ONLY about the agentic economy based on the research corpus below. If a question is outside this scope, politely redirect to the topic.
+        // Ask-the-corpus client. Talks to /api/ask (Cloudflare Pages Function),
+        // which holds the Gemini key as a Worker secret and grounds answers on
+        // llms-full.txt. No keys in this file.
 
-KNOWLEDGE BASE:
-- The agentic economy refers to economic activity where AI agents autonomously transact, negotiate, and make decisions on behalf of humans or organizations.
-- There are 51 published definitions spanning 2021-2026, organized in 6 categories:
-  A: Agent-Assisted Commerce (14 definitions) - Human-initiated, agent-executed transactions (Visa, Mastercard, Stripe, PayPal, Amazon)
-  B: Agent-as-Workforce (8) - Agents replacing human labor functions (Salesforce, Microsoft, Google)
-  C_cr: Agent-to-Agent Blockchain (11) - Crypto-native autonomous agent economies (Fetch.ai, Olas, Circle)
-  C_s: Agent-to-Agent Non-Crypto (1) - Traditional settlement for agent transactions (BotNode)
-  D: Analytical/Regulatory (7) - Policy and oversight frameworks (Gartner, McKinsey, EU)
-  E: Infrastructure/Standards (10) - Protocols enabling agent commerce (Google A2A, Anthropic MCP, x402, IEEE)
-
-- 3 research papers by René Dechamps Otamendi on Zenodo:
-  1. CRI paper (DOI: 10.5281/zenodo.19208083) - Commerce Readiness Index
-  2. Taxonomy paper (zenodo.org/records/19208278) - 51 definitions taxonomy
-  3. Oracle Problem paper (zenodo.org/records/19208440) - Trust in agent transactions
-
-- Settlement Neutrality: Framework with 5 properties - Escrow Determinism, Ledger Consistency, Reputation Equivalence, Dispute Parity, Auditability
-
-- Key protocols: Google A2A, Anthropic MCP, x402 (119M+ transactions), Olas (700K monthly tx), Mastercard Agent Pay, Visa Intelligent Commerce, Stripe ACP, Circle USDC, IEEE 7012, IETF VCAP
-
-- Market size: $7B current → $93B by 2032 (CAGR ~40%)
-- McKinsey estimates $3-5T in agent-mediated commerce by 2030
-- The "11:1 ratio": 11 definitions describe agent-to-agent commerce vs 1 (BotNode) that proposes traditional settlement
-
-Keep responses concise (2-4 paragraphs max). Use specific data points. Link to relevant pages when appropriate:
-- Definitions: agentic-economy-definitions.html
-- Timeline: agentic-economy-timeline.html
-- Protocols: agentic-economy-protocols.html
-- 101 Guide: agentic-economy-101.html
-- Glossary: agentic-economy-glossary.html
-- Papers: agentic-economy-research.html`;
-
-        // DOM elements
         const chatMessages = document.getElementById('chatMessages');
         const chatInput = document.getElementById('chatInput');
         const sendBtn = document.getElementById('sendBtn');
-        const settingsBtn = document.getElementById('settingsBtn');
-        const setupOverlay = document.getElementById('setupOverlay');
-        const apiKeyInput = document.getElementById('apiKeyInput');
-        const saveKeyBtn = document.getElementById('saveKeyBtn');
         const navToggle = document.querySelector('.nav-toggle');
         const navMenu = document.querySelector('.nav-menu');
 
-        // State
+        // { role: 'user' | 'model', text: string } — sent as-is to /api/ask
         let conversationHistory = [];
         let isLoading = false;
-        const DEFAULT_GEMINI_KEY = 'AIzaSyCCTh1S5hwrQIr2MgvCc7dbHDBE-JRJrTM';
 
-        function getApiKey() {
-            return localStorage.getItem('gemini_api_key') || DEFAULT_GEMINI_KEY;
-        }
-
-        // Initialize
         document.addEventListener('DOMContentLoaded', () => {
-            const hasApiKey = getApiKey();
-            if (!hasApiKey) {
-                setupOverlay.style.display = 'flex';
-                chatInput.disabled = true;
-                sendBtn.disabled = true;
-            } else {
-                addWelcomeMessage();
-            }
+            addWelcomeMessage();
 
-            // Event listeners
             sendBtn.addEventListener('click', sendMessage);
             chatInput.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter' && !e.shiftKey) {
@@ -945,14 +776,6 @@ Keep responses concise (2-4 paragraphs max). Use specific data points. Link to r
                 }
             });
 
-            settingsBtn.addEventListener('click', () => {
-                setupOverlay.style.display = 'flex';
-                apiKeyInput.value = localStorage.getItem('gemini_api_key') || '';
-            });
-
-            saveKeyBtn.addEventListener('click', saveApiKey);
-
-            // Suggested questions
             document.querySelectorAll('.question-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     chatInput.value = btn.dataset.question;
@@ -961,19 +784,12 @@ Keep responses concise (2-4 paragraphs max). Use specific data points. Link to r
                 });
             });
 
-            // Mobile nav toggle
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-            });
-
-            // Close nav when clicking a link
+            if (navToggle) {
+                navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+            }
             document.querySelectorAll('.nav-item, .dropdown-panel a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navMenu.classList.remove('active');
-                });
+                link.addEventListener('click', () => navMenu && navMenu.classList.remove('active'));
             });
-
-            // Dropdown toggle on mobile
             document.querySelectorAll('.nav-dropdown-trigger').forEach(trigger => {
                 trigger.addEventListener('click', (e) => {
                     if (window.innerWidth <= 768) {
@@ -984,153 +800,148 @@ Keep responses concise (2-4 paragraphs max). Use specific data points. Link to r
             });
         });
 
-        function saveApiKey() {
-            const key = apiKeyInput.value.trim();
-            if (!key) {
-                alert('Please enter your Gemini API key');
-                return;
-            }
-            localStorage.setItem('gemini_api_key', key);
-            setupOverlay.style.display = 'none';
-            chatInput.disabled = false;
-            sendBtn.disabled = false;
-            chatInput.focus();
-            if (chatMessages.children.length === 0) {
-                addWelcomeMessage();
-            }
-        }
-
         function addWelcomeMessage() {
-            const welcomeMsg = `Welcome to the Agentic Economy Research Assistant! I can answer questions about:
+            const welcomeMsg = `**Welcome to the Agentic Economy Research Assistant.** I answer questions grounded in the agenticeconomy.dev corpus:
 
-• The 51 definitions of the agentic economy
-• Protocols and standards (x402, MCP, Google A2A, etc.)
-• Settlement neutrality and its properties
-• Market size and growth projections
-• Companies and projects in the space
-• Regulatory frameworks
-• Research papers and detailed data
+- 51 definitions across the six-category taxonomy
+- Protocols: x402, MCP, A2A, ACP, Olas, Circle USDC, Mastercard Agent Pay, etc.
+- Three preprints: CRI, Taxonomy, Oracle Problem
+- Glossary, timeline, field reports, settlement neutrality properties
 
-Try asking me anything about the agentic economy. You can click the suggested questions on the left, or type your own question below.`;
-
+Click a suggested question or type your own below.`;
             chatMessages.innerHTML = '';
-            addMessage(welcomeMsg, 'bot', true);
+            addMessage(welcomeMsg, 'bot', { welcome: true });
         }
 
-        function addMessage(text, sender, isWelcome = false) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${sender}`;
-
-            if (!isWelcome) {
+        function addMessage(text, sender, opts = {}) {
+            const wrap = document.createElement('div');
+            wrap.className = `message ${sender}`;
+            if (sender === 'bot' && !opts.welcome) {
                 const avatar = document.createElement('div');
                 avatar.className = 'message-avatar';
-                avatar.textContent = sender === 'bot' ? 'AE' : '';
-                if (sender === 'bot') {
-                    messageDiv.appendChild(avatar);
-                }
+                avatar.textContent = 'AE';
+                wrap.appendChild(avatar);
             }
-
             const content = document.createElement('div');
-            content.className = 'message-content';
-            if (isWelcome) {
-                content.className += ' welcome-message';
-            }
+            content.className = 'message-content' + (opts.welcome ? ' welcome-message' : '');
             content.innerHTML = renderMarkdown(text);
-            messageDiv.appendChild(content);
-
-            chatMessages.appendChild(messageDiv);
+            wrap.appendChild(content);
+            chatMessages.appendChild(wrap);
             chatMessages.scrollTop = chatMessages.scrollHeight;
+            return content;
         }
 
         function addTypingIndicator() {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = 'message bot';
-            messageDiv.id = 'typingIndicator';
-
+            const wrap = document.createElement('div');
+            wrap.className = 'message bot';
+            wrap.id = 'typingIndicator';
             const avatar = document.createElement('div');
             avatar.className = 'message-avatar';
             avatar.textContent = 'AE';
-            messageDiv.appendChild(avatar);
-
+            wrap.appendChild(avatar);
             const typing = document.createElement('div');
             typing.className = 'typing-indicator';
             typing.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
-            messageDiv.appendChild(typing);
-
-            chatMessages.appendChild(messageDiv);
+            wrap.appendChild(typing);
+            chatMessages.appendChild(wrap);
             chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function removeTypingIndicator() {
-            const indicator = document.getElementById('typingIndicator');
-            if (indicator) {
-                indicator.remove();
-            }
+            return wrap;
         }
 
         function renderMarkdown(text) {
-            // Escape HTML
             text = text
                 .replace(/&/g, '&amp;')
                 .replace(/</g, '&lt;')
                 .replace(/>/g, '&gt;');
-
-            // Convert markdown to HTML
-            // Bold
             text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
             text = text.replace(/__(.*?)__/g, '<strong>$1</strong>');
-
-            // Italic
             text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
             text = text.replace(/_(.*?)_/g, '<em>$1</em>');
-
-            // Links [text](url)
-            text = text.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank">$1</a>');
-
-            // Code blocks
+            text = text.replace(/\[([^\]]+?)\]\(([^)]+?)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
             text = text.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
-
-            // Inline code
-            text = text.replace(/`(.*?)`/g, '<code>$1</code>');
-
-            // Lists
-            text = text.replace(/^\* (.*?)$/gm, '<li>$1</li>');
+            text = text.replace(/`([^`]+?)`/g, '<code>$1</code>');
+            text = text.replace(/^[\*\-] (.*?)$/gm, '<li>$1</li>');
             text = text.replace(/^\d+\. (.*?)$/gm, '<li>$1</li>');
-            text = text.replace(/(<li>.*?<\/li>)/s, '<ul>$1</ul>');
-            text = text.replace(/<\/li>\n<li>/g, '</li>\n<li>');
-
-            // Line breaks
-            text = text.replace(/\n\n/g, '</p><p>');
+            text = text.replace(/(<li>[\s\S]*?<\/li>)/g, match => `<ul>${match}</ul>`);
+            text = text.replace(/<\/ul>\s*<ul>/g, '');
+            text = text.replace(/\n\n+/g, '</p><p>');
             text = '<p>' + text + '</p>';
-
             return text;
         }
 
         async function sendMessage() {
             const message = chatInput.value.trim();
             if (!message || isLoading) return;
-
-            // Add user message
             addMessage(message, 'user');
-            conversationHistory.push({ role: 'user', parts: [{ text: message }] });
-
-            // Clear input
+            conversationHistory.push({ role: 'user', text: message });
             chatInput.value = '';
             chatInput.style.height = 'auto';
 
-            // Show typing indicator
-            addTypingIndicator();
+            const typing = addTypingIndicator();
             isLoading = true;
             sendBtn.disabled = true;
 
+            let answer = '';
+            let answerContent = null;
+
             try {
-                const response = await callGeminiAPI(message);
-                removeTypingIndicator();
-                addMessage(response, 'bot');
-                conversationHistory.push({ role: 'model', parts: [{ text: response }] });
+                const resp = await fetch('/api/ask', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ messages: conversationHistory.slice(-20) }),
+                });
+
+                if (!resp.ok) {
+                    const err = await resp.json().catch(() => ({}));
+                    throw new Error(err.error || `HTTP ${resp.status}`);
+                }
+
+                if (!resp.body) throw new Error('No response stream');
+
+                typing.remove();
+                answerContent = addMessage('', 'bot');
+
+                const reader = resp.body.getReader();
+                const decoder = new TextDecoder();
+                let buffer = '';
+                let finished = false;
+
+                while (!finished) {
+                    const { value, done } = await reader.read();
+                    if (done) break;
+                    buffer += decoder.decode(value, { stream: true });
+                    let idx;
+                    while ((idx = buffer.indexOf('\n\n')) >= 0) {
+                        const chunk = buffer.slice(0, idx).trim();
+                        buffer = buffer.slice(idx + 2);
+                        if (!chunk.startsWith('data:')) continue;
+                        const payload = chunk.slice(5).trim();
+                        if (!payload) continue;
+                        let json;
+                        try { json = JSON.parse(payload); } catch { continue; }
+                        if (json.error) throw new Error(json.error);
+                        if (json.done) { finished = true; break; }
+                        if (json.delta) {
+                            answer += json.delta;
+                            answerContent.innerHTML = renderMarkdown(answer);
+                            chatMessages.scrollTop = chatMessages.scrollHeight;
+                        }
+                    }
+                }
+
+                if (!answer) {
+                    answerContent.innerHTML = renderMarkdown('*(no response)*');
+                } else {
+                    conversationHistory.push({ role: 'model', text: answer });
+                }
             } catch (error) {
-                removeTypingIndicator();
-                addMessage(`Sorry, I encountered an error: ${error.message}. Please try again or check your API key.`, 'bot');
+                typing.remove();
+                const errMsg = `Sorry, something went wrong: ${error.message}. Try again in a moment.`;
+                if (answerContent) {
+                    answerContent.innerHTML = renderMarkdown(errMsg);
+                } else {
+                    addMessage(errMsg, 'bot');
+                }
             } finally {
                 isLoading = false;
                 sendBtn.disabled = false;
@@ -1138,61 +949,6 @@ Try asking me anything about the agentic economy. You can click the suggested qu
             }
         }
 
-        async function callGeminiAPI(userMessage) {
-            const apiKey = getApiKey();
-            if (!apiKey) {
-                throw new Error('API key not configured');
-            }
-
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-04-17:generateContent?key=${apiKey}`;
-
-            // Build request with conversation context
-            const messages = [
-                {
-                    role: 'user',
-                    parts: [{ text: SYSTEM_PROMPT }]
-                }
-            ];
-
-            // Add conversation history
-            messages.push(...conversationHistory);
-
-            // Add current message
-            messages.push({
-                role: 'user',
-                parts: [{ text: userMessage }]
-            });
-
-            const requestBody = {
-                contents: messages,
-                generationConfig: {
-                    temperature: 0.3,
-                    maxOutputTokens: 1024
-                }
-            };
-
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(requestBody)
-            });
-
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.error?.message || `API error: ${response.status}`);
-            }
-
-            const data = await response.json();
-            if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
-                throw new Error('Invalid API response');
-            }
-
-            return data.candidates[0].content.parts[0].text;
-        }
-
-        // Auto-expand textarea
         chatInput.addEventListener('input', () => {
             chatInput.style.height = 'auto';
             chatInput.style.height = Math.min(chatInput.scrollHeight, 100) + 'px';

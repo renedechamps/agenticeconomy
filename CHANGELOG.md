@@ -4,6 +4,77 @@ All notable changes to agenticeconomy.dev.
 
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versioning: [SemVer](https://semver.org/).
 
+## [3.1.2] — 2026-04-15
+
+**Ask-the-Corpus backend goes live.** The chatbot at `/ask-agentic-economy` is no longer client-side-only; it's now backed by a Cloudflare Pages Function that holds the Gemini key as a Worker secret and grounds answers on `llms-full.txt`.
+
+### Added
+
+- **`functions/api/ask.js`** — Cloudflare Pages Function (POST `/api/ask`):
+  - Reads `GEMINI_API_KEY` as a Pages secret (`env.GEMINI_API_KEY`). Never exposed to the client.
+  - Loads `/llms-full.txt` via `env.ASSETS.fetch()` and injects it as Gemini `systemInstruction` (≤60 KB corpus cap).
+  - Streams Gemini `gemini-2.5-flash` via `streamGenerateContent?alt=sse` and re-emits a simplified SSE envelope (`{delta}` / `{done}` / `{error}`) to the browser.
+  - Edge-local rate limit: 10 req / 60s per `CF-Connecting-IP` via Cloudflare Cache API (no KV binding required).
+  - Strict CORS: `Access-Control-Allow-Origin` only for `agenticeconomy.dev`, `www.agenticeconomy.dev`, and local wrangler.
+  - Input validation: max 20 messages, max 4,000 chars each, last message must be `role: "user"`.
+  - Safety settings: `BLOCK_MEDIUM_AND_ABOVE` for harassment / hate / sexually-explicit / dangerous.
+  - Zero server-side logging of prompt or response content (only error counters).
+
+### Changed
+
+- **`ask-agentic-economy.html`** rewritten end-to-end:
+  - Client now POSTs `{ messages: [{role, text}, ...] }` to `/api/ask` and consumes the SSE stream token-by-token. Markdown re-renders on every delta so you see the answer type in real time.
+  - The **embedded Gemini system prompt** (~1.5 KB hand-maintained summary) is gone — grounding comes from `llms-full.txt` on the server, so the corpus stays in one place.
+  - The **"Configure API Key" overlay + settings button** are removed. Users no longer need a key. All related CSS rules (`.settings-btn`, `.setup-overlay`, `.setup-panel`, `.setup-title`, `.setup-description`, `.setup-input`, `.setup-button`, `.setup-note`) deleted as dead code.
+  - Conversation history kept client-side and sent fresh on every request (stateless server). Last 20 turns forwarded for context.
+  - Typing indicator removed as soon as the first streamed token arrives.
+
+### Removed (security)
+
+- **Hardcoded default Gemini API key** that used to sit in `ask-agentic-economy.html:922` as a `const DEFAULT_GEMINI_KEY = 'AIzaSy...'` literal. This key was reachable by anyone viewing the page source. **It has been revoked at Google AI Studio.** The new production key lives exclusively as a Cloudflare Pages secret.
+- `localStorage.setItem('gemini_api_key', ...)` — the browser no longer stores any key.
+- The direct `fetch('https://generativelanguage.googleapis.com/...')` call from the browser — all Gemini traffic now flows through our Worker.
+
+### Tooling
+
+- **`.dev.vars`** — local wrangler secrets file (gitignored). Loaded automatically by `wrangler pages dev`.
+- **`.gitignore`** — added `.dev.vars` and `.wrangler/` to prevent ever committing local dev state or secrets.
+
+### Deploy
+
+Production deploy requires setting the Pages secret once per Cloudflare project:
+
+```bash
+cd 03-Web
+npx wrangler pages secret put GEMINI_API_KEY --project-name=<project-name>
+# paste the key when prompted
+```
+
+After that, every `git push origin main` redeploys both the static site and the function.
+
+### Stats
+
+- 1 new Function (~250 lines)
+- 1 HTML page rewired (`ask-agentic-economy.html`: –124 script lines, –99 dead-CSS lines, +188 new client)
+- 0 new HTML files — still 146 pages
+- 4,329 internal links verified · 0 real broken
+
+### Smoke tested locally
+
+- `POST /api/ask` with a corpus question → streams a grounded answer citing `/term/…` + Zenodo DOI ✓
+- `POST /api/ask` with an off-topic question → politely declines and names the corpus scope ✓
+- Rate limit → 429 after 10 rapid requests with `Retry-After: 60` ✓
+- CORS preflight → 204 with the right `Access-Control-Allow-Origin` ✓
+- Invalid JSON / missing fields → 400 with a descriptive error ✓
+
+### Not yet in this release
+
+- **Post 2 + Post 3** of the blog — held for v3.2.0 / v3.3.0.
+- **KV-backed rate limit** (would be consistent across edge colos, but Cache API is sufficient for current traffic).
+- **Streaming cancellation** on the client (AbortController) — nice-to-have.
+
+---
+
 ## [3.1.1] — 2026-04-15
 
 **Real 1200×630 PNG social card.** Proper raster `og:image` so X, LinkedIn, Discord, Slack, iMessage and Google Business Profile show a clean branded preview instead of the SVG placeholder.
