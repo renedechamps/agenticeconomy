@@ -199,11 +199,27 @@ footer.site-footer{background:var(--bg-surface);border-top:1px solid var(--borde
 .blog-card-readmore{font-family:var(--font-mono);font-size:.82rem;color:var(--accent);display:inline-flex;align-items:center;gap:.35rem}
 .blog-coming-soon{padding:1.75rem;background:transparent;border:1px dashed var(--border-light);border-radius:12px;text-align:center;color:var(--text-muted);font-size:.95rem}
 .blog-coming-soon .cs-label{font-family:var(--font-mono);font-size:.72rem;color:var(--accent);letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:.4rem}
+
+/* Infographic lightbox */
+.post-infographic{margin:2.5rem 0;text-align:center}
+.post-infographic .infographic-trigger{display:inline-block;cursor:zoom-in;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;position:relative;max-width:100%}
+.post-infographic .infographic-trigger:hover{border-color:var(--accent-dim);box-shadow:0 4px 24px rgba(52,211,153,.12)}
+.post-infographic .infographic-trigger img{display:block;width:100%;height:auto;border-radius:11px}
+.post-infographic .infographic-trigger::after{content:'⤢ enlarge';position:absolute;bottom:.65rem;right:.75rem;font-family:var(--font-mono);font-size:.68rem;color:var(--accent);background:rgba(4,6,14,.82);padding:.25rem .55rem;border-radius:4px;letter-spacing:.05em;pointer-events:none;opacity:0;transition:opacity .2s}
+.post-infographic .infographic-trigger:hover::after{opacity:1}
+.post-infographic figcaption{margin-top:.6rem;font-family:var(--font-mono);font-size:.72rem;color:var(--text-muted);letter-spacing:.02em;line-height:1.5}
+
+.post-lightbox{display:none;position:fixed;inset:0;z-index:99999;background:rgba(4,6,14,.92);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:2rem}
+.post-lightbox.open{display:flex}
+.lightbox-inner{position:relative;max-width:min(1200px,96vw);max-height:90vh}
+.lightbox-inner img{display:block;max-width:100%;max-height:90vh;border-radius:10px;object-fit:contain;border:1px solid var(--border-light)}
+.lightbox-close{position:absolute;top:-.6rem;right:-.6rem;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--bg-card);border:1px solid var(--border-light);color:var(--text-primary);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;z-index:1;line-height:1}
+.lightbox-close:hover{background:var(--accent-dim);border-color:var(--accent);color:var(--bg-deep)}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","@id":"https://agenticeconomy.dev/#organization","name":"Agentic Economy","url":"https://agenticeconomy.dev","logo":"https://agenticeconomy.dev/agentic-economy-two-economies.svg","founder":{"@type":"Person","@id":"https://renedechamps.com/#person","name":"Rene Dechamps Otamendi","url":"https://renedechamps.com"},"sameAs":["https://renedechamps.com","https://orcid.org/0009-0007-1033-6519","https://github.com/renedechamps/agenticeconomy","https://www.linkedin.com/in/renedechamps/","https://zenodo.org/communities/agentic-economy"],"description":"The definitive research hub on the agentic economy"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://agenticeconomy.dev/#website","url":"https://agenticeconomy.dev","name":"Agentic Economy","description":"The definitive research hub on the agentic economy","publisher":{"@id":"https://agenticeconomy.dev/#organization"},"inLanguage":"en","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://agenticeconomy.dev/agentic-economy-definitions.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://renedechamps.com/#person","name":"Rene Dechamps Otamendi","url":"https://renedechamps.com","identifier":{"@type":"PropertyValue","propertyID":"ORCID","value":"0009-0007-1033-6519","url":"https://orcid.org/0009-0007-1033-6519"},"jobTitle":"Independent researcher","affiliation":{"@type":"Organization","name":"BotNode — The Lab: Where Theory Meets Code"},"sameAs":["https://renedechamps.com","https://orcid.org/0009-0007-1033-6519","https://github.com/renedechamps","https://www.linkedin.com/in/renedechamps/","https://zenodo.org/communities/agentic-economy"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://agenticeconomy.dev/blog/what-is-the-agentic-economy/#blogposting","mainEntityOfPage":{"@type":"WebPage","@id":"https://agenticeconomy.dev/blog/what-is-the-agentic-economy/"},"headline":"What Is the Agentic Economy? Five Categories, Two Fault Lines","description":"Fifty-one published definitions of the \"Agentic Economy\" do not mean the same thing. A taxonomy with five categories and two fault lines clarifies what the field actually looks like today.","image":["https://agenticeconomy.dev/blog/images/agentic-economy-five-categories-taxonomy.png"],"datePublished":"2026-04-15T09:00:00Z","dateModified":"2026-04-15T09:00:00Z","author":{"@type":"Person","@id":"https://renedechamps.com/#person","name":"Rene Dechamps Otamendi","url":"https://renedechamps.com","identifier":{"@type":"PropertyValue","propertyID":"ORCID","value":"0009-0007-1033-6519","url":"https://orcid.org/0009-0007-1033-6519"},"sameAs":["https://renedechamps.com","https://orcid.org/0009-0007-1033-6519","https://github.com/renedechamps","https://www.linkedin.com/in/renedechamps/","https://zenodo.org/communities/agentic-economy"]},"publisher":{"@id":"https://agenticeconomy.dev/#organization"},"inLanguage":"en","articleSection":"Taxonomy","keywords":"agentic economy, taxonomy, definitions, agent-to-agent commerce, autonomous agents, settlement neutrality, BIS, Microsoft, Stripe, Gartner, MCP, A2A","wordCount":1087,"isPartOf":{"@id":"https://agenticeconomy.dev/blog/#blog"},"license":"https://creativecommons.org/licenses/by-sa/4.0/","copyrightHolder":{"@id":"https://renedechamps.com/#person"},"citation":[{"@type":"ScholarlyArticle","name":"Agentic Economy Taxonomy","identifier":"doi:10.5281/zenodo.19208278","url":"https://doi.org/10.5281/zenodo.19208278"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","@id":"https://agenticeconomy.dev/blog/what-is-the-agentic-economy/#blogposting","mainEntityOfPage":{"@type":"WebPage","@id":"https://agenticeconomy.dev/blog/what-is-the-agentic-economy/"},"headline":"What Is the Agentic Economy? Five Categories, Two Fault Lines","description":"Fifty-one published definitions of the \"Agentic Economy\" do not mean the same thing. A taxonomy with five categories and two fault lines clarifies what the field actually looks like today.","image":["https://agenticeconomy.dev/blog/images/agentic-economy-five-categories-taxonomy.png","https://agenticeconomy.dev/blog/images/agentic-economy-taxonomy-two-economies-infographic.png"],"datePublished":"2026-04-15T09:00:00Z","dateModified":"2026-04-21T09:00:00Z","author":{"@type":"Person","@id":"https://renedechamps.com/#person","name":"Rene Dechamps Otamendi","url":"https://renedechamps.com","identifier":{"@type":"PropertyValue","propertyID":"ORCID","value":"0009-0007-1033-6519","url":"https://orcid.org/0009-0007-1033-6519"},"sameAs":["https://renedechamps.com","https://orcid.org/0009-0007-1033-6519","https://github.com/renedechamps","https://www.linkedin.com/in/renedechamps/","https://zenodo.org/communities/agentic-economy"]},"publisher":{"@id":"https://agenticeconomy.dev/#organization"},"inLanguage":"en","articleSection":"Taxonomy","keywords":"agentic economy, taxonomy, definitions, agent-to-agent commerce, autonomous agents, settlement neutrality, BIS, Microsoft, Stripe, Gartner, MCP, A2A","wordCount":1087,"isPartOf":{"@id":"https://agenticeconomy.dev/blog/#blog"},"license":"https://creativecommons.org/licenses/by-sa/4.0/","copyrightHolder":{"@id":"https://renedechamps.com/#person"},"citation":[{"@type":"ScholarlyArticle","name":"Agentic Economy Taxonomy","identifier":"doi:10.5281/zenodo.19208278","url":"https://doi.org/10.5281/zenodo.19208278"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://agenticeconomy.dev/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://agenticeconomy.dev/blog/"},{"@type":"ListItem","position":3,"name":"What Is the Agentic Economy? Five Categories, Two Fault Lines","item":"https://agenticeconomy.dev/blog/what-is-the-agentic-economy/"}]}</script>
 </head>
 <body>
@@ -289,6 +305,25 @@ footer.site-footer{background:var(--bg-surface);border-top:1px solid var(--borde
 <p><strong>Category D &mdash; Analytical and regulatory.</strong> The World Economic Forum, the BIS, the OECD. They&rsquo;re studying the phenomenon, not building it. About 14%.</p>
 
 <p><strong>Category E &mdash; Infrastructure and standards.</strong> Google&rsquo;s A2A, Anthropic&rsquo;s MCP, IEEE 7012. Protocols that enable agent communication but don&rsquo;t handle the economics &mdash; settlement, reputation, disputes. About 20%.</p>
+
+<figure class="post-infographic">
+  <button class="infographic-trigger" onclick="document.getElementById('lb-taxonomy').classList.add('open')" aria-label="Enlarge infographic: Two Economies, Not One — full taxonomy of the agentic economy">
+    <img src="../../blog/images/agentic-economy-taxonomy-two-economies-infographic.png"
+         alt="Infographic: Two Economies, Not One — full taxonomy of the agentic economy showing five categories (Agent-Assisted Commerce, Agent-as-Workforce, Autonomous A2A Commerce, Analytical/Regulatory, Infrastructure), two fault lines separating human from agent commerce and crypto from non-crypto settlement, five settlement neutrality properties, and the 2024–2026 protocol landscape with 17 protocols"
+         width="2752" height="1536" loading="lazy"
+         title="Two Economies, Not One: A Taxonomy of the Agentic Economy — visual summary of the full research paper (Zenodo DOI 10.5281/zenodo.19208278)">
+  </button>
+  <figcaption>Fig. 1 — <em>Two Economies, Not One: A Taxonomy of the Agentic Economy.</em> Five categories, two fault lines, five settlement neutrality properties, and the 2024–2026 protocol landscape. Click to enlarge. <a href="https://doi.org/10.5281/zenodo.19208278" rel="cite-as" target="_blank" rel="noopener">Full paper on Zenodo ↗</a></figcaption>
+</figure>
+
+<div id="lb-taxonomy" class="post-lightbox" role="dialog" aria-modal="true" aria-label="Infographic: Two Economies, Not One — taxonomy of the agentic economy">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" onclick="document.getElementById('lb-taxonomy').classList.remove('open')" aria-label="Close">&times;</button>
+    <img src="../../blog/images/agentic-economy-taxonomy-two-economies-infographic.png"
+         alt="Two Economies, Not One: A Taxonomy of the Agentic Economy — full-size infographic showing five categories, two structural fault lines, settlement neutrality properties, and protocol landscape 2024–2026"
+         width="2752" height="1536">
+  </div>
+</div>
 
 <h2 id="two-fault-lines">The two fault lines</h2>
 
@@ -411,6 +446,14 @@ footer.site-footer{background:var(--bg-surface);border-top:1px solid var(--borde
   </div>
 </footer>
 <script>
+// Lightbox
+document.querySelectorAll('.post-lightbox').forEach(lb => {
+  lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('open'); });
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') document.querySelectorAll('.post-lightbox.open').forEach(lb => lb.classList.remove('open'));
+});
+
 // Copy-link button (no tracking)
 document.querySelectorAll('[data-copy]').forEach(btn => {
   btn.addEventListener('click', e => {
