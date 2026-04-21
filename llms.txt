@@ -20,7 +20,7 @@
 
 ## Papers (Zenodo DOIs)
 
-- CRI Framework — https://doi.org/10.5281/zenodo.19679843
+- CRI Framework — https://doi.org/10.5281/zenodo.19208083
 - Taxonomy — https://doi.org/10.5281/zenodo.19679806
 - Oracle Problem — https://doi.org/10.5281/zenodo.19679701
 - Fifty-One Maps — https://doi.org/10.5281/zenodo.19679860
