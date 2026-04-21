@@ -22,8 +22,8 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:'Outfit',sa
 .nav-dropdown{position:relative}
 .nav-dropdown-trigger{cursor:pointer}
 .arrow{font-size:10px;display:inline-block;transition:transform .2s}
-.dropdown-panel{position:absolute;top:56px;left:0;background:rgba(8,13,28,.98);border:1px solid var(--border);border-radius:6px;padding:8px;min-width:180px;opacity:0;pointer-events:none;transition:opacity .2s;backdrop-filter:blur(4px)}
-.nav-dropdown:hover .dropdown-panel{opacity:1;pointer-events:auto}
+.dropdown-panel{position:absolute;top:56px;left:0;background:rgba(8,13,28,.98);border:1px solid var(--border);border-radius:6px;padding:8px;min-width:180px;opacity:0;pointer-events:none;transition:opacity .2s;transition-delay:.5s;backdrop-filter:blur(4px)}
+.nav-dropdown:hover .dropdown-panel{opacity:1;pointer-events:auto;transition-delay:0s}
 .nav-dropdown:hover .nav-dropdown-trigger .arrow{transform:rotate(180deg)}
 .dropdown-panel a{display:block;padding:10px 16px;color:var(--text-secondary);text-decoration:none;font-size:14px;border-radius:4px;transition:background-color .2s,color .2s}
 .dropdown-panel a:hover{background:rgba(52,211,153,.1);color:var(--accent)}

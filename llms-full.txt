@@ -8,9 +8,10 @@ Author: Rene Dechamps Otamendi (https://renedechamps.com)
 
 ## Papers
 
-- CRI Framework — https://doi.org/10.5281/zenodo.19208083
-- Agentic Economy Taxonomy — https://doi.org/10.5281/zenodo.19208278
-- The Oracle Problem — https://doi.org/10.5281/zenodo.19208440
+- CRI Framework — https://doi.org/10.5281/zenodo.19679843
+- Agentic Economy Taxonomy — https://doi.org/10.5281/zenodo.19679806
+- The Oracle Problem — https://doi.org/10.5281/zenodo.19679701
+- Fifty-One Maps, No Territory — https://doi.org/10.5281/zenodo.19679860
 
 ---
 
@@ -686,7 +687,7 @@ The paper surveys 51 definitions, classifies all of them, and formalizes a conce
 
 If you're building in this space — or investing, or regulating — the taxonomy gives you a map. Use it, disagree with it, extend it. That's why the spec is CC BY-SA 4.0.
 
-The full paper is open-access on Zenodo: [doi.org/10.5281/zenodo.19208278](https://doi.org/10.5281/zenodo.19208278)
+The full paper is open-access on Zenodo: [doi.org/10.5281/zenodo.19679806](https://doi.org/10.5281/zenodo.19679806)
 
 It is one of three papers I published this month. One covers reputation scoring for autonomous agents. Another addresses why automated quality verification is mathematically impossible — and what to build instead.
 
@@ -694,7 +695,7 @@ It is one of three papers I published this month. One covers reputation scoring 
 *Ren&eacute;*
 
 Canonical: https://agenticeconomy.dev/blog/what-is-the-agentic-economy/
-Paper: https://doi.org/10.5281/zenodo.19208278
+Paper: https://doi.org/10.5281/zenodo.19679806
 
 ---
 

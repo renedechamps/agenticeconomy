@@ -9,6 +9,17 @@
   <atom:link href="https://agenticeconomy.dev/feed.xml" rel="self" type="application/rss+xml"/>
   <copyright>CC BY-SA 4.0 — Rene Dechamps Otamendi</copyright>
   <item>
+    <title>The Agentic Economy Doesn't Exist Yet</title>
+    <link>https://agenticeconomy.dev/blog/the-agentic-economy-doesnt-exist-yet/</link>
+    <guid isPermaLink="false">https://agenticeconomy.dev/blog/the-agentic-economy-doesnt-exist-yet/</guid>
+    <pubDate>Mon, 21 Apr 2026 09:00:00 GMT</pubDate>
+    <description>Fifty-one published definitions of the agentic economy. Zero convergence. Three historical analogs say definitions stabilize when infrastructure gets built, not when researchers agree.</description>
+    <author>noreply@agenticeconomy.dev (Rene Dechamps Otamendi)</author>
+    <category>Definitions</category>
+    <category>Infrastructure</category>
+    <category>Convergence</category>
+  </item>
+  <item>
     <title>What Is the Agentic Economy? Five Categories, Two Fault Lines</title>
     <link>https://agenticeconomy.dev/blog/what-is-the-agentic-economy/</link>
     <guid isPermaLink="false">https://agenticeconomy.dev/blog/what-is-the-agentic-economy/</guid>
@@ -35,24 +46,35 @@
   </item>
   <item>
     <title>Cooperation Reliability Index (CRI) Framework</title>
-    <link>https://doi.org/10.5281/zenodo.19208083</link>
-    <guid isPermaLink="false">doi:10.5281/zenodo.19208083</guid>
+    <link>https://doi.org/10.5281/zenodo.19679843</link>
+    <guid isPermaLink="false">doi:10.5281/zenodo.19679843</guid>
     <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
     <description>Preprint CRI framework for agent reputation. Zenodo DOI.</description>
   </item>
   <item>
     <title>Agentic Economy Taxonomy</title>
-    <link>https://doi.org/10.5281/zenodo.19208278</link>
-    <guid isPermaLink="false">doi:10.5281/zenodo.19208278</guid>
+    <link>https://doi.org/10.5281/zenodo.19679806</link>
+    <guid isPermaLink="false">doi:10.5281/zenodo.19679806</guid>
     <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
     <description>Taxonomy paper mapping the agentic economy into six categories.</description>
   </item>
   <item>
     <title>The Oracle Problem in Agentic Commerce</title>
-    <link>https://doi.org/10.5281/zenodo.19208440</link>
-    <guid isPermaLink="false">doi:10.5281/zenodo.19208440</guid>
+    <link>https://doi.org/10.5281/zenodo.19679701</link>
+    <guid isPermaLink="false">doi:10.5281/zenodo.19679701</guid>
     <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
     <description>Paper on verification and the oracle problem in agent-to-agent commerce.</description>
+  </item>
+  <item>
+    <title>Fifty-One Maps, No Territory: Definitional Divergence in the Agentic Economy</title>
+    <link>https://doi.org/10.5281/zenodo.19679860</link>
+    <guid isPermaLink="false">doi:10.5281/zenodo.19679860</guid>
+    <pubDate>Mon, 21 Apr 2026 00:00:00 GMT</pubDate>
+    <description>A diagnostic analysis of 51 published definitions of the agentic economy (2021–2026) — why none converge, and the four tests that will force convergence.</description>
+    <author>noreply@agenticeconomy.dev (Rene Dechamps Otamendi)</author>
+    <category>Definitions</category>
+    <category>Taxonomy</category>
+    <category>Infrastructure</category>
   </item>
 </channel>
 </rss>

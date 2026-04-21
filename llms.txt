@@ -1,6 +1,6 @@
 # agenticeconomy.dev
 
-> The definitive research hub on the agentic economy. 51 definitions, 3 preprints, 30 glossary terms, 17 protocols, open API, open data (CC BY-SA 4.0).
+> The definitive research hub on the agentic economy. 51 definitions, 4 preprints, 30 glossary terms, 17 protocols, open API, open data (CC BY-SA 4.0).
 
 ## Overview
 
@@ -20,9 +20,10 @@
 
 ## Papers (Zenodo DOIs)
 
-- CRI Framework — https://doi.org/10.5281/zenodo.19208083
-- Taxonomy — https://doi.org/10.5281/zenodo.19208278
-- Oracle Problem — https://doi.org/10.5281/zenodo.19208440
+- CRI Framework — https://doi.org/10.5281/zenodo.19679843
+- Taxonomy — https://doi.org/10.5281/zenodo.19679806
+- Oracle Problem — https://doi.org/10.5281/zenodo.19679701
+- Fifty-One Maps — https://doi.org/10.5281/zenodo.19679860
 
 ## Open data API
 

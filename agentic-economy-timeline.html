@@ -463,7 +463,7 @@ body{
   <p>Eight years. Fifty-one definitions. From IoT machines paying each other to trillion-dollar protocol wars. This is the timeline.</p>
   <div style="margin-top:1.25rem;display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap">
     <a href="agentic-economy-definitions.html" title="Browse all 51 definitions with filters and search" style="display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border:1px solid rgba(52,211,153,.3);border-radius:8px;color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:.78rem;transition:all .2s"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 5h6"/></svg> Browse 51 Definitions</a>
-    <a href="https://zenodo.org/records/19208278" title="Two Economies, Not One — Full Paper on Zenodo" style="display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border:1px solid var(--border);border-radius:8px;color:var(--text-secondary);text-decoration:none;font-family:var(--font-mono);font-size:.78rem;transition:all .2s" target="_blank" rel="noopener"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg> Read the Paper</a>
+    <a href="https://zenodo.org/records/19679806" title="Two Economies, Not One — Full Paper on Zenodo" style="display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border:1px solid var(--border);border-radius:8px;color:var(--text-secondary);text-decoration:none;font-family:var(--font-mono);font-size:.78rem;transition:all .2s" target="_blank" rel="noopener"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg> Read the Paper</a>
   </div>
 </section>
 
@@ -634,7 +634,7 @@ function render(){
       html+=`<div class="insight"><p><strong>The payment networks circled the wagons.</strong> Visa (tokenization + biometric), Mastercard (Agentic Tokens + passkeys), PayPal (AP2 + OAuth) -- all Category A. Every design ensures the human remains the payer. Interchange revenue is the business model being defended.</p></div>`;
     }
     if(era.id==='convergence'&&activeCat==='all'){
-      html+=`<div class="insight"><p><strong>The 11:1 ratio.</strong> Of 12 Category C entries (agents transacting autonomously), 11 assume blockchain. 1 does not. This is not a technical accident -- it follows from the logic that agents can't open bank accounts. <a href="https://zenodo.org/records/19208278" title="Two Economies, Not One: A Taxonomy of the Agentic Economy and the Case for Settlement Neutrality" style="color:var(--accent)" target="_blank" rel="noopener">The main paper</a> analyzes why this logic, while compelling, is incomplete.</p></div>`;
+      html+=`<div class="insight"><p><strong>The 11:1 ratio.</strong> Of 12 Category C entries (agents transacting autonomously), 11 assume blockchain. 1 does not. This is not a technical accident -- it follows from the logic that agents can't open bank accounts. <a href="https://zenodo.org/records/19679806" title="Two Economies, Not One: A Taxonomy of the Agentic Economy and the Case for Settlement Neutrality" style="color:var(--accent)" target="_blank" rel="noopener">The main paper</a> analyzes why this logic, while compelling, is incomplete.</p></div>`;
     }
 
     section.innerHTML=html;
@@ -739,5 +739,6 @@ document.addEventListener('click', (e) => {
   </div>
 </footer>
 
-    </body>
+    <style>.nav-group.dd-grace>.dropdown,.nav-dropdown.dd-grace .dropdown-panel{display:block!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}</style><script>(function(){document.querySelectorAll('.nav-group,.nav-dropdown').forEach(function(g){var t;g.addEventListener('mouseenter',function(){clearTimeout(t);g.classList.remove('dd-grace');});g.addEventListener('mouseleave',function(){t=setTimeout(function(){g.classList.remove('dd-grace');},500);g.classList.add('dd-grace');});});})()</script>
+</body>
 </html>
