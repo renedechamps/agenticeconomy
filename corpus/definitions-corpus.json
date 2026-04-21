@@ -1,6 +1,6 @@
 {
   "schema_version": "1.2",
-  "updated": "2026-04-10",
+  "updated": "2026-04-21",
   "license": "CC BY-SA 4.0",
   "curator": {
     "name": "René Dechamps Otamendi",
@@ -118,7 +118,7 @@
   "categories": {
     "A": {
       "label": "Agent-Assisted Human Commerce",
-      "count": 14,
+      "count": 15,
       "color": "#3b82f6"
     },
     "B": {
@@ -128,7 +128,7 @@
     },
     "Ccr": {
       "label": "Autonomous A2A Commerce (Blockchain)",
-      "count": 11,
+      "count": 13,
       "color": "#f59e0b"
     },
     "Cs": {
@@ -138,12 +138,12 @@
     },
     "D": {
       "label": "Analytical and Regulatory",
-      "count": 7,
+      "count": 9,
       "color": "#f87171"
     },
     "E": {
       "label": "Infrastructure and Standards",
-      "count": 10,
+      "count": 11,
       "color": "#22d3ee"
     }
   },
@@ -221,7 +221,9 @@
       },
       "influence_markers": {
         "deployment": "Live in ChatGPT as Instant Checkout with Etsy and Shopify merchants",
-        "role": "The first at-scale Category A protocol actually running in production"
+        "role": "The first at-scale Category A protocol actually running in production",
+        "spec_version": "v2026-04-08 — breaking change moving signing_keys from nested to root-level; business profiles and platform profiles formally separated; A2A transport formally added alongside REST/MCP/Embedded",
+        "adoption_signal": "Coordinated platform-level migration observed Apr 13–17 2026: 2 stores on new spec on day 0 → 3,988 on day 4"
       },
       "cross_references": [
         {
@@ -310,7 +312,8 @@
       },
       "influence_markers": {
         "partners": "Google, Mastercard, PayPal",
-        "principle": "The agent never touches money it does not have permission to spend"
+        "principle": "The agent never touches money it does not have permission to spend",
+        "apr_2026_scale": "60+ organisations across payments and financial services now supporting; PayPal's own support formalised"
       },
       "cross_references": [
         {
@@ -660,7 +663,8 @@
         "regulatory_stance": "addressed"
       },
       "influence_markers": {
-        "role": "The closest Category A initiative to Category C — the A/C hybrid that matters most"
+        "role": "The closest Category A initiative to Category C — the A/C hybrid that matters most",
+        "tempo_mainnet": "Mainnet went live 2026-03-18, concurrent with the MPP announcement"
       },
       "cross_references": [
         {
@@ -1135,7 +1139,7 @@
       "source": "Coinbase / Cloudflare",
       "authors": "x402 Working Group",
       "organization_type": "crypto-infrastructure",
-      "date": "May 2025",
+      "date": "May 2025 / Apr 2026 (v2 + Linux Foundation)",
       "date_iso": "2025-05",
       "region": "global",
       "url": "https://x402.org/",
@@ -1153,7 +1157,10 @@
       },
       "influence_markers": {
         "settlement_speed": "Sub-500ms settlement",
-        "elegance": "One of the most architecturally elegant Category C proposals in the corpus"
+        "elegance": "One of the most architecturally elegant Category C proposals in the corpus",
+        "governance_apr_2026": "Contributed to the Linux Foundation as the x402 Foundation on 2026-04-02; founding members include Coinbase, Cloudflare, Stripe, Google, Visa, Mastercard, AWS, Shopify",
+        "v2_capabilities": "Adds Upto scheme (usage-based billing — per-token, per-compute-time, per-query-complexity), wallet-based identity, automatic API discovery, dynamic payment recipients, CAIP multi-chain + fiat support, modular SDK",
+        "settlement_depth": "Utexo integration 2026-04-16 adds USDT with claimed ~50 ms settlement; Bankr launched x402 Cloud as hosted pay-per-request platform on 2026-04-02"
       },
       "cross_references": [
         {
@@ -1194,7 +1201,8 @@
         "regulatory_stance": "addressed"
       },
       "influence_markers": {
-        "mechanism": "Off-chain aggregation with batched on-chain settlement"
+        "mechanism": "Off-chain aggregation with batched on-chain settlement",
+        "testnet_live": "Gas-free USDC transfers as small as $0.000001, 12 chains (Arbitrum, Base, Ethereum, Polygon, et al.) live on testnet since 2026-03-03"
       },
       "cross_references": [
         {
@@ -1861,7 +1869,10 @@
       "influence_markers": {
         "version": "v0.3 (Apr 2025)",
         "partners": "150+ launch partners",
-        "governance": "Contributed to the Linux Foundation"
+        "governance": "Contributed to the Linux Foundation",
+        "v1_0_signed_agent_cards": "A2A v1.0 (early 2026) introduced Signed Agent Cards — cryptographic signatures verifying domain-owner issuance, the most consequential trust upgrade in A2A's history",
+        "anniversary_apr_2026": "1-year milestone 2026-04-09: 150+ supporting organisations (up from 50+), 22,000+ GitHub stars, production SDKs in Python / JS / Java / Go / .NET",
+        "payments_extension": "AP2 (Agent Payments Protocol) is now an A2A extension with 60+ payments/FS orgs supporting"
       },
       "cross_references": [
         {
@@ -1907,7 +1918,8 @@
         "regulatory_stance": "avoided"
       },
       "influence_markers": {
-        "adoption": "Reference tool-invocation protocol across the LLM ecosystem"
+        "adoption": "Reference tool-invocation protocol across the LLM ecosystem",
+        "security_apr_2026": "Systemic vulnerability disclosed April 2026 — potential for arbitrary command execution; '150 million downloads' exposure figure cited in the responsible-disclosure reporting. Material empirical data point for the verification/trust-gap argument in the Oracle Problem paper"
       },
       "cross_references": [
         {
@@ -1922,7 +1934,7 @@
         }
       ],
       "teaser": "MCP is the tool layer, and like A2A it is deliberately silent on economics.",
-      "analytical_note": "MCP is the tool layer, and like A2A it is deliberately silent on economics. That silence is the whole design philosophy of the current protocol generation: separate concerns ruthlessly, let the market figure out the rest. It is good engineering and it is also how settlement assumptions end up as a default rather than a choice. MCP is cited in Category C architectures as if it were neutral infrastructure, but the moment it gets used to invoke a paid tool, the payment has to resolve somewhere, and MCP has no opinion about where."
+      "analytical_note": "MCP is the tool layer, and like A2A it is deliberately silent on economics. That silence is the whole design philosophy of the current protocol generation: separate concerns ruthlessly, let the market figure out the rest. It is good engineering and it is also how settlement assumptions end up as a default rather than a choice. MCP is cited in Category C architectures as if it were neutral infrastructure, but the moment it gets used to invoke a paid tool, the payment has to resolve somewhere, and MCP has no opinion about where. The April 2026 disclosure is the first corpus-level empirical confirmation that the protocol layer absorbs the trust assumptions E2 itself does not declare."
     },
     {
       "id": "E3",
@@ -2055,7 +2067,7 @@
       "source": "IETF",
       "authors": "IETF VCAP Working Group",
       "organization_type": "standards-body",
-      "date": "2026 (Internet-Draft)",
+      "date": "Jan 2026 / Apr 2026 (VCAP v01 + agent-identity cluster)",
       "date_iso": "2026-01",
       "region": "global",
       "url": "https://datatracker.ietf.org/",
@@ -2072,7 +2084,9 @@
         "regulatory_stance": "avoided"
       },
       "influence_markers": {
-        "role": "IETF's entry into the verification layer — complementary to escrow-based approaches"
+        "role": "IETF's entry into the verification layer — complementary to escrow-based approaches",
+        "vcap_v01": "draft-stone-vcap-01 published (up from draft-00): defines proof-of-work-delivery for agent commerce",
+        "identity_cluster_apr_2026": "Six concurrent IETF drafts on agent identity and authentication: draft-yl-agent-id-requirements-00, draft-sharif-agent-payment-trust-00, draft-ni-wimse-ai-agent-identity-02, draft-sharif-agent-audit-trail-00, draft-klrc-aiagent-auth-01. Signals a de facto standards-track convergence around the Taxonomy paper's trust_model dimension."
       },
       "cross_references": [
         {
@@ -2253,6 +2267,292 @@
       ],
       "teaser": "TessPay is the academic version of the verification problem VCAP is standardizing, and the complementarity with reputation systems is exactly the kind of layering a mature Category C needs.",
       "analytical_note": "TessPay is the academic version of the verification problem VCAP is standardizing, and the complementarity with reputation systems is exactly the kind of layering a mature Category C needs. Per-transaction verification and temporal reputation are different problems — the first proves what happened, the second predicts what will happen — and Category C architectures tend to conflate them. The Goenka paper is useful because it separates them cleanly and shows that verify-then-pay is infrastructure-agnostic, which is the thing most of the Category C orthodoxy assumes it cannot be."
+    },
+    {
+      "id": "A15",
+      "slug": "alibaba-alipay-a15",
+      "category": "A",
+      "source": "Alibaba / Alipay",
+      "authors": "Ant Group / Alipay (institutional)",
+      "organization_type": "big-tech-platform",
+      "date": "Jan 2026",
+      "date_iso": "2026-01",
+      "region": "China / APAC",
+      "url": "https://www.businesswire.com/news/home/20260213770962/en/Alipay-AI-Payment-Exceeds-120-Million-Transactions-in-One-Week-as-Agentic-Commerce-Accelerates-in-China",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "Four-domain framework — Delegated Authorisation, Commercial Interaction, Payment Service, Trust Service — for AI agents transacting on behalf of users within Alipay's rails. Users grant preset conditions to agents; Alipay executes settlement; a trust service keeps record-of-transaction and verification layers.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "regional",
+        "temporal_horizon": "present",
+        "settlement_assumption": "fiat",
+        "actor_model": "human-in-loop",
+        "trust_model": "legal",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "scale": "120M+ AI-initiated transactions in a single week (Feb 11–13, 2026) — largest documented agentic-commerce volume worldwide to date",
+        "coverage": "Integrated with Qwen App, Taobao Instant Commerce, Rokid devices",
+        "role": "First large-scale production implementation of a category-A framework outside the Western ACP/AP2/UCP cluster"
+      },
+      "cross_references": [
+        {
+          "id": "A2",
+          "short_label": "Stripe / OpenAI ACP",
+          "reason": "The Western sibling framework — same Category A commitments, different jurisdiction and rails."
+        },
+        {
+          "id": "A4",
+          "short_label": "Google / MC / PayPal AP2",
+          "reason": "Delegated-authorisation model with an analogous preset-conditions primitive."
+        },
+        {
+          "id": "D1",
+          "short_label": "WEF (KYA)",
+          "reason": "Alipay's Trust Service is the operational analogue to WEF's Know-Your-Agent framing."
+        }
+      ],
+      "teaser": "The largest working Category-A deployment on the planet is in China, and almost no one in the Western corpus cites it.",
+      "analytical_note": "Alipay's four-domain framework is not doctrinally novel — it slots neatly into Category A — but its *scale* is. 120M agent-initiated transactions in a week makes every Western pilot look like a prototype. The entry matters in the corpus because it punctures the tacit assumption in A1–A14 that the agentic economy is being built in San Francisco. It also exposes a blind spot: none of the Western A-entries cross-reference Alipay, which means the dominant production system sits outside the analytical perimeter the corpus inherited from the Rothschild paper. The regulatory_stance code is 'addressed' because the protocol builds on top of China's existing payment-institution licensing — the opposite of the 'avoided' stance that characterises the Silicon Valley A-entries."
+    },
+    {
+      "id": "C13",
+      "slug": "zetrix-caict-astron-c13",
+      "category": "Ccr",
+      "source": "Zetrix AI / CAICT's Astron",
+      "authors": "CZ Wong (Zetrix AI) et al.",
+      "organization_type": "public-private-consortium",
+      "date": "Apr 2026",
+      "date_iso": "2026-04",
+      "region": "APAC / China",
+      "url": "https://www.prnewswire.com/news-releases/zetrix-caicts-astron-unveil-blockchain-ai-trust-layer-for-agentic-ai-ecosystem-302742222.html",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "A blockchain-AI trust layer where each user runs a verified 'avatar' — a bonded identity tied to verifiable credentials, professional qualifications, and digital assets — and avatars negotiate, collaborate, and transact with other verified avatars without immediate human intervention, using the Zetrix and Astron chains as the identity and settlement substrate.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "regional",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "launch_venue": "World Internet Conference Asia Pacific, Hong Kong, April 15, 2026",
+        "certification": "CAICT-certified security framework (Chinese government-linked standards body)",
+        "geography": "First major Category-Ccr entry anchored in the Chinese standards ecosystem"
+      },
+      "cross_references": [
+        {
+          "id": "C1",
+          "short_label": "Fetch.ai / ASI Alliance",
+          "reason": "Shares the verified-autonomous-agent framing; diverges on governance — Fetch.ai is Western/permissionless, Avatar is APAC/state-adjacent."
+        },
+        {
+          "id": "E3",
+          "short_label": "Trulioo / Worldpay KYA",
+          "reason": "Western counterpart to Avatar's bonded-identity primitive; regulatory DNA is different."
+        },
+        {
+          "id": "D1",
+          "short_label": "WEF (KYA)",
+          "reason": "Avatar is what KYA looks like when a national standards body certifies the identity layer."
+        }
+      ],
+      "teaser": "Category-C now has a Chinese flag planted in it. The governance implications are louder than the technical ones.",
+      "analytical_note": "Avatar Protocol is technically unremarkable — verifiable credentials plus a permissioned chain is the 2021 self-sovereign-identity recipe with an LLM bolted on — but geopolitically consequential. It is the first Category-Ccr entry whose trust anchor is a Chinese standards body (CAICT) rather than a foundation, a VC-backed consortium, or an academic group. The 'addressed' regulatory_stance is earned by the CAICT certification layer, not by reference to foreign law. Read this entry alongside C3 (x402) to see the emerging bifurcation: the Western C cluster routes trust through cryptographic protocol design; the Eastern entrants route it through institutional certification. Both call themselves trustless. Neither is."
+    },
+    {
+      "id": "C14",
+      "slug": "xu-blockchain-foundation-c14",
+      "category": "Ccr",
+      "source": "Minghui Xu (arXiv 2602.14219)",
+      "authors": "Xu, M.",
+      "organization_type": "academic",
+      "date": "Feb 2026",
+      "date_iso": "2026-02",
+      "region": "global",
+      "url": "https://arxiv.org/abs/2602.14219",
+      "citation_type": "academic-paper",
+      "verbatim_quote": "An Agent Economy is a blockchain-based foundation in which autonomous AI agents operate as economic peers to humans. Blockchain provides three properties enabling genuine agent autonomy: permissionless participation, trustless settlement, and machine-to-machine micropayments. Anything short of these three reduces agents to delegated proxies for human economic actors.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "stake",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "role_in_corpus": "The sharpest prescriptive statement in Category Ccr — defines autonomy in terms of three blockchain-native properties and explicitly rejects non-crypto alternatives",
+        "citation_potential": "Foundational-paper framing; likely to be cited by subsequent Ccr work as the canonical 'agents require blockchain' argument"
+      },
+      "cross_references": [
+        {
+          "id": "C3",
+          "short_label": "Coinbase / Cloudflare x402",
+          "reason": "Operationalises the 'M2M micropayments' leg of Xu's three-property argument."
+        },
+        {
+          "id": "C12",
+          "short_label": "BotNode / VMP-1.0",
+          "reason": "The direct counterargument — asserts autonomy is achievable without any of Xu's three blockchain properties."
+        },
+        {
+          "id": "A1",
+          "short_label": "Microsoft Research",
+          "reason": "The 'on-behalf-of' framing Xu's paper explicitly refutes as insufficient for genuine autonomy."
+        }
+      ],
+      "teaser": "Xu writes down what every Ccr entry assumes out loud: no blockchain, no agency.",
+      "analytical_note": "This paper is the first Ccr entry in the corpus that states the category's foundational commitments as testable propositions rather than as marketing. Xu's three-property claim (permissionless participation + trustless settlement + M2M micropayments) is falsifiable — which is exactly why it matters, and exactly why the BotNode/VMP-1.0 entry (C12) is its most direct counterexample. Coded definition_type is 'prescriptive' rather than 'descriptive' because Xu is not observing an economy; he is specifying the conditions one must meet to count as one. trust_model: 'stake' follows from the paper's explicit framing of economic-peer status as requiring skin-in-the-game. Read C14 and C12 together to see the corpus's tightest pair of mutually exclusive claims."
+    },
+    {
+      "id": "D8",
+      "slug": "lucier-immorlica-et-al-d8",
+      "category": "D",
+      "source": "Microsoft Research (arXiv 2603.25893)",
+      "authors": "Lucier, B.; Immorlica, N.; Mobius, M.; Slivkins, A.; Goldstein, D. G.; Hofman, J. M.; Jaffe, S.; Rothschild, D. M.",
+      "organization_type": "big-tech-research",
+      "date": "Mar 2026",
+      "date_iso": "2026-03",
+      "region": "global",
+      "url": "https://arxiv.org/abs/2603.25893",
+      "citation_type": "academic-paper",
+      "verbatim_quote": "Agentic markets are two-sided markets in which consumers and businesses are assisted by AI tools that facilitate consumer search. Cheaper search improves learning and consumer surplus; more informative search can degrade both unless the market learns as much as consumers about the products.",
+      "coded_dimensions": {
+        "definition_type": "descriptive",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "unstated",
+        "actor_model": "human-in-loop",
+        "trust_model": "unstated",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "continuity": "Direct follow-up by the A1 author team (Rothschild, Mobius, Hofman, Immorlica, Slivkins, Goldstein, Jaffe) extending the Microsoft Research agentic-economy research programme into formal equilibrium analysis",
+        "methodology": "First corpus entry to offer a closed-form welfare result on agent-mediated search, not a taxonomy or a protocol"
+      },
+      "cross_references": [
+        {
+          "id": "A1",
+          "short_label": "Microsoft Research",
+          "reason": "This is A1's research programme continued — same authors, same Category-A frame, now formal rather than descriptive."
+        },
+        {
+          "id": "D3",
+          "short_label": "a16z Crypto / YC / Medium",
+          "reason": "The welfare-surplus framing intersects with the informal 'assistant-as-buyer' intuitions in the D3 cluster."
+        },
+        {
+          "id": "D7",
+          "short_label": "MIT Technology Review (EmTech)",
+          "reason": "Companion analytical piece with a less formal treatment of the same market structure."
+        }
+      ],
+      "teaser": "The A1 team came back with equations. The equations say better search does not always help.",
+      "analytical_note": "D8 is structurally important because it converts A1's descriptive claims into a model with comparative-statics results, which makes the Rothschild-school position properly testable for the first time. The most corpus-relevant finding is the non-monotonicity: more informative agent-mediated search can reduce consumer surplus when the platform learns asymmetrically less about products than individual consumers do. That result directly undermines the Category-A 'agents as pure efficiency gain' intuition that A1 trades on rhetorically. Coded regulatory_stance: 'avoided' because the paper treats platform learning as a market primitive and does not engage with the competition-policy implications its own result invites. Expect this paper to be cited heavily by Category-D regulators within 6–12 months; corpus entry now to avoid catch-up later."
+    },
+    {
+      "id": "D9",
+      "slug": "nannini-et-al-d9",
+      "category": "D",
+      "source": "Nannini et al. (arXiv 2604.04604)",
+      "authors": "Nannini, L.; Smith, A. L.; Maggini, M. J.; Panai, E.; Feliciano, S.; Tiulkanov, A.; Maran, E.; Gealy, J.; Bisconti, P.",
+      "organization_type": "academic / standards-practitioner consortium",
+      "date": "Apr 2026",
+      "date_iso": "2026-04",
+      "region": "EU / global",
+      "url": "https://arxiv.org/abs/2604.04604",
+      "citation_type": "academic-paper",
+      "verbatim_quote": "AI agents — AI systems that autonomously plan, invoke external tools, and execute multi-step action chains with reduced human involvement — already meet the EU's AI-system definition under the AI Act. A compliance architecture for AI-agent providers can be assembled by integrating M/613 draft harmonised standards (CEN/CENELEC JTC 21, Jan 2026), the GPAI Code of Practice (Jul 2025), the CRA harmonised standards programme (M/606, Apr 2025), and the Digital Omnibus proposals (Nov 2025).",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "regional",
+        "temporal_horizon": "near-future",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "legal",
+        "infrastructure_layer": "hybrid",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "timeliness": "Published weeks before the EU AI Act's full applicability date (2 August 2026)",
+        "novelty": "First corpus entry to provide a concrete regulatory mapping for AI-agent providers across four live EU instruments simultaneously",
+        "stakeholders": "Co-authored by standards practitioners, academics, and industry-adjacent experts — unusual breadth for a D-entry"
+      },
+      "cross_references": [
+        {
+          "id": "D1",
+          "short_label": "WEF (KYA)",
+          "reason": "KYA is the industry framing D9 operationalises for EU compliance."
+        },
+        {
+          "id": "E4",
+          "short_label": "IEEE 7012",
+          "reason": "IEEE 7012 is the likely citation target when D9's compliance architecture needs a standard to point at."
+        },
+        {
+          "id": "E7",
+          "short_label": "OECD",
+          "reason": "D9 builds directly on the vocabulary E7 seeded into policy."
+        }
+      ],
+      "teaser": "The first operational answer to 'what does the EU AI Act actually require of agent providers' — four months before the deadline.",
+      "analytical_note": "D9 matters for the corpus less as an analytical framework and more as evidence. Three claims relevant to the taxonomy project: (1) the AI Act does not need an agent-specific amendment — existing definitions already bite; (2) compliance is assemblable from currently-drafted instruments, meaning regulatory uncertainty is lower than industry claims; (3) provider-side compliance cost is non-trivial and front-loaded on standards conformity work (M/613) rather than on case-by-case litigation. The 'prescriptive' definition_type is earned by the paper's explicit architecture for what providers must do, not merely describe. Expect this paper to be cited by every EU compliance vendor from now through mid-2027; corpus placement now preempts the back-dating problem that hit E7."
+    },
+    {
+      "id": "E11",
+      "slug": "ais-1-e11",
+      "category": "E",
+      "source": "AIS-1 (ais-1.org)",
+      "authors": "AIS-1 Working Group",
+      "organization_type": "open-standards-consortium",
+      "date": "Apr 2026",
+      "date_iso": "2026-04",
+      "region": "global",
+      "url": "https://ais-1.org",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "A bonded dual-identity token on-chain that permanently links an AI agent's identity to the legal entity or person responsible for it. Neither party can be separated from the other without revoking the bond. Three tiers — Basic (permissionless), Verified (issuer-KYC'd, sanctions-screened), Sovereign (enhanced due diligence, government-attested).",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "licensing": "CC0 — free to implement",
+        "claim": "Self-described as 'world's first open standard for AI agent identity'",
+        "coverage": "Identosphere issue #168 (Mar 28 – Apr 4 2026) covered AIS-1 alongside NIST NCCoE agent-auth work; signals cross-standards-body attention"
+      },
+      "cross_references": [
+        {
+          "id": "E3",
+          "short_label": "Trulioo / Worldpay KYA",
+          "reason": "The commercial KYC-stack analogue — AIS-1's Verified/Sovereign tiers map onto KYA's verification levels."
+        },
+        {
+          "id": "E8",
+          "short_label": "a16z Keycard",
+          "reason": "The nearest corpus peer — also a crypto-native, bonded-identity primitive for agents."
+        },
+        {
+          "id": "C13",
+          "short_label": "Zetrix / Avatar",
+          "reason": "Avatar's 'verified avatar' requirement is implementable via AIS-1 Verified/Sovereign tiers."
+        }
+      ],
+      "teaser": "The first open-licensed identity standard that treats 'the agent' and 'the responsible party' as a single cryptographic object.",
+      "analytical_note": "The design choice that distinguishes AIS-1 from prior agent-identity work is the *bonded dual token*: it refuses to let agent identity and sponsor identity circulate independently, which makes 'the agent is autonomous but the human is liable' enforceable at the protocol layer rather than merely at the contract layer. That is a non-trivial philosophical commitment — closer to the WEF/KYA trust framing than to the self-sovereign-identity tradition that gave us did:method specs. The three-tier structure is the other consequential design choice: Basic is genuinely permissionless, Sovereign requires government attestation, Verified threads the needle in a way that KYA has not yet specified concretely. Category E rather than Ccr because the primary output is an identity specification, not a settlement or commerce primitive — but the crypto-native substrate means the corpus should watch for AIS-1-like non-blockchain variants in the next 12 months."
     }
   ]
 }
