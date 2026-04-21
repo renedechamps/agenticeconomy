@@ -77,6 +77,19 @@
     @media print{body{background:#fff;color:#000;font-size:12pt}body::after,nav,.grid-bg{display:none}section{padding:2rem 0}h1,h2,h3{color:#000}a{color:#000;text-decoration:underline}.article-header{padding-top:2rem}.article-body p,.article-body li{color:#000}}
     @media(max-width:900px){nav{padding:1rem}.nav-links{gap:1rem}.article-header{padding:7rem 1.5rem 2rem}.article-body{padding:0 1.5rem 4rem}}
     @media(max-width:600px){.nav-links .hm{display:none}nav{padding:.8rem 1rem}.nav-links{gap:.8rem}.gh-link{padding:.35rem .65rem;font-size:.78rem}.article-header{padding:6rem 1rem 1.5rem}.article-header h1{font-size:1.7rem}.article-body{padding:0 1rem 3rem}}
+    .post-infographic{margin:2.5rem 0;text-align:center}
+    .post-infographic .infographic-trigger{display:inline-block;cursor:zoom-in;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;position:relative;max-width:100%}
+    .post-infographic .infographic-trigger:hover{border-color:var(--accent-dim);box-shadow:0 4px 24px rgba(52,211,153,.12)}
+    .post-infographic .infographic-trigger img{display:block;width:100%;height:auto;border-radius:11px;border:none}
+    .post-infographic .infographic-trigger::after{content:'⤢ enlarge';position:absolute;bottom:.65rem;right:.75rem;font-family:var(--font-mono);font-size:.68rem;color:var(--accent);background:rgba(4,6,14,.82);padding:.25rem .55rem;border-radius:4px;letter-spacing:.05em;pointer-events:none;opacity:0;transition:opacity .2s}
+    .post-infographic .infographic-trigger:hover::after{opacity:1}
+    .post-infographic figcaption{margin-top:.6rem;font-family:var(--font-mono);font-size:.72rem;color:var(--text-muted);letter-spacing:.02em;line-height:1.5}
+    .post-lightbox{display:none;position:fixed;inset:0;z-index:99999;background:rgba(4,6,14,.92);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:2rem}
+    .post-lightbox.open{display:flex}
+    .lightbox-inner{position:relative;max-width:min(1200px,96vw);max-height:90vh}
+    .lightbox-inner img{display:block;max-width:100%;max-height:90vh;border-radius:10px;object-fit:contain;border:1px solid var(--border-light)}
+    .lightbox-close{position:absolute;top:-.6rem;right:-.6rem;width:2.2rem;height:2.2rem;border-radius:50%;background:#141a38;border:1px solid var(--border-light);color:var(--text-primary);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;z-index:1;line-height:1}
+    .lightbox-close:hover{background:var(--accent-dim);border-color:var(--accent);color:#04060e}
   </style>
 </head>
 <body>
@@ -145,6 +158,25 @@
 
       <p>That is exactly what the two-layer architecture does. Layer 1 is the building inspector. Layer 2 is the court system. You don&rsquo;t ask the building inspector whether the house is beautiful. You don&rsquo;t ask the court to check the plumbing.</p>
 
+      <figure class="post-infographic">
+        <button class="infographic-trigger" onclick="document.getElementById('lb-oracle').classList.add('open')" aria-label="Enlarge infographic: The Oracle Problem in Agent Commerce — two-layer verification architecture">
+          <img src="../../blog/images/oracle-problem-agent-commerce-verification-infographic.png"
+               alt="Infographic: The Oracle Problem in Agent Commerce — two-layer verification architecture showing Layer 1 deterministic validators (schema, regex, language detection) and Layer 2 Quality Markets with verifier agents, CRI scoring, and Nash equilibrium incentives for autonomous agent settlement"
+               width="2752" height="1536" loading="lazy"
+               title="The Oracle Problem in Agent Commerce — two-layer architecture. Full infographic from the paper (Zenodo DOI 10.5281/zenodo.19208440)">
+        </button>
+        <figcaption>Fig. 1 — <em>The Oracle Problem in Agent Commerce: two-layer verification architecture.</em> Layer 1: deterministic validators. Layer 2: Quality Markets with Nash-equilibrium incentives. Click to enlarge. <a href="https://doi.org/10.5281/zenodo.19208440" target="_blank" rel="noopener noreferrer">Full paper on Zenodo ↗</a></figcaption>
+      </figure>
+
+      <div id="lb-oracle" class="post-lightbox" role="dialog" aria-modal="true" aria-label="The Oracle Problem in Agent Commerce — verification architecture infographic">
+        <div class="lightbox-inner">
+          <button class="lightbox-close" onclick="document.getElementById('lb-oracle').classList.remove('open')" aria-label="Close">&times;</button>
+          <img src="../../blog/images/oracle-problem-agent-commerce-verification-infographic.png"
+               alt="The Oracle Problem in Agent Commerce — full-size infographic: two-layer verification architecture with deterministic validators and Quality Markets for autonomous agent settlement"
+               width="2752" height="1536">
+        </div>
+      </div>
+
       <h2>What we don&rsquo;t solve</h2>
 
       <p>The bootstrapping problem. Quality Markets need established verifiers to function. But verifiers need a market to verify in. The first verifier has no track record &mdash; who trusts it? This is the cold-start problem applied to verification. We have a mechanism for it &mdash; Genesis Verifiers with provisional scores &mdash; but I won&rsquo;t pretend it&rsquo;s fully solved.</p>
@@ -167,6 +199,10 @@
     </article>
   </main>
 
+  <script>
+    document.querySelectorAll('.post-lightbox').forEach(lb=>{lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')})});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.post-lightbox.open').forEach(lb=>lb.classList.remove('open'))});
+  </script>
   <footer>
     <div class="container">
       <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;padding-bottom:1.5rem;margin-bottom:1rem;border-bottom:1px solid var(--border)">

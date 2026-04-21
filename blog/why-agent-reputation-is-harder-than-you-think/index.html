@@ -77,6 +77,19 @@
     @media print{body{background:#fff;color:#000;font-size:12pt}body::after,nav,.grid-bg{display:none}section{padding:2rem 0}h1,h2,h3{color:#000}a{color:#000;text-decoration:underline}.article-header{padding-top:2rem}.article-body p,.article-body li{color:#000}}
     @media(max-width:900px){nav{padding:1rem}.nav-links{gap:1rem}.article-header{padding:7rem 1.5rem 2rem}.article-body{padding:0 1.5rem 4rem}}
     @media(max-width:600px){.nav-links .hm{display:none}nav{padding:.8rem 1rem}.nav-links{gap:.8rem}.gh-link{padding:.35rem .65rem;font-size:.78rem}.article-header{padding:6rem 1rem 1.5rem}.article-header h1{font-size:1.7rem}.article-body{padding:0 1rem 3rem}}
+    .post-infographic{margin:2.5rem 0;text-align:center}
+    .post-infographic .infographic-trigger{display:inline-block;cursor:zoom-in;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .2s,box-shadow .2s;position:relative;max-width:100%}
+    .post-infographic .infographic-trigger:hover{border-color:var(--accent-dim);box-shadow:0 4px 24px rgba(52,211,153,.12)}
+    .post-infographic .infographic-trigger img{display:block;width:100%;height:auto;border-radius:11px;border:none}
+    .post-infographic .infographic-trigger::after{content:'⤢ enlarge';position:absolute;bottom:.65rem;right:.75rem;font-family:var(--font-mono);font-size:.68rem;color:var(--accent);background:rgba(4,6,14,.82);padding:.25rem .55rem;border-radius:4px;letter-spacing:.05em;pointer-events:none;opacity:0;transition:opacity .2s}
+    .post-infographic .infographic-trigger:hover::after{opacity:1}
+    .post-infographic figcaption{margin-top:.6rem;font-family:var(--font-mono);font-size:.72rem;color:var(--text-muted);letter-spacing:.02em;line-height:1.5}
+    .post-lightbox{display:none;position:fixed;inset:0;z-index:99999;background:rgba(4,6,14,.92);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:2rem}
+    .post-lightbox.open{display:flex}
+    .lightbox-inner{position:relative;max-width:min(1200px,96vw);max-height:90vh}
+    .lightbox-inner img{display:block;max-width:100%;max-height:90vh;border-radius:10px;object-fit:contain;border:1px solid var(--border-light)}
+    .lightbox-close{position:absolute;top:-.6rem;right:-.6rem;width:2.2rem;height:2.2rem;border-radius:50%;background:var(--bg-card,#141a38);border:1px solid var(--border-light);color:var(--text-primary);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s;z-index:1;line-height:1}
+    .lightbox-close:hover{background:var(--accent-dim);border-color:var(--accent);color:#04060e}
   </style>
 </head>
 <body>
@@ -139,6 +152,25 @@
 
       <p>The logarithmic scaling is the piece I&rsquo;m most convinced about. It comes from EigenTrust &mdash; Kamvar, Schlosser, and Garcia-Molina&rsquo;s 2003 paper that won the WWW Test of Time Award. The insight: trust should scale with the logarithm of transaction volume, not linearly. An agent with 1,000 transactions is more trustworthy than one with 10, but not 100 times more trustworthy. Logarithms compress volume and force diversity to matter.</p>
 
+      <figure class="post-infographic">
+        <button class="infographic-trigger" onclick="document.getElementById('lb-cri').classList.add('open')" aria-label="Enlarge infographic: CRI — Anatomy of Agent Trust, the ten components of the Composite Reliability Index">
+          <img src="../../blog/images/cri-anatomy-agent-trust-composite-reliability-index-infographic.png"
+               alt="Infographic: CRI Anatomy of Agent Trust — the ten components of the Composite Reliability Index showing how base score, activity engine, integrity filter, and safety valves compose a 0–100 reputation score for autonomous agents in agent commerce"
+               width="2752" height="1536" loading="lazy"
+               title="CRI: Composite Reliability Index — Anatomy of Agent Trust. Full infographic from the paper (Zenodo DOI 10.5281/zenodo.19208083)">
+        </button>
+        <figcaption>Fig. 1 — <em>Anatomy of Agent Trust: the Composite Reliability Index.</em> Ten components, three penalty layers, one portable 0–100 score. Click to enlarge. <a href="https://doi.org/10.5281/zenodo.19208083" target="_blank" rel="noopener noreferrer">Full paper on Zenodo ↗</a></figcaption>
+      </figure>
+
+      <div id="lb-cri" class="post-lightbox" role="dialog" aria-modal="true" aria-label="CRI: Composite Reliability Index — Anatomy of Agent Trust infographic">
+        <div class="lightbox-inner">
+          <button class="lightbox-close" onclick="document.getElementById('lb-cri').classList.remove('open')" aria-label="Close">&times;</button>
+          <img src="../../blog/images/cri-anatomy-agent-trust-composite-reliability-index-infographic.png"
+               alt="CRI Anatomy of Agent Trust — full-size infographic: ten components of the Composite Reliability Index composing a portable 0–100 reputation score for autonomous agents"
+               width="2752" height="1536">
+        </div>
+      </div>
+
       <h2>The honest part</h2>
 
       <p>The paper includes a full Sybil resistance analysis with worked examples. A static ring attack &mdash; twenty fake agents trading with each other &mdash; gets a CRI of 59.4 against a legitimate node&rsquo;s 76.3. A gap of 16.9 points. That&rsquo;s meaningful.</p>
@@ -159,6 +191,10 @@
     </article>
   </main>
 
+  <script>
+    document.querySelectorAll('.post-lightbox').forEach(lb=>{lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')})});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape')document.querySelectorAll('.post-lightbox.open').forEach(lb=>lb.classList.remove('open'))});
+  </script>
   <footer>
     <div class="container">
       <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;padding-bottom:1.5rem;margin-bottom:1rem;border-bottom:1px solid var(--border)">
