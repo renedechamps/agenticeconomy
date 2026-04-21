@@ -1,6 +1,6 @@
 # agenticeconomy.dev
 
-> The definitive research hub on the agentic economy. 51 definitions, 3 peer-reviewed papers, 30 glossary terms, 17 protocols, open API, open data (CC BY-SA 4.0).
+> The definitive research hub on the agentic economy. 51 definitions, 3 preprints, 30 glossary terms, 17 protocols, open API, open data (CC BY-SA 4.0).
 
 ## Overview
 
