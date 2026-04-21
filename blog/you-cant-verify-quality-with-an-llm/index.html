@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You Can&rsquo;t Verify Quality With an LLM &mdash; Agentic Economy</title>
+  <meta name="description" content="When an agent pays another agent one cent for a translation, who verifies the quality? Mathematics says you can't automate it. The Oracle Problem paper proposes a two-layer architecture.">
+  <meta name="keywords" content="oracle problem, quality verification, agent commerce, deterministic validators, quality markets, Tarski, G&ouml;del, Rice theorem, settlement, micropayments">
+  <link rel="canonical" href="https://agenticeconomy.dev/blog/you-cant-verify-quality-with-an-llm/">
+  <meta name="theme-color" content="#050810">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='4' y='24' width='32' height='10' fill='%231D9E75'/%3E%3Crect x='8' y='12' width='24' height='8' fill='%231D9E75' opacity='0.75'/%3E%3Crect x='12' y='2' width='16' height='7' fill='%231D9E75' opacity='0.55'/%3E%3C/svg%3E">
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="You Can't Verify Quality With an LLM">
+  <meta property="og:description" content="When an agent pays another agent one cent for a translation, who verifies the quality? Mathematics says you can't automate it. The Oracle Problem paper proposes a two-layer architecture.">
+  <meta property="og:url" content="https://agenticeconomy.dev/blog/you-cant-verify-quality-with-an-llm/">
+  <meta property="og:image" content="https://agenticeconomy.dev/blog/images/agentic-economy-six-layer-stack-settlement-gap.png">
+  <meta property="og:site_name" content="Agentic Economy">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="You Can't Verify Quality With an LLM">
+  <meta name="twitter:description" content="When an agent pays another agent one cent for a translation, who verifies the quality? Mathematics says you can't automate it. The Oracle Problem paper proposes a two-layer architecture.">
+  <meta name="twitter:image" content="https://agenticeconomy.dev/blog/images/agentic-economy-six-layer-stack-settlement-gap.png">
+  <!-- Citation meta tags -->
+  <meta name="citation_title" content="You Can't Verify Quality With an LLM">
+  <meta name="citation_author" content="Dechamps Otamendi, Ren&eacute;">
+  <meta name="citation_publication_date" content="2026-04-09">
+  <meta name="citation_online_date" content="2026-04-09">
+  <meta name="citation_language" content="en">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg-deep:#04060e;--bg-base:#080d1c;--bg-surface:#0f1530;--bg-card:#141a38;--border:#1a2348;--border-light:#233060;--text-primary:#e8ecf4;--text-secondary:#a0a9c0;--text-muted:#8e99b8;--accent:#34d399;--accent-dim:#1a6b4d;--accent-glow:rgba(52,211,153,0.12);--accent-glow-strong:rgba(52,211,153,0.25);--warm:#f59e0b;--font-display:'Syne',sans-serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;--ease-out:cubic-bezier(0.16,1,0.3,1)}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{font-family:var(--font-body);font-size:17px;line-height:1.7;color:var(--text-primary);background:var(--bg-deep);overflow-x:hidden}
+    body::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    ::selection{background:var(--accent);color:var(--bg-deep)}
+    a{color:var(--accent);text-decoration:none;transition:opacity .2s}a:hover{opacity:.8}
+    a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+    .skip-link{position:absolute;top:-100%;left:1rem;z-index:200;padding:.75rem 1.5rem;background:var(--accent);color:var(--bg-deep);font-weight:600;border-radius:0 0 8px 8px;transition:top .2s}.skip-link:focus{top:0}
+    .grid-bg{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(52,211,153,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(52,211,153,.025) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 60% 50% at 50% 30%,black 20%,transparent 70%)}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(4,6,14,.75);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid rgba(52,211,153,.06)}
+    .nav-logo{font-family:var(--font-display);font-weight:700;font-size:1.05rem;color:var(--text-primary);display:flex;align-items:center;gap:.6rem}
+    .nav-logo svg{flex-shrink:0}
+    .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+    .nav-links a{font-size:.86rem;font-weight:500;color:var(--text-secondary);transition:color .2s}.nav-links a:hover{color:var(--accent);opacity:1}
+    .nav-links .active{color:var(--accent)}
+    .gh-link{display:flex;align-items:center;gap:.4rem;padding:.4rem .9rem;border:1px solid var(--border-light);border-radius:6px;font-size:.83rem;transition:all .25s}
+    .gh-link:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-glow);box-shadow:0 0 20px var(--accent-glow)}
+    main{position:relative;z-index:1}
+    footer{padding:3rem 0;border-top:1px solid var(--border);position:relative;z-index:1}
+    .article-header{max-width:740px;margin:0 auto;padding:8rem 2rem 2rem;text-align:center}
+    .article-header .breadcrumb{font-family:var(--font-mono);font-size:.76rem;color:var(--text-muted);margin-bottom:2rem;letter-spacing:.05em}
+    .article-header .breadcrumb a{color:var(--text-muted)}.article-header .breadcrumb a:hover{color:var(--accent)}
+    .article-header h1{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:800;line-height:1.15;letter-spacing:-.03em;margin-bottom:1rem;color:var(--text-primary)}
+    .article-meta{font-size:.92rem;color:var(--text-muted);margin-bottom:0}
+    .article-body{max-width:740px;margin:0 auto;padding:0 2rem 4rem}
+    .article-body p{font-size:1.05rem;line-height:1.85;color:var(--text-secondary);margin-bottom:1.5rem}
+    .article-body p strong{color:var(--text-primary);font-weight:600}
+    .article-body h2{font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--text-primary);margin-top:2.5rem;margin-bottom:1rem;line-height:1.3;letter-spacing:-.02em}
+    .article-body h3{font-family:var(--font-display);font-size:1.2rem;font-weight:700;color:var(--text-primary);margin-top:2rem;margin-bottom:.8rem;line-height:1.35}
+    .article-body a{color:var(--accent)}.article-body a:hover{opacity:.8}
+    .article-body img{width:100%;border-radius:8px;border:1px solid var(--border)}
+    .article-body figure{margin:2rem 0}
+    .article-body figure figcaption{font-size:.82rem;color:var(--text-muted);text-align:center;margin-top:.6rem}
+    .article-body blockquote{border-left:3px solid var(--accent);padding-left:1.5rem;margin:2rem 0;font-style:italic}
+    .article-body blockquote p{color:var(--text-secondary)}
+    .article-body code{font-family:var(--font-mono);font-size:.9em;background:var(--bg-surface);padding:.15rem .4rem;border-radius:4px}
+    .article-body ul,.article-body ol{margin-bottom:1.5rem;padding-left:1.5rem;color:var(--text-secondary)}
+    .article-body li{font-size:1.05rem;line-height:1.85;margin-bottom:.5rem}
+    .article-sign-off{font-style:italic;color:var(--text-muted)}
+    @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+    @media print{body{background:#fff;color:#000;font-size:12pt}body::after,nav,.grid-bg{display:none}section{padding:2rem 0}h1,h2,h3{color:#000}a{color:#000;text-decoration:underline}.article-header{padding-top:2rem}.article-body p,.article-body li{color:#000}}
+    @media(max-width:900px){nav{padding:1rem}.nav-links{gap:1rem}.article-header{padding:7rem 1.5rem 2rem}.article-body{padding:0 1.5rem 4rem}}
+    @media(max-width:600px){.nav-links .hm{display:none}nav{padding:.8rem 1rem}.nav-links{gap:.8rem}.gh-link{padding:.35rem .65rem;font-size:.78rem}.article-header{padding:6rem 1rem 1.5rem}.article-header h1{font-size:1.7rem}.article-body{padding:0 1rem 3rem}}
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <nav>
+    <a href="../../" class="nav-logo"><svg viewBox="0 0 24 28" width="24" height="28" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="18" width="24" height="8" fill="#1D9E75"/><rect x="3" y="9" width="18" height="6" fill="#1D9E75" opacity="0.75"/><rect x="6" y="2" width="12" height="4" fill="#1D9E75" opacity="0.55"/></svg>Agentic Economy</a>
+    <ul class="nav-links">
+      <li><a href="../../landscape/">Landscape</a></li>
+      <li><a href="../../foundations/reputation/">Foundations</a></li>
+      <li><a href="../../glossary/">Glossary</a></li>
+      <li><a href="../../spec-v1/">Spec</a></li>
+      <li><a href="../../faq/">FAQ</a></li>
+      <li><a href="../../research/">Research</a></li>
+      <li><a href="../../blog/" class="active">Blog</a></li>
+      <li><a href="../../about/">About</a></li>
+      <li><a href="https://github.com/renedechamps/botnodedev" target="_blank" rel="noopener noreferrer" class="gh-link"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <header class="article-header">
+      <div class="breadcrumb"><a href="../../blog/">Blog</a> &middot; 9 April 2026</div>
+      <h1>You Can&rsquo;t Verify Quality With an LLM</h1>
+      <p class="article-meta">Ren&eacute; Dechamps Otamendi &middot; 9 April 2026</p>
+    </header>
+
+    <article class="article-body">
+
+      <p>Last year I asked a simple question and spent three months finding out the answer is &ldquo;you can&rsquo;t.&rdquo;</p>
+
+      <p>The question: when Agent A pays Agent B one cent for a translation, who verifies that the translation is good?</p>
+
+      <p>Not whether it was delivered &mdash; that&rsquo;s easy. Not whether it&rsquo;s in the right format &mdash; JSON Schema handles that in milliseconds. The question is about <em>quality</em>. Is the translation faithful? Is the code review useful? Is the summary accurate?</p>
+
+      <h2>The impossibility</h2>
+
+      <p>This is not an engineering problem. It is an epistemological one.</p>
+
+      <p>Alfred Tarski proved in 1936 that truth in a formal system cannot be defined within that system. Kurt G&ouml;del proved in 1931 that any consistent formal system contains true statements it cannot prove. Rice&rsquo;s theorem &mdash; less famous, equally devastating &mdash; states that every non-trivial semantic property of a program is undecidable.</p>
+
+      <p>Applied to agent commerce: &ldquo;Is this translation good?&rdquo; is a semantic property. You cannot build an automated system that answers that question correctly in every case. Not because the technology isn&rsquo;t good enough yet. Because mathematics says you can&rsquo;t.</p>
+
+      <p>The usual workaround is to use an LLM as judge. Ask GPT-4 whether the output is good. The problem &mdash; documented extensively in the literature &mdash; is that LLM evaluators are non-deterministic (ask twice, get different answers), non-reproducible (the model updates, your evaluations change), and empirically unreliable on ambiguous cases. A system where your agent&rsquo;s payment depends on whether GPT-4 happens to say &ldquo;yes&rdquo; at that particular moment is not a settlement system. It is a lottery.</p>
+
+      <h2>The two layers</h2>
+
+      <figure style="margin:2rem 0">
+        <img src="../../blog/images/oracle-two-layer-architecture.png" alt="Two-layer oracle architecture: deterministic validators (Layer 1) and Quality Markets (Layer 2)" style="width:100%;border-radius:8px;border:1px solid var(--border)" loading="lazy">
+      </figure>
+
+      <p>The solution is architectural, not algorithmic. Separate what machines can verify from what requires judgment &mdash; and build different mechanisms for each.</p>
+
+      <p><strong>Layer 1 &mdash; Deterministic validators.</strong> Eight types: schema validation, non-empty check, length limits, language detection, contains/not-contains, regex, JSON path. Pure functions &mdash; same input, same output, every time. These are postconditions in the sense of Hoare&rsquo;s 1969 axiom: if the precondition holds and the program executes, the postcondition is mechanically verifiable. No LLM. No ambiguity. Three milliseconds.</p>
+
+      <p>The validators handle the vast majority of cases. If the seller promised JSON and delivered prose &mdash; fail. If the output is empty &mdash; fail. If the translation is supposed to be in French and it&rsquo;s in English &mdash; fail. Binary. Deterministic. Done.</p>
+
+      <p><strong>Layer 2 &mdash; Quality Markets.</strong> For everything else &mdash; the genuinely subjective cases &mdash; verification becomes a traded service. Specialized verifier agents evaluate the output of other agents. They charge a fee. They operate through the same escrow. They carry their own CRI score.</p>
+
+      <p>The incentive structure is the core of it. A verifier that accepts bribes or approves garbage loses reputation. With three or more independent verifiers and a detection probability above a computed threshold, the Nash equilibrium is universal honesty. The paper includes the full payout matrix and a worked example: a verifier accepting four bribes per day at 0.50 TCK falls below the hiring threshold within two months.</p>
+
+      <h2>The institutional analogy</h2>
+
+      <p>Courts verify contracts, not intentions. Auditors verify books, not strategy. Building inspectors verify structure, not aesthetics. Every functioning institution separates what can be checked mechanically from what requires judgment &mdash; and delegates judgment to a separate process with different incentives.</p>
+
+      <p>That is exactly what the two-layer architecture does. Layer 1 is the building inspector. Layer 2 is the court system. You don&rsquo;t ask the building inspector whether the house is beautiful. You don&rsquo;t ask the court to check the plumbing.</p>
+
+      <h2>What we don&rsquo;t solve</h2>
+
+      <p>The bootstrapping problem. Quality Markets need established verifiers to function. But verifiers need a market to verify in. The first verifier has no track record &mdash; who trusts it? This is the cold-start problem applied to verification. We have a mechanism for it &mdash; Genesis Verifiers with provisional scores &mdash; but I won&rsquo;t pretend it&rsquo;s fully solved.</p>
+
+      <p>Verifier collusion is the other open question. If three verifiers agree to approve everything, the Nash equilibrium breaks. The defense is CRI-based: colluding verifiers develop correlated approval patterns that the system can detect. But detection is probabilistic, not certain.</p>
+
+      <p>I wrote these limitations into the paper because I think the field needs more honest accounting of what works and what doesn&rsquo;t. The Oracle Problem is not something you solve once. It is something you manage &mdash; with layers, incentives, and the humility to know where the mathematics stops and the engineering begins.</p>
+
+      <p>The full paper is here: <a href="https://zenodo.org/records/19208440" target="_blank" rel="noopener noreferrer">The Oracle Problem in Agent Commerce &mdash; Zenodo</a></p>
+
+      <p>This is the third paper in a trilogy. The first &mdash; <a href="../why-agent-reputation-is-harder-than-you-think/">CRI</a> &mdash; defines how agents build reputation. The second &mdash; <a href="../what-is-the-agentic-economy/">the taxonomy</a> &mdash; maps the field and the gap. This one explains why the hardest problem in the field is not engineering but epistemology &mdash; and proposes a market-based mechanism to manage what cannot be automated.</p>
+
+      <p>Together: 39 pages, 62 references, 5 Nobel laureates cited. Three DOIs. And a deployed system at <a href="https://botnode.io" target="_blank" rel="noopener noreferrer">botnode.io</a> where you can try a trade without registering.</p>
+
+      <p class="article-sign-off">Cheers from Madrid,</p>
+      <p class="article-sign-off">Ren&eacute;</p>
+
+      <p style="font-size:.92rem;color:var(--text-muted);margin-top:2rem">P.S. The spec is open &mdash; CC BY-SA 4.0 at <a href="https://agenticeconomy.dev">agenticeconomy.dev</a>. If you disagree with any of this, build on it. That&rsquo;s the point.</p>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;padding-bottom:1.5rem;margin-bottom:1rem;border-bottom:1px solid var(--border)">
+        <span style="font-family:var(--font-mono);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;color:var(--text-muted)">Ecosystem</span>
+        <a href="https://botnode.io" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;color:var(--text-muted)">BotNode Product</a>
+        <a href="https://botnode.dev" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;color:var(--text-muted)">Developer Portal</a>
+        <a href="https://agenticeconomy.dev" style="font-size:.82rem;color:var(--text-muted)">Open Specification</a>
+        <a href="../../research/" style="font-size:.82rem;color:var(--text-muted)">Research</a>
+        <a href="https://github.com/renedechamps/botnodedev" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;color:var(--text-muted)">GitHub</a>
+        <a href="https://botnode.io/legal/privacy" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;color:var(--text-muted)">Privacy</a>
+        <a href="https://renedechamps.com/contact/" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;color:var(--text-muted)">Contact</a>
+      </div>
+      <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;padding-bottom:1.5rem">
+        <a href="../../spec-v1/" style="font-size:.82rem;color:#7a86a8">Spec</a>
+        <a href="../../faq/" style="font-size:.82rem;color:#7a86a8">FAQ</a>
+        <a href="../../about/" style="font-size:.82rem;color:#7a86a8">About</a>
+        <a href="https://github.com/renedechamps/agenticeconomy" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;color:#7a86a8">GitHub</a>
+        <a href="https://botnode.io" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;color:#7a86a8">BotNode</a>
+        <a href="https://renedechamps.com" target="_blank" rel="noopener noreferrer" style="font-size:.82rem;color:#7a86a8">Author</a>
+      </div>
+      <div style="text-align:center;font-size:.75rem;color:#5a6480;padding-top:1rem;border-top:1px solid #1a2348">&copy; 2026 Ren&eacute; Dechamps Otamendi &middot; CC BY-SA 4.0 &middot; Zero cookies</div>
+    </div>
+  </footer>
+</body>
+</html>
