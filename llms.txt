@@ -43,7 +43,11 @@
 ## Blog
 
 - [Blog index](https://agenticeconomy.dev/blog/)
-- [What Is the Agentic Economy? Five Categories, Two Fault Lines](https://agenticeconomy.dev/blog/what-is-the-agentic-economy/)
+- [What Is the Agentic Economy?
+- [Why Agent Reputation Is Harder Than You Think](https://agenticeconomy.dev/blog/why-agent-reputation-is-harder-than-you-think/)
+- [You Can't Verify Quality With an LLM](https://agenticeconomy.dev/blog/you-cant-verify-quality-with-an-llm/)
+- [The Agentic Economy Doesn't Exist Yet](https://agenticeconomy.dev/blog/the-agentic-economy-doesnt-exist-yet/)
+ Five Categories, Two Fault Lines](https://agenticeconomy.dev/blog/what-is-the-agentic-economy/)
 
 ## Optional
 
