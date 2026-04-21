@@ -27,6 +27,10 @@ https://agenticeconomy.us/* https://agenticeconomy.dev/:splat 301!
 # Term pages — strip .html
 /term/:slug.html /term/:slug 301
 
+# Contact page — old anchor links preserved for Digest #1
+/about-agentic-economy#contact   /contact.html                  301
+/about-agentic-economy.html#contact /contact.html               301
+
 # Legacy v1 → v3 redirects (from the prior site version)
 /faq / 301
 /quickstart /agentic-economy-101 301

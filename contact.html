@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — AgenticEconomy.dev</title>
+<meta name="description" content="Start a conversation. Advisory retainers, commissioned research, and press inquiries. One inbox, personal reply within two business days.">
+<meta name="author" content="René Dechamps Otamendi">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact — AgenticEconomy.dev">
+<meta property="og:description" content="Start a conversation. Advisory retainers, commissioned research, and press inquiries.">
+<meta property="og:url" content="https://agenticeconomy.dev/contact.html">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Contact — AgenticEconomy.dev">
+<meta name="twitter:description" content="Start a conversation. Advisory retainers, commissioned research, and press inquiries.">
+
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Outfit:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_paper_template_styles.css">
+<link rel="stylesheet" href="_contact_styles.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav class="site-nav">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">AgenticEconomy<span style="color:var(--accent)">.dev</span></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <div class="nav-menu">
+      <a href="/" class="nav-item">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-item nav-dropdown-trigger">Research <span class="arrow">▾</span></button>
+        <div class="dropdown-panel">
+          <a href="/agentic-economy-research.html">Preprints</a>
+          <a href="/agentic-economy-research.html">Research Notes</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">▾</span></button>
+        <div class="dropdown-panel">
+          <a href="/videos.html">Videos</a>
+          <a href="/podcast.html">Podcast</a>
+          <a href="/infographics.html">Infographics</a>
+        </div>
+      </div>
+      <a href="/about-agentic-economy.html" class="nav-item">About</a>
+      <a href="/contact.html" class="nav-item active">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<div class="container">
+
+  <!-- Breadcrumb -->
+  <div class="crumb">
+    <a href="/">Home</a>
+    <span class="sep">/</span>
+    Contact
+  </div>
+
+  <!-- HERO -->
+  <section class="res-hero">
+    <div class="eyebrow">Agentic Economy Research Series / Contact</div>
+    <h1>Start a <span class="accent">conversation.</span></h1>
+    <p class="lede">I read every message personally and reply within two business days. Advisory inquiries are triaged first — everything else in the order it arrives.</p>
+    <div class="divider"></div>
+  </section>
+
+  <!-- TWO-COLUMN SHELL -->
+  <section class="contact-shell">
+
+    <!-- LEFT: routing / expectations -->
+    <aside class="ct-routing">
+      <h2>What you can reach me about.</h2>
+      <p class="ct-intro">I take <strong>three advisory engagements per quarter</strong> with operators, investors, and policy teams building in agentic commerce. Standing monthly retainer, deep on taxonomy, protocol selection, and regulatory positioning. Also open to commissioned research. For press, contributions, or anything else, the same form works.</p>
+
+      <ul class="ct-lanes">
+        <li>
+          <span class="ct-tag">01</span>
+          <div>
+            <div class="ct-name">Advisory retainer — monthly</div>
+            <div class="ct-desc">Standing retainer for operators building in agentic commerce. Strategy, taxonomy, protocol selection.</div>
+          </div>
+        </li>
+        <li>
+          <span class="ct-tag">02</span>
+          <div>
+            <div class="ct-name">Commissioned research</div>
+            <div class="ct-desc">One-off papers, position studies, or market analyses for private clients. 4–8 week engagements.</div>
+          </div>
+        </li>
+        <li>
+          <span class="ct-tag">03</span>
+          <div>
+            <div class="ct-name">Research inquiry / press</div>
+            <div class="ct-desc">Journalists, academics, conference organizers. Happy to comment, co-author, or speak.</div>
+          </div>
+        </li>
+        <li>
+          <span class="ct-tag">04</span>
+          <div>
+            <div class="ct-name">Contribute a definition or protocol</div>
+            <div class="ct-desc">Spot a gap in the 51-definition corpus? Know a protocol I missed? Tell me.</div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="ct-foot">
+        <div class="ct-availability">Current availability · Q3 2026</div>
+        <div class="ct-privacy">Submissions land in one inbox. No CRM, no newsletters, no tracking pixels. See the <a href="/privacy.html">privacy note</a>.</div>
+      </div>
+    </aside>
+
+    <!-- RIGHT: form -->
+    <div class="ct-form-card">
+      <h2>Send a message.</h2>
+      <p class="ct-sub">The more specific you are, the faster I can triage. Two to five sentences is plenty — I'll ask follow-ups if I need them.</p>
+
+      <form class="contact-form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/contact-sent.html">
+
+        <!-- Netlify form name (required for programmatic submissions) -->
+        <input type="hidden" name="form-name" value="contact">
+        <!-- Honeypot -->
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="cf-name">Your name</label>
+            <input id="cf-name" type="text" name="name" required placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Your email</label>
+            <input id="cf-email" type="email" name="email" required placeholder="email@domain.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-subject">Subject</label>
+          <select id="cf-subject" name="subject">
+            <option value="Advisory retainer">Advisory retainer (monthly)</option>
+            <option value="Commissioned research">Commissioned research</option>
+            <option value="Research inquiry / press">Research inquiry / press</option>
+            <option value="Contribute a definition or protocol">Contribute a definition or protocol</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cf-message">Your message</label>
+          <textarea id="cf-message" name="message" rows="6" required placeholder="Tell me what you're working on and what you'd want from a conversation. Two to five sentences is plenty."></textarea>
+        </div>
+
+        <button type="submit" class="ct-btn">Send message →</button>
+
+        <div class="ct-form-meta">
+          Your message goes to <code>rene@renedechamps.com</code> only. Expect a reply within two business days — from the same address, written by me, not an autoresponder beyond a one-line "received" note.
+        </div>
+      </form>
+    </div>
+
+  </section>
+
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Research</h4>
+      <a href="/agentic-economy-research.html">Preprints</a>
+      <a href="/agentic-economy-research.html">Research Notes</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="/videos.html">Videos</a>
+      <a href="/podcast.html">Podcast</a>
+      <a href="/infographics.html">Infographics</a>
+    </div>
+    <div class="footer-col">
+      <h4>Ecosystem</h4>
+      <a href="https://botnode.io" target="_blank" rel="noopener">BotNode</a>
+      <a href="/taxonomy.html">Taxonomy</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="https://www.youtube.com/@agenticeconomy" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://orcid.org/0009-0007-1033-6519" target="_blank" rel="noopener">ORCID</a>
+      <a href="https://zenodo.org/communities/agentic-economy" target="_blank" rel="noopener">Zenodo</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 René Dechamps Otamendi · AgenticEconomy.dev · All research open access under CC-BY 4.0</p>
+  </div>
+</footer>
+
+<style>.nav-group.dd-grace>.dropdown,.nav-dropdown.dd-grace .dropdown-panel{display:block!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}</style><script>(function(){document.querySelectorAll('.nav-group,.nav-dropdown').forEach(function(g){var t;g.addEventListener('mouseenter',function(){clearTimeout(t);g.classList.remove('dd-grace');});g.addEventListener('mouseleave',function(){t=setTimeout(function(){g.classList.remove('dd-grace');},500);g.classList.add('dd-grace');});});})()</script>
+</body>
+</html>
