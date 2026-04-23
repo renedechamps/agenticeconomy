@@ -1375,6 +1375,7 @@ body{
       <div class="nav-dropdown">
         <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
         <div class="dropdown-panel">
+          <a href="/digest/">Monthly Digest</a>
           <a href="agentic-economy-glossary.html">Glossary</a>
           <a href="agentic-economy-quiz.html">Quiz</a>
           <a href="agentic-economy-infographic.html">Infographic</a>
@@ -1707,6 +1708,7 @@ function renderGrid(){
     entries.forEach((d,i)=>{
       const card=document.createElement('div');
       card.className='card';
+      card.id=d.id;
       card.dataset.cat=d.cat;
       card.style.animationDelay=(i*0.04)+'s';
       card.innerHTML=`
@@ -1963,6 +1965,7 @@ document.addEventListener('click', (e) => {
     </div>
     <div class="footer-col">
       <h4>Resources</h4>
+      <a href="/digest/">Monthly Digest</a>
       <a href="agentic-economy-glossary.html">Glossary</a>
       <a href="agentic-economy-quiz.html">Quiz</a>
       <a href="agentic-economy-infographic.html">Infographic</a>
