@@ -39,6 +39,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_subscribe_styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -586,6 +587,7 @@
           <div class="nav-dropdown">
             <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
             <div class="dropdown-panel">
+              <a href="/digest/">Monthly Digest</a>
               <a href="agentic-economy-glossary.html">Glossary</a>
               <a href="agentic-economy-quiz.html">Quiz</a>
               <a href="agentic-economy-infographic.html">Infographic</a>
@@ -639,6 +641,7 @@
     </div>
     <div class="footer-col">
       <h4>Resources</h4>
+      <a href="/digest/">Monthly Digest</a>
       <a href="agentic-economy-glossary.html">Glossary</a>
       <a href="agentic-economy-quiz.html">Quiz</a>
       <a href="agentic-economy-infographic.html">Infographic</a>
@@ -646,9 +649,9 @@
     </div>
     <div class="footer-col">
       <h4>Tools</h4>
-      <a href="#">Sandbox <span class="badge-soon">Soon</span></a>
-      <a href="#">Validators <span class="badge-soon">Soon</span></a>
-      <a href="#">Benchmark <span class="badge-soon">Soon</span></a>
+      <a href="/sandbox">Sandbox <span class="badge-soon">Soon</span></a>
+      <a href="/validators">Validators <span class="badge-soon">Soon</span></a>
+      <a href="/benchmark">Benchmark <span class="badge-soon">Soon</span></a>
     </div>
     <div class="footer-col">
       <h4>Project</h4>
@@ -909,6 +912,21 @@
                         <a href="${resultURL}" class="result-btn primary">Explore all Category ${info.letter} definitions →</a>
                         <button class="result-btn" onclick="copyToClipboard('${shareText}')">Share your result</button>
                     </div>
+                </div>
+
+                <div class="quiz-cta" id="quiz-email-gate">
+                    <h2>Get a reading list for <span class="category-name">${info.name}</span>.</h2>
+                    <p>The papers, the open protocols, and the open questions most relevant to your category &mdash; one email, no follow-up unless you ask.</p>
+                    <form name="quiz-subscribe" method="POST" netlify netlify-honeypot="bot-field" action="/subscribe-confirmed.html" class="form-inline">
+                        <input type="hidden" name="form-name" value="quiz-subscribe">
+                        <input type="hidden" name="category" value="${winner}">
+                        <input type="hidden" name="category_name" value="${info.name}">
+                        <p style="display:none"><label>Don&#x2019;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+                        <label style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)" for="quiz-email-input">Your email</label>
+                        <input id="quiz-email-input" name="email" type="email" required placeholder="you@domain.com" autocomplete="email" />
+                        <button type="submit">Send me the list</button>
+                    </form>
+                    <p class="quiz-cta-meta">Or <a href="#full-result" onclick="document.getElementById('quiz-email-gate').style.display='none';return false;">skip and stay on this result</a>.</p>
                 </div>
 
                 <div class="retake-section">

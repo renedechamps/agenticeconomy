@@ -39,6 +39,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_subscribe_styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -958,6 +959,7 @@
       <div class="nav-dropdown">
         <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
         <div class="dropdown-panel">
+          <a href="/digest/">Monthly Digest</a>
           <a href="agentic-economy-glossary.html">Glossary</a>
           <a href="agentic-economy-quiz.html">Quiz</a>
           <a href="agentic-economy-infographic.html">Infographic</a>
@@ -978,14 +980,21 @@
     <div class="hero-container">
       <!-- Left Column -->
       <div class="hero-left fade-in">
-        <span class="label">Research Hub</span>
-        <h1>Mapping the agentic economy</h1>
-        <p class="hero-subtext">57 definitions surveyed. 6 categories identified. 2 fault lines discovered. 4 preprints published. The most comprehensive map of agent commerce protocols.</p>
+        <span class="label">Independent research hub</span>
+        <p class="audience-signal">For researchers, operators, investors and policy teams building in agentic commerce.</p>
+        <h1>Before you build for the agentic economy, see who else is &mdash; and where the fault lines are.</h1>
+        <p class="hero-subtext">57 definitions catalogued. 17 protocols indexed. 4 published papers. One independent map, updated every Monday.</p>
         <div class="hero-cta">
-          <a href="agentic-economy-research.html" class="button">Explore the Research</a>
-          <a href="agentic-economy-101.html" class="hero-secondary">Start with the 101 →</a>
+          <a href="agentic-economy-101.html" class="button">
+            Start with the 101
+            <span class="meta">10&nbsp;min read</span>
+          </a>
+          <a href="agentic-economy-research.html" class="hero-secondary">
+            or jump to the four papers
+            <span class="meta">~2&nbsp;hrs total</span>
+          </a>
         </div>
-        <div class="hero-metadata">CC BY-SA 4.0 · 3 published papers · Zero cookies · Zero trackers</div>
+        <div class="hero-metadata">CC BY-SA 4.0 · 4 published papers · Zero cookies · Zero trackers</div>
       </div>
 
       <!-- Right Column: SVG -->
@@ -1057,8 +1066,8 @@
           <path d="M4 3H6V18H4V3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M18 3H20V18H18V3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <div class="stat-number">51+</div>
-        <div class="stat-label">Definitions surveyed</div>
+        <div class="stat-number">57</div>
+        <div class="stat-label">Definitions catalogued</div>
       </div>
 
       <div class="stat-item">
@@ -1089,8 +1098,8 @@
           <path d="M4 10H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M10 4V20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <div class="stat-number">3</div>
-        <div class="stat-label">Preprints</div>
+        <div class="stat-number">4</div>
+        <div class="stat-label">Papers published</div>
       </div>
     </div>
   </div>
@@ -1238,6 +1247,33 @@
   </div>
 </section>
 
+<!-- Subscribe band -->
+<div class="footer-subscribe-band">
+  <div class="inner">
+    <aside class="subscribe-inline" aria-label="Subscribe to the Monday Brief">
+      <p class="copy">
+        <strong>The Monday Brief.</strong>
+        One short note every Monday. New definitions, new protocols, new fault lines. No tracking, unsubscribe in one click.
+      </p>
+      <form
+        name="subscribe-footer"
+        method="POST"
+        netlify
+        netlify-honeypot="bot-field"
+        action="/subscribe-confirmed.html"
+        class="form-inline"
+      >
+        <input type="hidden" name="form-name" value="subscribe-footer">
+        <p style="display:none"><label>Don&#x2019;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <label class="visually-hidden" for="email-footer">Your email</label>
+        <input id="email-footer" name="email" type="email" required placeholder="you@domain.com" autocomplete="email" />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="meta"><a href="/subscribe">See what&#x2019;s in it &rarr;</a></p>
+    </aside>
+  </div>
+</div>
+
 <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-grid">
@@ -1250,6 +1286,7 @@
     </div>
     <div class="footer-col">
       <h4>Resources</h4>
+      <a href="/digest/">Monthly Digest</a>
       <a href="agentic-economy-glossary.html">Glossary</a>
       <a href="agentic-economy-quiz.html">Quiz</a>
       <a href="agentic-economy-infographic.html">Infographic</a>
@@ -1257,9 +1294,9 @@
     </div>
     <div class="footer-col">
       <h4>Tools</h4>
-      <a href="#">Sandbox <span class="badge-soon">Soon</span></a>
-      <a href="#">Validators <span class="badge-soon">Soon</span></a>
-      <a href="#">Benchmark <span class="badge-soon">Soon</span></a>
+      <a href="/sandbox">Sandbox <span class="badge-soon">Soon</span></a>
+      <a href="/validators">Validators <span class="badge-soon">Soon</span></a>
+      <a href="/benchmark">Benchmark <span class="badge-soon">Soon</span></a>
     </div>
     <div class="footer-col">
       <h4>Project</h4>

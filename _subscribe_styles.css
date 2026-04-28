@@ -1,0 +1,198 @@
+/* ============================================================
+   Subscribe styles — shared across all pages
+   Used by: footer band, blog posts, 101, paper pages, quiz
+   ============================================================ */
+
+/* ── Inline widget ── */
+.subscribe-inline {
+  margin: 56px 0 24px;
+  padding: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.subscribe-inline .copy { margin: 0; color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+.subscribe-inline .copy strong { color: var(--text-primary); font-family: Syne, 'Outfit', sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+.subscribe-inline .form-inline { display: flex; gap: 10px; flex-wrap: wrap; }
+.subscribe-inline input[type="email"] {
+  flex: 1 1 240px;
+  background: var(--bg-deep);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  transition: border-color .18s, box-shadow .18s;
+}
+.subscribe-inline input[type="email"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+.subscribe-inline input[type="email"]::placeholder { color: rgba(142,153,184,.6); }
+.subscribe-inline button {
+  background: var(--accent);
+  color: #062417;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background .18s, transform .15s;
+  white-space: nowrap;
+}
+.subscribe-inline button:hover { background: #2edabf; transform: translateY(-1px); }
+.subscribe-inline button:active { transform: none; }
+.subscribe-inline .meta { margin: 0; font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+.subscribe-inline .meta a { color: var(--text-muted); border-bottom: 1px dotted currentColor; text-decoration: none; }
+.subscribe-inline .meta a:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Submit status (inline widget) */
+.subscribe-status {
+  font-size: 13px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  display: none;
+  margin-top: 4px;
+}
+.subscribe-status.ok { display: block; background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-dim); }
+.subscribe-status.err { display: block; background: rgba(245,158,11,.1); color: var(--warm); border: 1px solid rgba(245,158,11,.4); }
+
+/* Visually hidden (a11y) */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* ── CTA reading-time meta ── */
+.button .meta, .btn .meta {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+  line-height: 1;
+}
+.hero-secondary .meta {
+  display: inline;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+/* ── Audience signal (hero) ── */
+.audience-signal {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+  margin-top: -0.4rem;
+  line-height: 1.5;
+}
+
+/* ── Footer subscribe band ── */
+.footer-subscribe-band {
+  background: var(--bg-base);
+  border-top: 1px solid var(--border);
+  padding: 0 0 0;
+}
+.footer-subscribe-band .inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+.footer-subscribe-band .subscribe-inline {
+  margin: 0;
+  border-color: var(--border-light);
+}
+
+/* ── Quiz email gate ── */
+.quiz-cta {
+  margin-top: 28px;
+  padding: 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+.quiz-cta h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+.quiz-cta .category-name { color: var(--accent); }
+.quiz-cta p { font-size: 14px; color: var(--text-secondary); margin: 0 0 16px; line-height: 1.6; }
+.quiz-cta .form-inline { display: flex; gap: 10px; flex-wrap: wrap; }
+.quiz-cta input[type="email"] {
+  flex: 1 1 220px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+}
+.quiz-cta input[type="email"]:focus { outline: none; border-color: var(--accent); }
+.quiz-cta button[type="submit"] {
+  background: var(--accent); color: #062417; border: 0;
+  border-radius: 10px; padding: 12px 18px;
+  font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15px; cursor: pointer;
+}
+.quiz-cta button[type="submit"]:hover { background: #2edabf; }
+.quiz-cta .quiz-cta-meta { margin: 10px 0 0; font-size: 12px; color: var(--text-muted); }
+.quiz-cta .quiz-cta-meta a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Teaser / waitlist card ── */
+.waitlist-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 560px;
+}
+.waitlist-card h2 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+.waitlist-card p { font-size: 14px; color: var(--text-muted); margin: 0 0 20px; line-height: 1.6; }
+.waitlist-form { display: flex; gap: 10px; flex-wrap: wrap; }
+.waitlist-form input[type="email"] {
+  flex: 1 1 220px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  padding: 13px 16px;
+  color: var(--text-primary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  transition: border-color .18s;
+}
+.waitlist-form input[type="email"]:focus { outline: none; border-color: var(--accent); }
+.waitlist-form button {
+  background: var(--accent); color: #062417; border: 0;
+  border-radius: 10px; padding: 13px 20px;
+  font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 15px; cursor: pointer;
+  transition: background .18s, transform .15s;
+}
+.waitlist-form button:hover { background: #2edabf; transform: translateY(-1px); }
+.waitlist-status {
+  margin-top: 14px; font-size: 13px; padding: 10px 14px; border-radius: 8px; display: none;
+}
+.waitlist-status.ok { display: block; background: var(--accent-glow); color: var(--accent); border: 1px solid var(--accent-dim); }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .subscribe-inline button,
+  .waitlist-form button { transition: none; transform: none; }
+}

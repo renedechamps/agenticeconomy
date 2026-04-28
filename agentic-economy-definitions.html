@@ -1394,7 +1394,7 @@ body{
 <!-- ══ Hero ══ -->
 <section class="hero">
   <div class="count-wrapper">
-    <span class="count" id="hero-count">0</span>
+    <span class="count" id="hero-count">57</span>
     <span class="count-label">definitions</span>
   </div>
   <h1>The <em>Agentic Economy</em>,<br>Defined by Everyone</h1>
@@ -1623,8 +1623,13 @@ const CAT_COUNTS={A:14,B:8,Ccr:11,Cs:1,D:7,E:10};
 // ══ Hero count animation ══
 (function(){
   const el=document.getElementById('hero-count');
-  let n=0;const target=51;const step=Math.ceil(target/30);
-  const iv=setInterval(()=>{n=Math.min(n+step,target);el.textContent=n;if(n>=target)clearInterval(iv)},40);
+  const target=57;
+  el.textContent=target; // static fallback — never shows 0
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  let n=Math.max(0,target-4);
+  el.textContent=n;
+  const tick=()=>{n+=1;el.textContent=n;if(n<target)requestAnimationFrame(tick);};
+  requestAnimationFrame(tick);
 })();
 
 // ══ Distribution bar ══
@@ -1632,7 +1637,7 @@ const CAT_COUNTS={A:14,B:8,Ccr:11,Cs:1,D:7,E:10};
   const bar=document.getElementById('distro-bar');
   const labels=document.getElementById('distro-labels');
   CATS.forEach(c=>{
-    const pct=(CAT_COUNTS[c]/51*100);
+    const pct=(CAT_COUNTS[c]/57*100);
     const seg=document.createElement('div');
     seg.className='seg';
     seg.style.cssText=`width:${pct}%;background:${CAT[c].hex};`;
@@ -1973,9 +1978,9 @@ document.addEventListener('click', (e) => {
     </div>
     <div class="footer-col">
       <h4>Tools</h4>
-      <a href="#">Sandbox <span class="badge-soon">Soon</span></a>
-      <a href="#">Validators <span class="badge-soon">Soon</span></a>
-      <a href="#">Benchmark <span class="badge-soon">Soon</span></a>
+      <a href="/sandbox">Sandbox <span class="badge-soon">Soon</span></a>
+      <a href="/validators">Validators <span class="badge-soon">Soon</span></a>
+      <a href="/benchmark">Benchmark <span class="badge-soon">Soon</span></a>
     </div>
     <div class="footer-col">
       <h4>Project</h4>

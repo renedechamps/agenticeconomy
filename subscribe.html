@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Monday Brief — AgenticEconomy.dev</title>
+  <meta name="description" content="A weekly research note from AgenticEconomy.dev. New definitions, new protocols, new fault lines. Around 500 words. No tracking. Unsubscribe in one click." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Monday Brief — AgenticEconomy.dev" />
+  <meta property="og:description" content="One short note every Monday on the agentic economy. New definitions, new protocols, new fault lines. Around 500 words. No tracking." />
+  <meta property="og:url" content="https://agenticeconomy.dev/subscribe" />
+  <meta property="og:site_name" content="AgenticEconomy.dev" />
+  <meta property="og:image" content="https://agenticeconomy.dev/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Monday Brief — AgenticEconomy.dev" />
+  <meta name="twitter:description" content="One short note every Monday on the agentic economy. Around 500 words. No tracking." />
+  <meta name="twitter:image" content="https://agenticeconomy.dev/og-image.png" />
+
+  <link rel="canonical" href="https://agenticeconomy.dev/subscribe" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400&display=swap" />
+
+  <style>
+    :root {
+      --accent: #34d399;
+      --accent-dim: #1a6b4d;
+      --accent-glow: rgba(52,211,153,0.12);
+      --accent-glow-strong: rgba(52,211,153,0.25);
+      --bg-base: #080d1c;
+      --bg-card: #141a38;
+      --bg-deep: #04060e;
+      --bg-surface: #0f1530;
+      --border: #1a2348;
+      --border-light: #233060;
+      --ease-out: cubic-bezier(0.16,1,0.3,1);
+      --text-muted: #8e99b8;
+      --text-primary: #e8ecf4;
+      --text-secondary: #a0a9c0;
+      --warm: #f59e0b;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: Montserrat, 'Outfit', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--text-primary); text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    /* Nav */
+    .site-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 9999;
+      background: rgba(4,6,14,0.80); backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      height: 56px; display: flex; align-items: center; padding: 0 2rem;
+    }
+    .nav-container {
+      width: 100%; max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand {
+      font-family: Syne, sans-serif; font-weight: 700; font-size: 1.1rem;
+      color: var(--text-primary); white-space: nowrap;
+    }
+    .nav-brand:hover { color: var(--accent); }
+    .nav-back { font-size: 14px; color: var(--text-muted); }
+    .nav-back:hover { color: var(--accent); }
+
+    /* Layout */
+    main { max-width: 720px; margin: 0 auto; padding: 96px 28px 96px; }
+
+    .eyebrow {
+      font-family: Montserrat, sans-serif; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      font-size: 12px; color: var(--accent); margin: 0 0 18px;
+    }
+    h1 {
+      font-family: Syne, sans-serif; font-weight: 800;
+      letter-spacing: -0.025em;
+      font-size: clamp(40px, 6.4vw, 62px);
+      line-height: 1.04; margin: 0 0 22px;
+    }
+    .lede {
+      font-size: 18px; color: var(--text-secondary);
+      max-width: 56ch; margin: 0 0 36px; line-height: 1.6;
+    }
+
+    /* Form card */
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px;
+      box-shadow: 0 1px 0 rgba(255,255,255,.02), 0 30px 60px -30px rgba(0,0,0,.7);
+    }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 18px; }
+    label {
+      display: block; font-size: 13px; font-weight: 500;
+      color: var(--text-muted); margin: 0 0 6px; letter-spacing: 0.02em;
+    }
+    input[type="email"] {
+      width: 100%; background: var(--bg-deep);
+      border: 1px solid var(--border-light); border-radius: 10px;
+      padding: 14px 16px; color: var(--text-primary);
+      font: inherit; font-size: 16px;
+      transition: border-color .18s var(--ease-out), box-shadow .18s var(--ease-out);
+    }
+    input[type="email"]:focus {
+      outline: none; border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+
+    /* Topic chips */
+    fieldset { border: none; padding: 0; margin: 0; }
+    legend { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chips label {
+      cursor: pointer; margin: 0; padding: 9px 14px;
+      border-radius: 999px; border: 1px solid var(--border-light);
+      color: var(--text-secondary); font-size: 13px;
+      transition: all .18s var(--ease-out); user-select: none;
+    }
+    .chips input[type="checkbox"] { position: absolute; opacity: 0; pointer-events: none; }
+    .chips input:checked + span { /* handled via label selection */ }
+    .chips label:has(input:checked) {
+      background: var(--accent-glow); border-color: var(--accent); color: var(--accent);
+    }
+    .chips label:hover { color: var(--text-primary); border-color: var(--border-light); }
+
+    /* Submit */
+    .submit-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    button[type="submit"] {
+      background: var(--accent); color: #062417; border: 0;
+      border-radius: 10px; padding: 14px 22px;
+      font: inherit; font-weight: 600; font-size: 15px; cursor: pointer;
+      transition: transform .18s var(--ease-out), box-shadow .18s var(--ease-out);
+    }
+    button[type="submit"]:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 30px -10px var(--accent-glow-strong);
+    }
+    .submit-meta { font-size: 13px; color: var(--text-muted); }
+
+    /* Honeypot */
+    .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+    /* Sections */
+    .promise {
+      margin-top: 56px;
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    }
+    .promise .item {
+      background: var(--bg-surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 22px;
+    }
+    .promise h3 {
+      font-family: Syne, sans-serif; font-weight: 700; font-size: 17px;
+      margin: 0 0 8px; letter-spacing: -0.01em;
+    }
+    .promise p { margin: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.55; }
+
+    .privacy {
+      margin-top: 40px; padding: 22px 24px;
+      background: var(--bg-surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent); border-radius: 12px;
+    }
+    .privacy h2 { font-family: Syne, sans-serif; font-size: 18px; margin: 0 0 8px; }
+    .privacy p { margin: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    .signature {
+      margin-top: 56px; display: flex; gap: 18px; align-items: flex-start;
+    }
+    .signature .avatar {
+      width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%);
+      display: grid; place-items: center;
+      color: #062417; font-family: Syne, sans-serif; font-weight: 800; font-size: 22px;
+    }
+    .signature p { margin: 0; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .signature p strong { color: var(--text-primary); font-weight: 600; }
+
+    footer {
+      max-width: 720px; margin: 80px auto 56px; padding: 0 28px;
+      font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em;
+      display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between;
+      border-top: 1px solid var(--border); padding-top: 28px;
+    }
+    footer a { color: var(--text-muted); }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 640px) {
+      main { padding: 80px 22px 80px; }
+      .promise { grid-template-columns: 1fr; gap: 12px; }
+      .card { padding: 22px; }
+      h1 { font-size: clamp(34px, 9vw, 48px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Primary">
+  <div class="nav-container">
+    <a class="nav-brand" href="/">agenticeconomy.dev</a>
+    <a class="nav-back" href="/">&#8592; Back to the research hub</a>
+  </div>
+</nav>
+
+<main>
+  <p class="eyebrow">The Monday Brief</p>
+  <h1>One short note. Every Monday.</h1>
+  <p class="lede">
+    New definitions catalogued, new protocols indexed, new fault lines exposed. Around 500 words. No tracking pixels, no cookies, no upsells. Unsubscribe in one click.
+  </p>
+
+  <form
+    class="card"
+    id="subscribe-form"
+    name="subscribe"
+    method="POST"
+    netlify
+    netlify-honeypot="bot-field"
+    action="/subscribe-confirmed.html"
+  >
+    <input type="hidden" name="form-name" value="subscribe" />
+    <div class="hp" aria-hidden="true">
+      <label>Don&#x2019;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+    </div>
+
+    <div class="form-grid">
+      <div>
+        <label for="sub-email">Your email</label>
+        <input id="sub-email" name="email" type="email" required autocomplete="email" placeholder="you@domain.com" />
+      </div>
+
+      <fieldset>
+        <legend>What do you want to hear about?</legend>
+        <div class="chips" role="group" aria-label="Topics">
+          <label>
+            <input type="checkbox" name="topics" value="weekly-brief" checked />
+            <span>Weekly research brief</span>
+          </label>
+          <label>
+            <input type="checkbox" name="topics" value="paper-alerts" />
+            <span>New paper alerts</span>
+          </label>
+          <label>
+            <input type="checkbox" name="topics" value="advisory" />
+            <span>Advisory openings</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="submit-row">
+        <button type="submit">Subscribe</button>
+        <span class="submit-meta">You&#x2019;ll get a confirmation note. Unsubscribe in one click, anytime.</span>
+      </div>
+    </div>
+  </form>
+
+  <section class="promise" aria-label="What you get">
+    <div class="item">
+      <h3>~500 words</h3>
+      <p>Short by design. The brief takes about three minutes to read on a Monday morning.</p>
+    </div>
+    <div class="item">
+      <h3>Three signals</h3>
+      <p>What was added to the corpus, what changed in protocol-land, and the open question of the week.</p>
+    </div>
+    <div class="item">
+      <h3>No noise</h3>
+      <p>Zero referral pixels, no third-party tracking, no follow-up sequences. One email a week.</p>
+    </div>
+  </section>
+
+  <section class="privacy" aria-label="Privacy commitment">
+    <h2>Privacy commitment</h2>
+    <p>Your email is stored in a Netlify Forms submission, visible only to the site owner. It is never shared, sold, or matched against advertising IDs. The Monday Brief contains no tracking pixels, no UTM link rewrites, and no link wrappers. If you want to be removed, one email to <a href="mailto:rene@renedechamps.com">rene@renedechamps.com</a> and it&#x2019;s done.</p>
+  </section>
+
+  <section class="signature" aria-label="About the author">
+    <div class="avatar" aria-hidden="true">R</div>
+    <p>
+      Written and sent by <strong>René Dechamps Otamendi</strong>, founder of AgenticEconomy.dev. Every brief is hand-written. If you reply, I read it.<br />
+      ORCID 0009-0007-1033-6519 &middot; <a href="/about-agentic-economy">About</a> &middot; <a href="/contact">Contact</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <span>&copy; 2026 René Dechamps Otamendi &middot; CC BY-SA 4.0</span>
+  <span>
+    <a href="/privacy">Privacy</a> &middot;
+    <a href="/terms">Terms</a> &middot;
+    <a href="/licensing">Licensing</a>
+  </span>
+</footer>
+
+</body>
+</html>

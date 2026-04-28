@@ -39,6 +39,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="_subscribe_styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -266,6 +267,7 @@
       <div class="nav-dropdown">
         <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
         <div class="dropdown-panel">
+          <a href="/digest/">Monthly Digest</a>
           <a href="agentic-economy-glossary.html">Glossary</a>
           <a href="agentic-economy-quiz.html">Quiz</a>
           <a href="agentic-economy-infographic.html">Infographic</a>
@@ -288,7 +290,7 @@
       <p>Original research on how autonomous agents will transact, settle, and build trust — covering reputation, taxonomy, the Oracle Problem, and the diagnostics of a pre-infrastructural field.</p>
       <div class="hero-meta">
         <span class="badge"><span class="badge-dot"></span>Open access · CC BY-SA 4.0</span>
-        <span class="badge">Zenodo DOIs</span>
+        <span class="badge">Zenodo DOI<span style="text-transform:none">s</span></span>
         <span class="badge">ORCID 0009-0007-1033-6519</span>
       </div>
     </div>
@@ -374,6 +376,25 @@
     </div>
   </section>
 
+  <section class="companion" style="padding-top:0">
+    <div class="container">
+      <aside class="subscribe-inline" aria-label="Subscribe to the Monday Brief">
+        <p class="copy">
+          <strong>The Monday Brief.</strong>
+          New papers, new definitions, new fault lines. One note every Monday. No tracking, unsubscribe in one click.
+        </p>
+        <form name="subscribe-research" method="POST" netlify netlify-honeypot="bot-field" action="/subscribe-confirmed.html" class="form-inline">
+          <input type="hidden" name="form-name" value="subscribe-research">
+          <p style="display:none"><label>Don&#x2019;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <label class="visually-hidden" for="email-research">Your email</label>
+          <input id="email-research" name="email" type="email" required placeholder="you@domain.com" autocomplete="email" />
+          <button type="submit">Subscribe</button>
+        </form>
+        <p class="meta"><a href="/subscribe">See what&#x2019;s in it &rarr;</a></p>
+      </aside>
+    </div>
+  </section>
+
   <section class="companion">
     <div class="container">
       <h3>Companion resources</h3>
@@ -413,6 +434,7 @@
     </div>
     <div class="footer-col">
       <h4>Resources</h4>
+      <a href="/digest/">Monthly Digest</a>
       <a href="agentic-economy-glossary.html">Glossary</a>
       <a href="agentic-economy-quiz.html">Quiz</a>
       <a href="agentic-economy-infographic.html">Infographic</a>

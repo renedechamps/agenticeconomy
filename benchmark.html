@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agentic Economy Validators — Coming Q3 2026 · Agentic Economy</title>
-<meta name="description" content="Validator network for autonomous agent reputation. Coming Q3 2026. Research and specification.">
+<title>Agentic Economy Benchmark — Coming Q3 2026 · Agentic Economy</title>
+<meta name="description" content="A protocol benchmarking tool for comparing agent commerce protocols by latency, settlement finality, and cost. Coming Q3 2026.">
 <meta name="author" content="Rene Dechamps Otamendi">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-<link rel="canonical" href="https://agenticeconomy.dev/validators">
+<link rel="canonical" href="https://agenticeconomy.dev/benchmark">
 <meta name="theme-color" content="#04060e">
 <meta name="color-scheme" content="dark">
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Agentic Economy Validators — Coming Q3 2026">
-<meta property="og:description" content="Validator network for autonomous agent reputation. Coming Q3 2026. Research and specification.">
-<meta property="og:url" content="https://agenticeconomy.dev/validators">
+<meta property="og:title" content="Agentic Economy Benchmark — Coming Q3 2026">
+<meta property="og:description" content="A protocol benchmarking tool for comparing agent commerce protocols by latency, settlement finality, and cost. Coming Q3 2026.">
+<meta property="og:url" content="https://agenticeconomy.dev/benchmark">
 <meta property="og:image" content="https://agenticeconomy.dev/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -27,8 +27,8 @@
 <meta property="article:modified_time" content="2026-04-15T00:00:00Z">
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Agentic Economy Validators — Coming Q3 2026">
-<meta name="twitter:description" content="Validator network for autonomous agent reputation. Coming Q3 2026. Research and specification.">
+<meta name="twitter:title" content="Agentic Economy Benchmark — Coming Q3 2026">
+<meta name="twitter:description" content="A protocol benchmarking tool for comparing agent commerce protocols by latency, settlement finality, and cost. Coming Q3 2026.">
 <meta name="twitter:image" content="https://agenticeconomy.dev/og-image.png">
 <meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
 <!-- Feed -->
@@ -67,10 +67,10 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://agenticeconomy.dev/validators#webpage",
-  "url": "https://agenticeconomy.dev/validators",
-  "name": "Agentic Economy Validators — Coming Q3 2026",
-  "description": "Validator network for autonomous agent reputation. Coming Q3 2026. Research and specification.",
+  "@id": "https://agenticeconomy.dev/benchmark#webpage",
+  "url": "https://agenticeconomy.dev/benchmark",
+  "name": "Agentic Economy Benchmark — Coming Q3 2026",
+  "description": "A protocol benchmarking tool for comparing agent commerce protocols by latency, settlement finality, and cost. Coming Q3 2026.",
   "isPartOf": {
     "@id": "https://agenticeconomy.dev/#website"
   },
@@ -357,7 +357,7 @@
       display: inline-block;
     }
 
-    .shield-icon {
+    .terminal-icon {
       width: 120px;
       height: 120px;
       stroke: var(--accent);
@@ -507,20 +507,30 @@
   <!-- Main Content -->
   <div class="page-container">
     <div class="coming-soon-label">Coming Soon</div>
-    <h1>Validators</h1>
-    <p class="subtext">Open-source validators for agent transaction messages. Check VMP-1.0 compliance, verify signatures, validate reputation claims.</p>
+    <h1>Benchmark</h1>
+    <p class="subtext">Compare agent commerce protocols by latency, settlement finality, and cost per transaction. Run standardized tests across the 17 protocols in the corpus.</p>
 
-    <svg class="svg-illustration" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-      <!-- Shield background -->
-      <path d="M 60 10 L 90 25 L 90 60 Q 90 85 60 105 Q 30 85 30 60 L 30 25 Z" class="shield-icon" />
-      <!-- Checkmark inside shield -->
-      <path d="M 45 60 L 55 70 L 75 50" stroke="var(--accent)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <svg class="svg-illustration" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" width="120" height="120">
+      <!-- Bar chart background -->
+      <rect x="10" y="10" width="100" height="100" rx="6" stroke="var(--accent)" stroke-width="2" fill="none" opacity="0.3" />
+      <!-- Baseline -->
+      <line x1="18" y1="95" x2="110" y2="95" stroke="var(--accent)" stroke-width="1.5" opacity="0.5" />
+      <!-- Vertical axis -->
+      <line x1="18" y1="18" x2="18" y2="95" stroke="var(--accent)" stroke-width="1.5" opacity="0.5" />
+      <!-- Bar 1 (short) -->
+      <rect x="26" y="78" width="12" height="17" fill="var(--accent)" opacity="0.5" rx="1" />
+      <!-- Bar 2 (medium) -->
+      <rect x="44" y="65" width="12" height="30" fill="var(--accent)" opacity="0.65" rx="1" />
+      <!-- Bar 3 (tall) -->
+      <rect x="62" y="48" width="12" height="47" fill="var(--accent)" opacity="0.8" rx="1" />
+      <!-- Bar 4 (tallest) -->
+      <rect x="80" y="30" width="12" height="65" fill="var(--accent)" opacity="1" rx="1" />
     </svg>
 
     <div class="email-prompt">
       <p>Join the waitlist &mdash; one email when it&#x2019;s ready, nothing else.</p>
-      <form name="waitlist-validators" method="POST" netlify netlify-honeypot="bot-field" action="/subscribe-confirmed.html" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px">
-        <input type="hidden" name="form-name" value="waitlist-validators">
+      <form name="waitlist-benchmark" method="POST" netlify netlify-honeypot="bot-field" action="/subscribe-confirmed.html" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px">
+        <input type="hidden" name="form-name" value="waitlist-benchmark">
         <p style="display:none"><label>Don&#x2019;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <input type="email" name="email" required placeholder="you@domain.com" autocomplete="email" style="flex:1 1 200px;max-width:280px;background:var(--bg-card);border:1px solid var(--border-light);border-radius:8px;padding:11px 14px;color:var(--text-primary);font:inherit;font-size:14px;">
         <button type="submit" class="email-link" style="cursor:pointer;border:none;font:inherit;font-size:14px;white-space:nowrap">Join waitlist</button>

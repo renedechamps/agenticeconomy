@@ -503,6 +503,7 @@
         <div class="nav-dropdown">
           <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
           <div class="dropdown-panel">
+            <a href="/digest/">Monthly Digest</a>
             <a href="agentic-economy-glossary.html">Glossary</a>
             <a href="agentic-economy-quiz.html">Quiz</a>
             <a href="agentic-economy-infographic.html">Infographic</a>
@@ -540,8 +541,13 @@
     </svg>
 
     <div class="email-prompt">
-      <p>Want early access?</p>
-      <a href="/about-agentic-economy#contact" class="email-link">Request Access</a>
+      <p>Join the waitlist &mdash; one email when it&#x2019;s ready, nothing else.</p>
+      <form name="waitlist-sandbox" method="POST" netlify netlify-honeypot="bot-field" action="/subscribe-confirmed.html" style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px">
+        <input type="hidden" name="form-name" value="waitlist-sandbox">
+        <p style="display:none"><label>Don&#x2019;t fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <input type="email" name="email" required placeholder="you@domain.com" autocomplete="email" style="flex:1 1 200px;max-width:280px;background:var(--bg-card);border:1px solid var(--border-light);border-radius:8px;padding:11px 14px;color:var(--text-primary);font:inherit;font-size:14px;">
+        <button type="submit" class="email-link" style="cursor:pointer;border:none;font:inherit;font-size:14px;white-space:nowrap">Join waitlist</button>
+      </form>
     </div>
 
     <p style="margin-top: 40px; color: var(--text-muted); font-size: 14px;">Expected: Q3 2026</p>
@@ -559,6 +565,7 @@
       </div>
       <div class="footer-col">
         <h4>Resources</h4>
+        <a href="/digest/">Monthly Digest</a>
         <a href="agentic-economy-glossary.html">Glossary</a>
         <a href="agentic-economy-quiz.html">Quiz</a>
         <a href="agentic-economy-infographic.html">Infographic</a>
@@ -566,9 +573,9 @@
       </div>
       <div class="footer-col">
         <h4>Tools</h4>
-        <a href="sandbox.html">Sandbox <span class="badge-soon">Soon</span></a>
-        <a href="validators.html">Validators <span class="badge-soon">Soon</span></a>
-        <a href="#">Benchmark <span class="badge-soon">Soon</span></a>
+        <a href="/sandbox">Sandbox <span class="badge-soon">Soon</span></a>
+        <a href="/validators">Validators <span class="badge-soon">Soon</span></a>
+        <a href="/benchmark">Benchmark <span class="badge-soon">Soon</span></a>
       </div>
       <div class="footer-col">
         <h4>Project</h4>

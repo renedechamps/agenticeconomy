@@ -20,6 +20,9 @@ https://agenticeconomy.us/* https://agenticeconomy.dev/:splat 301!
 /embed-demo.html /embed-demo 301
 /sandbox.html /sandbox 301
 /validators.html /validators 301
+/benchmark.html /benchmark 301
+/subscribe.html /subscribe 301
+/subscribe-confirmed.html /subscribe-confirmed 301
 /field-reports.html /field-reports 301
 
 # Definition pages — strip .html
