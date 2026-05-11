@@ -5,30 +5,30 @@ https://agenticeconomy.us/* https://agenticeconomy.dev/:splat 301!
 
 # Clean URLs — strip .html extension
 /index.html / 301
-/digest/001-april-2026.html /digest/001-april-2026 301
-/agentic-economy-101.html /agentic-economy-101 301
-/agentic-economy-definitions.html /agentic-economy-definitions 301
-/agentic-economy-timeline.html /agentic-economy-timeline 301
-/agentic-economy-protocols.html /agentic-economy-protocols 301
-/agentic-economy-quiz.html /agentic-economy-quiz 301
-/agentic-economy-glossary.html /agentic-economy-glossary 301
-/agentic-economy-infographic.html /agentic-economy-infographic 301
-/agentic-economy-research.html /agentic-economy-research 301
-/ask-agentic-economy.html /ask-agentic-economy 301
-/about-agentic-economy.html /about-agentic-economy 301
-/compare.html /compare 301
-/embed-demo.html /embed-demo 301
-/sandbox.html /sandbox 301
-/validators.html /validators 301
-/benchmark.html /benchmark 301
-/subscribe.html /subscribe 301
-/subscribe-confirmed.html /subscribe-confirmed 301
-/field-reports.html /field-reports 301
-/privacy.html /privacy 301
-/terms.html /terms 301
-/licensing.html /licensing 301
-/contact.html /contact 301
-/contact-sent.html /contact-sent 301
+/digest/001-april-2026.html /digest/001-april-2026 301!
+/agentic-economy-101.html /agentic-economy-101 301!
+/agentic-economy-definitions.html /agentic-economy-definitions 301!
+/agentic-economy-timeline.html /agentic-economy-timeline 301!
+/agentic-economy-protocols.html /agentic-economy-protocols 301!
+/agentic-economy-quiz.html /agentic-economy-quiz 301!
+/agentic-economy-glossary.html /agentic-economy-glossary 301!
+/agentic-economy-infographic.html /agentic-economy-infographic 301!
+/agentic-economy-research.html /agentic-economy-research 301!
+/ask-agentic-economy.html /ask-agentic-economy 301!
+/about-agentic-economy.html /about-agentic-economy 301!
+/compare.html /compare 301!
+/embed-demo.html /embed-demo 301!
+/sandbox.html /sandbox 301!
+/validators.html /validators 301!
+/benchmark.html /benchmark 301!
+/subscribe.html /subscribe 301!
+/subscribe-confirmed.html /subscribe-confirmed 301!
+/field-reports.html /field-reports 301!
+/privacy.html /privacy 301!
+/terms.html /terms 301!
+/licensing.html /licensing 301!
+/contact.html /contact 301!
+/contact-sent.html /contact-sent 301!
 
 # SEO-friendly PDF filenames — old short names redirect to descriptive names
 /papers/paper-1-cri.pdf /papers/agentic-economy-cri-reputation-system.pdf 301
@@ -36,10 +36,10 @@ https://agenticeconomy.us/* https://agenticeconomy.dev/:splat 301!
 /papers/paper-3-oracle.pdf /papers/agentic-economy-oracle-problem.pdf 301
 
 # Definition pages — strip .html
-/definition/:slug.html /definition/:slug 301
+/definition/:slug.html /definition/:slug 301!
 
 # Term pages — strip .html
-/term/:slug.html /term/:slug 301
+/term/:slug.html /term/:slug 301!
 
 # Corpus & Research clean URLs — used by LinkedIn Digest #1 deep links
 /corpus  /agentic-economy-definitions.html  200
