@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+<link rel="manifest" href="../../manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
 <title>The Agentic Economy Doesn&rsquo;t Exist Yet &mdash; Agentic Economy</title>
 <meta name="description" content="Fifty-one published definitions of the agentic economy. Zero convergence. Three historical analogs say that&rsquo;s normal &mdash; definitions stabilize when infrastructure gets built, not when researchers agree.">
 <meta name="author" content="Rene Dechamps Otamendi">
@@ -426,6 +431,9 @@ footer.site-footer{background:var(--bg-surface);border-top:1px solid var(--borde
         <li><a href="../../agentic-economy-research.html">Methodology</a></li>
         <li><a href="../../llms.txt">llms.txt</a></li>
         <li><a href="../../feed.xml">RSS</a></li>
+              <li><a href="../../privacy.html">Privacy</a></li>
+        <li><a href="../../terms.html">Terms</a></li>
+        <li><a href="../../licensing.html">Licensing</a></li>
       </ul>
     </div>
   </div>
@@ -457,6 +465,17 @@ document.querySelectorAll('[data-copy]').forEach(btn => {
   });
 });
 </script>
-<style>.nav-group.dd-grace>.dropdown,.nav-dropdown.dd-grace .dropdown-panel{display:block!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}</style><script>(function(){document.querySelectorAll('.nav-group,.nav-dropdown').forEach(function(g){var t;g.addEventListener('mouseenter',function(){clearTimeout(t);g.classList.remove('dd-grace');});g.addEventListener('mouseleave',function(){t=setTimeout(function(){g.classList.remove('dd-grace');},500);g.classList.add('dd-grace');});});})()</script>
+<style>.nav-group.dd-grace>.dropdown,.nav-dropdown.dd-grace .dropdown-panel{display:block!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}
+    /* §9 — invisible bridge spans the gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
+</style><script>(function(){document.querySelectorAll('.nav-group,.nav-dropdown').forEach(function(g){var t;g.addEventListener('mouseenter',function(){clearTimeout(t);g.classList.remove('dd-grace');});g.addEventListener('mouseleave',function(){t=setTimeout(function(){g.classList.remove('dd-grace');},500);g.classList.add('dd-grace');});});})()</script>
 </body>
 </html>

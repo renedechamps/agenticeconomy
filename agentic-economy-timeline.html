@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
 <title>Agentic Economy Timeline — 2018 to 2026 · Agentic Economy</title>
 <meta name="description" content="Five eras of the agentic economy from the Machine Economy (2018) to the Protocol Wars (2026). Narrative timeline with key milestones and sources.">
 <meta name="author" content="Rene Dechamps Otamendi">
@@ -19,7 +24,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <meta property="og:site_name" content="Agentic Economy">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="https://renedechamps.com">
@@ -30,7 +35,7 @@
 <meta name="twitter:title" content="Agentic Economy Timeline — 2018 to 2026">
 <meta name="twitter:description" content="Five eras of the agentic economy from the Machine Economy (2018) to the Protocol Wars (2026). Narrative timeline with key milestones and sources.">
 <meta name="twitter:image" content="https://agenticeconomy.dev/og-image.png">
-<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
 <link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
@@ -164,7 +169,19 @@ html{scroll-behavior:smooth}
 .arrow{font-size:.6rem;transition:transform .2s}
 .nav-dropdown:hover .arrow{transform:rotate(180deg)}
 .dropdown-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;padding:.4rem 0;min-width:180px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
-.nav-dropdown:hover .dropdown-panel{display:block}
+    /* §9 — invisible bridge spans the gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
+
+.nav-dropdown:hover .dropdown-panel,
+    .nav-dropdown:focus-within .dropdown-panel{display:block}
 .dropdown-panel a{display:block;padding:.5rem 1rem;color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.85rem;transition:color .15s,background .15s,padding-left .15s}
 .dropdown-panel a:hover{color:var(--accent);background:var(--bg-surface);padding-left:1.25rem}
 .nav-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.4rem;cursor:pointer;padding:.5rem}
@@ -422,6 +439,16 @@ body{
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
     </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://agenticeconomy.dev/" },
+    { "@type": "ListItem", "position": 2, "name": "Timeline", "item": "https://agenticeconomy.dev/agentic-economy-timeline" }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -465,7 +492,7 @@ body{
   <p>Eight years. Fifty-one definitions. From IoT machines paying each other to trillion-dollar protocol wars. This is the timeline.</p>
   <div style="margin-top:1.25rem;display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap">
     <a href="agentic-economy-definitions.html" title="Browse all 57 definitions with filters and search" style="display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border:1px solid rgba(52,211,153,.3);border-radius:8px;color:var(--accent);text-decoration:none;font-family:var(--font-mono);font-size:.78rem;transition:all .2s"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 012-2h2a2 2 0 012 2M9 5h6"/></svg> Browse 57 Definitions</a>
-    <a href="https://zenodo.org/records/19679806" title="Two Economies, Not One — Full Paper on Zenodo" style="display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border:1px solid var(--border);border-radius:8px;color:var(--text-secondary);text-decoration:none;font-family:var(--font-mono);font-size:.78rem;transition:all .2s" target="_blank" rel="noopener"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg> Read the Paper</a>
+    <a href="https://zenodo.org/records/20039387" title="Two Economies, Not One — Full Paper on Zenodo" style="display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .9rem;border:1px solid var(--border);border-radius:8px;color:var(--text-secondary);text-decoration:none;font-family:var(--font-mono);font-size:.78rem;transition:all .2s" target="_blank" rel="noopener"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg> Read the Paper</a>
   </div>
 </section>
 
@@ -636,7 +663,7 @@ function render(){
       html+=`<div class="insight"><p><strong>The payment networks circled the wagons.</strong> Visa (tokenization + biometric), Mastercard (Agentic Tokens + passkeys), PayPal (AP2 + OAuth) -- all Category A. Every design ensures the human remains the payer. Interchange revenue is the business model being defended.</p></div>`;
     }
     if(era.id==='convergence'&&activeCat==='all'){
-      html+=`<div class="insight"><p><strong>The 11:1 ratio.</strong> Of 12 Category C entries (agents transacting autonomously), 11 assume blockchain. 1 does not. This is not a technical accident -- it follows from the logic that agents can't open bank accounts. <a href="https://zenodo.org/records/19679806" title="Two Economies, Not One: A Taxonomy of the Agentic Economy and the Case for Settlement Neutrality" style="color:var(--accent)" target="_blank" rel="noopener">The main paper</a> analyzes why this logic, while compelling, is incomplete.</p></div>`;
+      html+=`<div class="insight"><p><strong>The 11:1 ratio.</strong> Of 12 Category C entries (agents transacting autonomously), 11 assume blockchain. 1 does not. This is not a technical accident -- it follows from the logic that agents can't open bank accounts. <a href="https://zenodo.org/records/20039387" title="Two Economies, Not One: A Taxonomy of the Agentic Economy and the Case for Settlement Neutrality" style="color:var(--accent)" target="_blank" rel="noopener">The main paper</a> analyzes why this logic, while compelling, is incomplete.</p></div>`;
     }
 
     section.innerHTML=html;

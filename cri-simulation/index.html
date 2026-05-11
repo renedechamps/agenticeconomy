@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
+<title>CRI Adversarial Simulation — AgenticEconomy.dev</title>
+<meta name="description" content="Reproducible Python simulation for the CRI multi-factor reputation system (Paper 1, §5.4). 10,000 agents × 90 days × 3 adversarial profiles. CC BY-SA 4.0.">
+<meta name="theme-color" content="#04060e">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://agenticeconomy.dev/cri-simulation/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg-deep:#04060e;--bg-base:#080d1c;--bg-card:#141a38;--bg-surface:#0f1530;--accent:#34d399;--text-muted:#8e99b8;--border:#1a2348;--border-light:#233060;--font-display:'Syne',sans-serif;--font-mono:'JetBrains Mono',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg-deep);color:#e8edff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.65}
+.container{max-width:880px;margin:0 auto;padding:64px 32px}
+header{margin-bottom:48px;border-bottom:1px solid var(--border);padding-bottom:32px}
+.breadcrumb{font-size:13px;color:var(--text-muted);margin-bottom:24px;letter-spacing:0.05em}
+.breadcrumb a{color:var(--accent);text-decoration:none}
+h1{font-family:var(--font-display);font-weight:800;font-size:36px;line-height:1.15;letter-spacing:-0.02em;margin-bottom:16px}
+h2{font-family:var(--font-display);font-weight:700;font-size:22px;margin-top:48px;margin-bottom:16px;color:var(--accent)}
+.lead{font-size:18px;color:#cdd5ec;margin-bottom:8px}
+.metadata{display:flex;gap:24px;flex-wrap:wrap;margin-top:24px;font-size:14px;color:var(--text-muted)}
+.metadata strong{color:#e8edff}
+section{margin-bottom:32px}
+p{margin-bottom:16px;color:#cdd5ec}
+ul{margin-left:20px;margin-bottom:16px;color:#cdd5ec}
+ul li{margin-bottom:8px}
+code{background:var(--bg-card);padding:2px 6px;border-radius:3px;font-family:var(--font-mono);font-size:14px;color:var(--accent)}
+pre{background:var(--bg-card);border:1px solid var(--border-light);border-radius:6px;padding:20px;overflow-x:auto;margin-bottom:24px;font-family:var(--font-mono);font-size:13px;line-height:1.5}
+pre code{background:none;padding:0;color:#e8edff}
+.btn-row{display:flex;gap:16px;flex-wrap:wrap;margin:32px 0}
+.btn{display:inline-block;padding:12px 24px;border-radius:6px;text-decoration:none;font-weight:600;font-size:15px;transition:transform 0.15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--bg-deep)}
+.btn-secondary{background:transparent;color:var(--accent);border:1px solid var(--border-light)}
+table{width:100%;border-collapse:collapse;margin-bottom:24px;font-size:14px}
+th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border)}
+th{font-weight:700;color:var(--accent);background:var(--bg-card)}
+td{color:#cdd5ec}
+footer{margin-top:96px;padding-top:32px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);text-align:center}
+footer a{color:var(--accent);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+<div class="breadcrumb"><a href="/">AgenticEconomy.dev</a> / Repositories / cri-simulation</div>
+<h1>CRI Adversarial Simulation</h1>
+<p class="lead">Reproducible Monte Carlo simulation backing Paper 1 §5.4 Table 3.</p>
+<div class="metadata">
+<div><strong>Paper:</strong> <a href="/paper-1-cri" style="color:var(--accent)">CRI: A Multi-Factor Reputation System</a> (arXiv v2)</div>
+<div><strong>Language:</strong> Python 3 (no external dependencies)</div>
+<div><strong>Run time:</strong> ~3 seconds</div>
+<div><strong>License:</strong> CC BY-SA 4.0</div>
+</div>
+</header>
+
+<section>
+<h2>What this is</h2>
+<p>This repository contains the simulation code that produces the numbers in <strong>Table 3 of Paper 1 §5.4</strong> — the adversarial-resistance evaluation of the CRI multi-factor reputation system. The simulation generates 10,000 agents over 90 simulated days under four populations (honest + three adversarial profiles) and measures the system's discriminative power.</p>
+
+<h2>How to run</h2>
+<pre><code># Download the simulation script
+curl -O https://agenticeconomy.dev/cri-simulation/cri_simulation.py
+
+# Run it
+python3 cri_simulation.py</code></pre>
+
+<p>The script outputs a Markdown-formatted table identical to Table 3 in the paper. Run time is ~3 seconds on a modern laptop.</p>
+
+<h2>Files</h2>
+<ul>
+<li><a href="cri_simulation.py" style="color:var(--accent)"><code>cri_simulation.py</code></a> — main simulation (10,107 bytes)</li>
+<li><a href="agentic-economy-definitions.json" style="color:var(--accent)"><code>agentic-economy-definitions.json</code></a> — corpus of 58 definitions, the raw input behind Paper 2's taxonomy (29 KB)</li>
+</ul>
+
+<h2>Reproducibility</h2>
+<p>The simulation uses fixed random seeds to ensure exact reproducibility:</p>
+<ul>
+<li><code>RNG_HONEST = 0x4847</code> (honest agent population)</li>
+<li><code>RNG_A = 0x4341</code> (Profile A: fast Sybil ring, 50 rings of 5)</li>
+<li><code>RNG_B = 0x4252</code> (Profile B: patient Sybil with bridges, 30 rings of 5)</li>
+<li><code>RNG_C = 0x4343</code> (Profile C: collusive subnetwork, 20 rings of 5)</li>
+</ul>
+<p>Running with the same seeds produces the exact metrics reported in the paper:</p>
+
+<table>
+<thead>
+<tr><th>Metric</th><th>Profile A</th><th>Profile B</th><th>Profile C</th><th>Honest med</th></tr>
+</thead>
+<tbody>
+<tr><td>Median CRI day 90</td><td>65.3</td><td>70.1</td><td>72.9</td><td>79.1</td></tr>
+<tr><td>AUC vs honest</td><td>1.00</td><td>0.99</td><td>0.94</td><td>—</td></tr>
+<tr><td>FPR @ 70</td><td>0.00</td><td>0.75</td><td>1.00</td><td>—</td></tr>
+<tr><td>Cost per CRI point (TCK)</td><td>2.8</td><td>3.3</td><td>3.8</td><td>—</td></tr>
+</tbody>
+</table>
+
+<h2>Modifying the simulation</h2>
+<p>All parameters (number of rings, ring sizes, eigen factor per profile, dispute rates) are constants at the top of the file. Researchers reproducing the work can vary these to test sensitivity. Sensitivity analysis under ±50% variation of the four primary CRI coefficients is reported in Paper 1 §5.5.</p>
+
+<div class="btn-row">
+<a href="cri_simulation.py" class="btn btn-primary" download>Download cri_simulation.py</a>
+<a href="agentic-economy-definitions.json" class="btn btn-secondary" download>Download corpus JSON</a>
+<a href="/paper-1-cri" class="btn btn-secondary">Read Paper 1 →</a>
+</div>
+</section>
+</div>
+<footer>
+<p>AgenticEconomy.dev · CC BY-SA 4.0 · Zero cookies. Not even Belgian ones.</p>
+</footer>
+</body>
+</html>

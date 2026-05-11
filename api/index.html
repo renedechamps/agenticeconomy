@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic Economy Open Data API | agenticeconomy.dev</title>
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
+<title>Agentic Economy Open Data API | agenticeconomy.dev</title>
     <meta name="description" content="JSON API for 57 definitions, 17 protocols, and 30 glossary terms. CC BY-SA 4.0. Free, CORS-enabled, no auth required.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://agenticeconomy.dev/api/">
@@ -143,8 +148,20 @@
             min-width: 180px;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
         }
+    /* §9 — invisible bridge spans the gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
 
-        .nav-dropdown:hover .dropdown-panel {
+
+        .nav-dropdown:hover .dropdown-panel,
+    .nav-dropdown:focus-within .dropdown-panel {
             display: block;
         }
 
@@ -669,6 +686,12 @@
                 <h4>License</h4>
                 <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
                 <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--text-muted);">Attribution required. Share modifications under same license.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <a href="../privacy.html">Privacy</a>
+                <a href="../terms.html">Terms</a>
+                <a href="../licensing.html">Licensing</a>
             </div>
         </div>
         <div class="footer-bottom">

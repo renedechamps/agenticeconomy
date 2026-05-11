@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
 <title>Agentic Economy Glossary — 30 Terms · Agentic Economy</title>
 <meta name="description" content="Glossary of 30 essential terms of the agentic economy: agent, settlement, CRI, x402, KYA, and more. Each with FAQPage markup for rich snippets.">
 <meta name="author" content="Rene Dechamps Otamendi">
@@ -19,7 +24,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <meta property="og:site_name" content="Agentic Economy">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="https://renedechamps.com">
@@ -30,7 +35,7 @@
 <meta name="twitter:title" content="Agentic Economy Glossary — 30 Terms">
 <meta name="twitter:description" content="Glossary of 30 essential terms of the agentic economy: agent, settlement, CRI, x402, KYA, and more. Each with FAQPage markup for rich snippets.">
 <meta name="twitter:image" content="https://agenticeconomy.dev/og-image.png">
-<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
 <link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
@@ -126,7 +131,19 @@
         .arrow{font-size:.6rem;transition:transform .2s}
         .nav-dropdown:hover .arrow{transform:rotate(180deg)}
         .dropdown-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;padding:.4rem 0;min-width:180px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
-        .nav-dropdown:hover .dropdown-panel{display:block}
+    /* §9 — invisible bridge spans the gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
+
+        .nav-dropdown:hover .dropdown-panel,
+    .nav-dropdown:focus-within .dropdown-panel{display:block}
         .dropdown-panel a{display:block;padding:.5rem 1rem;color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.85rem;transition:color .15s,background .15s,padding-left .15s}
         .dropdown-panel a:hover{color:var(--accent);background:var(--bg-surface);padding-left:1.25rem}
         .nav-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.4rem;cursor:pointer;padding:.5rem}
@@ -385,6 +402,16 @@
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
     </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://agenticeconomy.dev/" },
+    { "@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://agenticeconomy.dev/agentic-economy-glossary" }
+  ]
+}
+</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -441,9 +468,9 @@
                 Economy Types
             </h2>
             <div class="cards-grid">
-                <div class="term-card" data-term="agentic-economy">
+                <div class="term-card" id="agentic-economy-agentic-economy" data-term="agentic-economy">
                     <div class="term-card-header">
-                        <div class="term-card-title">Agentic Economy</div>
+                        <h3 class="term-card-title">Agentic Economy</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="16" stroke="#34d399" stroke-width="2"/>
                             <circle cx="20" cy="20" r="6" fill="#34d399"/>
@@ -455,9 +482,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=agentic-economy">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="machine-economy">
+                <div class="term-card" id="agentic-economy-machine-economy" data-term="machine-economy">
                     <div class="term-card-header">
-                        <div class="term-card-title">Machine Economy</div>
+                        <h3 class="term-card-title">Machine Economy</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="8" y="8" width="24" height="24" stroke="#3b82f6" stroke-width="2" rx="2"/>
                             <circle cx="20" cy="20" r="4" fill="#3b82f6"/>
@@ -467,9 +494,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=machine-economy">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="agent-assisted-commerce">
+                <div class="term-card" id="agentic-economy-agent-assisted-commerce" data-term="agent-assisted-commerce">
                     <div class="term-card-header">
-                        <div class="term-card-title">Agent-Assisted Commerce</div>
+                        <h3 class="term-card-title">Agent-Assisted Commerce</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 20L18 28L30 12" stroke="#3b82f6" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
@@ -478,9 +505,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=agent-assisted-commerce">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="agent-as-workforce">
+                <div class="term-card" id="agentic-economy-agent-as-workforce" data-term="agent-as-workforce">
                     <div class="term-card-header">
-                        <div class="term-card-title">Agent-as-Workforce</div>
+                        <h3 class="term-card-title">Agent-as-Workforce</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="12" r="4" stroke="#a78bfa" stroke-width="2"/>
                             <rect x="16" y="18" width="8" height="8" stroke="#a78bfa" stroke-width="2" rx="1"/>
@@ -492,9 +519,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=agent-as-workforce">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="autonomous-a2a-commerce">
+                <div class="term-card" id="agentic-economy-autonomous-a2a-commerce" data-term="autonomous-a2a-commerce">
                     <div class="term-card-header">
-                        <div class="term-card-title">Autonomous A2A Commerce</div>
+                        <h3 class="term-card-title">Autonomous A2A Commerce</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="14" cy="20" r="5" stroke="#34d399" stroke-width="2"/>
                             <circle cx="26" cy="20" r="5" stroke="#34d399" stroke-width="2"/>
@@ -514,9 +541,9 @@
                 Settlement & Payment
             </h2>
             <div class="cards-grid">
-                <div class="term-card" data-term="settlement-neutrality">
+                <div class="term-card" id="agentic-economy-settlement-neutrality" data-term="settlement-neutrality">
                     <div class="term-card-header">
-                        <div class="term-card-title">Settlement Neutrality</div>
+                        <h3 class="term-card-title">Settlement Neutrality</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 8V32M8 20H32" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/>
                             <circle cx="20" cy="20" r="2" fill="#f59e0b"/>
@@ -526,9 +553,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=settlement-neutrality">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="escrow-determinism">
+                <div class="term-card" id="agentic-economy-escrow-determinism" data-term="escrow-determinism">
                     <div class="term-card-header">
-                        <div class="term-card-title">Escrow Determinism</div>
+                        <h3 class="term-card-title">Escrow Determinism</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="10" y="12" width="20" height="16" stroke="#f59e0b" stroke-width="2" rx="1"/>
                             <line x1="20" y1="12" x2="20" y2="28" stroke="#f59e0b" stroke-width="1"/>
@@ -538,9 +565,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=escrow-determinism">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="ledger-consistency">
+                <div class="term-card" id="agentic-economy-ledger-consistency" data-term="ledger-consistency">
                     <div class="term-card-header">
-                        <div class="term-card-title">Ledger Consistency</div>
+                        <h3 class="term-card-title">Ledger Consistency</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="8" y="8" width="24" height="24" stroke="#f59e0b" stroke-width="2" rx="2"/>
                             <line x1="12" y1="15" x2="28" y2="15" stroke="#f59e0b" stroke-width="1"/>
@@ -552,9 +579,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=ledger-consistency">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="tck-tick">
+                <div class="term-card" id="agentic-economy-tck-tick" data-term="tck-tick">
                     <div class="term-card-header">
-                        <div class="term-card-title">TCK (Tick)</div>
+                        <h3 class="term-card-title">TCK (Tick)</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="10" stroke="#f59e0b" stroke-width="2"/>
                             <text x="20" y="24" text-anchor="middle" font-size="14" fill="#f59e0b" font-weight="bold">τ</text>
@@ -564,9 +591,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=tck-tick">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="micropayment">
+                <div class="term-card" id="agentic-economy-micropayment" data-term="micropayment">
                     <div class="term-card-header">
-                        <div class="term-card-title">Micropayment</div>
+                        <h3 class="term-card-title">Micropayment</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="8" stroke="#f59e0b" stroke-width="2" fill="none"/>
                             <text x="20" y="23" text-anchor="middle" font-size="10" fill="#f59e0b" font-weight="bold">¢</text>
@@ -576,9 +603,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=micropayment">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="interchange-revenue">
+                <div class="term-card" id="agentic-economy-interchange-revenue" data-term="interchange-revenue">
                     <div class="term-card-header">
-                        <div class="term-card-title">Interchange Revenue</div>
+                        <h3 class="term-card-title">Interchange Revenue</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="8" y="14" width="10" height="12" stroke="#f59e0b" stroke-width="2" rx="1"/>
                             <rect x="22" y="14" width="10" height="12" stroke="#f59e0b" stroke-width="2" rx="1"/>
@@ -589,9 +616,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=interchange-revenue">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="stablecoin">
+                <div class="term-card" id="agentic-economy-stablecoin" data-term="stablecoin">
                     <div class="term-card-header">
-                        <div class="term-card-title">Stablecoin</div>
+                        <h3 class="term-card-title">Stablecoin</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="10" stroke="#f59e0b" stroke-width="2"/>
                             <path d="M16 18C16 16.9 17.3 16 18.5 16C19.2 16 19.8 16.3 20 16.8C20.2 16.3 20.8 16 21.5 16C22.7 16 24 16.9 24 18" stroke="#f59e0b" stroke-width="1.5"/>
@@ -611,9 +638,9 @@
                 Identity & Trust
             </h2>
             <div class="cards-grid">
-                <div class="term-card" data-term="kya">
+                <div class="term-card" id="agentic-economy-kya" data-term="kya">
                     <div class="term-card-header">
-                        <div class="term-card-title">Know Your Agent (KYA)</div>
+                        <h3 class="term-card-title">Know Your Agent (KYA)</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="14" r="4" stroke="#34d399" stroke-width="2"/>
                             <path d="M12 24C12 20 15.6 18 20 18C24.4 18 28 20 28 24" stroke="#34d399" stroke-width="2"/>
@@ -624,9 +651,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=kya">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="agent-card">
+                <div class="term-card" id="agentic-economy-agent-card" data-term="agent-card">
                     <div class="term-card-header">
-                        <div class="term-card-title">Agent Card</div>
+                        <h3 class="term-card-title">Agent Card</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="10" y="12" width="20" height="16" stroke="#34d399" stroke-width="2" rx="1"/>
                             <circle cx="15" cy="18" r="2" fill="#34d399"/>
@@ -638,9 +665,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=agent-card">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="digital-agent-passport">
+                <div class="term-card" id="agentic-economy-digital-agent-passport" data-term="digital-agent-passport">
                     <div class="term-card-header">
-                        <div class="term-card-title">Digital Agent Passport</div>
+                        <h3 class="term-card-title">Digital Agent Passport</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="10" y="10" width="20" height="20" stroke="#34d399" stroke-width="2" rx="1"/>
                             <rect x="14" y="14" width="6" height="6" stroke="#34d399" stroke-width="1" fill="#34d399" opacity="0.3"/>
@@ -652,9 +679,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=digital-agent-passport">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="cri">
+                <div class="term-card" id="agentic-economy-cri" data-term="cri">
                     <div class="term-card-header">
-                        <div class="term-card-title">Composite Reliability Index (CRI)</div>
+                        <h3 class="term-card-title">Composite Reliability Index (CRI)</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M10 28 Q 20 10 30 28" stroke="#34d399" stroke-width="2" fill="none"/>
                             <circle cx="20" cy="20" r="3" fill="#34d399"/>
@@ -664,9 +691,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=cri">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="reputation-equivalence">
+                <div class="term-card" id="agentic-economy-reputation-equivalence" data-term="reputation-equivalence">
                     <div class="term-card-header">
-                        <div class="term-card-title">Reputation Equivalence</div>
+                        <h3 class="term-card-title">Reputation Equivalence</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="15" cy="20" r="5" stroke="#34d399" stroke-width="2"/>
                             <circle cx="25" cy="20" r="5" stroke="#34d399" stroke-width="2"/>
@@ -677,9 +704,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=reputation-equivalence">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="did">
+                <div class="term-card" id="agentic-economy-did" data-term="did">
                     <div class="term-card-header">
-                        <div class="term-card-title">DID (Decentralized Identifier)</div>
+                        <h3 class="term-card-title">DID (Decentralized Identifier)</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="8" stroke="#34d399" stroke-width="2"/>
                             <path d="M15 20L20 25L25 15" stroke="#34d399" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -698,9 +725,9 @@
                 Protocols & Infrastructure
             </h2>
             <div class="cards-grid">
-                <div class="term-card" data-term="a2a">
+                <div class="term-card" id="agentic-economy-a2a" data-term="a2a">
                     <div class="term-card-header">
-                        <div class="term-card-title">A2A (Agent-to-Agent Protocol)</div>
+                        <h3 class="term-card-title">A2A (Agent-to-Agent Protocol)</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="8" y="12" width="8" height="12" stroke="#f87171" stroke-width="2" rx="1"/>
                             <rect x="24" y="12" width="8" height="12" stroke="#f87171" stroke-width="2" rx="1"/>
@@ -711,9 +738,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=a2a">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="mcp">
+                <div class="term-card" id="agentic-economy-mcp" data-term="mcp">
                     <div class="term-card-header">
-                        <div class="term-card-title">MCP (Model Context Protocol)</div>
+                        <h3 class="term-card-title">MCP (Model Context Protocol)</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="10" y="10" width="20" height="20" stroke="#f87171" stroke-width="2" rx="2"/>
                             <line x1="15" y1="15" x2="25" y2="15" stroke="#f87171" stroke-width="1"/>
@@ -725,9 +752,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=mcp">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="x402">
+                <div class="term-card" id="agentic-economy-x402" data-term="x402">
                     <div class="term-card-header">
-                        <div class="term-card-title">x402</div>
+                        <h3 class="term-card-title">x402</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <text x="20" y="26" text-anchor="middle" font-family="JetBrains Mono" font-size="16" fill="#f87171" font-weight="bold">402</text>
                         </svg>
@@ -736,9 +763,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=x402">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="acp">
+                <div class="term-card" id="agentic-economy-acp" data-term="acp">
                     <div class="term-card-header">
-                        <div class="term-card-title">ACP (Agentic Commerce Protocol)</div>
+                        <h3 class="term-card-title">ACP (Agentic Commerce Protocol)</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="10" stroke="#f87171" stroke-width="2"/>
                             <path d="M16 18L20 22L24 16" stroke="#f87171" stroke-width="2" fill="none" stroke-linecap="round"/>
@@ -748,9 +775,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=acp">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="vcap">
+                <div class="term-card" id="agentic-economy-vcap" data-term="vcap">
                     <div class="term-card-header">
-                        <div class="term-card-title">VCAP</div>
+                        <h3 class="term-card-title">VCAP</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="12" y="10" width="16" height="20" stroke="#f87171" stroke-width="2" rx="1"/>
                             <path d="M16 15H24M16 20H24M16 25H20" stroke="#f87171" stroke-width="1"/>
@@ -760,9 +787,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=vcap">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="ado">
+                <div class="term-card" id="agentic-economy-ado" data-term="ado">
                     <div class="term-card-header">
-                        <div class="term-card-title">ADO (Agent Discovery Optimization)</div>
+                        <h3 class="term-card-title">ADO (Agent Discovery Optimization)</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="20" cy="20" r="10" stroke="#f87171" stroke-width="2"/>
                             <path d="M18 18L22 20L18 22" stroke="#f87171" stroke-width="1.5" fill="none" stroke-linecap="round"/>
@@ -781,9 +808,9 @@
                 Governance & Risk
             </h2>
             <div class="cards-grid">
-                <div class="term-card" data-term="dispute-parity">
+                <div class="term-card" id="agentic-economy-dispute-parity" data-term="dispute-parity">
                     <div class="term-card-header">
-                        <div class="term-card-title">Dispute Parity</div>
+                        <h3 class="term-card-title">Dispute Parity</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="8" y="10" width="10" height="12" stroke="#22d3ee" stroke-width="2"/>
                             <rect x="22" y="10" width="10" height="12" stroke="#22d3ee" stroke-width="2"/>
@@ -795,9 +822,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=dispute-parity">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="auditability">
+                <div class="term-card" id="agentic-economy-auditability" data-term="auditability">
                     <div class="term-card-header">
-                        <div class="term-card-title">Auditability</div>
+                        <h3 class="term-card-title">Auditability</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="10" y="8" width="20" height="24" stroke="#22d3ee" stroke-width="2" rx="1"/>
                             <line x1="14" y1="14" x2="26" y2="14" stroke="#22d3ee" stroke-width="1"/>
@@ -809,9 +836,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=auditability">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="doom-loop">
+                <div class="term-card" id="agentic-economy-doom-loop" data-term="doom-loop">
                     <div class="term-card-header">
-                        <div class="term-card-title">Doom Loop</div>
+                        <h3 class="term-card-title">Doom Loop</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M20 8C29.4 8 32 14.7 32 20C32 28 26.6 32 20 32C11 32 8 25.3 8 20C8 12 13.4 8 20 8" stroke="#22d3ee" stroke-width="2" fill="none" stroke-linecap="round"/>
                             <path d="M22 14L26 20L22 26" stroke="#22d3ee" stroke-width="1.5" fill="none"/>
@@ -821,9 +848,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=doom-loop">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="agentic-walled-gardens">
+                <div class="term-card" id="agentic-economy-agentic-walled-gardens" data-term="agentic-walled-gardens">
                     <div class="term-card-header">
-                        <div class="term-card-title">Agentic Walled Gardens</div>
+                        <h3 class="term-card-title">Agentic Walled Gardens</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="10" y="10" width="20" height="20" stroke="#22d3ee" stroke-width="2" rx="2"/>
                             <line x1="15" y1="10" x2="15" y2="6" stroke="#22d3ee" stroke-width="1.5"/>
@@ -836,9 +863,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=agentic-walled-gardens">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="11-1-ratio">
+                <div class="term-card" id="agentic-economy-11-1-ratio" data-term="11-1-ratio">
                     <div class="term-card-header">
-                        <div class="term-card-title">The 11:1 Ratio</div>
+                        <h3 class="term-card-title">The 11:1 Ratio</h3>
                         <svg class="term-icon icon-rotate" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <text x="15" y="24" font-family="JetBrains Mono" font-size="12" fill="#22d3ee" font-weight="bold">11</text>
                             <text x="20" y="24" font-family="JetBrains Mono" font-size="10" fill="#22d3ee">:</text>
@@ -849,9 +876,9 @@
                     <div class="term-usage"><a href="agentic-economy-definitions.html?search=11-1-ratio">Used in corpus →</a></div>
                 </div>
 
-                <div class="term-card" data-term="settlement-layer">
+                <div class="term-card" id="agentic-economy-settlement-layer" data-term="settlement-layer">
                     <div class="term-card-header">
-                        <div class="term-card-title">Settlement Layer</div>
+                        <h3 class="term-card-title">Settlement Layer</h3>
                         <svg class="term-icon icon-pulse" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="8" y="14" width="24" height="4" stroke="#22d3ee" stroke-width="2" rx="1"/>
                             <line x1="8" y1="10" x2="32" y2="10" stroke="#22d3ee" stroke-width="1"/>

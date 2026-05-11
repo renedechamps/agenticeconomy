@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
 <title>Embed Any Definition — Widget Demo · Agentic Economy</title>
 <meta name="description" content="Live demo of the embeddable definition widget. Add any of the 57 agentic-economy definitions to your page with a single script tag. Free, CC BY-SA 4.0.">
 <meta name="author" content="Rene Dechamps Otamendi">
@@ -19,7 +24,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <meta property="og:site_name" content="Agentic Economy">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="https://renedechamps.com">
@@ -30,7 +35,7 @@
 <meta name="twitter:title" content="Embed Any Definition — Widget Demo">
 <meta name="twitter:description" content="Live demo of the embeddable definition widget. Add any of the 57 agentic-economy definitions to your page with a single script tag. Free, CC BY-SA 4.0.">
 <meta name="twitter:image" content="https://agenticeconomy.dev/og-image.png">
-<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
 <link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
@@ -210,8 +215,20 @@
             min-width: 180px;
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
         }
+    /* §9 — invisible bridge spans the gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
 
-        .nav-dropdown:hover .dropdown-panel {
+
+        .nav-dropdown:hover .dropdown-panel,
+    .nav-dropdown:focus-within .dropdown-panel {
             display: block;
         }
 

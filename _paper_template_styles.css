@@ -23,8 +23,10 @@ body{background:var(--bg-deep);color:var(--text-primary);font-family:'Outfit',sa
 .nav-dropdown-trigger{cursor:pointer}
 .arrow{font-size:10px;display:inline-block;transition:transform .2s}
 .dropdown-panel{position:absolute;top:56px;left:0;background:rgba(8,13,28,.98);border:1px solid var(--border);border-radius:6px;padding:8px;min-width:180px;opacity:0;pointer-events:none;transition:opacity .2s;transition-delay:.5s;backdrop-filter:blur(4px)}
-.nav-dropdown:hover .dropdown-panel{opacity:1;pointer-events:auto;transition-delay:0s}
-.nav-dropdown:hover .nav-dropdown-trigger .arrow{transform:rotate(180deg)}
+/* §9 hover bridge — invisible element fills the gap between trigger and panel so cursor traversal doesn't break :hover */
+.dropdown-panel::before{content:'';position:absolute;top:-16px;left:0;right:0;height:16px;background:transparent}
+.nav-dropdown:hover .dropdown-panel,.nav-dropdown:focus-within .dropdown-panel{opacity:1;pointer-events:auto;transition-delay:0s}
+.nav-dropdown:hover .nav-dropdown-trigger .arrow,.nav-dropdown:focus-within .nav-dropdown-trigger .arrow{transform:rotate(180deg)}
 .dropdown-panel a{display:block;padding:10px 16px;color:var(--text-secondary);text-decoration:none;font-size:14px;border-radius:4px;transition:background-color .2s,color .2s}
 .dropdown-panel a:hover{background:rgba(52,211,153,.1);color:var(--accent)}
 .dropdown-panel a.active{background:rgba(52,211,153,.15);color:var(--accent)}

@@ -8,14 +8,14 @@ Author: Rene Dechamps Otamendi (https://renedechamps.com)
 
 ## Papers
 
-- CRI Framework — https://doi.org/10.5281/zenodo.19208083
+- CRI Framework — https://doi.org/10.5281/zenodo.19679843
 - Agentic Economy Taxonomy — https://doi.org/10.5281/zenodo.19679806
 - The Oracle Problem — https://doi.org/10.5281/zenodo.19679701
 - Fifty-One Maps, No Territory — https://doi.org/10.5281/zenodo.19679860
 
 ---
 
-## 51 Definitions of the Agentic Economy
+## 57 Definitions of the Agentic Economy
 
 ### Category A — Agent-Assisted Human Commerce
 

@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
 <title>What is Digital Agent Passport? · Agentic Economy</title>
 <meta name="description" content="Digital Agent Passport: Trulioo/Worldpay/Skyfire&#039;s identity credential for autonomous agents. A digital agent passport is a cryptographically signed credentia…">
 <meta name="author" content="Rene Dechamps Otamendi">
@@ -20,7 +25,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <meta property="og:site_name" content="Agentic Economy">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="https://renedechamps.com">
@@ -31,7 +36,7 @@
 <meta name="twitter:title" content="What is Digital Agent Passport?">
 <meta name="twitter:description" content="Digital Agent Passport: Trulioo/Worldpay/Skyfire&#039;s identity credential for autonomous agents. A digital agent passport is a cryptographically signed credentia…">
 <meta name="twitter:image" content="https://agenticeconomy.dev/og-image.png">
-<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
 <link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
@@ -326,6 +331,9 @@ h2{font-family:var(--font-display);font-size:1.35rem;font-weight:700;margin:2rem
         <li><a href="../agentic-economy-research.html">Methodology</a></li>
         <li><a href="../llms.txt">llms.txt</a></li>
         <li><a href="../feed.xml">RSS</a></li>
+              <li><a href="../privacy.html">Privacy</a></li>
+        <li><a href="../terms.html">Terms</a></li>
+        <li><a href="../licensing.html">Licensing</a></li>
       </ul>
     </div>
   </div>
@@ -333,6 +341,17 @@ h2{font-family:var(--font-display);font-size:1.35rem;font-weight:700;margin:2rem
     © 2026 Rene Dechamps Otamendi · CC BY-SA 4.0 · Zero cookies. Not even Belgian ones.
   </div>
 </footer>
-<style>.nav-group.dd-grace>.dropdown,.nav-dropdown.dd-grace .dropdown-panel{display:block!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}</style><script>(function(){document.querySelectorAll('.nav-group,.nav-dropdown').forEach(function(g){var t;g.addEventListener('mouseenter',function(){clearTimeout(t);g.classList.remove('dd-grace');});g.addEventListener('mouseleave',function(){t=setTimeout(function(){g.classList.remove('dd-grace');},500);g.classList.add('dd-grace');});});})()</script>
+<style>.nav-group.dd-grace>.dropdown,.nav-dropdown.dd-grace .dropdown-panel{display:block!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}
+    /* §9 — invisible bridge spans the gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
+</style><script>(function(){document.querySelectorAll('.nav-group,.nav-dropdown').forEach(function(g){var t;g.addEventListener('mouseenter',function(){clearTimeout(t);g.classList.remove('dd-grace');});g.addEventListener('mouseleave',function(){t=setTimeout(function(){g.classList.remove('dd-grace');},500);g.classList.add('dd-grace');});});})()</script>
 </body>
 </html>

@@ -1,18 +1,18 @@
 # agenticeconomy.dev
 
-> The definitive research hub on the agentic economy. 51 definitions, 4 preprints, 30 glossary terms, 17 protocols, open API, open data (CC BY-SA 4.0).
+> The definitive research hub on the agentic economy. 57 definitions, 4 preprints, 30 glossary terms, 17 protocols, open API, open data (CC BY-SA 4.0).
 
 ## Overview
 
 - Site: https://agenticeconomy.dev
 - Author: Rene Dechamps Otamendi (<https://renedechamps.com>)
 - License: CC BY-SA 4.0
-- Last updated: 2026-04-15
+- Last updated: 2026-05-11
 
 ## Core resources
 
 - [Start Here: Agentic Economy 101](https://agenticeconomy.dev/agentic-economy-101)
-- [51 Definitions corpus](https://agenticeconomy.dev/agentic-economy-definitions)
+- [57 Definitions corpus](https://agenticeconomy.dev/agentic-economy-definitions)
 - [Protocol Matrix (17 protocols)](https://agenticeconomy.dev/agentic-economy-protocols)
 - [Glossary (30 terms)](https://agenticeconomy.dev/agentic-economy-glossary)
 - [Timeline 2018-2026](https://agenticeconomy.dev/agentic-economy-timeline)
@@ -20,7 +20,7 @@
 
 ## Papers (Zenodo DOIs)
 
-- CRI Framework — https://doi.org/10.5281/zenodo.19208083
+- CRI Framework — https://doi.org/10.5281/zenodo.19679843
 - Taxonomy — https://doi.org/10.5281/zenodo.19679806
 - Oracle Problem — https://doi.org/10.5281/zenodo.19679701
 - Fifty-One Maps — https://doi.org/10.5281/zenodo.19679860
@@ -43,11 +43,10 @@
 ## Blog
 
 - [Blog index](https://agenticeconomy.dev/blog/)
-- [What Is the Agentic Economy?
+- [What Is the Agentic Economy? Five Categories, Two Fault Lines](https://agenticeconomy.dev/blog/what-is-the-agentic-economy/)
 - [Why Agent Reputation Is Harder Than You Think](https://agenticeconomy.dev/blog/why-agent-reputation-is-harder-than-you-think/)
 - [You Can't Verify Quality With an LLM](https://agenticeconomy.dev/blog/you-cant-verify-quality-with-an-llm/)
 - [The Agentic Economy Doesn't Exist Yet](https://agenticeconomy.dev/blog/the-agentic-economy-doesnt-exist-yet/)
- Five Categories, Two Fault Lines](https://agenticeconomy.dev/blog/what-is-the-agentic-economy/)
 
 ## Optional
 

@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
 <title>Agentic Economy 101 — Start Here · Agentic Economy</title>
 <meta name="description" content="A 10-minute primer on the agentic economy. Six categories, protocol stack, the $5T question, and why 57 definitions means no consensus yet.">
 <meta name="author" content="Rene Dechamps Otamendi">
@@ -19,7 +24,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <meta property="og:site_name" content="Agentic Economy">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="https://renedechamps.com">
@@ -30,7 +35,7 @@
 <meta name="twitter:title" content="Agentic Economy 101 — Start Here">
 <meta name="twitter:description" content="A 10-minute primer on the agentic economy. Six categories, protocol stack, the $5T question, and why 57 definitions means no consensus yet.">
 <meta name="twitter:image" content="https://agenticeconomy.dev/og-image.png">
-<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
 <link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
@@ -135,7 +140,19 @@
         .arrow{font-size:.6rem;transition:transform .2s}
         .nav-dropdown:hover .arrow{transform:rotate(180deg)}
         .dropdown-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;padding:.4rem 0;min-width:180px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
-        .nav-dropdown:hover .dropdown-panel{display:block}
+    /* §9 — invisible bridge spans the gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
+
+        .nav-dropdown:hover .dropdown-panel,
+    .nav-dropdown:focus-within .dropdown-panel{display:block}
         .dropdown-panel a{display:block;padding:.5rem 1rem;color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.85rem;transition:color .15s,background .15s,padding-left .15s}
         .dropdown-panel a:hover{color:var(--accent);background:var(--bg-surface);padding-left:1.25rem}
         .nav-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.4rem;cursor:pointer;padding:.5rem}
@@ -711,6 +728,16 @@
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
     </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://agenticeconomy.dev/" },
+    { "@type": "ListItem", "position": 2, "name": "Agentic Economy 101", "item": "https://agenticeconomy.dev/agentic-economy-101" }
+  ]
+}
+</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -750,6 +777,7 @@
         <!-- SECTION 1: THE HOOK -->
         <section id="section-1">
             <div class="section-content">
+                <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">Agentic Economy 101 — a 10-minute primer on agent commerce</h1>
                 <div class="hook-number"><span class="counter" data-target="5">0</span>T</div>
                 <div class="hook-subtitle">That's McKinsey's estimate for agent-mediated commerce by 2030.</div>
                 <div class="hook-cta">In 10 minutes, you'll understand why.</div>
@@ -762,7 +790,7 @@
                 <h2>An AI that can act</h2>
                 <p>An AI agent is software that can take actions in the world. Not just answer questions. Act. Book a flight. Compare prices. Pay for a service. Negotiate a contract. The difference between ChatGPT and an AI agent is the difference between advice and action.</p>
                 <p>That distinction sounds small. It isn't. The moment an agent can spend money, it needs payment rails. The moment it transacts with another agent, it needs identity, reputation, and dispute resolution. An entire economy has to exist.</p>
-                <p>That economy is being built right now. By 51 different organizations. With 51 different definitions of what it should look like.</p>
+                <p>That economy is being built right now. By 57 different organizations. With 57 different definitions of what it should look like.</p>
                 <div class="agent-diagram">
                     <div class="agent-box">User</div>
                     <div class="arrow">→</div>
@@ -917,7 +945,7 @@
                     That's what the main paper is about.
                 </div>
                 <div style="text-align: center;">
-                    <a href="agentic-economy-research.html" class="paper-link">Read "Two Economies, Not One" →</a>
+                    <a href="paper-2-taxonomy.html" class="paper-link">Read "Two Economies, Not One" →</a>
                 </div>
             </div>
         </section>
@@ -935,20 +963,20 @@
                     <div class="builder-card"><a href="/definition/agentic-economy-def-stripe-openai-a2" class="tech-link">OpenAI</a></div>
                     <div class="builder-card"><a href="/definition/agentic-economy-def-ibm-a8" class="tech-link">IBM</a></div>
                     <div class="builder-card"><a href="/definition/agentic-economy-def-mckinsey-a7" class="tech-link">McKinsey</a></div>
-                    <div class="builder-card">Gartner</div>
-                    <div class="builder-card">Sequoia</div>
-                    <div class="builder-card">Deloitte</div>
-                    <div class="builder-card">Capgemini</div>
-                    <div class="builder-card">Coinbase</div>
-                    <div class="builder-card">Cloudflare</div>
-                    <div class="builder-card">Circle</div>
-                    <div class="builder-card">Fetch.ai</div>
-                    <div class="builder-card">Olas</div>
-                    <div class="builder-card">BotNode</div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-gartner-b1" class="tech-link">Gartner</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-sequoia-capital-b3" class="tech-link">Sequoia</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-deloitte-a12" class="tech-link">Deloitte</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-capgemini-oecd-b5" class="tech-link">Capgemini</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-coinbase-cloudflare-c3" class="tech-link">Coinbase</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-coinbase-cloudflare-c3" class="tech-link">Cloudflare</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-circle-c4" class="tech-link">Circle</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-fetchai-asi-alliance-c1" class="tech-link">Fetch.ai</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-olas-valory-c2" class="tech-link">Olas</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-botnode-vmp-10-c12" class="tech-link">BotNode</a></div>
                     <div class="builder-card"><a href="/definition/agentic-economy-def-anthropic-e2" class="tech-link">Anthropic</a></div>
-                    <div class="builder-card">IEEE</div>
-                    <div class="builder-card">IETF</div>
-                    <div class="builder-card">Forrester</div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-ieee-7012-e4" class="tech-link">IEEE</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-ietf-e6" class="tech-link">IETF</a></div>
+                    <div class="builder-card"><a href="/definition/agentic-economy-def-forrester-existaio-e5" class="tech-link">Forrester</a></div>
                 </div>
                 <div class="builders-text">
                     When Visa, Mastercard, Google, Stripe, Coinbase, and Anthropic are all building in the same space — this is real.
@@ -979,7 +1007,7 @@
                         <div class="cta-arrow">→</div>
                     </a>
 
-                    <a href="https://zenodo.org/records/19679806" class="cta-card" target="_blank" rel="noopener">
+                    <a href="https://zenodo.org/records/20039387" class="cta-card" target="_blank" rel="noopener">
                         <div class="cta-title">Read the Paper</div>
                         <div class="cta-desc">Two Economies, Not One — the full research.</div>
                         <div class="cta-arrow">→</div>

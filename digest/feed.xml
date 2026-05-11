@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+  <title>Agentic Economy Digest</title>
+  <link>https://agenticeconomy.dev/digest/</link>
+  <description>A monthly read-out on the agentic-commerce stack: protocols, firms, academic papers, policy. For operators, investors, and policy teams. No filler.</description>
+  <language>en-us</language>
+  <lastBuildDate>Wed, 22 Apr 2026 09:00:00 GMT</lastBuildDate>
+  <atom:link href="https://agenticeconomy.dev/digest/feed.xml" rel="self" type="application/rss+xml"/>
+  <copyright>CC BY-SA 4.0 — René Dechamps Otamendi</copyright>
+  <image>
+    <url>https://agenticeconomy.dev/digest/assets/AE-Digest-01-cover.png</url>
+    <title>Agentic Economy Digest</title>
+    <link>https://agenticeconomy.dev/digest/</link>
+  </image>
+  <item>
+    <title>A2A hits 1.0 — why the trust layer is the story of the quarter</title>
+    <link>https://agenticeconomy.dev/digest/001-april-2026</link>
+    <guid isPermaLink="true">https://agenticeconomy.dev/digest/001-april-2026</guid>
+    <pubDate>Wed, 22 Apr 2026 09:00:00 GMT</pubDate>
+    <description>April 2026 read-out on the agentic-commerce stack: A2A v1.0 ships with Signed Agent Cards, Alibaba enters with ACTP, x402 joins the Linux Foundation, and the first serious academic papers land. Monthly. No filler.</description>
+    <author>noreply@agenticeconomy.dev (René Dechamps Otamendi)</author>
+    <category>A2A</category>
+    <category>ACTP</category>
+    <category>x402</category>
+    <category>Settlement</category>
+    <enclosure url="https://agenticeconomy.dev/digest/assets/AE-Digest-01-April-2026.pdf" length="516232" type="application/pdf"/>
+  </item>
+</channel>
+</rss>

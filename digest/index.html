@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
+<title>Monthly Digest &mdash; AgenticEconomy.dev</title>
+<meta name="description" content="A monthly read-out on the agentic-commerce stack: protocols, firms, academic papers, policy. Distilled for operators, investors, and policy teams. No filler.">
+<meta name="author" content="René Dechamps Otamendi">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="canonical" href="https://agenticeconomy.dev/digest/">
+<meta name="theme-color" content="#04060e">
+<meta name="color-scheme" content="dark">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Monthly Digest &mdash; AgenticEconomy.dev">
+<meta property="og:description" content="Agentic commerce, distilled. Monthly. No filler.">
+<meta property="og:url" content="https://agenticeconomy.dev/digest/">
+<meta property="og:image" content="https://agenticeconomy.dev/digest/assets/AE-Digest-01-cover.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Agentic Economy Digest N°1 — April 2026 cover">
+<meta property="og:site_name" content="Agentic Economy">
+<meta property="og:locale" content="en_US">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Monthly Digest &mdash; AgenticEconomy.dev">
+<meta name="twitter:description" content="Agentic commerce, distilled. Monthly. No filler.">
+<meta name="twitter:image" content="https://agenticeconomy.dev/digest/assets/AE-Digest-01-cover.png">
+<meta name="twitter:image:alt" content="Agentic Economy Digest N°1 — April 2026 cover">
+<!-- Feeds -->
+<link rel="alternate" type="application/rss+xml" title="Agentic Economy Digest" href="https://agenticeconomy.dev/digest/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
+<link rel="sitemap" type="application/xml" href="https://agenticeconomy.dev/sitemap.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Outfit:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://agenticeconomy.dev/digest/#webpage",
+  "url": "https://agenticeconomy.dev/digest/",
+  "name": "Monthly Digest — AgenticEconomy.dev",
+  "description": "A monthly read-out on the agentic-commerce stack: protocols, firms, academic papers, policy.",
+  "inLanguage": "en",
+  "isPartOf": { "@id": "https://agenticeconomy.dev/#website" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AgenticEconomy.dev",
+    "url": "https://agenticeconomy.dev"
+  }
+}
+</script>
+<style>
+  :root{
+    --bg-deep:#04060e;--bg-base:#080d1c;--bg-surface:#0f1530;--bg-card:#141a38;
+    --border:#1a2348;--border-light:#233060;
+    --text-primary:#e8ecf4;--text-secondary:#a0a9c0;--text-muted:#8e99b8;
+    --accent:#34d399;--accent-dim:#1a6b4d;
+    --accent-glow:rgba(52,211,153,0.12);--accent-glow-strong:rgba(52,211,153,0.25);
+    --warm:#f59e0b;--ease-out:cubic-bezier(0.16,1,0.3,1);
+    --font-display:'Syne',sans-serif;--font-body:'Outfit',sans-serif;--font-mono:'JetBrains Mono',monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+  body{font-family:var(--font-body);font-size:17px;line-height:1.7;color:var(--text-primary);background:var(--bg-deep);padding-top:56px;overflow-x:hidden}
+  a{color:var(--accent);text-decoration:none;transition:opacity .2s}
+  a:hover{text-decoration:underline}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  .skip-link{position:absolute;top:-100%;left:1rem;z-index:10000;padding:.75rem 1.5rem;background:var(--accent);color:var(--bg-deep);font-weight:600;border-radius:0 0 8px 8px;transition:top .2s}
+  .skip-link:focus{top:0}
+  h1{font-family:var(--font-display);font-weight:800;font-size:clamp(2.4rem,5vw,4rem);line-height:1.1;letter-spacing:-.03em;margin-bottom:1rem}
+  h2{font-family:var(--font-display);font-weight:700;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.2;letter-spacing:-.02em;margin-bottom:1rem}
+  h3{font-family:var(--font-display);font-weight:700;font-size:1.35rem;line-height:1.3;margin-bottom:.6rem;color:var(--text-primary)}
+  .container{max-width:1100px;margin:0 auto;padding:0 24px}
+  .button{display:inline-block;background:var(--accent);color:var(--bg-deep);padding:14px 28px;border-radius:8px;font-weight:600;border:none;cursor:pointer;transition:all .3s var(--ease-out);text-decoration:none;font-size:1rem;font-family:var(--font-body)}
+  .button:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(52,211,153,.2);text-decoration:none}
+  .button-secondary{background:transparent;color:var(--accent);border:1px solid var(--accent);padding:13px 24px}
+  .button-secondary:hover{background:rgba(52,211,153,.1)}
+  /* Nav (matches sitewide) */
+  .site-nav{position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(4,6,14,.75);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:56px;display:flex;align-items:center;padding:0 2rem}
+  .nav-container{width:100%;max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+  .nav-brand{font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--text-primary);white-space:nowrap;flex-shrink:0}
+  .nav-brand:hover{color:var(--accent);text-decoration:none}
+  .nav-menu{display:flex;align-items:center;gap:1.5rem;flex:1}
+  .nav-item{color:var(--text-secondary);font-weight:500;font-size:.95rem;position:relative;white-space:nowrap;background:none;border:none;cursor:pointer;transition:color .3s var(--ease-out)}
+  .nav-item:hover{color:var(--accent);text-decoration:none}
+  .nav-dropdown{position:relative}
+  .nav-dropdown-trigger{display:flex;align-items:center;gap:.5rem}
+  .nav-dropdown-trigger .arrow{display:inline-block;font-size:.6rem;transition:transform .3s var(--ease-out)}
+  .nav-dropdown-trigger.active .arrow{transform:rotate(180deg)}
+  .dropdown-panel{position:absolute;top:100%;left:0;background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;padding:12px 0;min-width:200px;margin-top:8px;display:none;flex-direction:column;box-shadow:0 4px 32px rgba(0,0,0,.4)}
+    /* §9 — invisible bridge spans the gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
+
+  .dropdown-panel.active{display:flex}
+  @media(min-width:769px){.nav-dropdown:hover .dropdown-panel,
+    .nav-dropdown:focus-within .dropdown-panel{display:flex}.nav-dropdown:hover .nav-dropdown-trigger .arrow{transform:rotate(180deg)}}
+  .dropdown-panel a{padding:10px 20px;color:var(--text-secondary);font-size:.95rem;transition:all .3s var(--ease-out);border-left:3px solid transparent}
+  .dropdown-panel a:hover{color:var(--accent);background:rgba(52,211,153,.08);border-left-color:var(--accent);text-decoration:none}
+  .nav-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.5rem;cursor:pointer;flex-shrink:0}
+  /* Digest-specific */
+  .masthead{padding:64px 0 48px;border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(52,211,153,.04) 0%,transparent 100%)}
+  .masthead .eyebrow{font-family:var(--font-mono);font-size:.78rem;font-weight:500;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;gap:.7rem}
+  .masthead .eyebrow::before{content:'';width:24px;height:1px;background:var(--accent)}
+  .masthead .dek{font-size:1.2rem;color:var(--text-secondary);max-width:680px;line-height:1.6;margin-bottom:1.5rem}
+  .masthead .rule{width:64px;height:3px;background:var(--accent);border:none;margin-top:.5rem}
+  section{padding:48px 0}
+  .about-card{background:var(--bg-surface);border:1px solid var(--border);border-radius:14px;padding:28px;max-width:780px}
+  .about-card p{color:var(--text-secondary);font-size:1.02rem;line-height:1.75}
+  .subscribe{display:flex;flex-direction:column;gap:1rem;align-items:flex-start;padding:32px;background:var(--bg-card);border:1px solid var(--accent-dim);border-radius:14px;max-width:780px}
+  .subscribe h3{margin-bottom:.2rem}
+  .subscribe p{color:var(--text-secondary);font-size:.95rem}
+  .subscribe-actions{display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;margin-top:.5rem}
+  .subscribe-actions .secondary{color:var(--text-muted);font-size:.9rem}
+  .issues-grid{display:grid;grid-template-columns:1fr;gap:2rem;max-width:900px}
+  @media(min-width:720px){.issues-grid{grid-template-columns:repeat(2,1fr)}}
+  .issue-card{display:flex;flex-direction:column;background:var(--bg-surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s var(--ease-out);color:inherit}
+  .issue-card:hover{border-color:var(--accent-dim);transform:translateY(-2px);box-shadow:0 8px 32px rgba(52,211,153,.08);text-decoration:none}
+  .issue-card .cover{aspect-ratio:16/9;width:100%;background:#0b1026 center/cover no-repeat;border-bottom:1px solid var(--border)}
+  .issue-card .body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:.5rem;flex:1}
+  .issue-tag{display:inline-block;align-self:flex-start;font-family:var(--font-mono);font-size:.74rem;font-weight:500;color:var(--accent);letter-spacing:.08em;text-transform:uppercase;background:rgba(52,211,153,.1);border:1px solid var(--accent-dim);padding:3px 10px;border-radius:999px}
+  .issue-card h3{font-size:1.3rem;line-height:1.3;margin:.5rem 0 .3rem}
+  .issue-dek{color:var(--text-secondary);font-size:.96rem;line-height:1.65;margin-bottom:1rem;flex:1}
+  .issue-actions{display:flex;gap:1.1rem;flex-wrap:wrap;font-size:.9rem;padding-top:.8rem;border-top:1px solid var(--border);margin-top:auto}
+  .issue-actions a{color:var(--accent);font-weight:500}
+  .issue-actions a.muted{color:var(--text-muted)}
+  .issue-actions a.muted:hover{color:var(--accent)}
+  /* Footer */
+  .site-footer{background:var(--bg-base);border-top:1px solid var(--border);padding:64px 0 32px;margin-top:96px}
+  .footer-grid{max-width:1100px;margin:0 auto 3rem;padding:0 24px;display:grid;grid-template-columns:repeat(5,1fr);gap:3rem}
+  .footer-col h4{font-family:var(--font-display);font-weight:700;font-size:1rem;color:var(--text-primary);margin-bottom:1.2rem}
+  .footer-col a{display:block;color:var(--text-secondary);font-size:.95rem;margin-bottom:.8rem;transition:color .3s var(--ease-out)}
+  .footer-col a:hover{color:var(--accent);text-decoration:none}
+  .badge-soon{display:inline-block;background:rgba(245,158,11,.15);color:var(--warm);font-size:.7rem;padding:2px 6px;border-radius:4px;margin-left:.5rem;font-weight:600}
+  .footer-bottom{max-width:1100px;margin:0 auto;padding:2rem 24px 0;border-top:1px solid var(--border);text-align:center;color:var(--text-muted);font-size:.85rem}
+  /* Responsive */
+  @media(max-width:900px){
+    .footer-grid{grid-template-columns:repeat(2,1fr);gap:2rem}
+    .nav-menu{position:absolute;top:56px;left:0;right:0;background:var(--bg-surface);border-bottom:1px solid var(--border);flex-direction:column;align-items:flex-start;padding:1rem 2rem;gap:1rem;max-height:0;overflow:hidden;transition:max-height .3s var(--ease-out)}
+    .nav-menu.active{max-height:600px}
+    .nav-toggle{display:block}
+    .dropdown-panel{position:static;border:none;background:transparent;padding:0;margin-top:0;box-shadow:none;max-height:0;overflow:hidden;transition:max-height .3s var(--ease-out)}
+    .dropdown-panel.active{max-height:320px;padding:.5rem 0 .5rem 1.5rem}
+  }
+  @media(max-width:600px){
+    section{padding:40px 0}
+    .masthead{padding:48px 0 32px}
+    .footer-grid{grid-template-columns:1fr;gap:1.5rem}
+    .subscribe{padding:22px}
+  }
+  @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- Navigation -->
+<nav class="site-nav">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-brand">agenticeconomy.dev</a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <div class="nav-menu">
+      <a href="../agentic-economy-101.html" class="nav-item">Start Here</a>
+      <div class="nav-dropdown">
+        <button class="nav-item nav-dropdown-trigger" data-href="../agentic-economy-research.html">Research <span class="arrow">&#9662;</span></button>
+        <div class="dropdown-panel">
+          <a href="../agentic-economy-research.html">Papers</a>
+          <a href="../agentic-economy-definitions.html">57 Definitions</a>
+          <a href="../agentic-economy-timeline.html">Timeline</a>
+          <a href="../agentic-economy-protocols.html">Protocol Matrix</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-item nav-dropdown-trigger">Resources <span class="arrow">&#9662;</span></button>
+        <div class="dropdown-panel">
+          <a href="/digest/">Monthly Digest</a>
+          <a href="../agentic-economy-glossary.html">Glossary</a>
+          <a href="../agentic-economy-quiz.html">Quiz</a>
+          <a href="../agentic-economy-infographic.html">Infographic</a>
+          <a href="../ask-agentic-economy.html">Ask the Corpus</a>
+        </div>
+      </div>
+      <a href="../blog/index.html" class="nav-item">Blog</a>
+      <a href="../about-agentic-economy.html" class="nav-item">About</a>
+      <a href="../contact.html" class="nav-item">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+  <!-- Masthead -->
+  <section class="masthead">
+    <div class="container">
+      <div class="eyebrow">Monthly Digest</div>
+      <h1>Monthly Digest</h1>
+      <p class="dek">Agentic commerce, distilled. Monthly. No filler.</p>
+      <hr class="rule">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section>
+    <div class="container">
+      <div class="about-card">
+        <p>A monthly read-out on the agentic-commerce stack &mdash; protocols, firms, academic papers, policy. Built on the public corpus (57 entries, coded across eight dimensions, free to cite). For operators, investors, and policy teams shaping agentic commerce.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe CTA -->
+  <section style="padding-top:0">
+    <div class="container">
+      <div class="subscribe">
+        <h3>Subscribe</h3>
+        <p>New issue every month. LinkedIn is the only subscribe channel for now.</p>
+        <div class="subscribe-actions">
+          <a href="https://www.linkedin.com/newsletters/agentic-economy-digest-TK/" target="_blank" rel="noopener" class="button">Subscribe on LinkedIn &rarr;</a>
+          <a href="#archive" class="secondary">Or read the archive below.</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Issues grid -->
+  <section id="archive">
+    <div class="container">
+      <h2>Archive</h2>
+      <p style="color:var(--text-secondary);margin-bottom:2rem;max-width:680px">Every issue stays readable on the web and downloadable as PDF. References link back to the public corpus.</p>
+
+      <div class="issues-grid">
+        <!--
+          To add a new issue: copy one <a class="issue-card"> block below,
+          update the tag, title, dek, cover image, href, PDF, and LinkedIn URL.
+        -->
+        <a href="001-april-2026.html" class="issue-card" aria-labelledby="issue-001-title">
+          <div class="cover" style="background-image:url('assets/AE-Digest-01-cover.png')" role="img" aria-label="Issue N°1 cover — April 2026"></div>
+          <div class="body">
+            <span class="issue-tag">N&deg; 01 &middot; April 2026</span>
+            <h3 id="issue-001-title">A2A hits 1.0 &mdash; why the trust layer is the story of the quarter</h3>
+            <p class="issue-dek">From slideware to plumbing &mdash; how identity, delegation, and neutral governance all moved in the same month.</p>
+            <div class="issue-actions">
+              <span>Read issue &rarr;</span>
+              <a href="assets/AE-Digest-01-April-2026.pdf" download class="muted" onclick="event.stopPropagation()">Download PDF &darr;</a>
+              <a href="https://www.linkedin.com/pulse/a2a-hits-10-why-trust-layer-story-quarter-rene-dechamps-otamendi-TK/" target="_blank" rel="noopener" class="muted" onclick="event.stopPropagation()">LinkedIn &#8599;</a>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Research</h4>
+      <a href="../agentic-economy-research.html">Papers</a>
+      <a href="../agentic-economy-definitions.html">57 Definitions</a>
+      <a href="../agentic-economy-timeline.html">Timeline</a>
+      <a href="../agentic-economy-protocols.html">Protocol Matrix</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="/digest/">Monthly Digest</a>
+      <a href="../agentic-economy-glossary.html">Glossary</a>
+      <a href="../agentic-economy-quiz.html">Quiz</a>
+      <a href="../agentic-economy-infographic.html">Infographic</a>
+      <a href="../ask-agentic-economy.html">Ask the Corpus</a>
+    </div>
+    <div class="footer-col">
+      <h4>Tools</h4>
+      <a href="/sandbox">Sandbox <span class="badge-soon">Soon</span></a>
+      <a href="/validators">Validators <span class="badge-soon">Soon</span></a>
+      <a href="/benchmark">Benchmark <span class="badge-soon">Soon</span></a>
+    </div>
+    <div class="footer-col">
+      <h4>Project</h4>
+      <a href="../about-agentic-economy.html">About</a>
+      <a href="../blog/index.html">Blog</a>
+      <a href="https://github.com/renedechamps/agenticeconomy" target="_blank" rel="noopener">GitHub</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+      <a href="/licensing">Licensing</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Ren&eacute; Dechamps Otamendi &middot; CC BY-SA 4.0 &middot; Zero cookies. Not even Belgian ones.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var navToggle=document.querySelector('.nav-toggle');
+  var navMenu=document.querySelector('.nav-menu');
+  var dropdownTriggers=document.querySelectorAll('.nav-dropdown-trigger');
+  if(navToggle){navToggle.addEventListener('click',function(){navMenu.classList.toggle('active');});}
+  dropdownTriggers.forEach(function(trigger){
+    trigger.addEventListener('click',function(e){
+      if(trigger.dataset.href && !e.target.classList.contains('arrow')){window.location.href=trigger.dataset.href;return;}
+      e.preventDefault();
+      var panel=trigger.nextElementSibling;
+      var parent=trigger.parentElement;
+      document.querySelectorAll('.nav-dropdown').forEach(function(d){
+        if(d!==parent){d.querySelector('.dropdown-panel').classList.remove('active');d.querySelector('.nav-dropdown-trigger').classList.remove('active');}
+      });
+      trigger.classList.toggle('active');
+      panel.classList.toggle('active');
+    });
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest('.site-nav')){
+      navMenu&&navMenu.classList.remove('active');
+      dropdownTriggers.forEach(function(t){t.classList.remove('active');t.nextElementSibling.classList.remove('active');});
+    }
+  });
+})();
+</script>
+</body>
+</html>

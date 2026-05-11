@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Agentic Economy · Agentic Economy</title>
-<meta name="description" content="The definitive research hub on the agentic economy: 57 definitions, 3 peer-reviewed papers, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
+<title>The Agentic Economy — 57 definitions, 4 papers, 17 protocols</title>
+<meta name="description" content="The definitive research hub on the agentic economy: 57 definitions, 4 preprints, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
 <meta name="author" content="Rene Dechamps Otamendi">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://agenticeconomy.dev/">
@@ -13,13 +18,13 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="The Agentic Economy">
-<meta property="og:description" content="The definitive research hub on the agentic economy: 57 definitions, 3 peer-reviewed papers, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
+<meta property="og:description" content="The definitive research hub on the agentic economy: 57 definitions, 4 preprints, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
 <meta property="og:url" content="https://agenticeconomy.dev/">
 <meta property="og:image" content="https://agenticeconomy.dev/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <meta property="og:site_name" content="Agentic Economy">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="https://renedechamps.com">
@@ -28,9 +33,9 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The Agentic Economy">
-<meta name="twitter:description" content="The definitive research hub on the agentic economy: 57 definitions, 3 peer-reviewed papers, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
+<meta name="twitter:description" content="The definitive research hub on the agentic economy: 57 definitions, 4 preprints, 17 protocols, 30 glossary terms. Open corpus under CC BY-SA 4.0.">
 <meta name="twitter:image" content="https://agenticeconomy.dev/og-image.png">
-<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
 <link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
@@ -80,7 +85,7 @@
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": "https://agenticeconomy.dev/agentic-economy-definitions.html?q={search_term_string}"
+      "urlTemplate": "https://agenticeconomy.dev/agentic-economy-definitions?q={search_term_string}"
     },
     "query-input": "required name=search_term_string"
   }
@@ -342,15 +347,28 @@
       box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
     }
 
+    /* §9 — invisible bridge spans the 8px gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
+
     .dropdown-panel.active {
       display: flex;
     }
     /* §9 — hover bridge for desktop: dropdown stays open on mouse-over */
     @media (min-width: 769px) {
-      .nav-dropdown:hover .dropdown-panel {
+      .nav-dropdown:hover .dropdown-panel,
+      .nav-dropdown:focus-within .dropdown-panel {
         display: flex;
       }
-      .nav-dropdown:hover .nav-dropdown-trigger .arrow {
+      .nav-dropdown:hover .nav-dropdown-trigger .arrow,
+      .nav-dropdown:focus-within .nav-dropdown-trigger .arrow {
         transform: rotate(180deg);
       }
     }
@@ -1151,21 +1169,21 @@
         <h4>Paper 1 — Reputation</h4>
         <h3>CRI: A Multi-Factor Reputation System</h3>
         <p>10 components. Score 0-100. Portable via JWT. Sybil-resistant by design. The first quantitative reputation system built specifically for autonomous agent commerce.</p>
-        <a href="https://doi.org/10.5281/zenodo.19208083" target="_blank" rel="noopener" class="research-link">Read on Zenodo →</a>
+        <a href="https://doi.org/10.5281/zenodo.19679843" target="_blank" rel="noopener" class="research-link">Read on Zenodo →</a>
       </div>
 
       <div class="card research-card">
         <h4>Paper 2 — Taxonomy</h4>
         <h3>Two Economies, Not One</h3>
         <p>57 definitions. 6 categories. 2 fault lines. Why 'agentic economy' means at least two completely different things — and why the infrastructure for each is incompatible.</p>
-        <a href="https://zenodo.org/records/19679806" target="_blank" rel="noopener" class="research-link">Read on Zenodo →</a>
+        <a href="https://zenodo.org/records/20039387" target="_blank" rel="noopener" class="research-link">Read on Zenodo →</a>
       </div>
 
       <div class="card research-card">
         <h4>Paper 3 — Verification</h4>
         <h3>The Oracle Problem in Agent Commerce</h3>
         <p>Gödel, Tarski, and Rice walk into an LLM evaluator. Formal proof that semantic truth verification is computationally intractable — and an architecture that works anyway.</p>
-        <a href="https://zenodo.org/records/19679701" target="_blank" rel="noopener" class="research-link">Read on Zenodo →</a>
+        <a href="https://zenodo.org/records/20039454" target="_blank" rel="noopener" class="research-link">Read on Zenodo →</a>
       </div>
 
       <div class="card research-card">

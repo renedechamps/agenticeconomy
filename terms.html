@@ -199,16 +199,29 @@
       flex-direction: column;
       box-shadow: 0 4px 32px rgba(0, 0, 0, 0.4);
     }
+    /* §9 — invisible bridge spans the 8px gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
+
 
     .dropdown-panel.active {
       display: flex;
     }
 
     @media (min-width: 769px) {
-      .nav-dropdown:hover .dropdown-panel {
+      .nav-dropdown:hover .dropdown-panel,
+      .nav-dropdown:focus-within .dropdown-panel {
         display: flex;
       }
-      .nav-dropdown:hover .nav-dropdown-trigger .arrow {
+      .nav-dropdown:hover .nav-dropdown-trigger .arrow,
+      .nav-dropdown:focus-within .nav-dropdown-trigger .arrow {
         transform: rotate(180deg);
       }
     }

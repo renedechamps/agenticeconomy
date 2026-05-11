@@ -3,6 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
 <title>17 Agentic Economy Protocols — Matrix · Agentic Economy</title>
 <meta name="description" content="Side-by-side comparison of 17 agentic-economy protocols: x402, ACP, A2A, MCP, AP2, VCAP, NANDA and more. Payment, identity, disputes, settlement.">
 <meta name="author" content="Rene Dechamps Otamendi">
@@ -19,7 +24,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <meta property="og:site_name" content="Agentic Economy">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="https://renedechamps.com">
@@ -30,7 +35,7 @@
 <meta name="twitter:title" content="17 Agentic Economy Protocols — Matrix">
 <meta name="twitter:description" content="Side-by-side comparison of 17 agentic-economy protocols: x402, ACP, A2A, MCP, AP2, VCAP, NANDA and more. Payment, identity, disputes, settlement.">
 <meta name="twitter:image" content="https://agenticeconomy.dev/og-image.png">
-<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
 <link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
@@ -212,7 +217,19 @@
         .arrow{font-size:.6rem;transition:transform .2s}
         .nav-dropdown:hover .arrow{transform:rotate(180deg)}
         .dropdown-panel{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;padding:.4rem 0;min-width:180px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
-        .nav-dropdown:hover .dropdown-panel{display:block}
+    /* §9 — invisible bridge spans the gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
+
+        .nav-dropdown:hover .dropdown-panel,
+    .nav-dropdown:focus-within .dropdown-panel{display:block}
         .dropdown-panel a{display:block;padding:.5rem 1rem;color:var(--text-secondary);text-decoration:none;font-family:'Outfit',sans-serif;font-size:.85rem;transition:color .15s,background .15s,padding-left .15s}
         .dropdown-panel a:hover{color:var(--accent);background:var(--bg-surface);padding-left:1.25rem}
         .nav-toggle{display:none;background:none;border:none;color:var(--text-primary);font-size:1.4rem;cursor:pointer;padding:.5rem}
@@ -924,7 +941,30 @@
 .footer-bottom p{color:var(--text-muted);font-size:.85rem;font-family:'Outfit',sans-serif}
 @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
-    </style>
+    
+        /* P0-8: Static crawlable matrix */
+        .static-matrix{max-width:1200px;margin:2rem auto;padding:0 1rem}
+        .static-matrix h2{font-family:'Syne',sans-serif;font-size:1.6rem;margin-bottom:.5rem}
+        .static-matrix-note{color:var(--text-secondary);margin-bottom:1rem;font-size:.95rem}
+        .table-scroll{overflow-x:auto;border:1px solid var(--border);border-radius:8px}
+        .protocol-matrix{width:100%;border-collapse:collapse;font-size:.85rem}
+        .protocol-matrix caption{text-align:left;padding:.6rem 1rem;color:var(--text-secondary);font-style:italic;caption-side:bottom;border-top:1px solid var(--border)}
+        .protocol-matrix thead{background:rgba(52,211,153,0.08)}
+        .protocol-matrix th{text-align:left;padding:.6rem .8rem;font-weight:600;color:var(--text-primary);border-bottom:2px solid var(--border);white-space:nowrap}
+        .protocol-matrix td{padding:.55rem .8rem;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-secondary)}
+        .protocol-matrix tr:hover{background:rgba(52,211,153,0.03)}
+        .protocol-matrix td.protocol-name{color:var(--text-primary);font-weight:600;white-space:nowrap}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://agenticeconomy.dev/" },
+    { "@type": "ListItem", "position": 2, "name": "Protocols", "item": "https://agenticeconomy.dev/agentic-economy-protocols" }
+  ]
+}
+</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -965,6 +1005,275 @@
         <h1>Protocol Comparison Matrix</h1>
         <p>How 17 protocols handle payment, identity, disputes, and governance. Side-by-side, with real data.</p>
     </section>
+
+<!-- ── Static crawlable comparison matrix (P0-8 fix) ── -->
+<section class="static-matrix" aria-label="Protocol comparison matrix">
+  <h2>All 17 protocols at a glance</h2>
+  <p class="static-matrix-note">A flat, sortable comparison of every protocol indexed by AgenticEconomy.dev. Use the interactive filters below for grouped exploration.</p>
+  <div class="table-scroll">
+    <table class="protocol-matrix" id="staticProtocolMatrix">
+      <caption>17 agent-commerce protocols compared on 12 dimensions. Updated 2026-04-09.</caption>
+      <thead>
+        <tr>
+          <th scope="col">Protocol</th>
+          <th scope="col">Sponsor</th>
+          <th scope="col">Category</th>
+          <th scope="col">Chain</th>
+          <th scope="col">Open source</th>
+          <th scope="col">API / stack</th>
+          <th scope="col">Governance</th>
+          <th scope="col">Partners / scale</th>
+          <th scope="col">Latency</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Status</th>
+          <th scope="col">Differentiator</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr data-protocol="acp" data-category="A">
+      <td class="protocol-name">ACP</td>
+      <td>Stripe/OpenAI</td>
+      <td>A</td>
+      <td>No</td>
+      <td>Partially (agenticcommerce.dev)</td>
+      <td>REST, Stripe SDK</td>
+      <td>Stripe/OpenAI</td>
+      <td>1M+ Shopify merchants eligible, 12 live</td>
+      <td>seconds (Stripe processing)</td>
+      <td>Stripe fees (2.9%+$0.30)</td>
+      <td>Production (scaled back)</td>
+      <td>First ChatGPT-native checkout</td>
+    </tr>
+    <tr data-protocol="ucp" data-category="A">
+      <td class="protocol-name">UCP</td>
+      <td>Google/Shopify/Walmart</td>
+      <td>A</td>
+      <td>No</td>
+      <td>Spec public</td>
+      <td>REST, native + embedded modes</td>
+      <td>Google-led consortium</td>
+      <td>20+ (Adyen, Amex, Best Buy, Macy's, Visa, Zalando)</td>
+      <td>—</td>
+      <td>Processor fees</td>
+      <td>Rolling out</td>
+      <td>Full commerce lifecycle state machine</td>
+    </tr>
+    <tr data-protocol="ap2" data-category="A">
+      <td class="protocol-name">AP2</td>
+      <td>Google/Mastercard/PayPal</td>
+      <td>A</td>
+      <td>No</td>
+      <td></td>
+      <td>OAuth-based</td>
+      <td>Multi-company</td>
+      <td>60+</td>
+      <td>—</td>
+      <td>Card network fees</td>
+      <td>Production</td>
+      <td>OAuth delegation, agent never touches money</td>
+    </tr>
+    <tr data-protocol="visa" data-category="A">
+      <td class="protocol-name">Visa &quot;Agentic Ready&quot;</td>
+      <td>Visa</td>
+      <td>A</td>
+      <td>No</td>
+      <td></td>
+      <td>Visa APIs + tokenization</td>
+      <td>Visa</td>
+      <td>20+ European banks (Santander, HSBC, Revolut, Barclays)</td>
+      <td>Card network speed</td>
+      <td>Interchange fees</td>
+      <td>Pilot (Europe)</td>
+      <td>Biometric verification ties agent to human</td>
+    </tr>
+    <tr data-protocol="mastercard" data-category="A">
+      <td class="protocol-name">Mastercard &quot;Agent Pay&quot;</td>
+      <td>Mastercard</td>
+      <td>A</td>
+      <td>No</td>
+      <td></td>
+      <td>Tokenization + passkeys</td>
+      <td>Mastercard</td>
+      <td>US all issuers, Europe pilot (Santander live), Australia (CBA, Westpac)</td>
+      <td>Card network speed</td>
+      <td>Interchange fees</td>
+      <td>Production (multi-region)</td>
+      <td>Agentic Tokens with spend limits via passkeys</td>
+    </tr>
+    <tr data-protocol="mpp" data-category="A">
+      <td class="protocol-name">MPP</td>
+      <td>Stripe/Tempo</td>
+      <td>A</td>
+      <td>No</td>
+      <td>—</td>
+      <td>—</td>
+      <td>Stripe/Tempo</td>
+      <td>—</td>
+      <td>—</td>
+      <td>Stripe/Visa fees</td>
+      <td>Announced</td>
+      <td>Hybrid fiat+stablecoin on human rails</td>
+    </tr>
+    <tr data-protocol="x402" data-category="C_cr">
+      <td class="protocol-name">x402</td>
+      <td>Coinbase/Cloudflare</td>
+      <td>C_cr</td>
+      <td>Yes</td>
+      <td>Yes (x402.org, GitHub)</td>
+      <td>HTTP 402, REST</td>
+      <td>x402 Foundation (Coinbase+Cloudflare)</td>
+      <td>x402 Foundation, 119M+ tx on Base, $600M annualized</td>
+      <td>&lt;500ms</td>
+      <td>Zero protocol fee</td>
+      <td>Production</td>
+      <td>HTTP-native micropayments, zero fees</td>
+    </tr>
+    <tr data-protocol="circle" data-category="C_cr">
+      <td class="protocol-name">Circle Nanopayments</td>
+      <td>Circle</td>
+      <td>C_cr</td>
+      <td>Yes</td>
+      <td>—</td>
+      <td>REST</td>
+      <td>Circle</td>
+      <td>12 chains supported</td>
+      <td>Near-instant (off-chain)</td>
+      <td>Down to $0.000001</td>
+      <td>Testnet</td>
+      <td>Gas-free nano-transfers, batched on-chain settlement</td>
+    </tr>
+    <tr data-protocol="kite" data-category="C_cr">
+      <td class="protocol-name">Kite</td>
+      <td>Kite</td>
+      <td>C_cr</td>
+      <td>Yes</td>
+      <td>—</td>
+      <td>EVM + x402 native</td>
+      <td>Kite team</td>
+      <td>100K+ testnet wallets</td>
+      <td>Sub-second (L1)</td>
+      <td>Zero gas</td>
+      <td>Testnet → Mainnet Q1 2026</td>
+      <td>Purpose-built L1 for agent payments + KYA identity</td>
+    </tr>
+    <tr data-protocol="olas" data-category="C_cr">
+      <td class="protocol-name">Olas</td>
+      <td>Valory</td>
+      <td>C_cr</td>
+      <td>Yes</td>
+      <td>Yes (GitHub)</td>
+      <td>Python SDK</td>
+      <td>DAO</td>
+      <td>700K+ monthly tx, $13.8M Series A</td>
+      <td>Gnosis chain speed</td>
+      <td>Minimal gas</td>
+      <td>Production</td>
+      <td>DAO-governed agent-to-agent service marketplace</td>
+    </tr>
+    <tr data-protocol="fetch" data-category="C_cr">
+      <td class="protocol-name">Fetch.ai/ASI</td>
+      <td>Fetch.ai</td>
+      <td>C_cr</td>
+      <td>Yes</td>
+      <td>Yes (GitHub)</td>
+      <td>Python SDK, Almanac</td>
+      <td>ASI Alliance</td>
+      <td>NVIDIA advisor, ASI Alliance</td>
+      <td>Chain speed</td>
+      <td>FET token fees</td>
+      <td>DevNet (mainnet late 2026)</td>
+      <td>Earliest mover (2021), NVIDIA partnership</td>
+    </tr>
+    <tr data-protocol="botnode" data-category="C_s">
+      <td class="protocol-name">BotNode/VMP-1.0</td>
+      <td>BotNode</td>
+      <td>C_s</td>
+      <td>No</td>
+      <td>—</td>
+      <td>REST + MCP + A2A</td>
+      <td>BotNode</td>
+      <td>—</td>
+      <td>&lt;100ms</td>
+      <td>TCK-denominated (no fiat fees)</td>
+      <td>Development</td>
+      <td>Only non-crypto C entry. Settlement neutrality, CRI reputation, deterministic validators</td>
+    </tr>
+    <tr data-protocol="a2a" data-category="E">
+      <td class="protocol-name">A2A</td>
+      <td>Google</td>
+      <td>E</td>
+      <td>No</td>
+      <td>Yes (GitHub, Apache 2.0)</td>
+      <td>JSON-RPC over HTTPS</td>
+      <td>Linux Foundation</td>
+      <td>150+ orgs</td>
+      <td>N/A (discovery)</td>
+      <td>Free</td>
+      <td>Production (v0.3)</td>
+      <td>Agent discovery standard, Agent Cards at /.well-known/agent.json</td>
+    </tr>
+    <tr data-protocol="mcp" data-category="E">
+      <td class="protocol-name">MCP</td>
+      <td>Anthropic</td>
+      <td>E</td>
+      <td>No</td>
+      <td>Yes (GitHub)</td>
+      <td>JSON-RPC, stdio/SSE</td>
+      <td>Anthropic</td>
+      <td>Massive ecosystem</td>
+      <td>N/A (tools)</td>
+      <td>Free</td>
+      <td>Production</td>
+      <td>Universal tool interoperability for LLMs</td>
+    </tr>
+    <tr data-protocol="ieee7012" data-category="E">
+      <td class="protocol-name">IEEE 7012</td>
+      <td>IEEE</td>
+      <td>E</td>
+      <td>No</td>
+      <td>Standard (IEEE)</td>
+      <td>N/A (legal standard)</td>
+      <td>IEEE SA</td>
+      <td>IEEE members</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Draft</td>
+      <td>First formal standard for agent-to-agent agreements</td>
+    </tr>
+    <tr data-protocol="vcap" data-category="E">
+      <td class="protocol-name">IETF VCAP</td>
+      <td>IETF</td>
+      <td>E</td>
+      <td>No</td>
+      <td>Internet-Draft</td>
+      <td>Protocol spec</td>
+      <td>IETF</td>
+      <td>IETF community</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>Draft</td>
+      <td>Cryptographic proof of work delivery</td>
+    </tr>
+    <tr data-protocol="kya" data-category="E">
+      <td class="protocol-name">KYA</td>
+      <td>Trulioo/Worldpay/Skyfire</td>
+      <td>E</td>
+      <td>No</td>
+      <td></td>
+      <td>REST</td>
+      <td>Multi-company</td>
+      <td>Trulioo, Worldpay, Skyfire</td>
+      <td>N/A (identity)</td>
+      <td>Per-verification</td>
+      <td>Development</td>
+      <td>&quot;Digital Agent Passport&quot; — KYC for machines</td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
 
     <!-- Main Container -->
     <div class="container">

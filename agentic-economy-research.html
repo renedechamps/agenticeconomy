@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
 <title>Agentic Economy Research — Papers &amp; Corpus · Agentic Economy</title>
-<meta name="description" content="Peer-reviewed research on the agentic economy: CRI framework, protocol taxonomy, and the Oracle Problem. Zenodo DOIs, BibTeX, open access.">
+<meta name="description" content="Preprint research on the agentic economy: CRI framework, protocol taxonomy, and the Oracle Problem. Zenodo DOIs, BibTeX, open access.">
 <meta name="author" content="Rene Dechamps Otamendi">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <link rel="canonical" href="https://agenticeconomy.dev/agentic-economy-research">
@@ -13,13 +18,13 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Agentic Economy Research — Papers &amp; Corpus">
-<meta property="og:description" content="Peer-reviewed research on the agentic economy: CRI framework, protocol taxonomy, and the Oracle Problem. Zenodo DOIs, BibTeX, open access.">
+<meta property="og:description" content="Preprint research on the agentic economy: CRI framework, protocol taxonomy, and the Oracle Problem. Zenodo DOIs, BibTeX, open access.">
 <meta property="og:url" content="https://agenticeconomy.dev/agentic-economy-research">
 <meta property="og:image" content="https://agenticeconomy.dev/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta property="og:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <meta property="og:site_name" content="Agentic Economy">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="https://renedechamps.com">
@@ -28,9 +33,9 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Agentic Economy Research — Papers &amp; Corpus">
-<meta name="twitter:description" content="Peer-reviewed research on the agentic economy: CRI framework, protocol taxonomy, and the Oracle Problem. Zenodo DOIs, BibTeX, open access.">
+<meta name="twitter:description" content="Preprint research on the agentic economy: CRI framework, protocol taxonomy, and the Oracle Problem. Zenodo DOIs, BibTeX, open access.">
 <meta name="twitter:image" content="https://agenticeconomy.dev/og-image.png">
-<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 3 preprints, 30 glossary terms, CC BY-SA 4.0">
+<meta name="twitter:image:alt" content="AgenticEconomy.dev — The research hub on the agentic economy: 57 definitions, 4 preprints, 30 glossary terms, CC BY-SA 4.0">
 <!-- Feed -->
 <link rel="alternate" type="application/rss+xml" title="Agentic Economy Updates" href="https://agenticeconomy.dev/feed.xml">
 <link rel="alternate" type="text/plain" title="LLMs.txt" href="https://agenticeconomy.dev/llms.txt">
@@ -71,7 +76,7 @@
   "@id": "https://agenticeconomy.dev/agentic-economy-research#webpage",
   "url": "https://agenticeconomy.dev/agentic-economy-research",
   "name": "Agentic Economy Research",
-  "description": "Peer-reviewed papers on the agentic economy",
+  "description": "Preprints on the agentic economy",
   "isPartOf": {
     "@id": "https://agenticeconomy.dev/#website"
   },
@@ -85,8 +90,8 @@
       "author": {
         "@id": "https://renedechamps.com/#person"
       },
-      "identifier": "10.5281/zenodo.19208083",
-      "sameAs": "https://doi.org/10.5281/zenodo.19208083",
+      "identifier": "10.5281/zenodo.19679843",
+      "sameAs": "https://doi.org/10.5281/zenodo.19679843",
       "publisher": "Zenodo",
       "license": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
@@ -96,8 +101,8 @@
       "author": {
         "@id": "https://renedechamps.com/#person"
       },
-      "identifier": "10.5281/zenodo.19208278",
-      "sameAs": "https://doi.org/10.5281/zenodo.19208278",
+      "identifier": "10.5281/zenodo.20039387",
+      "sameAs": "https://doi.org/10.5281/zenodo.20039387",
       "publisher": "Zenodo"
     },
     {
@@ -106,8 +111,8 @@
       "author": {
         "@id": "https://renedechamps.com/#person"
       },
-      "identifier": "10.5281/zenodo.19208440",
-      "sameAs": "https://doi.org/10.5281/zenodo.19208440",
+      "identifier": "10.5281/zenodo.20039454",
+      "sameAs": "https://doi.org/10.5281/zenodo.20039454",
       "publisher": "Zenodo"
     }
   ]
@@ -148,7 +153,19 @@
   .nav-dropdown-trigger{cursor:pointer}
   .arrow{font-size:10px;display:inline-block;transition:transform .2s}
   .dropdown-panel{position:absolute;top:56px;left:0;background:rgba(8,13,28,.98);border:1px solid var(--border);border-radius:6px;padding:8px;min-width:180px;opacity:0;pointer-events:none;transition:opacity .2s;backdrop-filter:blur(4px)}
-  .nav-dropdown:hover .dropdown-panel{opacity:1;pointer-events:auto}
+    /* §9 — invisible bridge spans the gap so hover doesn't break */
+    .dropdown-panel::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: transparent;
+    }
+
+  .nav-dropdown:hover .dropdown-panel,
+    .nav-dropdown:focus-within .dropdown-panel{opacity:1;pointer-events:auto}
   .nav-dropdown:hover .nav-dropdown-trigger .arrow{transform:rotate(180deg)}
   .dropdown-panel a{display:block;padding:10px 16px;color:var(--text-secondary);text-decoration:none;font-size:14px;border-radius:4px;transition:background-color .2s,color .2s}
   .dropdown-panel a:hover{background:rgba(52,211,153,.1);color:var(--accent)}
@@ -245,6 +262,16 @@
   @media(max-width:768px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://agenticeconomy.dev/" },
+    { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://agenticeconomy.dev/agentic-economy-research" }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -286,7 +313,7 @@
   <section class="hero">
     <div class="container">
       <div class="eyebrow">Agentic Economy Research Series</div>
-      <h1>Four preprints on the<br>economy of agents.</h1>
+      <h1>Four preprints on the <br>economy of agents.</h1>
       <p>Original research on how autonomous agents will transact, settle, and build trust — covering reputation, taxonomy, the Oracle Problem, and the diagnostics of a pre-infrastructural field.</p>
       <div class="hero-meta">
         <span class="badge"><span class="badge-dot"></span>Open access · CC BY-SA 4.0</span>

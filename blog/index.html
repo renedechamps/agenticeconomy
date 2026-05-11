@@ -3,8 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog &mdash; Agentic Economy</title>
-  <meta name="description" content="Articles on the agentic economy, agent commerce protocols, and the infrastructure for autonomous agents.">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../manifest.webmanifest">
+<meta name="theme-color" content="#04060e">
+<title>Blog — Agentic Economy · Four long-form articles on agent commerce</title>
+  <meta name="description" content="Four long-form articles on the agentic economy: definitional divergence, reputation, oracle problems, and agent commerce protocols. CC BY-SA 4.0.">
   <link rel="canonical" href="https://agenticeconomy.dev/blog/">
   <meta name="theme-color" content="#050810">
   <meta name="robots" content="index, follow">
@@ -52,7 +57,7 @@
     footer{padding:3rem 0;border-top:1px solid var(--border);position:relative;z-index:1}
     .page-header{padding-top:8rem;padding-bottom:3rem;text-align:center}
     .page-header p{color:var(--text-secondary);font-size:1.06rem;max-width:600px;margin:0 auto;line-height:1.75}
-    .blog-list{display:flex;flex-direction:column;gap:1.5rem;max-width:780px;margin:0 auto;padding-bottom:4rem}
+    .blog-card-wrap{display:block} .blog-list{display:flex;flex-direction:column;gap:1.5rem;max-width:780px;margin:0 auto;padding-bottom:4rem}
     .blog-card{display:block;padding:2rem;background:var(--bg-surface);border:1px solid var(--border);border-radius:12px;transition:all .3s}
     .blog-card:hover{border-color:var(--accent-dim);background:var(--bg-card);opacity:1;box-shadow:0 4px 40px rgba(0,0,0,.3)}
     .blog-card-date{font-family:var(--font-mono);font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.6rem}
@@ -65,6 +70,39 @@
     @media(max-width:900px){section{padding:5rem 0}.container{padding:0 1.5rem}nav{padding:1rem}.nav-links{gap:1rem}.blog-card{padding:1.5rem}}
     @media(max-width:600px){.container{padding:0 1rem}.nav-links .hm{display:none}section{padding:4rem 0}nav{padding:.8rem 1rem}.nav-links{gap:.8rem}.gh-link{padding:.35rem .65rem;font-size:.78rem}.page-header{padding-top:6rem}}
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://agenticeconomy.dev/blog/#blog",
+    "name": "AgenticEconomy.dev Blog",
+    "description": "Long-form analysis on the agentic economy, agent commerce protocols, settlement, and identity.",
+    "url": "https://agenticeconomy.dev/blog/",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Agentic Economy",
+      "url": "https://agenticeconomy.dev"
+    },
+    "blogPost": [
+      { "@type": "BlogPosting", "headline": "The Agentic Economy Doesn\u2019t Exist Yet", "url": "https://agenticeconomy.dev/blog/the-agentic-economy-doesnt-exist-yet/", "datePublished": "2026-04-21", "author": { "@type": "Person", "name": "Ren\u00e9 Dechamps Otamendi" } },
+      { "@type": "BlogPosting", "headline": "You Can\u2019t Verify Quality With an LLM", "url": "https://agenticeconomy.dev/blog/you-cant-verify-quality-with-an-llm/", "datePublished": "2026-04-09", "author": { "@type": "Person", "name": "Ren\u00e9 Dechamps Otamendi" } },
+      { "@type": "BlogPosting", "headline": "Why Agent Reputation Is Harder Than You Think", "url": "https://agenticeconomy.dev/blog/why-agent-reputation-is-harder-than-you-think/", "datePublished": "2026-04-08", "author": { "@type": "Person", "name": "Ren\u00e9 Dechamps Otamendi" } },
+      { "@type": "BlogPosting", "headline": "What Is the Agentic Economy? Five Categories, Two Fault Lines.", "url": "https://agenticeconomy.dev/blog/what-is-the-agentic-economy/", "datePublished": "2026-03-26", "author": { "@type": "Person", "name": "Ren\u00e9 Dechamps Otamendi" } }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://agenticeconomy.dev/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://agenticeconomy.dev/blog/" }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to content</a>
@@ -99,6 +137,7 @@
       <div class="container">
         <div class="blog-list">
 
+          <article itemscope itemtype="https://schema.org/BlogPosting" class="blog-card-wrap">
           <a href="the-agentic-economy-doesnt-exist-yet/" class="blog-card">
             <div class="blog-card-date">21 April 2026</div>
             <h2>The Agentic Economy Doesn&rsquo;t Exist Yet</h2>
@@ -106,7 +145,9 @@
             <p>Fifty-one published definitions. Zero convergence. Three historical analogs &mdash; e-commerce, cloud, the sharing economy &mdash; show that definitions stabilize when infrastructure gets built, not when researchers agree. Four tests will tell us when it&rsquo;s real.</p>
             <span class="read-more">Read article &rarr;</span>
           </a>
+          </article>
 
+          <article itemscope itemtype="https://schema.org/BlogPosting" class="blog-card-wrap">
           <a href="you-cant-verify-quality-with-an-llm/" class="blog-card">
             <div class="blog-card-date">9 April 2026</div>
             <h2>You Can&rsquo;t Verify Quality With an LLM</h2>
@@ -114,7 +155,9 @@
             <p>When an agent pays another agent one cent for a translation, who verifies the quality? Mathematics says you can&rsquo;t automate it. A two-layer architecture &mdash; deterministic validators plus Quality Markets &mdash; manages what cannot be solved.</p>
             <span class="read-more">Read article &rarr;</span>
           </a>
+          </article>
 
+          <article itemscope itemtype="https://schema.org/BlogPosting" class="blog-card-wrap">
           <a href="why-agent-reputation-is-harder-than-you-think/" class="blog-card">
             <div class="blog-card-date">8 April 2026</div>
             <h2>Why Agent Reputation Is Harder Than You Think</h2>
@@ -122,7 +165,9 @@
             <p>Amazon reviews are gamed. Now imagine the reviewers are machines that create a thousand identities in seconds. The CRI paper proposes a 10-component reputation score grounded in EigenTrust and Ostrom.</p>
             <span class="read-more">Read article &rarr;</span>
           </a>
+          </article>
 
+          <article itemscope itemtype="https://schema.org/BlogPosting" class="blog-card-wrap">
           <a href="what-is-the-agentic-economy/" class="blog-card">
             <div class="blog-card-date">26 March 2026</div>
             <h2>What Is the Agentic Economy? Five Categories, Two Fault Lines.</h2>
@@ -130,6 +175,7 @@
             <p>A taxonomy of 51 definitions &mdash; five categories, two fault lines, and why agent-assisted commerce is not the same as an economy of agents.</p>
             <span class="read-more">Read article &rarr;</span>
           </a>
+          </article>
 
         </div>
       </div>

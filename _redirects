@@ -24,6 +24,16 @@ https://agenticeconomy.us/* https://agenticeconomy.dev/:splat 301!
 /subscribe.html /subscribe 301
 /subscribe-confirmed.html /subscribe-confirmed 301
 /field-reports.html /field-reports 301
+/privacy.html /privacy 301
+/terms.html /terms 301
+/licensing.html /licensing 301
+/contact.html /contact 301
+/contact-sent.html /contact-sent 301
+
+# SEO-friendly PDF filenames — old short names redirect to descriptive names
+/papers/paper-1-cri.pdf /papers/agentic-economy-cri-reputation-system.pdf 301
+/papers/paper-2-taxonomy.pdf /papers/agentic-economy-taxonomy-settlement-neutrality.pdf 301
+/papers/paper-3-oracle.pdf /papers/agentic-economy-oracle-problem.pdf 301
 
 # Definition pages — strip .html
 /definition/:slug.html /definition/:slug 301

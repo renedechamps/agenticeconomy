@@ -133,10 +133,37 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- ── Monthly Digest ── -->
+  <url>
+    <loc>https://agenticeconomy.dev/digest/</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://agenticeconomy.dev/digest/001-april-2026</loc>
+    <lastmod>2026-04-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ── Corpus slice pages ── -->
+  <url><loc>https://agenticeconomy.dev/agentic-economy-by-actor-model</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://agenticeconomy.dev/agentic-economy-by-actor-type</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://agenticeconomy.dev/agentic-economy-by-infrastructure</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://agenticeconomy.dev/agentic-economy-by-region</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://agenticeconomy.dev/agentic-economy-by-settlement</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://agenticeconomy.dev/agentic-economy-by-trust-model</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+
+  <!-- ── Tools ── -->
+  <url><loc>https://agenticeconomy.dev/sandbox</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://agenticeconomy.dev/validators</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://agenticeconomy.dev/field-reports</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+
   <!-- ── Blog ── -->
   <url>
     <loc>https://agenticeconomy.dev/blog/</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-04-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -237,7 +264,48 @@
   <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-a16z-e8</loc><lastmod>2026-04-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-urbach-et-al-e9</loc><lastmod>2026-04-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-goenka-et-al-e10</loc><lastmod>2026-04-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://agenticeconomy.dev/definition/</loc><lastmod>2026-04-15</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- ── Definition fiches — new / renamed slugs (April 2026 corpus refresh) ── -->
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-alibaba-alipay-a15</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-zetrix-ai-caict-astron-c13</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-minghui-xu-arxiv-260214219-c14</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-microsoft-research-arxiv-260325893-d8</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-nannini-et-al-arxiv-260404604-d9</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-ais-1-ais-1org-e11</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-stripe-openai-acp-a2</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-google-shopify-walmart-ucp-a3</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-google-mastercard-paypal-ap2-a4</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-visa-agentic-ready-a5</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-mastercard-agent-pay-a6</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-mckinsey-end-of-inertia-a7</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-ibm-agentic-commerce-a8</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-deloitte-commerce-a12</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-stripe-tempo-mpp-a13</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-jason-cochran-workflow-a14</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-sequoia-mcgrew-b2</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-sequoia-buhler-b3</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-deloitte-agentic-enterprise-b4</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-bornet-self-running-businesses-b7</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-notoriousplg-agentic-workforce-b8</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-fetch-ai-asi-alliance-c1</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-coinbase-cloudflare-x402-c3</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-circle-nanopayments-c4</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-xu-et-al-agent-economy-c8</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-okx-onchainos-c11</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-bis-agentic-finance-d2</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-a16z-yc-sovereign-d3</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-macroeconomic-doom-loop-d4</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-mit-tech-review-emtech-d7</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-google-a2a-e1</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-anthropic-mcp-e2</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-trulioo-worldpay-skyfire-kya-e3</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-forrester-exista-ado-e5</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-ietf-vcap-e6</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-oecd-agentic-ai-e7</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-a16z-keycard-e8</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-urbach-machine-economy-e9</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://agenticeconomy.dev/definition/agentic-economy-def-goenka-tesspay-e10</loc><lastmod>2026-04-22</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- ── Glossary terms ── -->
   <url><loc>https://agenticeconomy.dev/term/agentic-economy-agentic-economy</loc><lastmod>2026-04-15</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>

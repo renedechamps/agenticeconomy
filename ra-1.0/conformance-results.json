@@ -1,0 +1,46 @@
+{
+  "harness_version": "RA-1.0",
+  "test_count": 6,
+  "passed": 6,
+  "compliant": true,
+  "results": [
+    {
+      "test": "CT1 \u2014 Cross-protocol identity",
+      "passed": true,
+      "sequences_compared": 3
+    },
+    {
+      "test": "CT2 \u2014 Cross-substrate identity (canonical)",
+      "passed": true,
+      "substrates_compared": [
+        "Postgres",
+        "L2",
+        "TEE"
+      ]
+    },
+    {
+      "test": "CT3 \u2014 Reputation invariance",
+      "passed": true,
+      "combinations_tested": 9
+    },
+    {
+      "test": "CT4 \u2014 Dispute rule parity",
+      "passed": true,
+      "protocols_tested": [
+        "MCP",
+        "A2A",
+        "REST"
+      ]
+    },
+    {
+      "test": "CT5 \u2014 Auditor reconstruction",
+      "passed": true,
+      "transactions_reconstructed": 5
+    },
+    {
+      "test": "CT6 \u2014 Negative test (substrate idiosyncrasy masked)",
+      "passed": true,
+      "observation": "CRI delta independent of substrate commit semantics"
+    }
+  ]
+}
