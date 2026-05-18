@@ -1,0 +1,48 @@
+
+# ────────────────────────────────────────────────────────────────
+# agenticeconomy.dev · Field Reports + Research Preprints
+# Repositorio: https://github.com/renedechamps/agenticeconomy
+# ────────────────────────────────────────────────────────────────
+
+agenticeconomy.dev, www.agenticeconomy.dev {
+    root * /var/www/agenticeconomy
+    encode zstd gzip
+    try_files {path} {path}.html {path}/index.html
+    file_server
+
+    handle_errors {
+        @404 expression `{err.status_code} == 404`
+        rewrite @404 /404.html
+        file_server
+    }
+
+    @www host www.agenticeconomy.dev
+    redir @www https://agenticeconomy.dev{uri} permanent
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+        -Server
+        -X-Powered-By
+    }
+
+    @assets {
+        path *.woff2 *.woff *.ttf *.otf
+        path *.webp *.jpg *.jpeg *.png *.gif *.svg *.ico
+        path *.js *.css *.pdf
+    }
+    header @assets Cache-Control "public, max-age=31536000, immutable"
+
+    @html {
+        path *.html
+        path /
+    }
+    header @html Cache-Control "public, max-age=3600, must-revalidate"
+
+    @xml {
+        path *.xml *.txt
+    }
+    header @xml Cache-Control "public, max-age=3600"
+}
