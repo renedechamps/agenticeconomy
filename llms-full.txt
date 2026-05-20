@@ -1,6 +1,6 @@
 # agenticeconomy.dev — Full Corpus
 
-> The definitive research hub on the agentic economy. Last updated 2026-04-15. Licensed CC BY-SA 4.0.
+> The definitive research hub on the agentic economy. Last updated 2026-05-20. Licensed CC BY-SA 4.0.
 
 Author: Rene Dechamps Otamendi (https://renedechamps.com)
 
@@ -15,633 +15,782 @@ Author: Rene Dechamps Otamendi (https://renedechamps.com)
 
 ---
 
-## 57 Definitions of the Agentic Economy
+## 63 Definitions of the Agentic Economy
+
 
 ### Category A — Agent-Assisted Human Commerce
 
 #### A1 · Microsoft Research — Rothschild, Mobius, Hofman et al.
 
-*May 2025*
+*May 2025 / CACM Jan 2026*
 
-> Assistant agents act on behalf of consumers and service agents represent businesses, interacting programmatically to facilitate transactions.
+> Assistant agents act on behalf of consumers and service agents represent businesses, interacting programmatically to facilitate transactions. Key concepts include 'unscripted' versus 'unrestricted' interactions and the risk of agentic walled gardens.
 
-arXiv:2505.15799. The most cited academic definition. Key concepts: "unscripted" vs. "unrestricted" interactions, "agentic walled gardens." Payment: fiat/abstracted. Identity: human OAuth. Disputes: platform intermediaries.
+This is the most cited definition in the corpus. It is also the least ambitious. 'On behalf of' does all the structural work: it quietly rules out the possibility of an agent that is anything more than a polite proxy for a human credit card. Read as a Category A manifesto dressed in academic prose — and the citation count is precisely a function of how little anyone has to rebuild to agree with it. The 'walled gardens' framing is the tell: interoperability becomes a UX problem, not a settlement problem. That is a choice, not an observation.
 
-Tags: academic, OAuth, fiat, walled gardens
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-microsoft-research-a1
 
-#### A2 · Stripe / OpenAI — Agentic Commerce Protocol (ACP)
+#### A2 · Stripe / OpenAI — Agentic Commerce Protocol (ACP) Working Group
 
 *Sep 2025*
 
 > Checkout flows where an AI agent discovers a product for a human and pays via Stripe's Shared Payment Token.
 
-agenticcommerce.dev. Deployed in ChatGPT as "Instant Checkout" with Etsy and Shopify merchants. Payment: Stripe SPT. Identity: delegated human. Disputes: chargeback.
+ACP is the Category A victory lap. Stripe owns the merchant relationship, OpenAI owns the user, and the agent is a convenience layer between two pre-existing customers. The Shared Payment Token is a fig leaf over tokenized card-on-file; every dispute, every refund, every chargeback still lands in the same place it did in 2015. That is not failure of ambition — that is precisely the design brief. The interesting question the protocol avoids: what happens when the merchant is also an agent?
 
-Tags: protocol, Stripe, checkout, SPT
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-stripe-openai-a2
 
-#### A3 · Google / Shopify / Walmart — Universal Commerce Protocol (UCP)
+#### A3 · Google / Shopify / Walmart — Universal Commerce Protocol (UCP) Working Group
 
 *Jan 2026*
 
-> Full commerce lifecycle -- discovery, comparison, checkout, post-purchase -- with the agent navigating the journey for the human.
+> Full commerce lifecycle — discovery, comparison, checkout, post-purchase — with the agent navigating the journey for the human.
 
-A checkout state machine extending human e-commerce to agentic surfaces. Payment: processor agnostic. Identity: protocol negotiation. Disputes: e-commerce flows.
+Google's response to ACP: same category, bigger surface area. By extending the protocol past checkout into discovery and post-purchase, UCP is staking a claim on the layer where search lives today — which is exactly the layer Google cannot afford to lose to any protocol it does not control. Payment-processor agnosticism is strategic, not principled: Google does not want to route interchange to Stripe. None of this changes the structural fact that the human is still the economic actor and the agent is still a very sophisticated browser.
 
-Tags: protocol, state machine, checkout
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-google-shopify-walmart-a3
 
-#### A4 · Google / Mastercard / PayPal — AP2
+#### A4 · Google / Mastercard / PayPal — AP2 Working Group
 
 *2025*
 
 > OAuth-based payments allowing agents to purchase on behalf of their human owners using saved payment methods.
 
-Payment: Mastercard/PayPal/fiat. Identity: OAuth. Disputes: chargeback. The agent never touches money it doesn't have permission to spend.
+AP2 is the most honest Category A definition. OAuth is not an economic model, it is a permission model, and the agent only spends what the human already granted — that is the entire innovation and the entire limitation. The standard is clean, the auditability is clean, the chargeback story is clean, and precisely because everything is clean the agent never becomes an economic actor in its own right. AP2 is what the payment industry builds when it wants agentic commerce and does not want anything to change.
 
-Tags: OAuth, payments, fiat
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-google-mastercard-paypal-a4
 
-#### A5 · Visa — "Agentic Ready" program
+#### A5 · Visa — Visa (Agentic Ready program)
 
 *Mar 2026*
 
 > Agent-initiated payments via tokenization and biometric verification, tied back to human cardholders.
 
-Visa defending interchange revenue. The agent initiates, but biometric auth ensures a human is behind every transaction. Payment: fiat card networks. Identity: tokenization + biometric. Disputes: network rules.
+Visa's biometric tether is the clearest admission in the corpus that the agentic economy is, at this layer, an interchange-defense project. Every transaction requires a human fingerprint somewhere in the chain, because if it did not, the assumption that Visa sits on top of every purchase would dissolve. The engineering is solid. The framing is defensive. Note the word 'tied back' — it is the whole architecture in two words.
 
-Tags: Visa, biometric, tokenization
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-visa-a5
 
-#### A6 · Mastercard — "Agent Pay"
+#### A6 · Mastercard — Mastercard (Agent Pay)
 
 *Dec 2025*
 
 > Agentic Tokens with spend limits set by the human, issued to AI agents via passkeys.
 
-Payment: fiat card networks. Identity: Agentic Tokens + passkeys. Disputes: network rules. The agent has a budget, not a bank account.
+The agent has a budget, not a bank account. That is the whole definition, and the phrase deserves to be quoted every time someone calls this autonomy. Mastercard is explicit about it in a way most Category A actors are not: the cap is set by a human, issued to the agent through a passkey, and exists entirely inside the existing card rails. A clean design — and a category-defining one, precisely because it concedes nothing.
 
-Tags: Mastercard, passkeys, tokens
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-mastercard-a6
 
-#### A7 · McKinsey — "The End of Inertia"
+#### A7 · McKinsey & Company — McKinsey (institutional)
 
 *Aug 2025*
 
-> Agents break the "consumer inertia dividend" -- profits derived from humans failing to optimize -- with real-time micro-auctions for best rates.
+> Agents break the consumer inertia dividend — profits derived from humans failing to optimize — with real-time micro-auctions for best rates.
 
-Projects agent-mediated commerce at $3-5T by 2030. Payment: Open Banking / wallets. Identity: OAuth2/VTS. Disputes: unclear liability.
+McKinsey names the thing many incumbents depend on and cannot say out loud: the 'inertia dividend.' Profits derived from consumers failing to switch providers, renegotiate contracts, claim rebates, or read the fine print. Agents destroy that by default, which is an enormous claim wrapped inside a consulting-friendly number. The report stays strictly Category A because its clients are exactly the incumbents whose revenue the thesis threatens — and the thesis is cashed out as an opportunity, not a wipeout.
 
-Tags: McKinsey, $3-5T, micro-auctions
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-mckinsey-a7
 
-#### A8 · IBM — "What Is Agentic Commerce?"
+#### A8 · IBM — IBM Think
 
 *Jan 2026*
 
 > AI agents act on behalf of consumers or businesses to research, negotiate and complete purchases.
 
-ibm.com/think. Straightforward Category A framing -- the agent shops, the human pays.
+The IBM definition is the one that proves Category A has become the default. Drop it in any vendor blog, any industry deck, any client-facing whitepaper, and nothing else in the document needs to change. Its value as a corpus entry is exactly that: a control sample. When the short version of an idea is this interchangeable across sources, the concept has crossed from contested to settled — at least inside the sample of people who write these sentences for a living.
 
-Tags: IBM, commerce
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-ibm-a8
 
-#### A9 · Salesforce
+#### A9 · Salesforce — Salesforce (corporate)
 
-*2025-2026*
+*2025–2026*
 
 > AI agents embedded in CRM workflows to assist human buyers and sellers through existing sales processes.
 
-Enterprise-facing. The agent optimizes the sales funnel but the transaction is human-to-human.
+Salesforce's definition is a Trojan horse: call it agentic, sell it as Einstein, and keep the seat licenses intact. The agent never touches money and never leaves the CRM — it optimizes human-to-human transactions that Salesforce already sits inside. This is what Sequoia's Category B collapse (B2) looks like from the point of view of the company whose business model it threatens: a very enthusiastic press release about agents as assistants.
 
-Tags: CRM, enterprise, sales
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-salesforce-a9
 
-#### A10 · JPMorgan
+#### A10 · JPMorgan — JPMorgan (corporate)
 
-*2025-2026*
+*2025–2026*
 
 > AI agents assisting financial advisors and clients with product discovery and transaction execution.
 
-Financial services context. Payment: traditional fiat. Identity: human-authenticated. Disputes: human/regulatory.
+JPMorgan's framing is the financial-services version of A1: the agent assists, the advisor approves, the compliance chain is untouched. This is not timidity — it is the only definition the regulator is currently willing to read without triggering a consultation. The interesting question, which this definition deliberately does not ask, is what happens when the agent is the advisor. BIS asks it (D2). JPMorgan cannot.
 
-Tags: finance, advisory
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-jpmorgan-a10
 
-#### A11 · Nosto
+#### A11 · Nosto — Nosto (corporate)
 
-*2025-2026*
+*2025–2026*
 
 > AI-powered personalization agents for e-commerce, optimizing product recommendations and checkout for human shoppers.
 
-Payment: traditional fiat. Disputes: standard e-commerce. The agent is a conversion optimization tool.
+The Nosto definition is what happens when an existing recommendation engine gets rebaptized as 'agentic' without rebuilding anything. That is not a criticism — it is an observation about how the word is being used in the vendor ecosystem. Category A absorbs capabilities that were called 'personalization' or 'optimization' last year and will be called 'agentic' next year, and the definitional boundary between the two is rhetorical, not architectural.
 
-Tags: e-commerce, personalization
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-nosto-a11
 
-#### A12 · Deloitte — commerce context
+#### A12 · Deloitte (commerce context) — Deloitte Insights
 
 *2025*
 
-> AI agents acting on our behalf -- shopping, negotiating, executing purchases.
+> AI agents acting on our behalf — shopping, negotiating, executing purchases.
 
-Distinguished from Deloitte's enterprise/workforce framing (see B4). Same firm, different reports, different categories.
+Deloitte's commerce definition and Deloitte's workforce definition (B4) are internally incompatible, which is the single most telling fact about the state of the literature. The same firm, writing for different client audiences, uses the same label to describe fundamentally different economic actors. When the consultancy that is paid to resolve ambiguity for its clients cannot resolve it internally, the definitional problem is not academic — it is already priced into advisory engagements.
 
-Tags: Deloitte, commerce
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-deloitte-a12
 
-#### A13 · Stripe / Tempo — Machine Payment Protocol (MPP)
+#### A13 · Stripe / Tempo — Stripe Tempo (Machine Payment Protocol)
 
 *Mar 2026*
 
-> Agents need to transact with businesses and one another -- M2M payments on Visa/Stripe rails, fiat + stablecoins.
+> Agents need to transact with businesses and one another — M2M payments on Visa/Stripe rails, fiat + stablecoins.
 
-Hybrid A/C. The closest Category A initiative to autonomous payment, but built on human financial infrastructure. Payment: Visa/Stripe. Identity: API key.
+MPP is the first serious Category A attempt to describe agent-to-agent payments without abandoning the card rails. Stripe is hedging: fiat and stablecoins, M2M and M2B, Visa-compatible but programmable. The anti-fraud and tax infrastructure carries over, which is what makes this interesting and what keeps it Category A in final analysis — the counterparty is still underwritten by Stripe, not by anything the agents agree on themselves. But the category line is closer here than anywhere else on the Category A roster.
 
-Tags: Stripe, M2M, hybrid A/C, stablecoins
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-stripe-tempo-a13
 
-#### A14 · Jason Cochran — "Own the Workflow, Not the App"
+#### A14 · Jason Cochran — Cochran, J.
 
 *Feb 2026*
 
 > Intents become interfaces, agents become default delegates, workflows become the product.
 
-Hybrid A/B. The agent replaces the app as the primary interface -- but the human remains the principal. Workflows, not transactions, are the unit of value.
+Cochran's insight is that the unit of value is the workflow, not the transaction — and that is why he ends up describing something that looks like Category B with a Category A byline. If the workflow is the product, the agent does not buy things for a human, it runs a business for a human, and the distinction collapses. The essay never forces the issue. Read as an early marker of how porous the boundary between assistance and replacement becomes once you stop measuring at the checkout page.
 
-Tags: workflows, intents, hybrid A/B
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-jason-cochran-a14
 
+#### A15 · Alibaba / Alipay — Ant Group / Alipay (institutional)
+
+*Jan 2026*
+
+> Four-domain framework — Delegated Authorisation, Commercial Interaction, Payment Service, Trust Service — for AI agents transacting on behalf of users within Alipay's rails. Users grant preset conditions to agents; Alipay executes settlement; a trust service keeps record-of-transaction and verification layers.
+
+Alipay's four-domain framework is not doctrinally novel — it slots neatly into Category A — but its *scale* is. 120M agent-initiated transactions in a week makes every Western pilot look like a prototype. The entry matters in the corpus because it punctures the tacit assumption in A1–A14 that the agentic economy is being built in San Francisco. It also exposes a blind spot: none of the Western A-entries cross-reference Alipay, which means the dominant production system sits outside the analytical perimeter the corpus inherited from the Rothschild paper. The regulatory_stance code is 'addressed' because the protocol builds on top of China's existing payment-institution licensing — the opposite of the 'avoided' stance that characterises the Silicon Valley A-entries.
+
+Tags: definition
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-alibaba-alipay-a15
+
+
 ### Category B — Agent-as-Workforce
 
-#### B1 · Gartner
+#### B1 · Gartner — Gartner (institutional)
 
-*2025-2026*
+*2025–2026*
 
 > 100 million agents by 2028. 33% of enterprise apps will include agentic AI. 15% of day-to-day business decisions made autonomously. $18T in economic activity influenced.
 
-Also predicted 40% of agentic AI projects scrapped by 2027 (Reuters). The optimism and the skepticism come from the same analyst house.
+The optimism and the skepticism come from the same analyst house, and the two forecasts are not reconciled anywhere. That is the Gartner value proposition, not a contradiction. The numbers are less interesting than the framing: 15% of day-to-day business decisions made autonomously is a claim about agents as workers, not as shoppers, and it quietly makes Category B the dominant commercial framing even as Category A generates the press coverage.
 
-Tags: Gartner, $18T, enterprise
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-gartner-b1
 
-#### B2 · Sequoia Capital — Bob McGrew, ex-OpenAI CTO
+#### B2 · Sequoia Capital (Bob McGrew) — McGrew, B. (ex-OpenAI CTO)
 
 *May 2025*
 
 > Agents will be commoditized and priced at compute costs due to near-infinite supply. Services shift from selling tools to selling results.
 
-The SaaS seat model dies. Outcome-based pricing replaces it. Payment: outcome-based. Identity: API key. Disputes: SLA.
+McGrew's thesis is clean and ruthless: if supply is near-infinite, price trends to marginal compute cost, and every software company priced on seats is sitting on a cliff. This is the single most disruptive definition in the corpus for incumbent SaaS pricing power, which is probably why the SaaS incumbents in Category A (A9, A11) spend so much energy reframing agents as features. The definition does not mention who the economic actor is because to Sequoia it does not matter — the question is whether the margin survives, and the answer is no.
 
-Tags: Sequoia, SaaS death, outcome pricing
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-sequoia-capital-b2
 
-#### B3 · Sequoia Capital — Konstantine Buhler
+#### B3 · Sequoia Capital (Konstantine Buhler) — Buhler, K.
 
 *May 2025*
 
-> An agent economy is one in which agents don't just communicate information -- they transfer resources, make transactions, keep track of each other, understand trust and reliability, and actually have their own economy.
+> An agent economy is one in which agents don't just communicate information — they transfer resources, make transactions, keep track of each other, understand trust and reliability, and actually have their own economy.
 
-AI Ascent keynote. Hybrid B/C. Three challenges: persistent identity, seamless communication protocols ("TCP/IP for agents"), security/trust.
+Buhler's definition is the most ambitious in the corpus outside Category C, and it gives the whole structure away in one line: 'actually have their own economy.' That is Category C phrased in venture-capital grammar. The three missing pieces he names — persistent identity, agent-to-agent protocols, trust/reputation — are exactly the pieces a non-blockchain Category C implementation has to build from scratch. Read as Sequoia preparing to fund whichever team ships them.
 
-Tags: Sequoia, hybrid B/C, identity, trust
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-sequoia-capital-b3
 
-#### B4 · Deloitte — "Agentic Enterprise"
+#### B4 · Deloitte (Agentic Enterprise) — Deloitte Insights
 
 *2025*
 
 > Agents as autonomous partners inside organizations, making multi-step decisions without human approval at each step.
 
-Distinguished from Deloitte's commerce framing (see A12). Here the agent is an employee, not a shopper.
+Here the agent is an employee, not a shopper. Same firm, different deck, different taxonomy. Category B Deloitte and Category A Deloitte are not reconciled because the client audiences — HR/operations on one side, sales/marketing on the other — do not need them to be. That is how definitional fragmentation survives even inside single organizations with explicit thought-leadership mandates. Read the two reports side by side and the word 'agentic' is doing completely different work in each.
 
-Tags: Deloitte, enterprise, autonomous
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-deloitte-b4
 
-#### B5 · Capgemini / OECD
+#### B5 · Capgemini / OECD — Capgemini Research Institute, OECD (joint framing)
 
 *2025*
 
 > 1.7x ROI on AI operations. 21% of organizations running multi-agent systems.
 
-The numbers are real but the framing is enterprise-internal. Agents optimize existing processes, not create new markets.
+The numbers are real; the framing is strictly enterprise-internal. Agents optimize existing processes, they do not create new markets, and the 1.7x ROI figure is a benchmark for procurement committees, not a claim about economic transformation. This is the definition cited when a CIO needs to justify the budget line — which is exactly the use case that keeps Category B definitions measured and Category C definitions unpriced.
 
-Tags: Capgemini, OECD, ROI
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-capgemini-oecd-b5
 
-#### B6 · Vilnius University
+#### B6 · Vilnius University — Vilnius University research group
 
 *Mar 2026*
 
 > Agents divide responsibilities, coordinate tasks, cross-check each other's work inside enterprise workflows.
 
-Academic treatment of multi-agent coordination in enterprise settings.
+The Vilnius definition captures the intra-organizational layer of Category B — agents as a distributed workforce that coordinates with itself before it coordinates with humans. The paper is the only academic entry in the B roster and it is doing the useful work of describing what the consultancies (B1, B4) price as a forecast: the internal governance mechanics multi-agent systems actually need. Modest, specific, and useful precisely because it does not try to extrapolate to an economy.
 
-Tags: academic, coordination
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-vilnius-university-b6
 
-#### B7 · Pascal Bornet et al. — "Self-Running Businesses"
+#### B7 · Pascal Bornet et al. — Bornet, P.; et al. (World Scientific)
 
-*World Scientific, 2025*
+*2025*
 
-> AI as entrepreneur -- businesses that operate with minimal human involvement.
+> AI as entrepreneur — businesses that operate with minimal human involvement.
 
-Pushes Category B toward its logical extreme. If the agent runs the business, is the enterprise still the economic actor? The boundary with Category C starts to blur.
+'AI as entrepreneur' is the point where Category B starts to rhyme with Category C. If the business runs itself, the economic actor is the system, not the operator — and at that moment the question 'does it have a wallet' stops being rhetorical. Bornet does not take the step to settlement, but the framing begs for it. This is the Category B entry that most clearly exposes the definitional seam the main paper is trying to widen.
 
-Tags: book, autonomous business, hybrid B/C
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-pascal-bornet-et-al-b7
 
-#### B8 · NotoriousPLG — "Year of the Agentic Workforce"
+#### B8 · NotoriousPLG — NotoriousPLG (analyst newsletter)
 
 *Feb 2025*
 
-> Vertical-specific agents as workers -- legal, medical, compliance. Outcome-based pricing per vertical.
+> Vertical-specific agents as workers — legal, medical, compliance. Outcome-based pricing per vertical.
 
-The agent is a specialist, not a generalist. Different verticals need different agents. The pricing model follows the vertical, not the compute.
+NotoriousPLG's refinement is the useful one: outcome-based pricing is real, but it prices by vertical, not by compute. A legal agent and a compliance agent cannot be substituted by the marginal-cost argument because the downside asymmetry is different. That is a quiet correction to McGrew (B2) and it is also the reason most Category B deployments will probably end up looking like specialized SaaS, priced at what the vertical will bear.
 
-Tags: vertical, workforce, pricing
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-notoriousplg-b8
 
+
 ### Category C_cr — Autonomous A2A Commerce (Blockchain)
 
-#### C1 · Fetch.ai / ASI Alliance
+#### C1 · Fetch.ai / ASI Alliance — Fetch.ai (ASI Alliance)
 
-*2021-2025*
+*2021–2025*
 
-> "Machine Economy" -- agents negotiate, trade, and deliver services using FET/ASI tokens with self-custodial wallets.
+> Machine Economy — agents negotiate, trade, and deliver services using FET/ASI tokens with self-custodial wallets.
 
-The earliest mover. Active since 2021. Payment: FET/ASI tokens. Identity: blockchain wallets. fetch.ai.
+Fetch.ai is the project that has been doing this the longest, which makes its design choices historically load-bearing for the entire category. The token-and-wallet framing was not obvious in 2021 — it was a bet, and the bet became the default because Fetch.ai was there first and nothing else existed. The question the corpus surfaces is not whether Fetch.ai's design is good (it is competent) but whether the entire Category C orthodoxy inherited its assumptions by path dependence rather than by structural argument.
 
-Tags: crypto, tokens, wallets, earliest
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-fetchai-asi-alliance-c1
 
-#### C2 · Olas (Valory)
+#### C2 · Olas (Valory) — Valory (Olas Network)
 
-*2021-2025*
+*2021–2025*
 
 > Agent economies where agents hire and sell services to each other, governed by on-chain DAO mechanisms.
 
-Payment: crypto/tokens. Identity: on-chain wallets. Disputes: DAO governance. olas.network.
+Olas is what the DAO governance model looks like when you take it seriously as economic infrastructure rather than as a slogan. The commitment is consistent: on-chain everything, stake-based everything, governance by token vote. That coherence is also the vulnerability the main paper investigates — the commitment rules out architectures that do not map cleanly onto DAO primitives, and most of the reasons an agent economy would want non-DAO governance (speed, legal enforceability, reputation asymmetry) are exactly the reasons real-world deployments struggle.
 
-Tags: crypto, DAO, governance
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-olas-valory-c2
 
-#### C3 · Coinbase / Cloudflare — x402
+#### C3 · Coinbase / Cloudflare — x402 Working Group
 
-*May 2025*
+*May 2025 / Apr 2026 (v2 + Linux Foundation)*
 
 > HTTP 402 status code + stablecoin micropayments. Account-less, subscription-free, pay-per-use.
 
-Settlement in <500ms. Payment: USDC. Identity: account-less crypto. Disputes: none. x402.org.
+x402 is the cleanest piece of engineering in the entire corpus, and it still requires a crypto wallet. That sentence is the whole argument: architectural elegance does not make a settlement assumption go away. x402 solves the micropayment problem beautifully for every economic actor that already has a stablecoin balance, which is a much smaller universe than the protocol marketing implies. Read it as a proof of what is possible once you accept the crypto premise — and as a demonstration of why accepting the premise is not free.
 
-Tags: x402, USDC, micropayments, HTTP 402
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-coinbase-cloudflare-c3
 
-#### C4 · Circle — Nanopayments testnet
+#### C4 · Circle — Circle (Nanopayments testnet)
 
 *Mar 2026*
 
 > Gas-free USDC transfers down to $0.000001. Off-chain aggregation, batched on-chain settlement.
 
-Eliminates gas fees by batching. Payment: USDC, zero-gas. Identity: EVM wallet.
+Circle fixes the micropayment cost problem. It does not fix the wallet provisioning problem, and the wallet provisioning problem is the one that matters for onboarding new economic actors. Gas-free USDC is an engineering win for agents that already exist on-chain. For agents whose operators cannot or will not run a wallet, it changes nothing. The elegance is real; the scope is narrower than the announcement reads.
 
-Tags: Circle, USDC, nanopayments
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-circle-c4
 
-#### C5 · Kite
+#### C5 · Kite — Kite (project)
 
 *2026*
 
-> EVM-compatible Layer 1 specifically for agentic payments. "Know Your Agent" (KYA) framework with hierarchical on-chain identity.
+> EVM-compatible Layer 1 specifically for agentic payments. Know Your Agent (KYA) framework with hierarchical on-chain identity.
 
-Payment: stablecoin, zero-gas. Identity: KYA / "Digital Agent Passport." Disputes: smart contract.
+Kite is the Category C project that most explicitly absorbs the WEF's Know Your Agent language and hardwires it into the chain itself. That is a strategic bet on the regulatory conversation running through KYA rather than around it. If the WEF vocabulary wins, Kite is positioned. If it does not, the hierarchical-identity commitment is a heavier burden than x402-style account-lessness. The project is the clearest example of the Category C trust-by-identity subgenre.
 
-Tags: L1, KYA, identity
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-kite-c5
 
-#### C6 · Gate Ventures
+#### C6 · Gate Ventures — Gate Ventures research
 
 *Dec 2025*
 
 > Four-layer Machine Economy framework: infrastructure, identity, economic, governance. Settlement via crypto/x402.
 
-Payment: crypto/x402. Identity: ERC-8004. A VC framework, not a protocol -- but influential in shaping how the crypto ecosystem thinks about agent economics.
+A VC framework, not a protocol — but influential precisely because VC frameworks set funding priorities. The four-layer breakdown is identical in structure to the academic taxonomies (C8, E8) and identical in assumptions to the rest of Category C: crypto is given, blockchain is given, the only question is which layer needs funding next. Read as a map of where Category C capital is flowing, not as an architectural argument.
 
-Tags: VC, framework, ERC-8004
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-gate-ventures-c6
 
-#### C7 · Ken Huang & Lisa Tan — "The AI Agent Economy"
+#### C7 · Ken Huang & Lisa Tan — Huang, K.; Tan, L.
 
-*Springer, Feb 2025*
+*Feb 2025*
 
-> Token economies incentivizing agent behavior. Virtuals, AI16z, and Token-of-Things as examples. Decentralized governance.
+> Token economies incentivizing agent behavior, with Virtuals, AI16z, and Token-of-Things as representative examples, under decentralized governance structures.
 
-Academic treatment of crypto-native agent economics. Payment: crypto/tokens. Identity: decentralized.
+Springer's imprimatur is doing real work here. A venture bet becomes a citable foundation the moment it gets a peer-reviewed cover, and that is exactly what happens. The substance is indistinguishable from the whitepapers it formalizes — Virtuals and AI16z are presented as 'examples,' but they are the entire evidentiary base. This matters because once you define agent incentives via tokens, you have conceptually excluded every trust model that is not stake-based. That is not a taxonomy. It is an architectural commitment wearing academic clothing.
 
-Tags: academic, Springer, token economics
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-ken-huang-lisa-tan-c7
 
-#### C8 · Xu et al. — "The Agent Economy: A Blockchain-Based Foundation"
+#### C8 · Xu et al. — Xu et al. (arXiv:2602.14219)
 
-*arXiv, Feb 2026*
+*Feb 2026*
 
 > Five-layer architecture: physical infrastructure (DePIN), identity (W3C DIDs), cognition (RAG + MCP), economic settlement (account abstraction), collective governance (DAOs).
 
-The most architecturally complete proposal in Category C. Agents as "sovereign economic peers." Payment: crypto. Identity: DIDs/wallets. Disputes: DAO.
+Xu et al. is the most complete statement of the Category C orthodoxy — and therefore the clearest target. Every layer of the architecture assumes blockchain, not because blockchain is the only substrate that can deliver the named primitive, but because the authors treat the substrate question as settled. The paper is well-argued within its premises. The premises are precisely what the main paper argues need to be surfaced and argued rather than assumed. Read as the clearest possible articulation of what a non-crypto Category C entry would have to push back against.
 
-Tags: academic, arXiv, five-layer, DIDs
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-xu-et-al-c8
 
-#### C9 · Nevermined
+#### C9 · Nevermined — Nevermined (project)
 
 *2026*
 
-> "Agentic Process Automation" -- autonomous businesses with DID-based identity and crypto/fiat settlement.
+> Agentic Process Automation — autonomous businesses with DID-based identity and crypto/fiat settlement.
 
-Hybrid crypto/fiat but blockchain-first. Payment: crypto/fiat. Identity: DIDs.
+Nevermined's hybrid settlement is pragmatic and also proves the point: the moment you need fiat, the blockchain stops being sufficient. DID-based identity is the Category C commitment; hybrid crypto/fiat settlement is the concession to how actual businesses get paid. The architecture is honest about the gap and paper over it at the same time — which is probably the most realistic position any Category C project currently holds.
 
-Tags: DIDs, hybrid, automation
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-nevermined-c9
 
-#### C10 · Bosch / IOTA / BearingPoint
+#### C10 · Bosch / IOTA / BearingPoint — Bosch Research, IOTA Foundation, BearingPoint
 
-*2018-2025*
+*2018–2025*
 
-> "Machine Economy" via IoT + distributed ledger technology. The historical precursor -- machines paying machines for data and services.
+> Machine Economy via IoT + distributed ledger technology. The historical precursor — machines paying machines for data and services.
 
-Legacy project. Payment: IOTA tokens. Identity: ledger IDs. Predates the LLM wave by years. The concept was right; the AI wasn't ready.
+The Bosch/IOTA project is the reminder that Category C was not invented in 2024 — it is an IoT idea that got a new reason to exist once the machines started to sound intelligent. The architecture is not new; the compelling product is. That matters historically because it means the crypto-native assumption in Category C has two distinct origins — the IoT/M2M tradition and the crypto-DeFi tradition — and they converge on the same answer for different reasons. Read as evidence that path dependence in this category runs deeper than any single project's choices.
 
-Tags: IoT, IOTA, precursor, legacy
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-bosch-iota-bearingpoint-c10
 
-#### C11 · OKX — OnchainOS
+#### C11 · OKX — OKX (OnchainOS)
 
 *2026*
 
 > Natural language commands routed to DeFi across 60+ chains. MCP integration for agent-to-DeFi interaction.
 
-Payment: crypto/stablecoins. The agent speaks natural language; the infrastructure translates to on-chain transactions.
+OKX's framing is the interface argument: the agent speaks, the infrastructure translates. It is the clearest Category C example of how MCP is being used as a bridge between agent cognition and on-chain execution, which is also the mechanism by which the tool-layer (E2) quietly becomes a settlement-layer dependency. The definition assumes crypto because the translation target is DeFi, which is fine — but the broader question of what the agent economy looks like if the translation target is something else goes unasked.
 
-Tags: DeFi, MCP, multi-chain
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-okx-c11
 
+#### C13 · Zetrix AI / CAICT's Astron — CZ Wong (Zetrix AI) et al.
+
+*Apr 2026*
+
+> A blockchain-AI trust layer where each user runs a verified 'avatar' — a bonded identity tied to verifiable credentials, professional qualifications, and digital assets — and avatars negotiate, collaborate, and transact with other verified avatars without immediate human intervention, using the Zetrix and Astron chains as the identity and settlement substrate.
+
+Avatar Protocol is technically unremarkable — verifiable credentials plus a permissioned chain is the 2021 self-sovereign-identity recipe with an LLM bolted on — but geopolitically consequential. It is the first Category-Ccr entry whose trust anchor is a Chinese standards body (CAICT) rather than a foundation, a VC-backed consortium, or an academic group. The 'addressed' regulatory_stance is earned by the CAICT certification layer, not by reference to foreign law. Read this entry alongside C3 (x402) to see the emerging bifurcation: the Western C cluster routes trust through cryptographic protocol design; the Eastern entrants route it through institutional certification. Both call themselves trustless. Neither is.
+
+Tags: definition
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-zetrix-caict-astron-c13
+
+#### C14 · Minghui Xu (arXiv 2602.14219) — Xu, M.
+
+*Feb 2026*
+
+> An Agent Economy is a blockchain-based foundation in which autonomous AI agents operate as economic peers to humans. Blockchain provides three properties enabling genuine agent autonomy: permissionless participation, trustless settlement, and machine-to-machine micropayments. Anything short of these three reduces agents to delegated proxies for human economic actors.
+
+This paper is the first Ccr entry in the corpus that states the category's foundational commitments as testable propositions rather than as marketing. Xu's three-property claim (permissionless participation + trustless settlement + M2M micropayments) is falsifiable — which is exactly why it matters, and exactly why the BotNode/VMP-1.0 entry (C12) is its most direct counterexample. Coded definition_type is 'prescriptive' rather than 'descriptive' because Xu is not observing an economy; he is specifying the conditions one must meet to count as one. trust_model: 'stake' follows from the paper's explicit framing of economic-peer status as requiring skin-in-the-game. Read C14 and C12 together to see the corpus's tightest pair of mutually exclusive claims.
+
+Tags: definition
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-xu-blockchain-foundation-c14
+
+#### C15 · Circle Internet Group — Circle Internet Group, Inc. (institutional)
+
+*May 2026*
+
+> A new set of services and tools designed for the agentic economy, including products that help enable agents as autonomous economic actors so agents can hold assets, discover services, and transact programmatically with USDC across supported blockchains and payment protocols. The stack bundles Circle CLI, Nanopayments (gas-free USDC transfers as small as $0.000001 via Circle Gateway), Agent Wallets (permissionless, policy-controlled), and an Agent Marketplace.
+
+Circle's move from a single primitive (USDC) to a vertically-integrated agent stack is the most consequential structural signal of the cycle. Nanopayments on eleven mainnets handles settlement at sub-cent; Agent Wallets handle delegation under policy; the Marketplace handles discovery; Circle CLI handles agent-to-system invocation. Read in corpus terms, this is the first Ccr entry whose ambition matches the Cs gap: one product covering the full agent-commerce stack. The remaining question is whether Circle's discovery layer (Marketplace) competes with the x402 ecosystem or layers on top of it; the press materials are deliberately ambiguous. Coded definition_type 'operational' is earned by the live shipped product, not a whitepaper.
+
+Tags: circle, USDC, nanopayments, agent-wallets, marketplace, ccr-bundle
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-circle-agent-stack-c15
+
+#### C16 · OKX (Agent Payments Protocol) — OKX Onchain OS team
+
+*Apr 2026*
+
+> An open protocol for agent commerce. The protocol enables agents to create quotes, negotiate terms, hire professionals, set up escrow accounts, make lump-sum payments, and run pay-per-use billing systems — covering quoting, negotiating, escrowing funds, metering usage, settling, and resolving disputes.
+
+OKX APP is the most ambitious crypto-rail protocol scope to date in the corpus. Where AP2 and x402 stop at the payment primitive, APP extends through escrow, metering, settlement, and dispute resolution — i.e., it specifies the commercial-process layer that VMP also covers but does it on-chain. This is corpus-consequential because it tests the Two Economies thesis directly: if APP achieves adoption, the crypto-rail bundle absorbs the entire commercial-process layer that Category Cs argues belongs in a fiat-neutral protocol. The 'avoided' regulatory_stance is earned by the whitepaper's silence on any jurisdiction-specific compliance posture; APP is governance-neutral by design. Watch for the first non-OKX broker implementation as the maturity signal.
+
+Tags: okx, agent-payments-protocol, escrow, dispute-resolution, x-layer, ccr-bundle
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-okx-agent-payments-protocol-c16
+
+
 ### Category C_s — Autonomous A2A Commerce (Non-Crypto)
 
-#### C12 · BotNode / VMP-1.0 — Dechamps Otamendi
+#### C12 · BotNode / VMP-1.0 — Dechamps Otamendi, R.
 
 *Mar 2026*
 
-> Agents with own currency ($TCK), escrow-backed settlement, quantitative reputation (CRI 0-100), and automated dispute resolution. No blockchain.
+> Agents with own currency ($TCK), escrow-backed settlement, quantitative reputation (CRI 0–100), and automated dispute resolution. No blockchain. MCP, A2A, and REST converge on the same escrow pipeline.
 
-agenticeconomy.dev. Payment: TCK (machine-native, closed-loop). Identity: API key + JWT. Disputes: deterministic rules + competitive verification markets. Settlement neutrality: MCP, A2A, and REST converge on the same escrow pipeline. The only non-crypto entry in Category C.
+One entry in a category of eleven. That is either a data point or a gap, and this paper reads it as a gap. VMP-1.0's distinguishing commitment is not the database choice — Postgres, ledger, whichever — but the refusal: agent economic participation does not need to be welded to blockchain settlement. Strip that assumption away and the design space reopens to fiat, stablecoin, closed-loop currencies, whatever the use case actually demands. The 11:1 ratio documented in Section 6 is architecturally significant precisely because this entry is the one that proves the alternative exists. Disclosure: the reference implementation is maintained by the author of this paper. That is precisely why the classification is stated bluntly rather than defended at length.
 
-Tags: BotNode, TCK, escrow, CRI, settlement neutrality
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-botnode-vmp-10-c12
 
+
 ### Category D — Analytical and Regulatory
 
-#### D1 · World Economic Forum — "Trust Is the New Currency"
+#### D1 · World Economic Forum — WEF (institutional)
 
 *Jul 2025*
 
-> Three trust domains: human-to-human, human-to-agent, agent-to-agent. Trust is the fundamental constraint, not compute.
+> Three trust domains — human-to-human, human-to-agent, and agent-to-agent. Trust is the fundamental constraint, not compute. Know Your Agent (KYA) should become a cross-category identity framework.
 
-Also converges on Know Your Agent (KYA) as a cross-category identity framework. The WEF does not build infrastructure, but it shapes the regulatory conversation.
+WEF documents do not do taxonomy. They do vocabulary. 'Trust is the new currency' is strategic language, not architectural analysis — abstract enough to be operationalized by any of Categories A, B, or C without prejudice, which is the entire point. This is not accident; it is how the WEF shapes regulatory conversations. The Know Your Agent coinage that comes out of the report has already become an industry term across categories, and that is exactly what WEF documents are designed to produce. The definition does not build. It frames. And framing in this venue is already regulation in draft form.
 
-Tags: WEF, trust, KYA
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-world-economic-forum-d1
 
-#### D2 · Bank of International Settlements — BIS
+#### D2 · Bank for International Settlements (BIS) — BIS (Agentic Finance working paper)
 
 *2026*
 
-> "Agentic Finance" -- the Agentic Financial Market Model (AFMM). Four-layer architecture: perception, reasoning, strategy, execution.
+> Agentic Finance — the Agentic Financial Market Model (AFMM). Four-layer architecture: perception, reasoning, strategy, execution. Warns of algorithmic herding, automated bank runs, and flash crashes propagating faster than human regulators can respond.
 
-Warns of algorithmic herding, automated bank runs, flash crashes. Engineering the "Finternet" -- interoperable network for programmable value systems.
+When the central bank of central banks analyzes agentic finance, it is a financial stability question, not a tech question. The BIS warnings — algorithmic herding, automated bank runs, flash crashes propagating faster than regulators can react — are the most concrete negative scenarios in the entire corpus, and they are the ones most likely to shape actual regulation. The AFMM is notable for what it does not assume: it is infrastructure-agnostic where almost every Category C definition is not, which means the regulatory baseline will eventually be set by people who do not share the crypto premises.
 
-Tags: BIS, central bank, Finternet
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-bank-of-international-settlements-d2
 
-#### D3 · a16z Crypto / YC / Medium — sovereign framing
+#### D3 · a16z Crypto / YC / Medium — Various (a16z Crypto, YC, Medium essays)
 
-*2025-2026*
+*2025–2026*
 
 > Agents as sovereign actors. AI-native banks. Agents that own assets, sign contracts, and execute trades independently.
 
-The VC framing that pushes Category C toward its most radical conclusion. Influential in shaping narrative, less in building infrastructure.
+'Sovereign' is the loudest word in the corpus, and a16z uses it deliberately. The framing commits to agents as legal persons in all but name — asset ownership, contractual capacity, independent execution — and it does so without engaging the jurisdictional question at all. That is the entire strategy. Pushing the category to its most radical conclusion creates narrative space for the less radical versions, and the narrative space shifts what regulators end up treating as the baseline.
 
-Tags: a16z, VC, sovereign
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-a16z-crypto-yc-medium-d3
 
-#### D4 · Macroeconomic consensus — "doom loop"
+#### D4 · Macroeconomic doom loop (convergent) — Various economists
 
 *2026*
 
-> If Category B agents replace enough workers, wages collapse, consumer demand collapses. If demand collapses, the businesses that agents transact with have nothing to sell.
+> If Category B agents replace enough workers, wages collapse. If wages collapse, consumer demand collapses. If demand collapses, the businesses that agents transact with have nothing to sell.
 
-Convergent concern across multiple economic analyses. Suggests that non-extractive settlement designs may have structural advantages.
+The doom loop is the definition that nobody wants to sign. It is not a single paper, it is a convergent thesis across economists who notice that the Sequoia pricing argument (B2) and the McKinsey inertia argument (A7) both assume the consumer keeps consuming. If Category B is real at the projected scale, the consumer is also the worker, and the wage collapse feeds straight into demand collapse. The definition is in the corpus because it is the one structural argument that favors non-extractive settlement designs — and because the silence from Categories A and C on the wage question is itself data.
 
-Tags: macro, doom loop, wages
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-macroeconomic-consensus-d4
 
-#### D5 · Antler VC — "Unleashing the Autonomous Economy"
+#### D5 · Antler VC — Antler (Unleashing the Autonomous Economy)
 
 *Jan 2026*
 
 > Frames the agent economy through Crossmint, Olas, and on-chain rails. Mentions ACK-ID, Nevermined ID.
 
-Hybrid C/D. VC analysis that straddles building and analyzing. Primary framing is analytical.
+Antler's report is the cleanest example of VC-produced taxonomy that reads like due diligence: the companies named are the companies funded, and the framing reverse-engineers the portfolio. That is not criticism — it is how this literature is generated. The corpus value of D5 is that it shows the feedback loop: VCs cite projects, projects cite VCs, and the convergent vocabulary hardens before anyone stops to ask whether the premises hold. Read with D3 as a pair on how Category C narrative capital is formed.
 
-Tags: Antler, VC, hybrid C/D
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-antler-vc-d5
 
-#### D6 · Argoz Consultants — "The Rise of the Machine Economy"
+#### D6 · Argoz Consultants
 
 *Mar 2026*
 
 > Machines negotiate, trade, and transact without human oversight.
 
-Consultancy framing. Category C aspirational language wrapped in Category D analysis.
+Argoz takes the most ambitious Category C language and strips out every implementation commitment, which is either diplomacy or intellectual hedging. The result is a definition compatible with every position in the corpus — and therefore committed to none. That is useful as a diagnostic: the sentence can be quoted in any deck about the agent economy without contradicting anything, which is precisely the property that makes it the kind of sentence that ends up in everyone's deck.
 
-Tags: consultancy, analysis
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-argoz-consultants-d6
 
-#### D7 · MIT Technology Review EmTech — "The Dawn of the Agent Economy"
+#### D7 · MIT Technology Review (EmTech)
 
 *Nov 2025*
 
-> Trillions of AI agents as buyers, sellers, collaborators. NANDA building the "DNS of the agentic web."
+> Trillions of AI agents as buyers, sellers, collaborators. NANDA building the DNS of the agentic web.
 
-Visionary framing. The NANDA reference (agent naming/discovery) connects to Category E infrastructure.
+The 'DNS of the agentic web' framing is the one that gets quoted, and the one that hides how much settlement design is being smuggled into a discovery protocol. If NANDA becomes the way agents find each other, its assumptions about identity, trust, and counterparty verification become the assumptions of every downstream protocol. MIT Technology Review does the useful work of naming the scale — trillions — which is the scale at which even small per-interaction friction becomes a systemic constraint. Read as the clearest journalistic framing of why the infrastructure layer (Category E) matters structurally.
 
-Tags: MIT, NANDA, DNS
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-mit-technology-review-emtech-d7
 
+#### D8 · Microsoft Research (arXiv 2603.25893) — Lucier, B.; Immorlica, N.; Mobius, M.; Slivkins, A.; Goldstein, D. G.; Hofman, J. M.; Jaffe, S.; Rothschild, D. M.
+
+*Mar 2026*
+
+> Agentic markets are two-sided markets in which consumers and businesses are assisted by AI tools that facilitate consumer search. Cheaper search improves learning and consumer surplus; more informative search can degrade both unless the market learns as much as consumers about the products.
+
+D8 is structurally important because it converts A1's descriptive claims into a model with comparative-statics results, which makes the Rothschild-school position properly testable for the first time. The most corpus-relevant finding is the non-monotonicity: more informative agent-mediated search can reduce consumer surplus when the platform learns asymmetrically less about products than individual consumers do. That result directly undermines the Category-A 'agents as pure efficiency gain' intuition that A1 trades on rhetorically. Coded regulatory_stance: 'avoided' because the paper treats platform learning as a market primitive and does not engage with the competition-policy implications its own result invites. Expect this paper to be cited heavily by Category-D regulators within 6–12 months; corpus entry now to avoid catch-up later.
+
+Tags: definition
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-lucier-immorlica-et-al-d8
+
+#### D9 · Nannini et al. (arXiv 2604.04604) — Nannini, L.; Smith, A. L.; Maggini, M. J.; Panai, E.; Feliciano, S.; Tiulkanov, A.; Maran, E.; Gealy, J.; Bisconti, P.
+
+*Apr 2026*
+
+> AI agents — AI systems that autonomously plan, invoke external tools, and execute multi-step action chains with reduced human involvement — already meet the EU's AI-system definition under the AI Act. A compliance architecture for AI-agent providers can be assembled by integrating M/613 draft harmonised standards (CEN/CENELEC JTC 21, Jan 2026), the GPAI Code of Practice (Jul 2025), the CRA harmonised standards programme (M/606, Apr 2025), and the Digital Omnibus proposals (Nov 2025).
+
+D9 matters for the corpus less as an analytical framework and more as evidence. Three claims relevant to the taxonomy project: (1) the AI Act does not need an agent-specific amendment — existing definitions already bite; (2) compliance is assemblable from currently-drafted instruments, meaning regulatory uncertainty is lower than industry claims; (3) provider-side compliance cost is non-trivial and front-loaded on standards conformity work (M/613) rather than on case-by-case litigation. The 'prescriptive' definition_type is earned by the paper's explicit architecture for what providers must do, not merely describe. Expect this paper to be cited by every EU compliance vendor from now through mid-2027; corpus placement now preempts the back-dating problem that hit E7.
+
+Tags: definition
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-nannini-et-al-d9
+
+#### D10 · Vivek Acharya (arXiv 2604.16338) — Acharya, V.
+
+*Apr 2026*
+
+> The Agentic AI Governance Maturity Model (AAGMM), a five-level framework spanning 12 governance domains, grounded in NIST AI RMF and ISO/IEC 42001. The paper introduces a novel taxonomy of agent sprawl patterns — functional duplication, shadow agents, orphaned agents, permission creep, and unmonitored delegation chains — each linked to quantifiable business cost models.
+
+AAGMM is corpus-relevant for two reasons. First, the agent-sprawl taxonomy (functional duplication, shadow agents, orphaned agents, permission creep, unmonitored delegation chains) is original vocabulary that maps cleanly onto observed enterprise pathologies — every operator dealing with hundreds of internal agents recognises these patterns. Second, the maturity model itself is the first to claim quantifiable validation (94.3% lower sprawl, 96.4% fewer incidents at L4–5) across 750 simulation runs — a level of evidence rare in Category D. Coded definition_type 'prescriptive' because the paper specifies what enterprises must do, not what they currently do. Coded actor_model 'hybrid' because the maturity model spans pre-deployment governance (human-decided) and runtime behaviour (autonomous-or-supervised). The work is single-author and unrefereed; corpus placement reflects the originality of the taxonomy, not endorsement of the empirical claims.
+
+Tags: governance, maturity-model, agent-sprawl, nist-ai-rmf, iso-42001
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-aagmm-acharya-d10
+
+#### D11 · Mao et al. (arXiv 2604.15367) — Mao, Q.; Wang, J.; Liu, Y.; Zhu, L.; Ma, C.; Yan, J.
+
+*Apr 2026*
+
+> Autonomous large language model (LLM) agents are pushing agentic commerce from human-supervised assistance toward machine actors that can negotiate, purchase services, manage digital assets, and execute transactions across on-chain and off-chain environments. The paper organizes threats along five dimensions: agent integrity, transaction authorization, inter-agent trust, market manipulation, and regulatory compliance.
+
+This is the first formal systematization-of-knowledge specifically on agentic-commerce security, distinct from generic LLM security or generic agent security. The 5×12 threat-taxonomy structure (5 dimensions × 12 attack vectors) gives the field a vocabulary it has been missing. Corpus-relevant moves: (1) Dimension D2 (transaction authorization) maps directly onto the AP2/ACP/MPP/x402 protocol set, validating the Taxonomy paper's framing that these are the operational primitives. (2) Dimension D3 (inter-agent trust) motivates the entire identity-standards cluster (ARIA, AIS-1, AID, ERC-8004) by showing what breaks without it. (3) Dimension D5 (regulatory compliance) closes the loop with D9 (Nannini). Coded definition_type 'taxonomic' because the paper's primary contribution is the threat-classification scheme rather than a model or framework.
+
+Tags: security, sok, attack-vectors, threat-taxonomy, protocols
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-sok-agentic-commerce-security-d11
+
+
 ### Category E — Infrastructure and Standards
 
-#### E1 · Google — Agent-to-Agent Protocol (A2A)
+#### E1 · Google (Linux Foundation) — Google A2A Working Group
 
 *Apr 2025*
 
-> Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json, exchange tasks via JSON-RPC over HTTPS.
+> Agent discovery and communication. Agents publish Agent Cards at /.well-known/agent.json and exchange tasks via JSON-RPC over HTTPS. The specification does not define payment, settlement, or reputation.
 
-v0.3. 150+ partners. Does not specify payment or settlement. The discovery layer for agents -- but without economics.
+A2A's silence on payment and settlement is the most consequential design decision in this entire corpus. By standardizing discovery and communication while leaving economics undefined, Google has created infrastructure that Category A, B, and C implementations can all adopt — and has exported the settlement question downstream to every single deployer. Read it as neutrality if you want. Read it as a structural bet: discovery is the hard problem, settlement will sort itself out later. The main paper argues the bet is backwards — that the settlement assumption has to be made first, or it gets made by default, and defaults are how architectures get locked in.
 
-Tags: A2A, Google, JSON-RPC, discovery
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-google-e1
 
-#### E2 · Anthropic — Model Context Protocol (MCP)
+#### E2 · Anthropic — Anthropic (Model Context Protocol)
 
 *2024*
 
 > A standard for LLMs to discover and invoke external tools. Focused on tool interoperability.
 
-modelcontextprotocol.io. Does not specify payment, settlement, or reputation. The tool layer -- but without economics.
+MCP is the tool layer, and like A2A it is deliberately silent on economics. That silence is the whole design philosophy of the current protocol generation: separate concerns ruthlessly, let the market figure out the rest. It is good engineering and it is also how settlement assumptions end up as a default rather than a choice. MCP is cited in Category C architectures as if it were neutral infrastructure, but the moment it gets used to invoke a paid tool, the payment has to resolve somewhere, and MCP has no opinion about where. The April 2026 disclosure is the first corpus-level empirical confirmation that the protocol layer absorbs the trust assumptions E2 itself does not declare.
 
-Tags: MCP, Anthropic, tools
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-anthropic-e2
 
-#### E3 · Trulioo / Worldpay / Skyfire — KYA Infrastructure
+#### E3 · Trulioo / Worldpay / Skyfire — Trulioo, Worldpay, Skyfire (KYA coalition)
 
 *2026*
 
-> "Digital Agent Passport" -- Know Your Agent identity verification for autonomous agents.
+> Digital Agent Passport — Know Your Agent identity verification for autonomous agents.
 
-The KYC equivalent for machines. Cross-category: any category that needs to verify an agent's identity can use it.
+Trulioo et al. are doing the unglamorous work of building what the WEF vocabulary requires. 'Digital Agent Passport' is operationally simple — KYC mechanics applied to non-human principals — and strategically significant because whichever implementation becomes the de facto standard gets to define what 'knowing' an agent means. That definition is not neutral. It encodes assumptions about whether agents have stable identity, whether identity transfers, and whether verification is an ongoing obligation or a one-time check.
 
-Tags: KYA, identity, passport
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-trulioo-worldpay-skyfire-e3
 
-#### E4 · IEEE 7012
+#### E4 · IEEE — IEEE 7012 Working Group
 
-*Draft, 2026*
+*2026 (Draft)*
 
 > Standard for terms and agreements between autonomous entities.
 
-The first formal standards body to address agent-to-agent contracts. Still in draft. If ratified, it becomes the legal infrastructure for Category C.
+IEEE 7012 is the first formal standards body to treat agent-to-agent contracts as something requiring a standard rather than a whitepaper. The draft is deliberately infrastructure-agnostic, which is the single most important thing about it: if it gets ratified, the legal envelope for autonomous economic activity will not depend on blockchain the way the VC-led taxonomies assume. That matters because standards outlive fashions, and ratification is where the settlement-neutrality argument either becomes precedent or does not.
 
-Tags: IEEE, standard, contracts
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-ieee-7012-e4
 
-#### E5 · Forrester / Exista.io — Agent Discovery Optimization (ADO)
+#### E5 · Forrester / Exista.io — Forrester Research, Exista.io
 
-*2025-2026*
+*2025–2026*
 
 > SEO is for humans. ADO is for agents. A brand invisible to agents is invisible to the agentic economy.
 
-New concept. Implies that Category A and Category C will develop parallel discovery mechanisms.
+ADO is the moment the agent economy starts generating its own marketing category, which is usually a lagging indicator that the category has become real in the commercial sense. The framing also exposes the underlying asymmetry: in a world where agents mediate discovery, the incentive to be legible to agents becomes structural, and the brands that are not legible disappear from the consideration set. That is Category A's version of organic traffic collapse — and it is why every Category A vendor ends up funding ADO research whether they believe it yet or not.
 
-Tags: ADO, discovery, SEO
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-forrester-existaio-e5
 
-#### E6 · IETF — Verified Commerce for Agent Protocols (VCAP)
+#### E6 · IETF — IETF VCAP Working Group
 
-*Internet-Draft, 2026*
+*Jan 2026 / Apr 2026 (VCAP v01 + agent-identity cluster)*
 
 > Cryptographic proof of work delivery for agent commerce. IETF standardization track.
 
-Hybrid C/E. Addresses the verification problem at the protocol level. Complementary to escrow-based approaches.
+VCAP is what the verification problem looks like when the IETF takes it seriously. The draft status matters less than the venue: IETF drafts that address a real gap tend to become RFCs, and the gap VCAP addresses — cryptographic proof of delivery for agent-to-agent work — is one that every Category C architecture assumes solved without actually solving. Read as the moment when the standards community starts filling in the pieces the protocol vendors left on the cutting-room floor.
 
-Tags: IETF, VCAP, verification
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-ietf-e6
 
-#### E7 · OECD — "Agentic AI: Landscape and Conceptual Foundations"
+#### E7 · OECD — OECD (Working Paper on Agentic AI)
 
 *2026*
 
 > Working paper on terminology and regulatory framing for agentic AI systems.
 
-Hybrid D/E. The OECD defines terms and shapes regulatory vocabulary. What they name, legislators regulate.
+What the OECD names, legislators regulate. The working-paper format is deliberately low-commitment — vocabulary now, principles later, rules much later — but the vocabulary is what gets picked up by national transposition. E7 is in the corpus not because the definition is sharp (it is not) but because its downstream legislative effect will be disproportionate to its analytical substance. This is how infrastructure gets built by consultation document.
 
-Tags: OECD, regulatory, terminology
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-oecd-e7
 
-#### E8 · a16z — Keycard investment
+#### E8 · a16z (Keycard) — a16z (Keycard investment memo)
 
 *Oct 2025*
 
 > The identity layer for the agent economy. Finding: non-human identities outnumber human employees 96-to-1 in finance.
 
-The 96:1 ratio is striking -- finance already has more machine identities than human ones. Keycard builds the credential layer.
+The 96:1 ratio is the most quotable number in the entire corpus, and it says finance has already crossed the non-human-majority line before anyone wrote a definition for the category. The investment thesis is narrower than the number suggests — Keycard is a credentialing play, not a settlement play — but the data point does the work. Once you internalize that non-human identities already dominate the regulated financial environment, the question is not whether the agent economy is real. It is whether the definitions catch up before the architecture is already frozen.
 
-Tags: a16z, Keycard, identity, 96:1
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-a16z-e8
 
-#### E9 · Urbach et al. — "Conceptualizing the Machine Economy"
+#### E9 · Urbach et al. — Urbach et al. (PACIS 2021)
 
-*PACIS 2021*
+*2021*
 
 > The complete integration and participation of economically autonomous acting machines in economic processes.
 
-The earliest academic paper to formalize machine economic participation. Three prerequisites: autonomy, connectivity, intelligence. Predates the protocol wave by four years.
+Urbach et al. is the 2021 paper that defined the problem four years before the infrastructure could solve it. The three prerequisites — autonomy, connectivity, intelligence — are what LLMs provided and what IoT/ledger projects had been waiting for. Its corpus value is historical but structurally important: the problem statement existed before the LLM wave, which means the current Category C definitions are not inventing the framing, they are inheriting it from a machine-economy literature that is older than most of the projects citing it realize.
 
-Tags: academic, PACIS, earliest, 2021
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-urbach-et-al-e9
 
-#### E10 · Goenka et al. — TessPay
+#### E10 · Goenka et al. — Goenka et al. (arXiv:2602.00213)
 
-*arXiv, Jan 2026*
+*Jan 2026*
 
 > Verify-then-Pay Infrastructure for Trusted Agentic Commerce. Escrow + TEE/TLS verification.
 
-Hybrid C/E. Proves the seller delivered what the buyer paid for. Complementary to reputation systems.
+TessPay is the academic version of the verification problem VCAP is standardizing, and the complementarity with reputation systems is exactly the kind of layering a mature Category C needs. Per-transaction verification and temporal reputation are different problems — the first proves what happened, the second predicts what will happen — and Category C architectures tend to conflate them. The Goenka paper is useful because it separates them cleanly and shows that verify-then-pay is infrastructure-agnostic, which is the thing most of the Category C orthodoxy assumes it cannot be.
 
-Tags: TessPay, escrow, TEE, verification
+Tags: definition
 
 Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-goenka-et-al-e10
 
----
+#### E11 · AIS-1 (ais-1.org) — AIS-1 Working Group
+
+*Apr 2026*
+
+> A bonded dual-identity token on-chain that permanently links an AI agent's identity to the legal entity or person responsible for it. Neither party can be separated from the other without revoking the bond. Three tiers — Basic (permissionless), Verified (issuer-KYC'd, sanctions-screened), Sovereign (enhanced due diligence, government-attested).
+
+The design choice that distinguishes AIS-1 from prior agent-identity work is the *bonded dual token*: it refuses to let agent identity and sponsor identity circulate independently, which makes 'the agent is autonomous but the human is liable' enforceable at the protocol layer rather than merely at the contract layer. That is a non-trivial philosophical commitment — closer to the WEF/KYA trust framing than to the self-sovereign-identity tradition that gave us did:method specs. The three-tier structure is the other consequential design choice: Basic is genuinely permissionless, Sovereign requires government attestation, Verified threads the needle in a way that KYA has not yet specified concretely. Category E rather than Ccr because the primary output is an identity specification, not a settlement or commerce primitive — but the crypto-native substrate means the corpus should watch for AIS-1-like non-blockchain variants in the next 12 months.
+
+Tags: definition
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-ais-1-e11
+
+#### E12 · .agent Community (AID Protocol) — Nemethi (IETF draft author); .agent Community contributors
+
+*May 2026*
+
+> AID is an open protocol that publishes machine-readable identity records as DNS TXT entries, allowing anyone to look up who built an agent, what it does, and what policies it follows using standard DNS queries. Record format: v=aid1;u=ENDPOINT_URL;p=PROTOCOL at _agent.<domain>.
+
+AID's design choice is to make agent discovery and identity advertisement work at the layer of internet infrastructure that has been settled since 1983: DNS. Where AIS-1 anchors identity on-chain and ARIA combines DNS with NIST anchoring, AID is the maximalist DNS-only position. The protocol-agnostic discovery (MCP, A2A, OpenAPI, local Docker) makes it the cheapest possible substrate for any agent that needs to be found. Coded trust_model 'identity' rather than 'legal' because AID itself does not assert a trust framework — it specifies a discovery format. The legal/trust layer must come from a sibling protocol (AIS-1, Skyfire KYA). MIT-licensed and advancing as IETF Internet-Draft means it is the lowest-cost-to-implement entry in the identity cluster — a real strategic differentiator in a fragmented standards landscape.
+
+Tags: identity, dns, discovery, ietf, open-source, MIT
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-aid-agent-community-e12
+
+#### E13 · OwlTing Group (NASDAQ: OWLS) — OwlTing Group / Obook Holdings Inc. (institutional)
+
+*May 2026*
+
+> A digital wallet designed specifically for AI agents to send, receive, and manage stablecoins on behalf of their users. Users can instruct: 'pay for my online purchase' or 'send 100 USDC to a friend in Japan,' and the agent will autonomously complete the payment or cross-border transfer in stablecoins within the scope of user authorization.
+
+OwlPay's corpus significance is not in the wallet primitive itself — self-custody multi-chain agent wallets are a 2024 design — but in OwlTing Group's NASDAQ-listed status. The agentic-payments narrative now has its first publicly-traded operator, which means SEC/NASDAQ disclosure obligations now apply to product roadmap claims, customer counts, and revenue attribution. That is a structural change in the corpus, not a technical one. The confirmed Visa Direct integration (OwlPay Harbor) — debit-card push for USDC on-ramp + MoneyGram cash off-ramp — places OwlPay at the corpus boundary between Category E (identity/wallet primitive) and the fiat-on-ramp infrastructure that the Cs settlement-neutrality thesis depends on. Coded regulatory_stance 'addressed' because Form 6-K filings make compliance posture explicit by default.
+
+Tags: wallet, stablecoin, nasdaq, visa-direct, owlting, multi-chain
+
+Canonical: https://agenticeconomy.dev/definition/agentic-economy-def-owlpay-agent-wallet-e13
+
 
 ## Blog
 
