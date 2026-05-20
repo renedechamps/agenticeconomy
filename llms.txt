@@ -1,6 +1,6 @@
 # agenticeconomy.dev
 
-> The definitive research hub on the agentic economy. 57 definitions, 4 preprints, 30 glossary terms, 17 protocols, open API, open data (CC BY-SA 4.0).
+> The definitive research hub on the agentic economy. 63 definitions, 4 preprints, 30 glossary terms, 20 protocols, open API, open data (CC BY-SA 4.0).
 
 ## Overview
 
@@ -12,8 +12,8 @@
 ## Core resources
 
 - [Start Here: Agentic Economy 101](https://agenticeconomy.dev/agentic-economy-101)
-- [57 Definitions corpus](https://agenticeconomy.dev/agentic-economy-definitions)
-- [Protocol Matrix (17 protocols)](https://agenticeconomy.dev/agentic-economy-protocols)
+- [63 Definitions corpus](https://agenticeconomy.dev/agentic-economy-definitions)
+- [Protocol Matrix (20 protocols)](https://agenticeconomy.dev/agentic-economy-protocols)
 - [Glossary (30 terms)](https://agenticeconomy.dev/agentic-economy-glossary)
 - [Timeline 2018-2026](https://agenticeconomy.dev/agentic-economy-timeline)
 - [Research & Papers](https://agenticeconomy.dev/agentic-economy-research)

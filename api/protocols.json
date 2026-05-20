@@ -1,9 +1,9 @@
 {
   "version": "1.0",
-  "updated": "2026-04-09",
+  "updated": "2026-05-20",
   "source": "agenticeconomy.dev",
   "license": "CC BY-SA 4.0",
-  "count": 17,
+  "count": 20,
   "protocols": [
     {
       "id": 1,
@@ -276,6 +276,54 @@
       "governance": "Multi-company",
       "status": "Development",
       "differentiator": "\"Digital Agent Passport\" — KYC for machines"
+    },
+    {
+      "id": 18,
+      "slug": "circle-agent-stack",
+      "name": "Circle Agent Stack",
+      "source": "Circle Internet Group",
+      "category": "C_cr",
+      "latency": "<500ms via Gateway",
+      "cost": "Gas-free; sub-cent transfers ($0.000001 min)",
+      "blockchain": true,
+      "openSource": "No (proprietary suite)",
+      "partners": "11 mainnets — Ethereum, Arbitrum, Base, Optimism, Polygon, Avalanche, Sei, Sonic, Unichain, HyperEVM, World Chain",
+      "api": "REST, Circle CLI, SDK",
+      "governance": "Circle (NYSE: CRCL)",
+      "status": "Production (May 2026)",
+      "differentiator": "First hyperscale issuer to ship discovery + wallet + settlement bundle"
+    },
+    {
+      "id": 19,
+      "slug": "okx-app",
+      "name": "OKX Agent Payments Protocol",
+      "source": "OKX",
+      "category": "C_cr",
+      "latency": "On-chain confirm",
+      "cost": "Low / zero gas (X Layer)",
+      "blockchain": true,
+      "openSource": "Open protocol (permissionless brokers)",
+      "partners": "Open broker ecosystem",
+      "api": "Payment SDK, Broker spec",
+      "governance": "OKX Onchain OS",
+      "status": "v1.0 spec live (Apr 2026)",
+      "differentiator": "Only crypto protocol bundling quote/negotiate/escrow/settle/dispute"
+    },
+    {
+      "id": 20,
+      "slug": "aid",
+      "name": "AID Protocol",
+      "source": ".agent Community",
+      "category": "E",
+      "latency": "DNS-speed",
+      "cost": "Free (zero infrastructure)",
+      "blockchain": false,
+      "openSource": "Yes (MIT)",
+      "partners": "21K+ members; Ollama, Datadog, Netlify",
+      "api": "DNS TXT + /.well-known/agent + IETF Internet-Draft",
+      "governance": ".agent Community (open) + IETF",
+      "status": "v1 + IETF I-D (May 2026)",
+      "differentiator": "DNS-native agent discovery — no CA, no registry"
     }
   ]
 }

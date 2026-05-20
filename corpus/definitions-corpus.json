@@ -1,6 +1,6 @@
 {
-  "schema_version": "1.2",
-  "updated": "2026-04-21",
+  "schema_version": "1.3",
+  "updated": "2026-05-20",
   "license": "CC BY-SA 4.0",
   "curator": {
     "name": "René Dechamps Otamendi",
@@ -128,7 +128,7 @@
     },
     "Ccr": {
       "label": "Autonomous A2A Commerce (Blockchain)",
-      "count": 13,
+      "count": 15,
       "color": "#f59e0b"
     },
     "Cs": {
@@ -138,12 +138,12 @@
     },
     "D": {
       "label": "Analytical and Regulatory",
-      "count": 9,
+      "count": 11,
       "color": "#f87171"
     },
     "E": {
       "label": "Infrastructure and Standards",
-      "count": 11,
+      "count": 13,
       "color": "#22d3ee"
     }
   },
@@ -2553,6 +2553,343 @@
       ],
       "teaser": "The first open-licensed identity standard that treats 'the agent' and 'the responsible party' as a single cryptographic object.",
       "analytical_note": "The design choice that distinguishes AIS-1 from prior agent-identity work is the *bonded dual token*: it refuses to let agent identity and sponsor identity circulate independently, which makes 'the agent is autonomous but the human is liable' enforceable at the protocol layer rather than merely at the contract layer. That is a non-trivial philosophical commitment — closer to the WEF/KYA trust framing than to the self-sovereign-identity tradition that gave us did:method specs. The three-tier structure is the other consequential design choice: Basic is genuinely permissionless, Sovereign requires government attestation, Verified threads the needle in a way that KYA has not yet specified concretely. Category E rather than Ccr because the primary output is an identity specification, not a settlement or commerce primitive — but the crypto-native substrate means the corpus should watch for AIS-1-like non-blockchain variants in the next 12 months."
+    },
+    {
+      "id": "C15",
+      "slug": "circle-agent-stack-c15",
+      "category": "Ccr",
+      "source": "Circle Internet Group",
+      "authors": "Circle Internet Group, Inc. (institutional)",
+      "organization_type": "stablecoin-issuer",
+      "date": "May 2026",
+      "date_iso": "2026-05",
+      "region": "US / global",
+      "url": "https://www.circle.com/blog/introducing-circle-agent-stack-financial-infrastructure-for-the-agentic-economy",
+      "citation_type": "product-announcement",
+      "verbatim_quote": "A new set of services and tools designed for the agentic economy, including products that help enable agents as autonomous economic actors so agents can hold assets, discover services, and transact programmatically with USDC across supported blockchains and payment protocols. The stack bundles Circle CLI, Nanopayments (gas-free USDC transfers as small as $0.000001 via Circle Gateway), Agent Wallets (permissionless, policy-controlled), and an Agent Marketplace.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "launch_event": "Circle pressroom announcement 2026-05-11; product live at agents.circle.com",
+        "scale": "First agent stack from a NYSE-listed stablecoin issuer (CRCL); USDC settlement layer",
+        "differentiator": "First single-vendor bundle covering discovery (Marketplace) + delegation (Agent Wallets) + settlement (Nanopayments) + CLI"
+      },
+      "cross_references": [
+        {
+          "id": "C4",
+          "short_label": "Circle Nanopayments",
+          "reason": "The Stack supersedes the standalone Nanopayments entry by embedding it inside a fuller agent-commerce bundle."
+        },
+        {
+          "id": "C3",
+          "short_label": "Coinbase / Cloudflare x402",
+          "reason": "Competing crypto-rail commerce framework; the Marketplace layer is the first hyperscaler-issuer counter to the x402 ecosystem directory."
+        },
+        {
+          "id": "E11",
+          "short_label": "AIS-1",
+          "reason": "The Agent Wallet's policy-controlled delegation primitive assumes an identity standard like AIS-1 to enforce sponsor liability."
+        }
+      ],
+      "teaser": "The first hyperscale stablecoin issuer to ship a full agent-economy stack — discovery, wallet, settlement — under one roof.",
+      "analytical_note": "Circle's move from a single primitive (USDC) to a vertically-integrated agent stack is the most consequential structural signal of the cycle. Nanopayments on eleven mainnets handles settlement at sub-cent; Agent Wallets handle delegation under policy; the Marketplace handles discovery; Circle CLI handles agent-to-system invocation. Read in corpus terms, this is the first Ccr entry whose ambition matches the Cs gap: one product covering the full agent-commerce stack. The remaining question is whether Circle's discovery layer (Marketplace) competes with the x402 ecosystem or layers on top of it; the press materials are deliberately ambiguous. Coded definition_type 'operational' is earned by the live shipped product, not a whitepaper.",
+      "tags": [
+        "circle",
+        "USDC",
+        "nanopayments",
+        "agent-wallets",
+        "marketplace",
+        "ccr-bundle"
+      ]
+    },
+    {
+      "id": "C16",
+      "slug": "okx-agent-payments-protocol-c16",
+      "category": "Ccr",
+      "source": "OKX (Agent Payments Protocol)",
+      "authors": "OKX Onchain OS team",
+      "organization_type": "crypto-exchange",
+      "date": "Apr 2026",
+      "date_iso": "2026-04",
+      "region": "APAC / global",
+      "url": "https://web3.okx.com/whitepaper/okx-app-whitepaper.pdf",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "An open protocol for agent commerce. The protocol enables agents to create quotes, negotiate terms, hire professionals, set up escrow accounts, make lump-sum payments, and run pay-per-use billing systems — covering quoting, negotiating, escrowing funds, metering usage, settling, and resolving disputes.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "scope": "Full agent-commerce lifecycle in one spec (quote → negotiate → escrow → meter → settle → dispute)",
+        "deployment": "Multi-chain — X Layer, Base, Ethereum, Solana, Sui, Aptos, Optimism",
+        "openness": "'Any team can implement a compliant Broker' — permissionless implementation; no whitelist"
+      },
+      "cross_references": [
+        {
+          "id": "C3",
+          "short_label": "Coinbase / Cloudflare x402",
+          "reason": "Adjacent payments-only protocol; APP extends to the commercial-process layer x402 stops short of."
+        },
+        {
+          "id": "C13",
+          "short_label": "Zetrix / Avatar",
+          "reason": "APAC-origin Ccr peer with on-chain trust anchor; different jurisdictional DNA, similar ambition."
+        },
+        {
+          "id": "E11",
+          "short_label": "AIS-1",
+          "reason": "Identity primitive APP implicitly assumes for broker registration and dispute attribution."
+        }
+      ],
+      "teaser": "The first crypto-rail protocol that bundles the entire commercial process — quote, negotiate, escrow, settle, dispute — into a single specification.",
+      "analytical_note": "OKX APP is the most ambitious crypto-rail protocol scope to date in the corpus. Where AP2 and x402 stop at the payment primitive, APP extends through escrow, metering, settlement, and dispute resolution — i.e., it specifies the commercial-process layer that VMP also covers but does it on-chain. This is corpus-consequential because it tests the Two Economies thesis directly: if APP achieves adoption, the crypto-rail bundle absorbs the entire commercial-process layer that Category Cs argues belongs in a fiat-neutral protocol. The 'avoided' regulatory_stance is earned by the whitepaper's silence on any jurisdiction-specific compliance posture; APP is governance-neutral by design. Watch for the first non-OKX broker implementation as the maturity signal.",
+      "tags": [
+        "okx",
+        "agent-payments-protocol",
+        "escrow",
+        "dispute-resolution",
+        "x-layer",
+        "ccr-bundle"
+      ]
+    },
+    {
+      "id": "D10",
+      "slug": "aagmm-acharya-d10",
+      "category": "D",
+      "source": "Vivek Acharya (arXiv 2604.16338)",
+      "authors": "Acharya, V.",
+      "organization_type": "academic-independent",
+      "date": "Apr 2026",
+      "date_iso": "2026-04",
+      "region": "US / global",
+      "url": "https://arxiv.org/abs/2604.16338",
+      "citation_type": "academic-paper",
+      "verbatim_quote": "The Agentic AI Governance Maturity Model (AAGMM), a five-level framework spanning 12 governance domains, grounded in NIST AI RMF and ISO/IEC 42001. The paper introduces a novel taxonomy of agent sprawl patterns — functional duplication, shadow agents, orphaned agents, permission creep, and unmonitored delegation chains — each linked to quantifiable business cost models.",
+      "coded_dimensions": {
+        "definition_type": "prescriptive",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "unstated",
+        "actor_model": "hybrid",
+        "trust_model": "legal",
+        "infrastructure_layer": "hybrid",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "novelty": "First explicit maturity model for agentic AI governance; first quantitative claim across 12 governance domains",
+        "anchoring": "Grounded in NIST AI RMF and ISO/IEC 42001 — connects to existing standards rather than re-inventing them",
+        "taxonomy": "Five 'agent sprawl' patterns now form the only canonical vocabulary in the field — functional duplication, shadow agents, orphaned agents, permission creep, unmonitored delegation chains",
+        "evidence": "750 simulation runs across 5 scenarios × 5 maturity levels, reporting 94.3% lower sprawl indices and 96.4% fewer risk incidents at Levels 4–5"
+      },
+      "cross_references": [
+        {
+          "id": "D9",
+          "short_label": "Nannini et al. (EU compliance)",
+          "reason": "Sibling normative work — D9 maps EU law, D10 maps internal enterprise governance; together they cover the external-and-internal compliance surface."
+        },
+        {
+          "id": "E7",
+          "short_label": "OECD",
+          "reason": "Both treat governance gaps as the structural problem; D10 operationalises what E7 conceptualises."
+        },
+        {
+          "id": "D11",
+          "short_label": "SoK Agentic Commerce Security",
+          "reason": "Complementary taxonomy — D10 covers governance maturity inside the enterprise, D11 covers attack-vector surface across protocols."
+        }
+      ],
+      "teaser": "The first quantified vocabulary for what goes wrong inside the enterprise when agents proliferate without governance.",
+      "analytical_note": "AAGMM is corpus-relevant for two reasons. First, the agent-sprawl taxonomy (functional duplication, shadow agents, orphaned agents, permission creep, unmonitored delegation chains) is original vocabulary that maps cleanly onto observed enterprise pathologies — every operator dealing with hundreds of internal agents recognises these patterns. Second, the maturity model itself is the first to claim quantifiable validation (94.3% lower sprawl, 96.4% fewer incidents at L4–5) across 750 simulation runs — a level of evidence rare in Category D. Coded definition_type 'prescriptive' because the paper specifies what enterprises must do, not what they currently do. Coded actor_model 'hybrid' because the maturity model spans pre-deployment governance (human-decided) and runtime behaviour (autonomous-or-supervised). The work is single-author and unrefereed; corpus placement reflects the originality of the taxonomy, not endorsement of the empirical claims.",
+      "tags": [
+        "governance",
+        "maturity-model",
+        "agent-sprawl",
+        "nist-ai-rmf",
+        "iso-42001"
+      ]
+    },
+    {
+      "id": "D11",
+      "slug": "sok-agentic-commerce-security-d11",
+      "category": "D",
+      "source": "Mao et al. (arXiv 2604.15367)",
+      "authors": "Mao, Q.; Wang, J.; Liu, Y.; Zhu, L.; Ma, C.; Yan, J.",
+      "organization_type": "academic-collaborative",
+      "date": "Apr 2026",
+      "date_iso": "2026-04",
+      "region": "global",
+      "url": "https://arxiv.org/abs/2604.15367",
+      "citation_type": "academic-paper",
+      "verbatim_quote": "Autonomous large language model (LLM) agents are pushing agentic commerce from human-supervised assistance toward machine actors that can negotiate, purchase services, manage digital assets, and execute transactions across on-chain and off-chain environments. The paper organizes threats along five dimensions: agent integrity, transaction authorization, inter-agent trust, market manipulation, and regulatory compliance.",
+      "coded_dimensions": {
+        "definition_type": "taxonomic",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "hybrid",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "hybrid",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "methodology": "First Systematization-of-Knowledge specifically on agentic-commerce security (distinct from generic LLM or agent security)",
+        "framework": "5 threat dimensions × 12 cross-layer attack vectors → the field's de facto attack-surface vocabulary",
+        "protocol_scope": "Explicitly maps onto ERC-8004, Agent Payments Protocol, AP2, x402, ACP, MPP, ERC-8183 — the live protocol set"
+      },
+      "cross_references": [
+        {
+          "id": "D10",
+          "short_label": "AAGMM (Acharya)",
+          "reason": "Complementary taxonomy on the same surface — D10 covers governance pathologies inside the enterprise, D11 covers attack vectors across protocols."
+        },
+        {
+          "id": "D9",
+          "short_label": "Nannini et al. (EU law)",
+          "reason": "Dimension D5 (regulatory compliance) closes the loop with D9's compliance architecture for EU-Act-bound providers."
+        },
+        {
+          "id": "E11",
+          "short_label": "AIS-1",
+          "reason": "Dimension D1 (agent integrity) motivates AIS-1's bonded-dual-token design — the integrity gap D11 names is what AIS-1 fills."
+        }
+      ],
+      "teaser": "Twelve cross-layer attack vectors and a five-dimensional threat taxonomy for everything that can go wrong when agents transact autonomously.",
+      "analytical_note": "This is the first formal systematization-of-knowledge specifically on agentic-commerce security, distinct from generic LLM security or generic agent security. The 5×12 threat-taxonomy structure (5 dimensions × 12 attack vectors) gives the field a vocabulary it has been missing. Corpus-relevant moves: (1) Dimension D2 (transaction authorization) maps directly onto the AP2/ACP/MPP/x402 protocol set, validating the Taxonomy paper's framing that these are the operational primitives. (2) Dimension D3 (inter-agent trust) motivates the entire identity-standards cluster (ARIA, AIS-1, AID, ERC-8004) by showing what breaks without it. (3) Dimension D5 (regulatory compliance) closes the loop with D9 (Nannini). Coded definition_type 'taxonomic' because the paper's primary contribution is the threat-classification scheme rather than a model or framework.",
+      "tags": [
+        "security",
+        "sok",
+        "attack-vectors",
+        "threat-taxonomy",
+        "protocols"
+      ]
+    },
+    {
+      "id": "E12",
+      "slug": "aid-agent-community-e12",
+      "category": "E",
+      "source": ".agent Community (AID Protocol)",
+      "authors": "Nemethi (IETF draft author); .agent Community contributors",
+      "organization_type": "open-community",
+      "date": "May 2026",
+      "date_iso": "2026-05",
+      "region": "global",
+      "url": "https://aid.agentcommunity.org/",
+      "citation_type": "protocol-specification",
+      "verbatim_quote": "AID is an open protocol that publishes machine-readable identity records as DNS TXT entries, allowing anyone to look up who built an agent, what it does, and what policies it follows using standard DNS queries. Record format: v=aid1;u=ENDPOINT_URL;p=PROTOCOL at _agent.<domain>.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "unstated",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "web-apis",
+        "regulatory_stance": "avoided"
+      },
+      "influence_markers": {
+        "licensing": "MIT — github.com/agentcommunity/agent-identity-discovery",
+        "standards_track": "IETF Internet-Draft draft-nemethi-aid-agent-identity-discovery-00 submitted",
+        "community": "21,000+ members including Ollama, Datadog, Netlify; parallel ICANN initiative for .agent TLD",
+        "design": "DNS-native (_agent.<domain> TXT records); fallback via .well-known/agent; protocol-agnostic discovery (MCP, A2A, OpenAPI, local Docker); optional in-band public-key for handshake without CA dependency"
+      },
+      "cross_references": [
+        {
+          "id": "E11",
+          "short_label": "AIS-1",
+          "reason": "Competing/complementary identity standard — AIS-1 anchors identity on-chain; AID anchors discovery on DNS. Most deployments will need both."
+        },
+        {
+          "id": "E1",
+          "short_label": "Google Agent Cards",
+          "reason": "Also publishes via well-known endpoints (well-known/agent.json); AID is the DNS-native generalisation of the Agent Card discovery pattern."
+        },
+        {
+          "id": "C3",
+          "short_label": "Coinbase / Cloudflare x402",
+          "reason": "Likely consumer of AID-published endpoints — x402 services need to be discoverable by agents, and AID is the cheapest way to publish."
+        }
+      ],
+      "teaser": "Agent identity at the speed of DNS — no central registry, no certificate authority, just TXT records.",
+      "analytical_note": "AID's design choice is to make agent discovery and identity advertisement work at the layer of internet infrastructure that has been settled since 1983: DNS. Where AIS-1 anchors identity on-chain and ARIA combines DNS with NIST anchoring, AID is the maximalist DNS-only position. The protocol-agnostic discovery (MCP, A2A, OpenAPI, local Docker) makes it the cheapest possible substrate for any agent that needs to be found. Coded trust_model 'identity' rather than 'legal' because AID itself does not assert a trust framework — it specifies a discovery format. The legal/trust layer must come from a sibling protocol (AIS-1, Skyfire KYA). MIT-licensed and advancing as IETF Internet-Draft means it is the lowest-cost-to-implement entry in the identity cluster — a real strategic differentiator in a fragmented standards landscape.",
+      "tags": [
+        "identity",
+        "dns",
+        "discovery",
+        "ietf",
+        "open-source",
+        "MIT"
+      ]
+    },
+    {
+      "id": "E13",
+      "slug": "owlpay-agent-wallet-e13",
+      "category": "E",
+      "source": "OwlTing Group (NASDAQ: OWLS)",
+      "authors": "OwlTing Group / Obook Holdings Inc. (institutional)",
+      "organization_type": "public-company-fintech",
+      "date": "May 2026",
+      "date_iso": "2026-05",
+      "region": "APAC / global",
+      "url": "https://www.globenewswire.com/news-release/2026/05/04/3286859/0/en/owlting-group-nasdaq-owls-launches-owlpay-agent-wallet-targeting-the-emerging-multi-trillion-dollar-agentic-commerce-economy.html",
+      "citation_type": "product-announcement",
+      "verbatim_quote": "A digital wallet designed specifically for AI agents to send, receive, and manage stablecoins on behalf of their users. Users can instruct: 'pay for my online purchase' or 'send 100 USDC to a friend in Japan,' and the agent will autonomously complete the payment or cross-border transfer in stablecoins within the scope of user authorization.",
+      "coded_dimensions": {
+        "definition_type": "operational",
+        "scope": "global",
+        "temporal_horizon": "present",
+        "settlement_assumption": "crypto-native",
+        "actor_model": "autonomous",
+        "trust_model": "identity",
+        "infrastructure_layer": "blockchain",
+        "regulatory_stance": "addressed"
+      },
+      "influence_markers": {
+        "scale": "First NASDAQ-listed agentic-payments deployment (OWLS) — agent product roadmap claims now governed by SEC/NASDAQ disclosure regime",
+        "differentiator": "Self-custody multi-chain (Ethereum + Stellar + Solana) with auto-learned 'agent skill' — no technical configuration required after install",
+        "fiat_ramp": "Visa Direct integration confirmed live (OwlPay Harbor) — debit-card USDC on-ramp + Circle Payment Network + MoneyGram cash pickup"
+      },
+      "cross_references": [
+        {
+          "id": "E8",
+          "short_label": "a16z Keycard",
+          "reason": "Adjacent agent-wallet primitive — Keycard is crypto-native and open-source; OwlPay is crypto-native and public-company-grade. Same primitive, different governance."
+        },
+        {
+          "id": "C4",
+          "short_label": "Circle Nanopayments",
+          "reason": "Settlement rail OwlPay routes through for USDC transfers; OwlPay sits at the wallet layer above Circle's rail layer."
+        },
+        {
+          "id": "A15",
+          "short_label": "Alibaba / Alipay (ACTP)",
+          "reason": "APAC peer with consumer-mass-market positioning — both deploy through super-app surfaces rather than dev-first interfaces."
+        }
+      ],
+      "teaser": "The first NASDAQ-listed agentic-payments product. SEC disclosure obligations now apply to agent wallets.",
+      "analytical_note": "OwlPay's corpus significance is not in the wallet primitive itself — self-custody multi-chain agent wallets are a 2024 design — but in OwlTing Group's NASDAQ-listed status. The agentic-payments narrative now has its first publicly-traded operator, which means SEC/NASDAQ disclosure obligations now apply to product roadmap claims, customer counts, and revenue attribution. That is a structural change in the corpus, not a technical one. The confirmed Visa Direct integration (OwlPay Harbor) — debit-card push for USDC on-ramp + MoneyGram cash off-ramp — places OwlPay at the corpus boundary between Category E (identity/wallet primitive) and the fiat-on-ramp infrastructure that the Cs settlement-neutrality thesis depends on. Coded regulatory_stance 'addressed' because Form 6-K filings make compliance posture explicit by default.",
+      "tags": [
+        "wallet",
+        "stablecoin",
+        "nasdaq",
+        "visa-direct",
+        "owlting",
+        "multi-chain"
+      ]
     }
-  ]
+  ],
+  "total": 63
 }

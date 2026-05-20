@@ -1,24 +1,24 @@
 {
   "version": "1.0",
-  "updated": "2026-04-09",
+  "updated": "2026-05-20",
   "source": "agenticeconomy.dev",
   "baseUrl": "https://agenticeconomy.dev/api",
   "license": "CC BY-SA 4.0",
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
   "author": "René Dechamps Otamendi",
   "authorUrl": "https://renedechamps.com",
-  "description": "Open data API for the Agentic Economy: 51 definitions, 17 protocols, 30 glossary terms, and cross-category analysis.",
+  "description": "Open data API for the Agentic Economy: 63 definitions, 20 protocols, 30 glossary terms, and cross-category analysis.",
   "endpoints": [
     {
       "path": "/api/definitions.json",
-      "description": "All 51 definitions across 6 categories (A, B, Ccr, Cs, D, E)",
+      "description": "All 63 definitions across 6 categories (A, B, Ccr, Cs, D, E)",
       "format": "JSON",
       "size": "~150KB",
       "updateFrequency": "Monthly"
     },
     {
       "path": "/api/protocols.json",
-      "description": "17 protocols with payment, identity, blockchain, governance, and status data",
+      "description": "20 protocols with payment, identity, blockchain, governance, and status data",
       "format": "JSON",
       "size": "~50KB",
       "updateFrequency": "Monthly"
@@ -86,7 +86,13 @@
     {
       "version": "1.0",
       "date": "2026-04-09",
-      "changes": ["Initial release", "51 definitions", "17 protocols", "30 glossary terms", "4 JSON endpoints"]
+      "changes": [
+        "Initial release",
+        "51 definitions",
+        "20 protocols",
+        "30 glossary terms",
+        "4 JSON endpoints"
+      ]
     }
   ]
 }
