@@ -59,20 +59,20 @@
       "status": "Curated by agenticeconomy.dev research team",
       "sources": "Academic (arXiv, Springer), industry (Stripe, Google, Anthropic, Coinbase), analyst (Gartner, McKinsey, Sequoia)",
       "coverage": "63/63 entries (100%)",
-      "lastVerified": "2026-04-09"
+      "lastVerified": "2026-05-20"
     },
     "protocols": {
       "status": "Production data verified from official sources",
       "sources": "Official docs, GitHub repos, public announcements",
-      "coverage": "17 major protocols (not exhaustive)",
-      "lastVerified": "2026-04-09",
+      "coverage": "20 major protocols (not exhaustive)",
+      "lastVerified": "2026-05-20",
       "note": "Some fields (latency, cost) are estimates where official specs unavailable. Help us improve via contribution form on agenticeconomy.dev."
     },
     "glossary": {
       "status": "Authoritative definitions from primary sources",
       "sources": "Protocol specs, research papers, industry whitepapers",
       "coverage": "30 core terms (not exhaustive)",
-      "lastVerified": "2026-04-09"
+      "lastVerified": "2026-05-20"
     }
   },
   "relatedResources": {
